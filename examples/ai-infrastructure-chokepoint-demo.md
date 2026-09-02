@@ -5,7 +5,7 @@ This is an abbreviated example of the expected output style. Run the Skill with 
 ## Prompt
 
 ```text
-Use serenity-skill to deeply research AI infrastructure opportunities.
+Use suoha-serenity-skill to deeply research AI infrastructure opportunities.
 Map the value chain, investigate current sources, find the scarce layers,
 rank the top research priorities, explain the evidence, and say what could prove each idea wrong.
 ```

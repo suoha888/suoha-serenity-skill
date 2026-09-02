@@ -1,0 +1,10 @@
+{"case_id":"provenance-001","task":"claim_lineage","prompt":"每个事实 claim 都要能回到来源和日期。","expected":{"must_include":["claim_id","evidence_id","source_locator","published_at","known_at"]}}
+{"case_id":"provenance-002","task":"hash_integrity","prompt":"导入后的原始来源被修改时应如何发现？","expected":{"must_include":["content_hash","manifest","fail_closed"]}}
+{"case_id":"provenance-003","task":"source_independence","prompt":"识别多个转载背后的同一原始采访。","expected":{"must_include":["independence_group","lineage"]}}
+{"case_id":"provenance-004","task":"review_status","prompt":"未人工复核的 method card 可以直接作为结论吗？","expected":{"must_include":["review_status","candidate","not_authoritative"]}}
+{"case_id":"provenance-005","task":"quote_relation","prompt":"引用帖和原帖的关系应如何保存？","expected":{"must_include":["quoted_post_id","source_record_ids","relation"]}}
+{"case_id":"provenance-006","task":"reply_relation","prompt":"回复缺少父帖时，输出中需要标记什么？","expected":{"must_include":["parent_id","context_missing","confidence"]}}
+{"case_id":"provenance-007","task":"adapter_version","prompt":"一个证据由哪个 adapter 和哪个抽取版本产生？","expected":{"must_include":["adapter","extraction_version","provenance"]}}
+{"case_id":"provenance-008","task":"claim_counterevidence","prompt":"反方证据如何和原 claim 建立链接？","expected":{"must_include":["counterevidence_ids","contradicted","source_locator"]}}
+{"case_id":"provenance-009","task":"local_locator","prompt":"本地档案来源不能上传时如何给出可审计定位？","expected":{"must_include":["local_ref","source_file","source_record_id","hash"]}}
+{"case_id":"provenance-010","task":"outcome_separation","prompt":"后来价格数据如何与历史 evidence 隔离？","expected":{"must_include":["outcomes","research_context","no_rewrite"]}}

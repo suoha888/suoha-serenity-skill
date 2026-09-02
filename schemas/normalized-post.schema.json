@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://serenity.local/schema/normalized-post.schema.json",
+  "title": "Serenity Normalized Historical Post",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "record_version",
+    "id",
+    "access_level",
+    "source_partition",
+    "text",
+    "created_at",
+    "created_at_raw",
+    "captured_at",
+    "time_status",
+    "conversation_id",
+    "parent_id",
+    "is_reply",
+    "is_quote",
+    "quote_status",
+    "mentions",
+    "metrics",
+    "media",
+    "provenance",
+    "record_hash"
+  ],
+  "properties": {
+    "record_version": { "type": "string", "const": "1" },
+    "id": { "type": "string", "minLength": 1 },
+    "access_level": { "type": "string", "enum": ["public", "subscription"] },
+    "source_partition": { "type": "string", "enum": ["public", "subscription"] },
+    "text": { "type": "string" },
+    "language": { "type": ["string", "null"] },
+    "created_at": { "type": ["string", "null"], "format": "date-time" },
+    "created_at_raw": { "type": ["string", "null"] },
+    "captured_at": { "type": "string", "format": "date-time" },
+    "time_status": { "type": "string", "enum": ["resolved", "unresolved"] },
+    "conversation_id": { "type": ["string", "null"] },
+    "parent_id": { "type": ["string", "null"] },
+    "is_reply": { "type": "boolean" },
+    "is_quote": { "type": "boolean" },
+    "quote_status": { "type": "string", "enum": ["resolved", "audit_only", "not_provided"] },
+    "mentions": { "type": "array" },
+    "author": { "type": "object" },
+    "metrics": {
+      "type": "object",
+      "required": ["likes", "replies", "views"],
+      "properties": {
+        "likes": { "type": ["integer", "null"] },
+        "replies": { "type": ["integer", "null"] },
+        "views": { "type": ["integer", "null"] }
+      }
+    },
+    "media": { "type": "array", "items": { "type": "object" } },
+    "provenance": {
+      "type": "object",
+      "required": ["source_partition", "source_file", "source_record_id", "source_sha256"],
+      "properties": {
+        "source_partition": { "type": "string" },
+        "source_file": { "type": "string", "minLength": 1 },
+        "source_record_id": { "type": "string", "minLength": 1 },
+        "source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "source_record_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "record_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "is_exclusive": { "type": "boolean" },
+    "local_media": { "type": "array", "items": { "type": "string" } },
+    "audit": { "type": "object" }
+  }
+}

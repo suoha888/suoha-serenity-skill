@@ -5,7 +5,7 @@ This is a dated example output shape for a tool-using run. Current facts, valuat
 ## Prompt
 
 ```text
-用 serenity-skill 深度调研现在 A 股 AI 半导体产业链，找 5 个最值得优先研究的标的。
+用 suoha-serenity-skill 深度调研现在 A 股 AI 半导体产业链，找 5 个最值得优先研究的标的。
 ```
 
 ## Example answer shape

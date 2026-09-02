@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suoha-serenity.local/schema/media-triage.schema.json",
+  "title": "suoha-serenity Media Triage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "media_id",
+    "post_id",
+    "media_type",
+    "contains_text",
+    "extraction_status",
+    "recommended_next_step",
+    "local_ref",
+    "access_level",
+    "source_partition",
+    "source_record_ids",
+    "source_lineage",
+    "review_status",
+    "extraction_version"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "2" },
+    "media_id": { "type": "string", "minLength": 1 },
+    "post_id": { "type": "string", "minLength": 1 },
+    "media_type": { "type": "string", "minLength": 1 },
+    "contains_text": { "type": "boolean" },
+    "extraction_status": { "type": "string", "minLength": 1 },
+    "recommended_next_step": { "type": "string", "minLength": 1 },
+    "local_ref": { "type": "string" },
+    "access_level": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_partition": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_record_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "source_lineage": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "object" }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["pending", "human_reviewed", "rejected"]
+    },
+    "extraction_version": { "type": "string", "minLength": 1 }
+  }
+}

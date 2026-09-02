@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suoha-serenity.local/schema/manifest.schema.json",
+  "title": "suoha-serenity Distillation Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "pipeline_version",
+    "created_at",
+    "input",
+    "partition",
+    "cutoff",
+    "counts",
+    "output_files",
+    "raw_archive_read",
+    "outcomes_read",
+    "access_policy",
+    "holdout_excluded",
+    "excluded_holdout_count"
+  ],
+  "properties": {
+    "manifest_version": { "type": "string", "const": "2" },
+    "pipeline_version": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256", "record_count", "source_record_count"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+      "record_count": { "type": "integer", "minimum": 0 },
+      "source_record_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "partition": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "cutoff": { "type": ["string", "null"], "format": "date-time" },
+    "counts": { "type": "object" },
+    "output_files": { "type": "object" },
+    "raw_archive_read": { "type": "boolean", "const": false },
+    "outcomes_read": { "type": "boolean", "const": false },
+    "access_policy": { "type": "string", "const": "taint-preserving" },
+    "holdout_excluded": { "type": "boolean" },
+    "excluded_holdout_count": { "type": "integer", "minimum": 0 },
+    "notes": { "type": "string" }
+  }
+}

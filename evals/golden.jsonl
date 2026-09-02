@@ -1,0 +1,20 @@
+{"case_id":"golden-001","task":"theme_scan","prompt":"拆解 AI 数据中心电力产业链并找出最值得研究的卡点。","expected":{"must_include":["value_chain","bottleneck","claim_ledger","counter_evidence","unknowns"]}}
+{"case_id":"golden-002","task":"candidate_challenge","prompt":"这家公司声称是 CPO 核心供应商，请挑战这个说法。","expected":{"must_include":["chain_position","customer_validation","evidence_state","main_risk","next_check"]}}
+{"case_id":"golden-003","task":"financial_translation","prompt":"把产能、利用率和 ASP 假设翻译成收入、利润、现金流和稀释影响。","expected":{"must_include":["revenue","gross_profit","cash_flow","funding","dilution"]}}
+{"case_id":"golden-004","task":"thesis_update","prompt":"新公告削弱了原来的供应链判断，更新 Thesis。","expected":{"must_include":["thesis_event","before","after","evidence_ids","invalidation"]}}
+{"case_id":"golden-005","task":"cross_market","prompt":"把同一产业链研究迁移到港股和日股。","expected":{"must_include":["market_specific_sources","source_routing","currency_or_policy_risk"]}}
+{"case_id":"golden-006","task":"plain_language","prompt":"用普通语言解释先进封装设备为什么可能值得研究。","expected":{"must_include":["judgment","bottleneck","evidence","risk","next_check"]}}
+{"case_id":"golden-007","task":"power_chain","prompt":"从数据中心负载增长拆到电网接入、变压器和散热，先排卡点再排公司。","expected":{"must_include":["system_change","layers","constraint","research_priority"]}}
+{"case_id":"golden-008","task":"optical_chain","prompt":"比较光模块、激光器、硅光和封装，指出哪个环节更难替代。","expected":{"must_include":["value_chain","substitution","qualification","evidence"]}}
+{"case_id":"golden-009","task":"memory_chain","prompt":"HBM 需求上升时，哪些上游工艺和材料值得优先核验？","expected":{"must_include":["upstream_layers","physical_constraint","source_routing","unknowns"]}}
+{"case_id":"golden-010","task":"customer_validation","prompt":"一家供应商声称已经进入大客户量产，怎样设计证据核验？","expected":{"must_include":["customer_validation","primary_sources","unknown","next_check"]}}
+{"case_id":"golden-011","task":"capacity","prompt":"把扩产公告拆成真实可用产能、爬坡时间和收入兑现路径。","expected":{"must_include":["capacity","qualification","financial_translation","assumptions"]}}
+{"case_id":"golden-012","task":"valuation_boundary","prompt":"产业链逻辑成立但估值很高，研究优先级应如何表达？","expected":{"must_include":["evidence","valuation_context","risk","not_buy_sell"]}}
+{"case_id":"golden-013","task":"alternative_thesis","prompt":"为这个热门产业链判断构造一个最强的替代解释。","expected":{"must_include":["counter_evidence","alternative_explanation","invalidation"]}}
+{"case_id":"golden-014","task":"unknown_handling","prompt":"客户关系和订单都找不到公开证据时，请明确告诉我不知道什么。","expected":{"must_include":["unknown","not_established","resolving_check"]}}
+{"case_id":"golden-015","task":"thesis_lifecycle","prompt":"同一观点从建立到减弱再到修正，应该保存哪些事件？","expected":{"must_include":["thesis_event","before","after","trigger_evidence","timeline"]}}
+{"case_id":"golden-016","task":"financial_bridge","prompt":"把利用率下降对毛利、现金流和融资的影响拆开说。","expected":{"must_include":["gross_profit","cash_flow","funding","dilution","unknowns"]}}
+{"case_id":"golden-017","task":"source_independence","prompt":"五篇新闻都引用同一份采访，应该怎样计数和解释？","expected":{"must_include":["independence_group","one_original_source","provenance"]}}
+{"case_id":"golden-018","task":"cross_layer","prompt":"从服务器需求追到基板、材料和设备，避免把大类混在一起。","expected":{"must_include":["granular_layers","chain_position","bottleneck","next_check"]}}
+{"case_id":"golden-019","task":"research_efficiency","prompt":"给我一个三小时内完成第一轮研究的优先级清单。","expected":{"must_include":["priority","evidence_gap","time_box","next_checks"]}}
+{"case_id":"golden-020","task":"method_training","prompt":"教我为什么先证明瓶颈再找股票，每次只讲一个关键问题。","expected":{"must_include":["one_question","system_change","bottleneck","plain_language"]}}

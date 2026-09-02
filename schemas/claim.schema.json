@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suoha-serenity.local/schema/claim.schema.json",
+  "title": "suoha-serenity Claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "claim_id",
+    "text",
+    "epistemic_type",
+    "entity_ids",
+    "as_of",
+    "asserted_at",
+    "known_at",
+    "evidence_ids",
+    "counterevidence_ids",
+    "evidence_state",
+    "confidence",
+    "access_level",
+    "source_partition",
+    "source_record_ids",
+    "source_lineage",
+    "review_status",
+    "extraction_version"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "2" },
+    "claim_id": { "type": "string", "minLength": 1 },
+    "text": { "type": "string", "minLength": 1 },
+    "epistemic_type": {
+      "type": "string",
+      "enum": ["fact", "inference", "hypothesis", "unknown"]
+    },
+    "entity_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "as_of": { "type": "string", "format": "date-time" },
+    "asserted_at": { "type": ["string", "null"], "format": "date-time" },
+    "known_at": { "type": ["string", "null"], "format": "date-time" },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "counterevidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "evidence_state": {
+      "type": "string",
+      "enum": ["supported", "stale", "contradicted", "not_established"]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "access_level": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_partition": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_record_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "source_lineage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_partition",
+          "source_file",
+          "source_record_id",
+          "source_sha256"
+        ],
+        "properties": {
+          "source_partition": { "type": "string", "minLength": 1 },
+          "source_file": { "type": "string", "minLength": 1 },
+          "source_record_id": { "type": "string", "minLength": 1 },
+          "source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["pending", "human_reviewed", "rejected"]
+    },
+    "extraction_version": { "type": "string", "minLength": 1 },
+    "notes": { "type": "string" }
+  }
+}

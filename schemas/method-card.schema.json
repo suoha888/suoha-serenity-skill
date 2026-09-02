@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suoha-serenity.local/schema/method-card.schema.json",
+  "title": "suoha-serenity Method Card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "method_id",
+    "name",
+    "problem",
+    "trigger_conditions",
+    "reasoning_pattern",
+    "required_evidence",
+    "disconfirming_evidence",
+    "known_failure_modes",
+    "counterexamples",
+    "source_event_ids",
+    "source_claim_ids",
+    "confidence",
+    "access_level",
+    "source_partition",
+    "source_record_ids",
+    "source_lineage",
+    "review_status",
+    "extraction_version"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "2" },
+    "method_id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "problem": { "type": "string", "minLength": 1 },
+    "trigger_conditions": { "type": "array", "items": { "type": "string" } },
+    "reasoning_pattern": { "type": "string", "minLength": 1 },
+    "required_evidence": { "type": "array", "items": { "type": "string" } },
+    "disconfirming_evidence": { "type": "array", "items": { "type": "string" } },
+    "known_failure_modes": { "type": "array", "items": { "type": "string" } },
+    "counterexamples": { "type": "array", "items": { "type": "string" } },
+    "source_event_ids": { "type": "array", "items": { "type": "string" } },
+    "source_claim_ids": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "string", "enum": ["low", "medium", "high"] },
+    "access_level": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_partition": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_record_ids": { "type": "array", "items": { "type": "string" } },
+    "source_lineage": { "type": "array", "minItems": 1 },
+    "review_status": {
+      "type": "string",
+      "enum": ["candidate", "pending", "human_reviewed", "rejected"]
+    },
+    "extraction_version": { "type": "string", "minLength": 1 }
+  }
+}

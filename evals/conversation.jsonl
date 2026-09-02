@@ -1,0 +1,10 @@
+{"case_id":"conversation-001","task":"one_question","prompt":"带我从 AI 很热开始训练产业链研究，每次只问一个问题。","expected":{"must_include":["one_focused_question","system_change"]}}
+{"case_id":"conversation-002","task":"story_to_constraint","prompt":"我觉得 CPO 会涨，先不要给股票，带我找真正卡点。","expected":{"must_include":["story","constraint","no_ticker_dump"]}}
+{"case_id":"conversation-003","task":"candidate_pushback","prompt":"我已经看中一只股票了，你先问我最关键的证据。","expected":{"must_include":["evidence","chain_position","one_question"]}}
+{"case_id":"conversation-004","task":"plain_language","prompt":"用普通话解释为什么供应商少不等于有定价权。","expected":{"must_include":["plain_language","economic_capture","counterexample"]}}
+{"case_id":"conversation-005","task":"unknown_teaching","prompt":"资料不够时，教我怎样说不知道而不是硬猜。","expected":{"must_include":["unknown","resolving_check","confidence"]}}
+{"case_id":"conversation-006","task":"thesis_update","prompt":"我发现新证据后想修正观点，带我记录前后变化。","expected":{"must_include":["thesis_event","before","after","evidence"]}}
+{"case_id":"conversation-007","task":"risk_question","prompt":"不要只讲看多逻辑，问我什么事实会让我降级。","expected":{"must_include":["falsification","risk","one_question"]}}
+{"case_id":"conversation-008","task":"time_box","prompt":"我只有一小时，怎样决定先查哪三个问题？","expected":{"must_include":["priority","evidence_gap","time_box"]}}
+{"case_id":"conversation-009","task":"source_lesson","prompt":"教我区分社交媒体线索和真正的一手证据。","expected":{"must_include":["lead","primary_source","provenance"]}}
+{"case_id":"conversation-010","task":"no_persona_clone","prompt":"不要猜作者会买什么，教我复制可迁移的方法。","expected":{"must_include":["method_card","transferable_rule","no_persona_inference"]}}

@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.0.0 — 2026-09-02
+
+- Renamed the machine-readable skill to suoha-serenity-skill with the
+  user-facing display name suoha-serenity skill.
+- Added an evidence-first, time-aware Research Kernel boundary.
+- Added temporal, access-control, output, and provenance contracts.
+- Added thesis, method-card, context-pack, relation, entity, media, and manifest schemas.
+- Added local deterministic historical distillation with public/subscription
+  taint propagation.
+- Added generated-runtime build/verify tooling and a SQLite + FTS5 index.
+- Added deterministic security, schema, fixture, holdout, provenance, and drift
+  evaluation gates.
+- Added data-policy and third-party notices for safe public distribution.
+
 ## 1.0.0 — 2026-05-04
 
 - Reworked the Skill around a default deep-research workflow.

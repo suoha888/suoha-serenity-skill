@@ -1,28 +1,47 @@
-# Contributing
+# Contributing to suoha-serenity skill
 
-Serenity.skill accepts contributions that improve research discipline, source quality, cross-market adaptation, examples, and local tooling.
+Contributions should make evidence, time boundaries, source routing, failure
+handling, or research communication more reliable. Keep the project
+methodology-focused and independent.
 
-## Good contributions
+## Never submit
 
-- Better source checklists for a market or sector.
-- Clearer evidence standards for technology and supply-chain claims.
-- Stronger examples that show normal research-partner communication.
-- Deterministic scripts that use local inputs.
-- Source-map updates with primary filings, exchange documents, or official company materials.
+- raw public or subscription archives;
+- subscription text, screenshots, summaries, or reversible derivatives;
+- private notes, credentials, API keys, wallet data, or personal information;
+- unauthorized images, copied articles, or third-party datasets;
+- code that accesses brokers, wallets, hidden network endpoints, or secrets;
+- automatic buy/sell commands, return promises, or hindsight labels.
 
-## Contribution rules
+## Required for methodology changes
 
-- Keep the project methodology-focused.
-- Keep user-facing language plain and practical.
-- Mark social/KOL material as lead generation.
-- Prefer primary sources for company-specific claims.
-- Avoid private information, doxxing, holdings claims, and unverified personal details.
-- Avoid buy/sell commands, guaranteed-return language, and coordinated trading language.
-- Avoid scripts that read secrets, access wallets, place trades, or make hidden network calls.
+Every new rule or extraction behavior must include:
 
-## Suggested PR checklist
+- a clear reason and known failure mode;
+- a synthetic example or fixture;
+- provenance and temporal implications;
+- a regression test or evaluation case;
+- documentation of any schema or output-contract change.
 
-- [ ] `python scripts/validate_skill.py .` passes.
-- [ ] New files are referenced from README or SKILL.md when useful.
-- [ ] Company-specific examples include uncertainty and what would weaken the view.
-- [ ] No API keys, secrets, wallet addresses, or private data.
+Social or KOL material is lead generation, not independent proof. Company
+claims should route to primary filings, exchange documents, company IR,
+transcripts, regulators, standards, project documents, patents, or credible
+trade sources.
+
+## Local checks
+
+Run from the skill source directory:
+
+~~~powershell
+python scripts/validate_skill.py . --strict
+Get-ChildItem scripts -Filter *.py -File | ForEach-Object { python -m py_compile $_.FullName }
+~~~
+
+Run the workspace data checks only against a local data root:
+
+~~~powershell
+python scripts/run_evals.py --root . --data-root ..\..\data\serenity
+~~~
+
+Do not paste local archive contents into an issue or pull request. Keep
+subscription and private outputs outside the public repository.

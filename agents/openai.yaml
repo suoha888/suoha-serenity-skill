@@ -1,8 +1,8 @@
 interface:
-  display_name: "Serenity.skill"
-  short_description: "Turns investment agents into supply-chain bottleneck hunters"
+  display_name: "suoha-serenity skill"
+  short_description: "Evidence-first, time-aware supply-chain research copilot"
   brand_color: "#111827"
-  default_prompt: "Use serenity-skill to deeply research a market theme, map the value chain, find scarce layers, rank research priorities, explain the evidence, and say what could prove the view wrong."
+  default_prompt: "Use suoha-serenity-skill to research a market theme, map the value chain, find scarce layers, rank research priorities, verify evidence, and say what could prove the view wrong."
 policy:
   allow_implicit_invocation: true
 dependencies:
