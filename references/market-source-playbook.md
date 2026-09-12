@@ -2,6 +2,18 @@
 
 Use this file when the market determines which source path matters.
 
+## Every market: company and quote fields
+
+Before ranking a company, resolve the legal entity, ticker, exchange, share
+class, market, and quote currency. Record price, market cap, shares, unit,
+source, `price_as_of`/`market_cap_as_of`/`shares_as_of`, quote type, share basis,
+market-cap basis, and `data_status` separately. A missing or old quote is
+`UNKNOWN` or `STALE`, not a guessed “current price”.
+
+If market caps are compared across currencies, preserve the original value and
+add a dated FX evidence item. Never mix basic shares, diluted shares, and
+weighted-average income-statement shares without stating the basis.
+
 ## US
 
 Primary source path:

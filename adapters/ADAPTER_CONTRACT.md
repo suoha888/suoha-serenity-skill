@@ -35,3 +35,39 @@ interchanged.
   historical outcomes.
 - Normalize into the Evidence schema before retrieval or scoring.
 - Keep raw input immutable and store a hash manifest outside runtime prompts.
+
+## Company and market-data extension
+
+Company-level adapters may emit `CompanyProfile` facts and `MarketSnapshot`
+facts, but they must keep them separate from interpretation:
+
+```text
+company_id:
+legal_name:
+ticker:
+exchange:
+market:
+quote_currency:
+field:
+value:
+unit:
+as_of:
+published_at:
+known_at:
+source_id:
+locator:
+content_hash:
+evidence_id:
+data_status:
+```
+
+Price records additionally require `price_type` and `captured_at`. Market-cap
+records additionally require `market_cap_basis`, `shares_basis`, and the
+share-count date. A calculated market cap must preserve the price and share
+evidence IDs; a reported market cap must not be silently relabeled as
+calculated.
+
+Adapters return `stale`, `delayed`, `unavailable`, or `ambiguous` explicitly.
+They never invent a quote, infer a customer relationship, calculate a valuation
+target, or issue a trade instruction. Currency conversion is a separate dated
+FX evidence record.

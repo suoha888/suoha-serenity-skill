@@ -22,9 +22,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
     from runtime_common import parse_frontmatter_name
     from verify_runtime import verify_runtime
+    from validate_research_output import (
+        validate_file as validate_research_output_file,
+        validate_component,
+    )
 except ImportError:
     from scripts.runtime_common import parse_frontmatter_name
     from scripts.verify_runtime import verify_runtime
+    from scripts.validate_research_output import (
+        validate_file as validate_research_output_file,
+        validate_component,
+    )
 
 
 PARTITIONS = {"public", "subscription"}
@@ -35,6 +43,20 @@ FIXTURE_GROUPS = {
     "provenance": ("provenance.jsonl", 10),
     "cross_market": ("cross-market.jsonl", 10),
     "conversation": ("conversation.jsonl", 10),
+    "company_research": ("company-research.jsonl", 10),
+}
+V3_SCHEMA_FILES = (
+    "bottleneck-assessment.schema.json",
+    "company-profile.schema.json",
+    "market-snapshot.schema.json",
+    "valuation-snapshot.schema.json",
+    "research-output.schema.json",
+)
+V3_COMPONENTS = {
+    "bottleneck_assessment": "bottleneck-assessment.schema.json",
+    "company_profile": "company-profile.schema.json",
+    "market_snapshot": "market-snapshot.schema.json",
+    "valuation_snapshot": "valuation-snapshot.schema.json",
 }
 DERIVED_REQUIREMENTS = {
     "context-packs.jsonl": ("context_id", "record_ids", "records", "source_lineage"),
@@ -283,6 +305,53 @@ def check_fixtures(root: Path, errors: list[str]) -> dict[str, int]:
     return counts
 
 
+def check_v3_research_contract(root: Path, errors: list[str]) -> dict[str, Any]:
+    result: dict[str, Any] = {"schemas": {}, "fixture": None, "components_fixture": None, "errors": 0}
+    for filename in V3_SCHEMA_FILES:
+        path = root / "schemas" / filename
+        if not path.is_file():
+            errors.append(f"v3_schema_missing:{filename}")
+            continue
+        try:
+            parsed = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"v3_schema_invalid:{filename}:{exc}")
+            continue
+        if not isinstance(parsed, dict) or parsed.get("type") != "object":
+            errors.append(f"v3_schema_not_object:{filename}")
+        result["schemas"][filename] = "valid"
+
+    fixture = root / "evals" / "fixtures" / "research-output.synthetic.json"
+    if not fixture.is_file():
+        errors.append("v3_research_output_fixture_missing")
+    else:
+        fixture_errors = validate_research_output_file(fixture, root / "schemas")
+        result["fixture"] = str(fixture)
+        result["errors"] = len(fixture_errors)
+        errors.extend(f"research_output:{item}" for item in fixture_errors)
+
+    components_fixture = root / "evals" / "fixtures" / "company-research-components.synthetic.json"
+    if not components_fixture.is_file():
+        errors.append("v3_components_fixture_missing")
+    else:
+        try:
+            components = json.loads(components_fixture.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            components = {}
+            errors.append(f"v3_components_fixture_invalid:{exc}")
+        result["components_fixture"] = str(components_fixture)
+        for key, schema_name in V3_COMPONENTS.items():
+            value = components.get(key) if isinstance(components, dict) else None
+            schema_errors = (
+                [f"missing component:{key}"]
+                if value is None
+                else validate_component(value, root / "schemas" / schema_name)
+            )
+            errors.extend(f"research_component:{key}:{item}" for item in schema_errors)
+            result["errors"] += len(schema_errors)
+    return result
+
+
 def check_skill_source(root: Path, errors: list[str]) -> dict[str, Any]:
     skill_path = root / "SKILL.md"
     if not skill_path.is_file():
@@ -300,6 +369,11 @@ def check_skill_source(root: Path, errors: list[str]) -> dict[str, Any]:
         "subscription",
         "falsif",
         "untrusted",
+        "BottleneckAssessment",
+        "CompanyProfile",
+        "MarketSnapshot",
+        "conditional",
+        "single composite",
     )
     for term in required_terms:
         if term.lower() not in text.lower():
@@ -517,6 +591,7 @@ def run(root: Path, data_root: Path, runtime_root: Path | None) -> dict[str, Any
     source = check_skill_source(root, errors)
     security = check_python_security(root, errors)
     fixtures = check_fixtures(root, errors)
+    v3_research = check_v3_research_contract(root, errors)
     normalized = check_normalized(data_root, errors)
     derived = check_derived(data_root, errors)
     schema_validation = check_schema_collections(root, data_root, errors)
@@ -535,6 +610,7 @@ def run(root: Path, data_root: Path, runtime_root: Path | None) -> dict[str, Any
         "temporal_holdout_integrity": 1 if holdout and not any("holdout_" in error for error in errors) else 0,
         "runtime_integrity": 1 if runtime.get("status") in {"pass", "not_requested"} else 0,
         "index_integrity": 1 if index.get("status") == "pass" else 0,
+        "research_output_contract": 1 if v3_research["errors"] == 0 else 0,
         "human_quality_status": "not_automated",
         "citation_entailment_status": "requires_human_or_model_evaluator",
     }
@@ -544,6 +620,7 @@ def run(root: Path, data_root: Path, runtime_root: Path | None) -> dict[str, Any
         "temporal_holdout_integrity": metrics["temporal_holdout_integrity"] == 1,
         "runtime_integrity": metrics["runtime_integrity"] == 1,
         "index_integrity": metrics["index_integrity"] == 1,
+        "research_output_contract": metrics["research_output_contract"] == 1,
         "fixtures": bool(fixtures) and not any(error.startswith("fixture_") for error in errors),
         "python_security": not security.get("network_imports"),
     }
@@ -553,6 +630,7 @@ def run(root: Path, data_root: Path, runtime_root: Path | None) -> dict[str, Any
         "source": source,
         "security": security,
         "fixtures": fixtures,
+        "v3_research": v3_research,
         "normalized": normalized,
         "derived": derived,
         "schema_validation": schema_validation,

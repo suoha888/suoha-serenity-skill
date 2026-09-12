@@ -5,6 +5,11 @@
 This project provides code and research methodology. It does not redistribute
 the historical archive used to test the local pipeline.
 
+Version 3 also defines a public-safe company research contract. Company facts,
+quotes, market caps, shares, financial metrics, and valuation context are
+field-level evidence objects; they are not a license to redistribute third-party
+data or to present a stale quote as current.
+
 ## Data classes
 
 | Class | Examples | Repository/runtime |
@@ -39,3 +44,7 @@ Before publishing a change, confirm:
 - fixtures are synthetic or rights-cleared;
 - links and trademarks are described in THIRD_PARTY_NOTICES.md;
 - evaluation outputs contain no later-outcome labels in research context.
+- company/market fields include source, as_of, quote/share/market-cap basis,
+  and an explicit stale or unavailable status when applicable;
+- no output contains a single composite conviction score, target-price promise,
+  expected-return forecast, or automatic trade instruction.

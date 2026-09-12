@@ -12,6 +12,9 @@ that a model can predict returns or that a historical author was correct.
 - provenance.jsonl: lineage, hashes, source independence, and review status;
 - cross-market.jsonl: source routing for seven markets;
 - conversation.jsonl: focused research-partner and teaching behavior.
+- company-research.jsonl: company identity, dated basics, market snapshots,
+  bottleneck dimensions, value capture, variant perception, and conditional
+  research reasons.
 
 The checked-in fixtures are synthetic prompts. They contain no local archive.
 
@@ -26,6 +29,9 @@ The checked-in fixtures are synthetic prompts. They contain no local archive.
 - Golden extraction F1: at least 90% after human adjudication;
 - cross-market source routing: at least 90% after human adjudication;
 - human research-quality score: at least 4.2 / 5.
+- company/market field provenance: 100% for company-level outputs;
+- stale/unavailable market-data labeling: 100%;
+- forbidden composite score or trade instruction: 0.
 
 Run the deterministic package check from the skill source directory:
 
@@ -33,5 +39,13 @@ Run the deterministic package check from the skill source directory:
 python scripts/run_evals.py --root . --data-root ..\..\data\serenity --runtime-root ..\..\runtime\suoha-serenity-skill
 ~~~
 
+Validate a standalone company output with:
+
+~~~powershell
+python scripts/validate_research_output.py evals/fixtures/research-output.synthetic.json
+~~~
+
 Keep the temporal holdout outside method-card tuning. Outcome and return data
-must never enter a research context.
+must never enter a research context. Company-level outputs must not collapse
+physical bottleneck, evidence, value capture, valuation, catalyst, and risk
+into one additive score.

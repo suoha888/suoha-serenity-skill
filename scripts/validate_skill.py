@@ -24,6 +24,8 @@ REQUIRED_FILES = (
     "contracts/provenance-contract.md",
     "contracts/temporal-contract.md",
     "contracts/access-control-contract.md",
+    "contracts/company-research-contract.md",
+    "references/company-research-and-valuation.md",
     "schemas/claim.schema.json",
     "schemas/evidence.schema.json",
     "schemas/thesis.schema.json",
@@ -31,11 +33,21 @@ REQUIRED_FILES = (
     "schemas/method-card.schema.json",
     "schemas/context-pack.schema.json",
     "schemas/manifest.schema.json",
+    "schemas/bottleneck-assessment.schema.json",
+    "schemas/company-profile.schema.json",
+    "schemas/market-snapshot.schema.json",
+    "schemas/valuation-snapshot.schema.json",
+    "schemas/research-output.schema.json",
     "scripts/build_runtime.py",
     "scripts/verify_runtime.py",
     "scripts/distill_archive.py",
     "scripts/build_local_index.py",
     "scripts/run_evals.py",
+    "scripts/validate_research_output.py",
+    "evals/company-research.jsonl",
+    "evals/fixtures/research-output.synthetic.json",
+    "evals/fixtures/company-research-components.synthetic.json",
+    "evals/rubrics/company-research.md",
 )
 FORBIDDEN_FILE_MARKERS = (
     "Raw_Data",
@@ -100,6 +112,11 @@ def validate(root: Path, strict: bool = False) -> list[str]:
         "falsifiable",
         "build_runtime.py",
         "verify_runtime.py",
+        "BottleneckAssessment",
+        "CompanyProfile",
+        "MarketSnapshot",
+        "conditional",
+        "single composite",
     )
     for term in required_terms:
         if term.lower() not in body.lower():

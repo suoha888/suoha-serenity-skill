@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suoha-serenity.local/schema/company-profile.schema.json",
+  "title": "suoha-serenity CompanyProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "company_id",
+    "legal_name",
+    "ticker",
+    "exchange",
+    "market",
+    "quote_currency",
+    "identity_status",
+    "business_model",
+    "business_description",
+    "as_of",
+    "research_cutoff",
+    "segments",
+    "revenue_mix",
+    "customers",
+    "geographies",
+    "competitors",
+    "financial_quality",
+    "main_risks",
+    "evidence_ids",
+    "access_level",
+    "source_partition",
+    "source_lineage",
+    "review_status",
+    "extraction_version"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "3" },
+    "company_id": { "type": "string", "minLength": 1 },
+    "legal_name": { "type": "string", "minLength": 1 },
+    "ticker": { "type": ["string", "null"] },
+    "exchange": { "type": ["string", "null"] },
+    "market": { "type": ["string", "null"] },
+    "share_class": { "type": ["string", "null"] },
+    "isin": { "type": ["string", "null"] },
+    "quote_currency": { "type": ["string", "null"] },
+    "country": { "type": ["string", "null"] },
+    "identity_status": {
+      "type": "string",
+      "enum": ["resolved", "ambiguous", "unlisted", "unknown"]
+    },
+    "business_model": {
+      "type": "string",
+      "enum": [
+        "capacity_manufacturer",
+        "equipment_supplier",
+        "consumables_materials",
+        "ip_royalty",
+        "project_infrastructure",
+        "services",
+        "diversified",
+        "other",
+        "unknown"
+      ]
+    },
+    "business_description": { "type": "string", "minLength": 1 },
+    "chain_position": { "type": "string" },
+    "bottleneck_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "as_of": { "type": "string", "format": "date-time" },
+    "research_cutoff": { "type": "string", "format": "date-time" },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "description", "evidence_ids"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "description": { "type": "string" },
+          "period": { "type": ["string", "null"] },
+          "revenue_value": { "type": ["number", "string", "null"] },
+          "revenue_currency": { "type": ["string", "null"] },
+          "revenue_share": { "type": ["number", "string", "null"] },
+          "reported_or_estimated": {
+            "type": "string",
+            "enum": ["reported", "estimated", "inferred", "unknown"]
+          },
+          "as_of": { "type": ["string", "null"], "format": "date-time" },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "epistemic_type": {
+            "type": "string",
+            "enum": ["fact", "inference", "hypothesis", "unknown"]
+          }
+        }
+      }
+    },
+    "revenue_mix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "segment",
+          "period",
+          "value",
+          "unit",
+          "currency",
+          "as_of",
+          "epistemic_type",
+          "evidence_ids"
+        ],
+        "properties": {
+          "segment": { "type": "string", "minLength": 1 },
+          "period": { "type": "string", "minLength": 1 },
+          "value": { "type": ["number", "string", "null"] },
+          "unit": { "type": "string", "minLength": 1 },
+          "currency": { "type": ["string", "null"] },
+          "as_of": { "type": "string", "format": "date-time" },
+          "epistemic_type": {
+            "type": "string",
+            "enum": ["fact", "inference", "hypothesis", "unknown"]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "customers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "relationship_status", "evidence_ids"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "relationship_status": {
+            "type": "string",
+            "enum": ["named", "unnamed", "inferred", "unknown", "not_disclosed"]
+          },
+          "concentration": { "type": ["number", "string", "null"] },
+          "period": { "type": ["string", "null"] },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "unknowns": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "geographies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "exposure_status", "evidence_ids"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "exposure_status": {
+            "type": "string",
+            "enum": ["reported", "inferred", "unknown"]
+          },
+          "revenue_share": { "type": ["number", "string", "null"] },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "relationship_status", "evidence_ids"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "relationship_status": {
+            "type": "string",
+            "enum": ["direct", "adjacent", "inferred", "unknown"]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "financial_quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "period", "metrics", "unknowns"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["strong", "mixed", "weak", "stale", "unknown"]
+        },
+        "period": { "type": "string", "minLength": 1 },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "metric",
+              "value",
+              "unit",
+              "currency",
+              "as_of",
+              "epistemic_type",
+              "evidence_ids"
+            ],
+            "properties": {
+              "metric": { "type": "string", "minLength": 1 },
+              "value": { "type": ["number", "string", "null"] },
+              "unit": { "type": "string", "minLength": 1 },
+              "currency": { "type": ["string", "null"] },
+              "as_of": { "type": "string", "format": "date-time" },
+              "epistemic_type": {
+                "type": "string",
+                "enum": ["fact", "inference", "hypothesis", "unknown"]
+              },
+              "evidence_ids": {
+                "type": "array",
+                "items": { "type": "string", "minLength": 1 },
+                "uniqueItems": true
+              }
+            }
+          }
+        },
+        "unknowns": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "main_risks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["risk", "status", "evidence_ids"],
+        "properties": {
+          "risk": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["open", "mitigated", "unknown"] },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "unknowns": { "type": "array", "items": { "type": "string" } },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "access_level": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_partition": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_lineage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_partition",
+          "source_record_id",
+          "source_locator",
+          "content_hash"
+        ],
+        "properties": {
+          "source_partition": { "type": "string", "minLength": 1 },
+          "source_record_id": { "type": "string", "minLength": 1 },
+          "source_locator": { "type": "string", "minLength": 1 },
+          "content_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "published_at": { "type": ["string", "null"], "format": "date-time" },
+          "known_at": { "type": ["string", "null"], "format": "date-time" }
+        }
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["pending", "human_reviewed", "rejected"]
+    },
+    "extraction_version": { "type": "string", "minLength": 1 },
+    "notes": { "type": "string" }
+  }
+}

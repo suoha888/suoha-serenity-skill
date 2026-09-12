@@ -16,6 +16,8 @@ Important threats include:
 - stripping public/subscription labels or leaking derived private content;
 - future-information contamination and hindsight outcome labels;
 - accidental secrets, hidden network calls, or execution of downloaded code.
+- false precision from a single composite score, stale quote, mismatched share
+  basis, or undocumented FX conversion.
 
 ## Fail-closed behavior
 
@@ -31,8 +33,8 @@ python scripts/run_evals.py --root . --data-root ..\..\data\serenity --runtime-r
 ~~~
 
 Any subscription leak, severe temporal leak, invalid provenance, schema
-failure, network import in local data scripts, or source/runtime drift blocks
-release.
+failure, network import in local data scripts, stale/unlabeled market data,
+forbidden composite score, or source/runtime drift blocks release.
 
 ## Reporting
 

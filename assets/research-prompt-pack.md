@@ -39,16 +39,25 @@ and the parts of the value chain investors may be underpricing.
 
 ```text
 Use suoha-serenity-skill to challenge [company/ticker].
-Where does it sit in the value chain? Does it control a scarce layer?
-What evidence supports the idea, what evidence is missing, and what would weaken the judgment?
+First resolve the legal entity, ticker, exchange, share class, and currency.
+Then give a dated CompanyProfile and MarketSnapshot covering price, market cap,
+shares, business, revenue mix, customers, geographies, competitors, financial
+quality, and risks. Where does it sit in the value chain? Does it capture a
+scarce layer? Explain what the market may be underestimating, the evidence that
+supports it, the missing proof, a conditional IF/THEN/BECAUSE/FAIL-IF research
+case, and what would weaken the judgment. Never invent stale/current market
+facts or issue a buy/sell instruction.
 ```
 
 ## Compare candidates
 
 ```text
 Use suoha-serenity-skill to compare [A], [B], and [C].
-Rank them by supply-chain position, evidence quality, customer urgency, valuation pressure,
-main risk, and next verification step.
+Resolve each entity and provide dated company basics and market snapshots.
+Rank them by separate dimensions: bottleneck strength, evidence quality,
+economic value capture, valuation context, catalyst timing, and risk. Explain
+what may be underappreciated and give a conditional research reason for each.
+Do not sum the dimensions into one conviction score.
 ```
 
 ## Research partner mode
@@ -58,9 +67,12 @@ main risk, and next verification step.
 不要直接写报告，每轮先给判断，再问我一个最关键的问题，带我从故事拆到产业链卡点和证据。
 ```
 
-## Scorecard
+## Non-additive scorecard
 
 ```text
-Use suoha-serenity-skill's local scorecard to score [company].
-Explain every rating in plain language and mark the evidence as strong, medium, weak, or needs checking.
+Use suoha-serenity-skill's local scorecard to report separate dimensions for
+[company]: bottleneck strength, evidence quality, economic value capture,
+valuation context, catalyst timing, and risk. Explain every rating in plain
+language, attach evidence IDs, mark unknowns, and do not calculate a composite
+conviction score.
 ```

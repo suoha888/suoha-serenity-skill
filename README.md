@@ -2,7 +2,7 @@
 
 # suoha-serenity skill
 
-### Evidence-first, time-aware supply-chain research for investment agents
+### Evidence-first supply-chain and company research compiler
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-SKILL.md-black)](SKILL.md)
@@ -14,8 +14,9 @@
 suoha-serenity skill 把这种问题变成可重复的研究流程：
 
 ~~~text
-市场叙事 -> 系统变化 -> 产业链层级 -> 物理瓶颈
--> 经济传导 -> 公司候选 -> 证据与反证
+市场叙事 -> 系统变化 -> 产业链层级 -> BottleneckAssessment
+-> 公司画像与 MarketSnapshot -> 经济传导与估值语境
+-> 预期差与条件化研究理由 -> 证据与反证
 -> thesis 生命周期 -> 优先研究清单 -> 下一步核验
 ~~~
 
@@ -24,6 +25,15 @@ suoha-serenity skill 把这种问题变成可重复的研究流程：
 ## 核心能力
 
 - 先研究系统和瓶颈，再讨论 ticker。
+- 把供应商集中度、替代性、认证、扩产、客户紧迫性、产能可见度、定价权
+  和经济价值捕获分开评估，不把它们压成一个总分。
+- 公司研究输出强制包含 CompanyProfile 和 MarketSnapshot：ticker、交易所、
+  币种、股价、市值、股本、主营、收入结构、客户、地区、竞争格局、财务质量
+  和风险，并为每个字段保留 as_of 与来源。
+- 将“市场可能低估了什么”写成有市场代理、有机制、有证据、有反证的
+  variant-perception 假设。
+- 将“为什么值得进一步研究”写成 IF/THEN/BECAUSE/CONFIRM/FAIL 条件，
+  不输出自动买卖指令、目标价或收益承诺。
 - 把 FACT、INFERENCE、HYPOTHESIS、UNKNOWN 与证据状态分开。
 - 对每条重要判断保留来源、时间、哈希和抽取版本。
 - 显式寻找替代解释、反方证据和失效条件。
@@ -71,10 +81,10 @@ JSONL 是标准数据格式，SQLite + FTS5 只是可重建的本地查询层。
 
 ~~~powershell
 python scripts/validate_skill.py . --strict
-python scripts/run_evals.py --root . --data-root ..\..\data\serenity --runtime-root ..\..\runtime\suoha-serenity-skill --report ..\..\data\serenity\reports\v2-automated-eval.json
+python scripts/run_evals.py --root . --data-root ..\..\data\serenity --runtime-root ..\..\runtime\suoha-serenity-skill --report ..\..\data\serenity\reports\v3-automated-eval.json
 ~~~
 
-自动化检查覆盖结构、脚本语法、网络依赖、public/subscription 分区、来源 lineage、时间 holdout、运行副本漂移和评测 fixture。它不能替代人工研究质量评估、法律审查或真实来源的事实核验。
+自动化检查覆盖结构、脚本语法、网络依赖、public/subscription 分区、来源 lineage、时间 holdout、运行副本漂移、Company ResearchOutput 合约和评测 fixture。它不能替代人工研究质量评估、法律审查或真实来源的事实核验。
 
 ## 公开与私有边界
 
@@ -82,7 +92,8 @@ python scripts/run_evals.py --root . --data-root ..\..\data\serenity --runtime-r
 
 参见：
 
-- [ARCHITECTURE_V2.md](ARCHITECTURE_V2.md)
+- [ARCHITECTURE_V3.md](ARCHITECTURE_V3.md)
+- [ARCHITECTURE_V2.md](ARCHITECTURE_V2.md)（历史 baseline）
 - [DATA_POLICY.md](DATA_POLICY.md)
 - [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
 - [references/distillation-playbook.md](references/distillation-playbook.md)

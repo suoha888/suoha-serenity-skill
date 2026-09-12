@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suoha-serenity.local/schema/research-output.schema.json",
+  "title": "suoha-serenity ResearchOutput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "research_output_id",
+    "question",
+    "market",
+    "mode",
+    "research_cutoff",
+    "as_of",
+    "bottleneck_assessment_ids",
+    "company_profile_ids",
+    "market_snapshot_ids",
+    "valuation_snapshot_ids",
+    "primary_candidate_id",
+    "priority",
+    "research_conclusion",
+    "research_language",
+    "why_research_now",
+    "conditional_reasons",
+    "variant_perception",
+    "catalysts",
+    "counterarguments",
+    "invalidation_conditions",
+    "next_checks",
+    "claim_ids",
+    "evidence_ids",
+    "no_trade_execution",
+    "no_return_prediction",
+    "access_level",
+    "source_partition",
+    "source_lineage",
+    "review_status",
+    "extraction_version"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "3" },
+    "research_output_id": { "type": "string", "minLength": 1 },
+    "question": { "type": "string", "minLength": 1 },
+    "market": { "type": "string", "minLength": 1 },
+    "mode": { "type": "string", "enum": ["quick", "standard", "deep"] },
+    "research_cutoff": { "type": "string", "format": "date-time" },
+    "as_of": { "type": "string", "format": "date-time" },
+    "bottleneck_assessment_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "company_profile_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "market_snapshot_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "valuation_snapshot_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "primary_candidate_id": { "type": ["string", "null"] },
+    "priority": { "type": "string", "enum": ["high", "medium", "low"] },
+    "research_conclusion": {
+      "type": "string",
+      "enum": ["supported", "tentative", "insufficient", "not_established"]
+    },
+    "research_language": {
+      "type": "string",
+      "enum": [
+        "research_priority_only",
+        "conditional_interest",
+        "insufficient_evidence"
+      ]
+    },
+    "why_research_now": { "type": "string", "minLength": 1 },
+    "conditional_reasons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "condition",
+          "implication",
+          "mechanism",
+          "confirm_with",
+          "fail_if",
+          "evidence_ids",
+          "status"
+        ],
+        "properties": {
+          "condition": { "type": "string", "minLength": 1 },
+          "implication": { "type": "string", "minLength": 1 },
+          "mechanism": { "type": "string", "minLength": 1 },
+          "confirm_with": { "type": "string", "minLength": 1 },
+          "fail_if": { "type": "string", "minLength": 1 },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "status": {
+            "type": "string",
+            "enum": ["open", "supported", "not_established", "failed"]
+          }
+        }
+      }
+    },
+    "variant_perception": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "market_proxy",
+        "what_market_appears_to_price",
+        "what_may_be_missing",
+        "hypothesis",
+        "evidence_ids",
+        "confidence",
+        "unknowns",
+        "disconfirming_check"
+      ],
+      "properties": {
+        "market_proxy": { "type": "string", "minLength": 1 },
+        "what_market_appears_to_price": { "type": "string", "minLength": 1 },
+        "what_may_be_missing": { "type": "string", "minLength": 1 },
+        "hypothesis": { "type": "string", "minLength": 1 },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "unknowns": { "type": "array", "items": { "type": "string" } },
+        "disconfirming_check": { "type": "string", "minLength": 1 }
+      }
+    },
+    "catalysts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["catalyst", "time_window", "confirmation_metric", "failure_risk", "evidence_ids"],
+        "properties": {
+          "catalyst": { "type": "string", "minLength": 1 },
+          "time_window": { "type": "string", "minLength": 1 },
+          "confirmation_metric": { "type": "string", "minLength": 1 },
+          "failure_risk": { "type": "string", "minLength": 1 },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "counterarguments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["argument", "evidence_ids", "effect_on_thesis"],
+        "properties": {
+          "argument": { "type": "string", "minLength": 1 },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "effect_on_thesis": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "invalidation_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "next_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["unknown", "resolving_source_or_metric", "next_action"],
+        "properties": {
+          "unknown": { "type": "string", "minLength": 1 },
+          "resolving_source_or_metric": { "type": "string", "minLength": 1 },
+          "next_action": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "claim_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "no_trade_execution": { "type": "boolean", "const": true },
+    "no_return_prediction": { "type": "boolean", "const": true },
+    "access_level": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_partition": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_lineage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_partition",
+          "source_record_id",
+          "source_locator",
+          "content_hash"
+        ],
+        "properties": {
+          "source_partition": { "type": "string", "minLength": 1 },
+          "source_record_id": { "type": "string", "minLength": 1 },
+          "source_locator": { "type": "string", "minLength": 1 },
+          "content_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "published_at": { "type": ["string", "null"], "format": "date-time" },
+          "known_at": { "type": ["string", "null"], "format": "date-time" }
+        }
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["pending", "human_reviewed", "rejected"]
+    },
+    "extraction_version": { "type": "string", "minLength": 1 },
+    "notes": { "type": "string" }
+  }
+}

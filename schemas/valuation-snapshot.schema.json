@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suoha-serenity.local/schema/valuation-snapshot.schema.json",
+  "title": "suoha-serenity ValuationSnapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "valuation_id",
+    "company_id",
+    "as_of",
+    "research_cutoff",
+    "currency",
+    "market_cap",
+    "enterprise_value",
+    "valuation_basis",
+    "metrics",
+    "expectation_gap",
+    "scenario_bridges",
+    "evidence_ids",
+    "counterevidence_ids",
+    "research_only_disclaimer",
+    "no_return_prediction",
+    "no_trade_execution",
+    "access_level",
+    "source_partition",
+    "source_lineage",
+    "review_status",
+    "extraction_version"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "3" },
+    "valuation_id": { "type": "string", "minLength": 1 },
+    "company_id": { "type": "string", "minLength": 1 },
+    "as_of": { "type": "string", "format": "date-time" },
+    "research_cutoff": { "type": "string", "format": "date-time" },
+    "currency": { "type": ["string", "null"] },
+    "market_cap": { "type": ["number", "string", "null"] },
+    "enterprise_value": { "type": ["number", "string", "null"] },
+    "valuation_basis": {
+      "type": "string",
+      "enum": ["reported", "calculated", "scenario", "unknown"]
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "value",
+          "unit",
+          "period",
+          "as_of",
+          "epistemic_type",
+          "evidence_ids"
+        ],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "value": { "type": ["number", "string", "null"] },
+          "unit": { "type": "string", "minLength": 1 },
+          "period": { "type": "string", "minLength": 1 },
+          "as_of": { "type": "string", "format": "date-time" },
+          "epistemic_type": {
+            "type": "string",
+            "enum": ["fact", "inference", "hypothesis", "unknown"]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "expectation_gap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "market_proxy",
+        "what_market_appears_to_price",
+        "underappreciated_hypothesis",
+        "mechanism",
+        "evidence_ids",
+        "confidence",
+        "unknowns"
+      ],
+      "properties": {
+        "market_proxy": { "type": "string", "minLength": 1 },
+        "what_market_appears_to_price": { "type": "string", "minLength": 1 },
+        "underappreciated_hypothesis": { "type": "string", "minLength": 1 },
+        "mechanism": { "type": "string", "minLength": 1 },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "unknowns": { "type": "array", "items": { "type": "string" } },
+        "disconfirming_check": { "type": "string" }
+      }
+    },
+    "scenario_bridges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case",
+          "assumptions",
+          "operating_drivers",
+          "sensitivity",
+          "disconfirming_metric"
+        ],
+        "properties": {
+          "case": { "type": "string", "enum": ["bear", "base", "bull"] },
+          "assumptions": { "type": "array", "items": { "type": "string" } },
+          "operating_drivers": { "type": "array", "items": { "type": "string" } },
+          "sensitivity": { "type": "array", "items": { "type": "string" } },
+          "disconfirming_metric": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "counterevidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "research_only_disclaimer": { "type": "string", "minLength": 1 },
+    "no_return_prediction": { "type": "boolean", "const": true },
+    "no_trade_execution": { "type": "boolean", "const": true },
+    "access_level": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_partition": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_lineage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_partition",
+          "source_record_id",
+          "source_locator",
+          "content_hash"
+        ],
+        "properties": {
+          "source_partition": { "type": "string", "minLength": 1 },
+          "source_record_id": { "type": "string", "minLength": 1 },
+          "source_locator": { "type": "string", "minLength": 1 },
+          "content_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "published_at": { "type": ["string", "null"], "format": "date-time" },
+          "known_at": { "type": ["string", "null"], "format": "date-time" }
+        }
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["pending", "human_reviewed", "rejected"]
+    },
+    "extraction_version": { "type": "string", "minLength": 1 },
+    "notes": { "type": "string" }
+  }
+}

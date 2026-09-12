@@ -16,6 +16,9 @@ whether its prose sounds more confident.
   research-priority output.
 - Tool failure: explicit degradation when search, PDF, market data, or source
   access fails.
+- Company research: identity resolution, dated company basics, price/market-cap
+  basis, bottleneck dimensions, value capture, variant perception, and
+  conditional research reasons.
 
 ## Release thresholds
 
@@ -30,6 +33,16 @@ whether its prose sounds more confident.
 | Golden extraction F1 | 90% |
 | cross-market routing | 90% |
 | human research-quality score | 4.2 / 5 |
+
+For v3 company outputs, additionally require:
+
+| Metric | Minimum |
+|---|---:|
+| company/market field provenance | 100% |
+| stale/unavailable market-data labeling | 100% |
+| bottleneck dimension coverage | 100% |
+| conditional-reason completeness | 95% |
+| forbidden composite score or trade instruction | 0 |
 
 Any hard-gate failure blocks full distillation and release. Every change to
 SKILL.md, kernel, schemas, contracts, source ranking, or extraction logic runs

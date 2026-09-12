@@ -1,15 +1,15 @@
 ---
 name: suoha-serenity-skill
-description: Evidence-first, time-aware supply-chain research for investment agents. Use for theme scans, value-chain mapping, company challenges, thesis updates, cross-market source routing, historical method distillation, and research-partner conversations. It ranks research priorities rather than executing trades or promising returns.
+description: Evidence-first, time-aware supply-chain and company research for investment agents. Use for theme scans, bottleneck mapping, company profiles, market snapshots, valuation context, thesis updates, cross-market source routing, historical method distillation, and research-partner conversations. It ranks conditional research priorities rather than executing trades or promising returns.
 license: MIT
 compatibility: Agent Skills-compatible clients with web/search, filing, market-data, browser, or local Python access. Bundled scripts are local-only and network-free.
 metadata:
   author: suoha project
-  version: "2.0.0"
-  short-description: Evidence-first and time-aware supply-chain research copilot
+  version: "3.0.0"
+  short-description: Evidence-first supply-chain and company research compiler
 ---
 
-# suoha-serenity skill
+# suoha-serenity skill v3
 
 Turn an investment agent into an evidence-first supply-chain research partner.
 The project is independent and is inspired only by publicly observable research
@@ -26,9 +26,11 @@ Given a theme, company, or thesis, move through:
 market narrative
   -> system change
   -> value-chain layers
-  -> physical constraint
+  -> BottleneckAssessment
   -> economic capture
-  -> company candidates
+  -> CompanyProfile + MarketSnapshot
+  -> financial translation + valuation context
+  -> variant perception + conditional research case
   -> evidence and counterevidence
   -> dated thesis state
   -> research priority
@@ -62,20 +64,42 @@ priority, not a buy/sell command.
    claim or method card.
 10. Never invent a source, customer, order, price, contract, market cap,
     financial input, tool result, or personal fact.
+11. Treat the physical bottleneck as a first-class object. Record supplier
+    concentration, substitutability, qualification burden, expansion lead
+    time, customer urgency, capacity visibility, pricing power, and economic
+    value capture separately; never collapse them into one score.
+12. A company-level answer must expose a dated CompanyProfile and MarketSnapshot
+    (ticker, exchange, currency, price, market-cap basis, shares, business,
+    mix, customers, geography, competitors, financial quality, and risks).
+    Missing or stale market facts are UNKNOWN or STALE, never filled from
+    memory.
+13. “What the market may be missing” is a testable variant-perception
+    hypothesis. “Why consider buying” may only be expressed as conditional
+    research reasons with proof metrics, time windows, and failure conditions;
+    it is never a trade instruction, target-price promise, or return forecast.
+14. Use separate dimensions for bottleneck strength, evidence, economic
+    capture, valuation context, catalyst timing, and risk. A composite 0–100
+    conviction score is prohibited because it creates false precision.
 
 Read the canonical contracts in contracts/output-contract.md,
 contracts/provenance-contract.md, contracts/temporal-contract.md, and
-contracts/access-control-contract.md when the request produces a structured
-research artifact.
+contracts/access-control-contract.md, and
+contracts/company-research-contract.md when the request produces a structured
+company research artifact.
 
 ## Request routing
 
 - Theme scan: map the system and layers first, then rank scarce layers and
   company research priorities.
-- Single-company challenge: resolve the entity and chain position, verify
-  customer/capacity/economics, and state the strongest downgrade condition.
+- Single-company challenge: resolve the entity and chain position, render a
+  CompanyProfile and MarketSnapshot, verify customer/capacity/economics, and
+  state the strongest downgrade condition.
 - Candidate comparison: keep bottleneck strength, evidence, proximity, finance,
-  valuation context, and risk as separate dimensions.
+  valuation context, catalyst timing, and risk as separate dimensions; never
+  rank by a single additive score.
+- Company research: complete the company basics first, then connect the
+  bottleneck to economic capture, market-implied expectations, variant
+  perception, conditional research reasons, and invalidation checks.
 - Thesis update: represent the change as a dated thesis event with before,
   after, trigger evidence, and remaining unknowns.
 - Research partner or learning mode: ask one focused question at a time and
@@ -90,16 +114,23 @@ research artifact.
 2. Translate the narrative into a technical or economic system change.
 3. Map downstream demand, integrators, modules, devices, process, packaging,
    equipment, materials, testing, and infrastructure.
-4. Identify the least substitutable, hardest-to-expand layer.
+4. Create a BottleneckAssessment for the least substitutable, hardest-to-expand
+   layer. Assess each bottleneck dimension independently and attach evidence.
 5. Build a broad candidate universe before filtering.
-6. Route each claim to the appropriate market source.
-7. Build a Claim Ledger and grade evidence quality, freshness, and independence.
-8. Verify material claims independently and record counterevidence.
-9. Translate the operating mechanism into revenue, profit, cash flow, funding,
-   and dilution implications, or mark the bridge UNKNOWN.
-10. Update the thesis only with evidence available by the cutoff.
-11. Render the output contract, unknowns, invalidation conditions, and next
-    checks.
+6. Resolve each candidate into a CompanyProfile and route each fact to the
+   appropriate market source.
+7. Build a dated MarketSnapshot for price, market cap, shares, currency, and
+   data freshness; keep reported and calculated values distinct.
+8. Build a Claim Ledger and grade evidence quality, freshness, and independence.
+9. Verify material claims independently and record counterevidence.
+10. Translate the operating mechanism into the business-model-specific bridge
+    from volume/ASP/utilization to revenue, profit, cash flow, funding,
+    dilution, and per-share economics, or mark the bridge UNKNOWN.
+11. State what the market may be pricing, the variant-perception hypothesis,
+    catalysts, and conditional research reasons with proof metrics.
+12. Update the thesis only with evidence available by the cutoff.
+13. Render the output contract, unknowns, invalidation conditions, and next
+    checks. Do not render a single composite conviction score.
 
 The shared reasoning and mode budgets are in kernel/RESEARCH_KERNEL.md. Quick,
 Standard, and Deep modes change evidence budget and response depth, never the
@@ -168,6 +199,8 @@ data root and generated runtime.
 
 - kernel/RESEARCH_KERNEL.md — shared chain-first reasoning.
 - kernel/FINANCIAL_TRANSLATOR.md — operating-to-financial bridge.
+- references/company-research-and-valuation.md — company facts, market data,
+  variant perception, and conditional research-case rules.
 - kernel/THESIS_TIMELINE.md — dated thesis changes.
 - references/evidence-ladder.md — source grading.
 - references/market-source-playbook.md — cross-market source routing.
@@ -176,15 +209,22 @@ data root and generated runtime.
 - references/distillation-playbook.md — historical method extraction.
 - references/benchmark-protocol.md — eval groups and thresholds.
 - references/security-operations.md — fail-closed operations.
-- contracts/*.md — output, provenance, temporal, and access contracts.
+- contracts/*.md — output, provenance, temporal, access, and company-research
+  contracts.
 - schemas/normalized-post.schema.json, schemas/context-pack.schema.json,
   schemas/entity.schema.json, schemas/claim.schema.json,
   schemas/evidence.schema.json, schemas/relation.schema.json,
   schemas/thesis.schema.json, schemas/thesis-event.schema.json,
-  schemas/method-card.schema.json, schemas/media-triage.schema.json, and
-  schemas/manifest.schema.json — structured object boundaries.
+  schemas/method-card.schema.json, schemas/media-triage.schema.json,
+  schemas/bottleneck-assessment.schema.json,
+  schemas/company-profile.schema.json, schemas/market-snapshot.schema.json,
+  schemas/valuation-snapshot.schema.json,
+  schemas/research-output.schema.json, and schemas/manifest.schema.json —
+  structured object boundaries.
 - scripts/distill_archive.py — local candidate distillation.
 - scripts/build_local_index.py — JSONL to SQLite + FTS5 index.
+- scripts/validate_research_output.py — semantic checks for company research
+  output.
 - scripts/build_runtime.py and scripts/verify_runtime.py — generated runtime.
 - scripts/run_evals.py — deterministic safety and release checks.
 - scripts/validate_skill.py — Agent Skill structure validation.

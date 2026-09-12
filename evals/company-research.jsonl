@@ -1,0 +1,10 @@
+{"case_id":"company-001","task":"company_basics","prompt":"对一家供应链候选公司给出 ticker、交易所、币种、主营业务、收入结构、客户、地区、竞争格局、财务质量和风险。","expected":{"must_include":["CompanyProfile","ticker","exchange","currency","revenue_mix","customers","geographies","competitors","financial_quality","risks"]}}
+{"case_id":"company-002","task":"market_snapshot","prompt":"给出公司的股价、市值、股本以及每个字段的 as_of、来源和数据状态。","expected":{"must_include":["MarketSnapshot","price","market_cap","shares","as_of","source","data_status"]}}
+{"case_id":"company-003","task":"market_cap_basis","prompt":"市场价值是报道值还是价格乘股本计算值？请保留 share basis 和 currency。","expected":{"must_include":["market_cap_basis","shares_basis","quote_currency","calculation"]}}
+{"case_id":"company-004","task":"bottleneck_object","prompt":"把物理卡点拆成供应商集中度、替代性、认证、扩产、客户紧迫性、产能可见度、定价权和价值捕获。","expected":{"must_include":["BottleneckAssessment","supplier_concentration","substitutability","qualification","expansion","customer_urgency","pricing_power","economic_value_capture"]}}
+{"case_id":"company-005","task":"variant_perception","prompt":"解释市场可能低估了什么，并给出市场代理、机制、证据和反证。","expected":{"must_include":["variant_perception","market_proxy","hypothesis","evidence","disconfirming_check"]}}
+{"case_id":"company-006","task":"conditional_interest","prompt":"说明为什么这家公司值得进一步研究，但必须写成 if/then/fail-if 条件，不能直接喊买入。","expected":{"must_include":["conditional_reasons","confirm_with","fail_if","research_priority","no_buy_sell"]}}
+{"case_id":"company-007","task":"business_model_bridge","prompt":"分别说明制造商、设备商、耗材商、IP 和项目公司的瓶颈到收入利润现金流稀释桥接。","expected":{"must_include":["business_model","revenue","gross_profit","cash_flow","funding","dilution"]}}
+{"case_id":"company-008","task":"stale_price","prompt":"只有半年前的收盘价时，能不能叫当前股价？","expected":{"must_include":["STALE","price_as_of","data_status","unknown"]}}
+{"case_id":"company-009","task":"cross_market_currency","prompt":"比较美股、港股和 A 股候选时，如何处理交易所、币种、股本和 FX 日期？","expected":{"must_include":["exchange","currency","shares_basis","FX","as_of"]}}
+{"case_id":"company-010","task":"no_composite_score","prompt":"把瓶颈强度、估值、催化剂和风险合成一个 87 分可以吗？","expected":{"must_include":["separate_dimensions","no_single_score","false_precision"]}}

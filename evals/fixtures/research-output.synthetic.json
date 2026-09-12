@@ -1,0 +1,84 @@
+{
+  "schema_version": "3",
+  "research_output_id": "synthetic-output-001",
+  "question": "某数据中心电力组件公司是否值得进入下一轮研究？",
+  "market": "US",
+  "mode": "standard",
+  "research_cutoff": "2026-09-12T00:00:00Z",
+  "as_of": "2026-09-12T00:00:00Z",
+  "bottleneck_assessment_ids": ["bottleneck:synthetic-power"],
+  "company_profile_ids": ["company:synthetic-power"],
+  "market_snapshot_ids": ["snapshot:synthetic-power"],
+  "valuation_snapshot_ids": ["valuation:synthetic-power"],
+  "primary_candidate_id": "company:synthetic-power",
+  "priority": "medium",
+  "research_conclusion": "tentative",
+  "research_language": "conditional_interest",
+  "why_research_now": "The system constraint is plausible, but the company-level value capture and current market data still require verification.",
+  "conditional_reasons": [
+    {
+      "condition": "Customer qualification and repeat orders are confirmed in a dated primary source.",
+      "implication": "The company may capture part of the constrained power-delivery economics.",
+      "mechanism": "Qualification can reduce substitution and support repeat volume at the required specification.",
+      "confirm_with": "Next filing, customer project document, or dated order/production metric within two reporting periods.",
+      "fail_if": "A qualified alternate appears or reported margins and repeat volume deteriorate.",
+      "evidence_ids": ["evidence:synthetic-1"],
+      "status": "open"
+    }
+  ],
+  "variant_perception": {
+    "market_proxy": "The current market snapshot is unavailable in this synthetic fixture.",
+    "what_market_appears_to_price": "UNKNOWN",
+    "what_may_be_missing": "UNKNOWN until a dated price, share count, and market-cap basis are available.",
+    "hypothesis": "The market may underappreciate qualification duration, but this is not established.",
+    "evidence_ids": ["evidence:synthetic-1"],
+    "confidence": "low",
+    "unknowns": ["Current quote, shares, market cap, and market-implied expectations."],
+    "disconfirming_check": "Obtain an authoritative dated market snapshot and compare the implied expectation with the operating bridge."
+  },
+  "catalysts": [
+    {
+      "catalyst": "A dated qualification or production milestone.",
+      "time_window": "Next two reporting periods",
+      "confirmation_metric": "Qualified capacity and recognized segment revenue",
+      "failure_risk": "Milestone slips or only reflects management guidance.",
+      "evidence_ids": ["evidence:synthetic-1"]
+    }
+  ],
+  "counterarguments": [
+    {
+      "argument": "The component may be replaceable and the company may only have thematic exposure.",
+      "evidence_ids": ["evidence:synthetic-2"],
+      "effect_on_thesis": "Downgrade the bottleneck and company value-capture conclusions to not established."
+    }
+  ],
+  "invalidation_conditions": [
+    "Independent alternatives qualify without a meaningful redesign.",
+    "The relevant segment remains immaterial or margins compress despite volume."
+  ],
+  "next_checks": [
+    {
+      "unknown": "Whether the company has direct qualified exposure.",
+      "resolving_source_or_metric": "Exchange filing, customer filing, or project document.",
+      "next_action": "Verify the chain position and segment economics before ranking the company."
+    }
+  ],
+  "claim_ids": ["claim:synthetic-1"],
+  "evidence_ids": ["evidence:synthetic-1", "evidence:synthetic-2"],
+  "no_trade_execution": true,
+  "no_return_prediction": true,
+  "access_level": "synthetic",
+  "source_partition": "synthetic",
+  "source_lineage": [
+    {
+      "source_partition": "synthetic",
+      "source_record_id": "fixture:research-output-001",
+      "source_locator": "synthetic://research-output-001",
+      "content_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "published_at": "2026-09-12T00:00:00Z",
+      "known_at": "2026-09-12T00:00:00Z"
+    }
+  ],
+  "review_status": "human_reviewed",
+  "extraction_version": "synthetic-v3"
+}

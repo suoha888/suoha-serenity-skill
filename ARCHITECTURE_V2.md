@@ -1,4 +1,9 @@
-# suoha-serenity skill v2 architecture
+# suoha-serenity skill v2 architecture (historical baseline)
+
+This document records the v2 baseline. The current architecture is documented
+in [ARCHITECTURE_V3.md](ARCHITECTURE_V3.md), which adds structured company
+research, dated market snapshots, valuation context, and conditional research
+cases while retaining v2 temporal and access guarantees.
 
 ## Product boundary
 

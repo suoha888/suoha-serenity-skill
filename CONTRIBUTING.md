@@ -12,6 +12,8 @@ methodology-focused and independent.
 - unauthorized images, copied articles, or third-party datasets;
 - code that accesses brokers, wallets, hidden network endpoints, or secrets;
 - automatic buy/sell commands, return promises, or hindsight labels.
+- additive conviction scores, stale “current price” claims, undocumented
+  market-cap/share bases, or valuation targets presented as facts.
 
 ## Required for methodology changes
 
@@ -22,6 +24,8 @@ Every new rule or extraction behavior must include:
 - provenance and temporal implications;
 - a regression test or evaluation case;
 - documentation of any schema or output-contract change.
+- a company-research fixture when changing company, market-data, valuation, or
+  conditional-reason behavior.
 
 Social or KOL material is lead generation, not independent proof. Company
 claims should route to primary filings, exchange documents, company IR,

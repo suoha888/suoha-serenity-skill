@@ -9,15 +9,21 @@ create three different reasoning systems.
 1. Parse the question, market, entities, and intended decision.
 2. Set an explicit `research_cutoff` before retrieving evidence.
 3. Translate the narrative into a system change and map the value chain.
-4. Identify scarce layers and bottleneck candidates before ranking companies.
+4. Create a first-class BottleneckAssessment and assess its dimensions
+   independently; never sum them into conviction.
 5. Retrieve evidence through source-appropriate adapters.
-6. Write a Claim Ledger and grade each material claim.
-7. Independently verify material claims and supply-chain edges.
-8. Search deliberately for contradictory evidence and alternative explanations.
-9. Translate the operating thesis into revenue, profit, cash-flow, funding, and dilution implications.
-10. Update the thesis state only with evidence available by the cutoff.
-11. State unknowns, stale inputs, invalidation conditions, and next checks.
-12. Render the [output contract](../contracts/OUTPUT_CONTRACT.md).
+6. Resolve candidate entities into CompanyProfile objects.
+7. Create a dated MarketSnapshot for price, market cap, shares, currency, and
+   freshness; distinguish reported, calculated, stale, and unavailable data.
+8. Write a Claim Ledger and grade each material claim.
+9. Independently verify material claims and supply-chain edges.
+10. Search deliberately for contradictory evidence and alternative explanations.
+11. Translate the operating thesis using the business-model-specific financial
+    bridge, then state market-implied expectations and a conditional research
+    case.
+12. Update the thesis state only with evidence available by the cutoff.
+13. State unknowns, stale inputs, invalidation conditions, and next checks.
+14. Render the [output contract](../contracts/output-contract.md).
 
 ## Evidence and epistemic discipline
 
@@ -38,9 +44,10 @@ collection time; never substitute one for the other.
 ## Bottleneck and candidate rules
 
 For each layer, test supplier concentration, qualification time, expansion
-difficulty, substitution resistance, capacity, customer validation, and the
-path from the constraint to company economics. Treat every graph edge as a
-claim, not as a visual fact.
+difficulty, substitution resistance, capacity, customer validation, pricing
+power, and the path from the constraint to company economics. Treat every
+graph edge as a claim, not as a visual fact. Preserve these dimensions
+separately in the BottleneckAssessment.
 
 Rank research priority, not an automatic buy/sell signal. Keep these dimensions
 separate in the report:
@@ -50,7 +57,12 @@ separate in the report:
 - supply-chain proximity;
 - financial transmission;
 - valuation or market context;
+- variant perception and conditional research reasons;
 - risk and invalidation conditions.
+
+Do not replace these dimensions with a single additive score. A company can
+have a strong bottleneck but weak value capture, or a good business but an
+unattractive market-implied expectation.
 
 Historical Serenity material is a method and thesis-history reference. Run the
 current evidence check first; retrieve historical method cards only afterwards

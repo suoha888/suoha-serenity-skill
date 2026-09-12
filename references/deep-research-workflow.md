@@ -136,6 +136,18 @@ Prioritize:
 
 Use `references/evidence-ladder.md` for grading.
 
+For every shortlisted company, create a CompanyProfile before making a market
+judgment. Resolve the legal entity, ticker, exchange, share class, quote
+currency, business model, segment/revenue mix, customer exposure, geography,
+competitors, financial quality, and main risks. Each field gets its own dated
+source or is explicitly `UNKNOWN`.
+
+Create a MarketSnapshot separately for price, price type, market cap, shares,
+share basis, currency, `price_as_of`, `market_cap_as_of`, source, and freshness.
+An old quote is `STALE`, not “current”. A calculated market cap preserves both
+the price and share-count evidence and does not silently replace a reported
+value.
+
 For deep current scans, aim for 25+ sources before the final ranking. A good mix:
 
 - 10+ filings, exchange disclosures, annual reports, quarterly reports, or announcements;
@@ -143,7 +155,24 @@ For deep current scans, aim for 25+ sources before the final ranking. A good mix
 - 5+ credible media, trade publications, industry association, patents, standards, or project records;
 - extra sources for cross-checking valuation, liquidity, financing, and customer evidence.
 
-### 7. Rank candidates
+### 7. Translate value capture and market expectations
+
+For each top candidate, connect the scarce layer to the company’s actual
+business model: capacity manufacturer, equipment, consumables/materials,
+IP/royalty, project/infrastructure, or diversified. Separate industry growth,
+company revenue, margin, cash flow, funding, dilution, and per-share economics.
+
+Then state the variant-perception hypothesis:
+
+```text
+market proxy -> what appears priced -> overlooked mechanism -> measurable bridge
+```
+
+Write every research reason as `IF / THEN / BECAUSE / CONFIRM WITH / FAIL IF`.
+This explains why a candidate may deserve more research without pretending that
+the evidence is a guaranteed buy signal.
+
+### 8. Rank candidates
 
 Rank by:
 
@@ -156,7 +185,8 @@ Rank by:
 - near-term events that could change investor perception;
 - financing, governance, liquidity, accounting, and geopolitical risk.
 
-Use `scripts/serenity_scorecard.py` when a repeatable numeric score helps.
+Use `scripts/serenity_scorecard.py` only as a non-additive dimension report.
+Never sum bottleneck, evidence, valuation, catalyst, and risk into one score.
 
 Keep two rankings distinct:
 
@@ -173,7 +203,7 @@ For each final company, answer:
 - What evidence supports that rank?
 - What would make the rank weaker?
 
-### 8. Explain the answer
+### 9. Explain the answer
 
 The answer should start with the conclusion:
 

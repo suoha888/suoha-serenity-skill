@@ -15,8 +15,8 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-RUNTIME_SCHEMA_VERSION = "2"
-SKILL_VERSION = "2.0.0"
+RUNTIME_SCHEMA_VERSION = "3"
+SKILL_VERSION = "3.0.0"
 RUNTIME_MANIFEST_NAME = "BUILD-MANIFEST.json"
 
 # Documentation and fixtures are public-safe source artifacts.  Historical raw

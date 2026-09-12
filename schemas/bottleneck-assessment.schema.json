@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suoha-serenity.local/schema/bottleneck-assessment.schema.json",
+  "title": "suoha-serenity BottleneckAssessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "bottleneck_id",
+    "topic",
+    "layer",
+    "constraint_type",
+    "physical_mechanism",
+    "assessment_as_of",
+    "research_cutoff",
+    "dimensions",
+    "economic_capture_hypothesis",
+    "evidence_ids",
+    "counterevidence_ids",
+    "access_level",
+    "source_partition",
+    "source_lineage",
+    "review_status",
+    "extraction_version"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "3" },
+    "bottleneck_id": { "type": "string", "minLength": 1 },
+    "topic": { "type": "string", "minLength": 1 },
+    "layer": { "type": "string", "minLength": 1 },
+    "constraint_type": {
+      "type": "string",
+      "enum": [
+        "capacity",
+        "qualification",
+        "process_yield",
+        "material",
+        "equipment",
+        "infrastructure",
+        "regulatory",
+        "integration",
+        "supplier_concentration",
+        "other"
+      ]
+    },
+    "physical_mechanism": { "type": "string", "minLength": 1 },
+    "demand_trigger": { "type": "string" },
+    "assessment_as_of": { "type": "string", "format": "date-time" },
+    "research_cutoff": { "type": "string", "format": "date-time" },
+    "dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dimension",
+          "status",
+          "assessment",
+          "epistemic_type",
+          "evidence_ids",
+          "confidence"
+        ],
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "enum": [
+              "supplier_concentration",
+              "substitutability",
+              "qualification_burden",
+              "expansion_lead_time",
+              "customer_urgency",
+              "capacity_visibility",
+              "pricing_power",
+              "economic_value_capture"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "unknown",
+              "not_established",
+              "contradicted"
+            ]
+          },
+          "assessment": { "type": "string", "minLength": 1 },
+          "value": { "type": ["number", "string", "null"] },
+          "unit": { "type": "string" },
+          "as_of": { "type": ["string", "null"], "format": "date-time" },
+          "epistemic_type": {
+            "type": "string",
+            "enum": ["fact", "inference", "hypothesis", "unknown"]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "unknowns": { "type": "array", "items": { "type": "string" } },
+          "confidence": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          }
+        }
+      }
+    },
+    "economic_capture_hypothesis": { "type": "string", "minLength": 1 },
+    "capture_path": { "type": "array", "items": { "type": "string" } },
+    "candidate_company_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "counterevidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "access_level": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_partition": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_lineage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_partition",
+          "source_record_id",
+          "source_locator",
+          "content_hash"
+        ],
+        "properties": {
+          "source_partition": { "type": "string", "minLength": 1 },
+          "source_record_id": { "type": "string", "minLength": 1 },
+          "source_locator": { "type": "string", "minLength": 1 },
+          "content_hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "published_at": { "type": ["string", "null"], "format": "date-time" },
+          "known_at": { "type": ["string", "null"], "format": "date-time" }
+        }
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["pending", "human_reviewed", "rejected"]
+    },
+    "extraction_version": { "type": "string", "minLength": 1 },
+    "notes": { "type": "string" }
+  }
+}

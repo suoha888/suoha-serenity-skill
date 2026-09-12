@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suoha-serenity.local/schema/market-snapshot.schema.json",
+  "title": "suoha-serenity MarketSnapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "company_id",
+    "ticker",
+    "exchange",
+    "market",
+    "quote_currency",
+    "price",
+    "price_type",
+    "price_as_of",
+    "price_source_evidence_ids",
+    "market_cap",
+    "market_cap_currency",
+    "market_cap_basis",
+    "market_cap_as_of",
+    "shares_outstanding",
+    "shares_basis",
+    "shares_as_of",
+    "data_status",
+    "captured_at",
+    "research_cutoff",
+    "evidence_ids",
+    "access_level",
+    "source_partition",
+    "source_lineage",
+    "review_status",
+    "extraction_version"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "3" },
+    "snapshot_id": { "type": "string", "minLength": 1 },
+    "company_id": { "type": "string", "minLength": 1 },
+    "ticker": { "type": ["string", "null"] },
+    "exchange": { "type": ["string", "null"] },
+    "market": { "type": ["string", "null"] },
+    "quote_currency": { "type": ["string", "null"] },
+    "price": { "type": ["number", "string", "null"] },
+    "price_type": {
+      "type": "string",
+      "enum": ["last_trade", "official_close", "indicative", "delayed", "unknown"]
+    },
+    "price_as_of": { "type": ["string", "null"], "format": "date-time" },
+    "price_source_evidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "market_cap": { "type": ["number", "string", "null"] },
+    "market_cap_currency": { "type": ["string", "null"] },
+    "market_cap_basis": {
+      "type": "string",
+      "enum": [
+        "reported",
+        "price_times_basic_shares",
+        "price_times_diluted_shares",
+        "unknown"
+      ]
+    },
+    "market_cap_as_of": { "type": ["string", "null"], "format": "date-time" },
+    "shares_outstanding": { "type": ["number", "string", "null"] },
+    "shares_basis": {
+      "type": "string",
+      "enum": [
+        "basic",
+        "diluted",
+        "weighted_average_basic",
+        "weighted_average_diluted",
+        "unknown"
+      ]
+    },
+    "shares_as_of": { "type": ["string", "null"], "format": "date-time" },
+    "data_status": {
+      "type": "string",
+      "enum": ["current", "delayed", "stale", "unavailable", "ambiguous"]
+    },
+    "currency_conversion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from_currency", "to_currency", "fx_rate", "fx_as_of", "evidence_ids"],
+      "properties": {
+        "from_currency": { "type": "string", "minLength": 1 },
+        "to_currency": { "type": "string", "minLength": 1 },
+        "fx_rate": { "type": ["number", "string", "null"] },
+        "fx_as_of": { "type": ["string", "null"], "format": "date-time" },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "freshness_note": { "type": "string" },
+    "captured_at": { "type": "string", "format": "date-time" },
+    "research_cutoff": { "type": "string", "format": "date-time" },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "access_level": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_partition": {
+      "type": "string",
+      "enum": ["public", "subscription", "private", "synthetic"]
+    },
+    "source_lineage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_partition",
+          "source_record_id",
+          "source_locator",
+          "content_hash"
+        ],
+        "properties": {
+          "source_partition": { "type": "string", "minLength": 1 },
+          "source_record_id": { "type": "string", "minLength": 1 },
+          "source_locator": { "type": "string", "minLength": 1 },
+          "content_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "published_at": { "type": ["string", "null"], "format": "date-time" },
+          "known_at": { "type": ["string", "null"], "format": "date-time" }
+        }
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["pending", "human_reviewed", "rejected"]
+    },
+    "extraction_version": { "type": "string", "minLength": 1 },
+    "notes": { "type": "string" }
+  }
+}

@@ -1,38 +1,132 @@
 {
-  "ticker": "EXAMPLE",
-  "company": "Example Co",
-  "market": "US/HK/A-share/Taiwan/Japan/Korea/Europe",
-  "notes": "Replace ratings with 0-5 scores. 0 = absent, 5 = very strong.",
-  "factors": {
-    "demand_inflection": 0,
-    "architecture_coupling": 0,
-    "chokepoint_severity": 0,
-    "supplier_concentration": 0,
-    "expansion_difficulty": 0,
-    "evidence_quality": 0,
-    "valuation_disconnect": 0,
-    "catalyst_timing": 0
-  },
-  "penalties": {
-    "dilution_financing": 0,
-    "governance": 0,
-    "geopolitics": 0,
-    "liquidity": 0,
-    "hype_risk": 0,
-    "accounting_quality": 0,
-    "cyclicality": 0,
-    "alternative_design_risk": 0
-  },
-  "evidence": [
+  "schema_version": "3",
+  "bottleneck_id": "bottleneck:example",
+  "topic": "Example supply-chain theme",
+  "layer": "Qualified component or process",
+  "constraint_type": "qualification",
+  "physical_mechanism": "Describe the physical or process constraint in one sentence.",
+  "assessment_as_of": "2026-09-12T00:00:00Z",
+  "research_cutoff": "2026-09-12T00:00:00Z",
+  "dimensions": [
     {
-      "claim": "",
-      "source": "",
-      "strength": "primary/media/analysis/social/rumor"
+      "dimension": "supplier_concentration",
+      "status": "unknown",
+      "assessment": "How many credible suppliers can meet the required specification?",
+      "value": null,
+      "unit": "count or qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Name the source or metric that would resolve this."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "substitutability",
+      "status": "unknown",
+      "assessment": "Can the customer switch without a redesign or requalification?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Identify qualified alternatives."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "qualification_burden",
+      "status": "unknown",
+      "assessment": "Record qualification duration, cost, and production gate.",
+      "value": null,
+      "unit": "months or qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find a dated engineering or customer source."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "expansion_lead_time",
+      "status": "unknown",
+      "assessment": "Record the time and capital needed to add qualified supply.",
+      "value": null,
+      "unit": "months or qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find capacity, capex, permit, and yield evidence."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "customer_urgency",
+      "status": "unknown",
+      "assessment": "Explain the operational cost of a late or missing supply.",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find a deployment or production schedule."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "capacity_visibility",
+      "status": "unknown",
+      "assessment": "Separate visible orders/backlog/utilization from vague demand language.",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find a dated order, backlog, or utilization metric."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "pricing_power",
+      "status": "unknown",
+      "assessment": "Test ASP, gross margin, contract terms, and mix rather than volume alone.",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find a dated margin or pricing indicator."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "economic_value_capture",
+      "status": "unknown",
+      "assessment": "Trace the exact company from the bottleneck to segment economics.",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Verify direct exposure, revenue, margin, and repeat demand."],
+      "confidence": "low"
     }
   ],
-  "what_could_weaken_view": [
-    "",
-    "",
-    ""
-  ]
+  "economic_capture_hypothesis": "State the conditional path from the bottleneck to company economics.",
+  "capture_path": [
+    "physical constraint",
+    "qualification/capacity/utilization/yield",
+    "volume/ASP/mix/repeat rate",
+    "segment revenue and margin",
+    "cash/capex/funding/dilution"
+  ],
+  "candidate_company_ids": [],
+  "evidence_ids": [],
+  "counterevidence_ids": [],
+  "access_level": "synthetic",
+  "source_partition": "synthetic",
+  "source_lineage": [
+    {
+      "source_partition": "synthetic",
+      "source_record_id": "fixture:bottleneck-scorecard",
+      "source_locator": "synthetic://bottleneck-scorecard",
+      "content_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "review_status": "human_reviewed",
+  "extraction_version": "template-v3",
+  "notes": "Do not average dimensions or emit a 0-100 conviction score."
 }
