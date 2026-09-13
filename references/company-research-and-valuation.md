@@ -1,4 +1,4 @@
-# Company Research and Valuation Playbook
+# Company Research and Valuation Playbook v4
 
 This playbook is loaded for company-level requests. It keeps “good industry”,
 “good company”, and “good research priority” separate.
@@ -9,9 +9,9 @@ This playbook is loaded for company-level requests. It keeps “good industry”
    market, quote currency, and reporting period.
 2. **Business pass** — describe what the company sells, where it sits in the
    chain, segment mix, customers, geography, competitors, and business model.
-3. **Bottleneck pass** — test the eight independent dimensions in
-   `BottleneckAssessment`; name the physical mechanism and the likely value
-   capture path.
+3. **Bottleneck pass** — resolve architecture necessity, record the
+   supply-chain edge and capacity states, then test all thirteen independent
+   dimensions in `BottleneckAssessment`.
 4. **Market pass** — collect price, price type, market cap, shares, currency,
    dates, source, and freshness. Preserve reported and calculated values.
 5. **Expectation pass** — state what the market proxy appears to imply, what
@@ -35,9 +35,16 @@ Do not use supplier count as a synonym for a bottleneck. Separate:
 | Capacity visibility | Is supply/booking visible enough to verify? | orders, backlog, utilization, project progress | vague “strong demand” language |
 | Pricing power | Can the supplier retain economics rather than just volume? | ASP, gross margin, contract terms, mix | price cuts or margin dilution |
 | Economic value capture | Does this exact company capture the constraint? | segment revenue, margins, repeat orders, cash flow | exposure only by association |
+| Architecture necessity | Can the system bypass the node without material redesign or loss? | architecture documents, standards, engineering sources | credible low-cost bypass |
+| Yield / manufacturability | Can the process repeat at required yield and quality? | yield, defect, reliability, ramp data | unstable production or poor yield |
+| Merchant vs captive capacity | Is capacity available to external customers? | allocation, backlog, segment disclosure | capacity reserved internally |
+| Geographic / regulatory concentration | Do geography, permits, export controls, or standards constrain supply? | permits, policy, filings, standards | unconstrained multi-region supply |
+| Capital intensity | What capital and funding are needed to scale qualified supply? | capex, working capital, financing, dilution data | low-cost rapid expansion |
 
 The table is an assessment aid, not a score. A missing dimension is a reason to
-write `UNKNOWN`, not a zero that gets averaged away.
+write `UNKNOWN`, not a zero that gets averaged away. Architecture necessity is
+the first gate; capacity states must be recorded separately as nominal,
+installed, usable, qualified, merchant, captive, and available.
 
 ## C. Company facts and live market facts
 
@@ -101,7 +108,20 @@ Examples of acceptable research reasons:
 These are conditional hypotheses. They are not promises, price targets, or
 personalized financial advice.
 
-## F. What not to optimize
+## F. Validation ladder and reflexivity
+
+Walk these stages in order before declaring a company-level variant perception:
+
+```text
+architecture necessity -> physical supply -> customer validation
+-> company capture -> financial transmission -> market expectations
+```
+
+If a public post or influential source precedes a price move, record whether
+independent fundamental confirmation exists. Until it does, price action is
+non-independent evidence and cannot upgrade the thesis.
+
+## G. What not to optimize
 
 Do not add complexity that hides uncertainty:
 

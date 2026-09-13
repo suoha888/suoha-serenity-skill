@@ -5,7 +5,7 @@
 This project provides code and research methodology. It does not redistribute
 the historical archive used to test the local pipeline.
 
-Version 3 also defines a public-safe company research contract. Company facts,
+Version 4 also defines a public-safe company research contract. Company facts,
 quotes, market caps, shares, financial metrics, and valuation context are
 field-level evidence objects; they are not a license to redistribute third-party
 data or to present a stale quote as current.

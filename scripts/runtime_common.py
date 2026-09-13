@@ -15,8 +15,8 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-RUNTIME_SCHEMA_VERSION = "3"
-SKILL_VERSION = "3.0.0"
+RUNTIME_SCHEMA_VERSION = "4"
+SKILL_VERSION = "4.0.0"
 RUNTIME_MANIFEST_NAME = "BUILD-MANIFEST.json"
 
 # Documentation and fixtures are public-safe source artifacts.  Historical raw
@@ -24,6 +24,7 @@ RUNTIME_MANIFEST_NAME = "BUILD-MANIFEST.json"
 # this list.
 RUNTIME_FILES = (
     "SKILL.md",
+    "ARCHITECTURE_V4.md",
     "LICENSE",
     "agents/openai.yaml",
 )

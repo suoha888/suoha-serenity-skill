@@ -15,7 +15,7 @@ from validate_research_output import validate_component, validate_output
 FIXTURE_PATH = SOURCE_ROOT / "evals" / "fixtures" / "research-output.synthetic.json"
 
 
-class SurohaSerenityV3Tests(unittest.TestCase):
+class SurohaSerenityV4Tests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.fixture = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
@@ -93,6 +93,43 @@ class SurohaSerenityV3Tests(unittest.TestCase):
                 )
             )
         )
+
+    def test_v4_validation_ladder_is_ordered_and_gates_supported_conclusion(self):
+        value = copy.deepcopy(self.fixture)
+        value["research_conclusion"] = "supported"
+        value["validation_ladder"][0]["status"] = "unknown"
+        errors = validate_output(value, SOURCE_ROOT / "schemas")
+        self.assertIn(
+            "research_output:supported_conclusion_requires_ladder_stage:architecture_necessity",
+            errors,
+        )
+
+    def test_v4_reflexivity_does_not_promote_post_price_action(self):
+        value = copy.deepcopy(self.fixture)
+        value["reflexivity_check"] = {
+            "social_originated": True,
+            "author_market_influence": "high",
+            "post_precedes_price_move": "yes",
+            "independent_fundamental_confirmation": "no",
+            "price_action_is_independent_evidence": "yes",
+            "evidence_ids": ["evidence:synthetic-3"],
+            "notes": "The price move followed the post, but no independent confirmation exists.",
+        }
+        self.assertIn(
+            "research_output:reflexive_price_action_cannot_be_independent_without_fundamental_confirmation",
+            validate_output(value, SOURCE_ROOT / "schemas"),
+        )
+
+    def test_v4_component_requires_all_capacity_states(self):
+        components = json.loads(
+            (SOURCE_ROOT / "evals" / "fixtures" / "company-research-components.synthetic.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        value = copy.deepcopy(components["bottleneck_assessment"])
+        value["capacity_states"] = value["capacity_states"][:-1]
+        errors = validate_component(value, SOURCE_ROOT / "schemas" / "bottleneck-assessment.schema.json")
+        self.assertIn("bottleneck:missing_capacity_state:available", errors)
 
 
 if __name__ == "__main__":

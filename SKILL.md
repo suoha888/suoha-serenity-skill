@@ -5,11 +5,11 @@ license: MIT
 compatibility: Agent Skills-compatible clients with web/search, filing, market-data, browser, or local Python access. Bundled scripts are local-only and network-free.
 metadata:
   author: suoha project
-  version: "3.0.0"
-  short-description: Evidence-first supply-chain and company research compiler
+  version: "4.0.0"
+  short-description: Auditable supply-chain bottleneck and company research compiler
 ---
 
-# suoha-serenity skill v3
+# suoha-serenity skill v4
 
 Turn an investment agent into an evidence-first supply-chain research partner.
 The project is independent and is inspired only by publicly observable research
@@ -27,10 +27,13 @@ market narrative
   -> system change
   -> value-chain layers
   -> BottleneckAssessment
+  -> architecture necessity + supply-chain edge
+  -> qualified/merchant capacity states
   -> economic capture
   -> CompanyProfile + MarketSnapshot
   -> financial translation + valuation context
   -> variant perception + conditional research case
+  -> six-stage validation ladder + reflexivity audit
   -> evidence and counterevidence
   -> dated thesis state
   -> research priority
@@ -80,6 +83,27 @@ priority, not a buy/sell command.
 14. Use separate dimensions for bottleneck strength, evidence, economic
     capture, valuation context, catalyst timing, and risk. A composite 0–100
     conviction score is prohibited because it creates false precision.
+15. Treat `architecture_necessity` as the first gate. If the system can bypass
+    the proposed node without a material redesign, qualification, or performance
+    loss, the bottleneck is not established. An unresolved architecture gate is
+    an explicit UNKNOWN, never an implied positive.
+16. Separate nominal, installed, usable, qualified, merchant, captive, and
+    available capacity. Never promote a capacity announcement, nameplate number,
+    or management target into qualified supply without dated evidence.
+17. Record the supply-chain edge itself: upstream entity, product/process,
+    downstream dependency, relationship type, effective period, evidence,
+    counterevidence, and alternative supplier or architecture. A product mention
+    or thematic adjacency is not a verified edge.
+18. A company-level output must separate direct chain exposure from economic
+    capture and from capital structure. The `CompanyProfile` must expose an
+    exposure assessment, capture assessment, and dated funding/dilution view.
+19. Walk the validation ladder in order: architecture necessity, physical
+    supply, customer validation, company capture, financial transmission, and
+    market expectations. Do not use a later rung to compensate for an unresolved
+    earlier rung.
+20. Run a reflexivity audit when social or author-originated material is present.
+    A price move after a post is non-independent market evidence until separately
+    confirmed by fundamentals; engagement is never evidence of a bottleneck.
 
 Read the canonical contracts in contracts/output-contract.md,
 contracts/provenance-contract.md, contracts/temporal-contract.md, and
@@ -90,10 +114,11 @@ company research artifact.
 ## Request routing
 
 - Theme scan: map the system and layers first, then rank scarce layers and
-  company research priorities.
+  company research priorities. Produce the validation ladder before ranking.
 - Single-company challenge: resolve the entity and chain position, render a
-  CompanyProfile and MarketSnapshot, verify customer/capacity/economics, and
-  state the strongest downgrade condition.
+  CompanyProfile and MarketSnapshot, verify the supply-chain edge,
+  customer/capacity/economics, reflexivity, and state the strongest downgrade
+  condition.
 - Candidate comparison: keep bottleneck strength, evidence, proximity, finance,
   valuation context, catalyst timing, and risk as separate dimensions; never
   rank by a single additive score.
@@ -113,24 +138,29 @@ company research artifact.
 1. Define market, theme/company, intended decision, time window, and cutoff.
 2. Translate the narrative into a technical or economic system change.
 3. Map downstream demand, integrators, modules, devices, process, packaging,
-   equipment, materials, testing, and infrastructure.
+   equipment, materials, testing, and infrastructure; record candidate
+   supply-chain edges and alternative architectures.
 4. Create a BottleneckAssessment for the least substitutable, hardest-to-expand
-   layer. Assess each bottleneck dimension independently and attach evidence.
+   layer. Resolve architecture necessity first, assess all thirteen dimensions
+   independently, and classify every capacity state.
 5. Build a broad candidate universe before filtering.
 6. Resolve each candidate into a CompanyProfile and route each fact to the
-   appropriate market source.
+   appropriate market source. Separate exposure, value capture, and funding or
+   dilution rather than treating a ticker as a proxy for the chain.
 7. Build a dated MarketSnapshot for price, market cap, shares, currency, and
    data freshness; keep reported and calculated values distinct.
 8. Build a Claim Ledger and grade evidence quality, freshness, and independence.
-9. Verify material claims independently and record counterevidence.
+9. Verify material claims independently, record counterevidence, and audit
+   whether social price action is independent evidence.
 10. Translate the operating mechanism into the business-model-specific bridge
     from volume/ASP/utilization to revenue, profit, cash flow, funding,
     dilution, and per-share economics, or mark the bridge UNKNOWN.
-11. State what the market may be pricing, the variant-perception hypothesis,
-    catalysts, and conditional research reasons with proof metrics.
+11. Complete the six-stage validation ladder before stating what the market may
+    be pricing, the variant-perception hypothesis, catalysts, and conditional
+    research reasons with proof metrics.
 12. Update the thesis only with evidence available by the cutoff.
-13. Render the output contract, unknowns, invalidation conditions, and next
-    checks. Do not render a single composite conviction score.
+13. Render the output contract, unknowns, invalidation conditions, next checks,
+    and reflexivity audit. Do not render a single composite conviction score.
 
 The shared reasoning and mode budgets are in kernel/RESEARCH_KERNEL.md. Quick,
 Standard, and Deep modes change evidence budget and response depth, never the
@@ -159,13 +189,14 @@ keep outcomes in an evaluator-only layer.
 
 ## Local architecture
 
-- kernel/: stable reasoning procedure, financial translation, and thesis
-  lifecycle.
+- kernel/: stable reasoning procedure, financial translation, thesis lifecycle,
+  and validation gates.
 - schemas/: machine-readable object contracts.
 - contracts/: output, provenance, time, and access invariants.
 - adapters/: normalized source boundary; adapters acquire data but do not infer
   investment conclusions.
-- references/: conditional detailed playbooks.
+- references/: conditional detailed playbooks, including advanced bottleneck
+  diagnostics and output routing.
 - evals/: synthetic fixtures and deterministic integrity checks.
 - scripts/: local validators, distillation, index, build, and verification.
 - assets/ and examples/: reusable templates and public-safe examples.
@@ -197,10 +228,13 @@ data root and generated runtime.
 
 ## Resources
 
+- ARCHITECTURE_V4.md — object model and release boundary.
 - kernel/RESEARCH_KERNEL.md — shared chain-first reasoning.
 - kernel/FINANCIAL_TRANSLATOR.md — operating-to-financial bridge.
 - references/company-research-and-valuation.md — company facts, market data,
   variant perception, and conditional research-case rules.
+- references/advanced-bottleneck-diagnostics.md — architecture, supply-chain
+  edge, capacity-state, capture, and reflexivity tests.
 - kernel/THESIS_TIMELINE.md — dated thesis changes.
 - references/evidence-ladder.md — source grading.
 - references/market-source-playbook.md — cross-market source routing.

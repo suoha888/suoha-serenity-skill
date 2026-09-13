@@ -1,4 +1,4 @@
-# Company Research Contract v3
+# Company Research Contract v4
 
 This contract governs the conversion of a supply-chain bottleneck into a
 dated, auditable company research object.
@@ -23,6 +23,16 @@ The CompanyProfile must cover, or explicitly mark UNKNOWN:
   working capital, financing, and dilution indicators;
 - main operating, accounting, governance, geopolitical, liquidity, and design
   risks.
+
+The profile must also separate three judgments:
+
+- `exposure_assessment`: what exact product or process links the company to the
+  chain, how the relationship is established, and whether it is direct,
+  qualified, design-in, contracted, inferred, or merely thematic;
+- `capture_assessment`: how the company could retain value, whether the relevant
+  segment is material, and whether pricing power is observed or only plausible;
+- `capital_structure`: funding status, share-count basis, liquidity, and
+  dilution risk as of a dated source.
 
 “AI exposure”, “core supplier”, “large customer”, and “leader” are claims, not
 fields that may be inferred from a product page or social post alone.
@@ -65,6 +75,28 @@ A strong bottleneck with weak company exposure is not a strong company thesis.
 A high-growth company with no evidence of bottleneck value capture remains a
 lead. Mark the bridge UNKNOWN where an input cannot be verified.
 
+The bottleneck object now assesses thirteen dimensions independently:
+
+```text
+supplier concentration
+substitutability
+qualification burden
+expansion lead time
+customer urgency
+capacity visibility
+pricing power
+economic value capture
+architecture necessity
+yield / manufacturability
+merchant versus captive capacity
+geographic / regulatory concentration
+capital intensity
+```
+
+It also records a supply-chain edge and the separate capacity states nominal,
+installed, usable, qualified, merchant, captive, and available. A nameplate
+number or expansion announcement does not establish qualified merchant supply.
+
 ## 5. Variant perception and conditional reasons
 
 The report must distinguish:
@@ -89,6 +121,21 @@ FAIL IF [specific counterevidence]
 This is a research-priority statement, not a buy/sell recommendation. Avoid
 `buy`, `sell`, `hold`, `guaranteed`, `certain`, target price, and expected
 return language in the structured conclusion.
+
+Before the expectation gap, walk the six-stage validation ladder in order:
+
+```text
+architecture necessity
+  -> physical supply
+  -> customer validation
+  -> company capture
+  -> financial transmission
+  -> market expectations
+```
+
+Also render a reflexivity audit whenever a social post or influential public
+source is part of the lead. If the post precedes the price move and independent
+fundamental confirmation is absent, the price move is not independent evidence.
 
 ## 6. Source routing
 

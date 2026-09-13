@@ -26,6 +26,8 @@ Every new rule or extraction behavior must include:
 - documentation of any schema or output-contract change.
 - a company-research fixture when changing company, market-data, valuation, or
   conditional-reason behavior.
+- architecture gates, supply-chain edge semantics, capacity-state taxonomy,
+  validation-ladder coverage, and reflexivity checks when those contracts change.
 
 Social or KOL material is lead generation, not independent proof. Company
 claims should route to primary filings, exchange documents, company IR,

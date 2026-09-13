@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a non-additive Serenity research scorecard.
+"""Render a non-additive Serenity v4 research scorecard.
 
 Usage:
   python scripts/serenity_scorecard.py --template
@@ -19,24 +19,30 @@ from typing import Any, Dict, Tuple
 
 
 DIMENSIONS = (
+    "architecture_necessity",
     "bottleneck_strength",
     "evidence_quality",
     "economic_value_capture",
+    "financial_transmission",
     "valuation_context",
     "catalyst_timing",
+    "reflexivity_risk",
     "risk",
 )
 
 LEGACY_FACTOR_MAP = {
+    "architecture_necessity": ("architecture_coupling",),
     "bottleneck_strength": ("demand_inflection", "architecture_coupling", "chokepoint_severity", "supplier_concentration", "expansion_difficulty"),
     "evidence_quality": ("evidence_quality",),
     "economic_value_capture": ("demand_inflection", "architecture_coupling"),
+    "financial_transmission": ("financial_transmission",),
     "valuation_context": ("valuation_disconnect",),
     "catalyst_timing": ("catalyst_timing",),
+    "reflexivity_risk": ("reflexivity_risk", "social_reflexivity"),
 }
 
 TEMPLATE = {
-    "scorecard_version": "3",
+    "scorecard_version": "4",
     "ticker": "EXAMPLE",
     "company": "Example Co",
     "market": "US/HK/A-share/Taiwan/Japan/Korea/Europe",
@@ -91,10 +97,11 @@ def _legacy_dimensions(data: Dict[str, Any]) -> tuple[dict[str, Any], bool]:
 
 
 def _priority(details: dict[str, dict[str, Any]]) -> str:
+    architecture = details["architecture_necessity"].get("rating")
     bottleneck = details["bottleneck_strength"].get("rating")
     evidence = details["evidence_quality"].get("rating")
     capture = details["economic_value_capture"].get("rating")
-    if all(value is not None and value >= 4 for value in (bottleneck, evidence, capture)):
+    if all(value is not None and value >= 4 for value in (architecture, bottleneck, evidence, capture)):
         return "high"
     if all(value is not None and value >= 3 for value in (bottleneck, evidence)):
         return "medium"
@@ -123,7 +130,7 @@ def score(data: Dict[str, Any]) -> Tuple[Dict[str, Any], str]:
         }
     priority = _priority(details)
     result = {
-        "scorecard_version": "3",
+        "scorecard_version": "4",
         "ticker": data.get("ticker", ""),
         "company": data.get("company", ""),
         "market": data.get("market", ""),

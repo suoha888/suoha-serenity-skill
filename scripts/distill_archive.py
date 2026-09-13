@@ -669,10 +669,25 @@ def distill(records: list[dict[str, Any]], partition: str, cutoff: datetime | No
                 "problem": definition["problem"],
                 "trigger_conditions": list(definition["trigger_conditions"]),
                 "reasoning_pattern": definition["reasoning_pattern"],
+                "works_when": list(
+                    definition.get(
+                        "works_when",
+                        ["The material mechanism is supported by dated, independent evidence."],
+                    )
+                ),
+                "fails_when": list(definition.get("known_failure_modes", [])),
                 "required_evidence": list(definition["required_evidence"]),
                 "disconfirming_evidence": list(definition["disconfirming_evidence"]),
                 "known_failure_modes": list(definition["known_failure_modes"]),
                 "counterexamples": ["A repeated social narrative can be wrong even when it is internally coherent."],
+                "alternative_explanations": list(
+                    definition.get(
+                        "alternative_explanations",
+                        [
+                            "The observed pattern may reflect timing, promotion, or a temporary imbalance rather than a durable constraint."
+                        ],
+                    )
+                ),
                 "source_event_ids": sorted(support["events"]),
                 "source_claim_ids": sorted(support["claims"]),
                 "confidence": "low",

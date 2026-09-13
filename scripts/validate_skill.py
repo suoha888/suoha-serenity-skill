@@ -11,6 +11,7 @@ from pathlib import Path
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 REQUIRED_FILES = (
     "SKILL.md",
+    "ARCHITECTURE_V4.md",
     "LICENSE",
     "agents/openai.yaml",
     "README.md",
@@ -26,6 +27,7 @@ REQUIRED_FILES = (
     "contracts/access-control-contract.md",
     "contracts/company-research-contract.md",
     "references/company-research-and-valuation.md",
+    "references/advanced-bottleneck-diagnostics.md",
     "schemas/claim.schema.json",
     "schemas/evidence.schema.json",
     "schemas/thesis.schema.json",
@@ -117,6 +119,9 @@ def validate(root: Path, strict: bool = False) -> list[str]:
         "MarketSnapshot",
         "conditional",
         "single composite",
+        "architecture_necessity",
+        "validation ladder",
+        "reflexivity",
     )
     for term in required_terms:
         if term.lower() not in body.lower():

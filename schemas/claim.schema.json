@@ -28,6 +28,27 @@
     "schema_version": { "type": "string", "const": "2" },
     "claim_id": { "type": "string", "minLength": 1 },
     "text": { "type": "string", "minLength": 1 },
+    "claim_kind": {
+      "type": "string",
+      "enum": [
+        "demand",
+        "architecture",
+        "supply_chain_edge",
+        "bottleneck",
+        "customer_validation",
+        "capacity",
+        "economic_capture",
+        "financial_transmission",
+        "market_expectation",
+        "falsification",
+        "other"
+      ]
+    },
+    "independence_group": { "type": ["string", "null"] },
+    "effective_from": { "type": ["string", "null"], "format": "date-time" },
+    "effective_to": { "type": ["string", "null"], "format": "date-time" },
+    "alternative_explanations": { "type": "array", "items": { "type": "string" } },
+    "missing_proof": { "type": "array", "items": { "type": "string" } },
     "epistemic_type": {
       "type": "string",
       "enum": ["fact", "inference", "hypothesis", "unknown"]

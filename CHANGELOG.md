@@ -1,5 +1,21 @@
 # Changelog
 
+## 4.0.0 — 2026-09-13
+
+- Added an architecture-necessity gate so supplier concentration alone cannot
+  establish a bottleneck.
+- Expanded BottleneckAssessment from eight to thirteen independent dimensions,
+  including yield, merchant versus captive capacity, geographic/regulatory
+  concentration, and capital intensity.
+- Added structured supply-chain edges and seven separate capacity states:
+  nominal, installed, usable, qualified, merchant, captive, and available.
+- Added CompanyProfile exposure, economic-capture, and capital-structure
+  assessments.
+- Added the six-stage validation ladder and a social-price reflexivity audit to
+  ResearchOutput.
+- Added historical method-card boundary fields and new company-research evals.
+- Added ARCHITECTURE_V4.md and advanced bottleneck diagnostics.
+
 ## 3.0.0 — 2026-09-12
 
 - Reframed the Skill as a Supply-Chain Research Compiler.

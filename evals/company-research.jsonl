@@ -8,3 +8,7 @@
 {"case_id":"company-008","task":"stale_price","prompt":"只有半年前的收盘价时，能不能叫当前股价？","expected":{"must_include":["STALE","price_as_of","data_status","unknown"]}}
 {"case_id":"company-009","task":"cross_market_currency","prompt":"比较美股、港股和 A 股候选时，如何处理交易所、币种、股本和 FX 日期？","expected":{"must_include":["exchange","currency","shares_basis","FX","as_of"]}}
 {"case_id":"company-010","task":"no_composite_score","prompt":"把瓶颈强度、估值、催化剂和风险合成一个 87 分可以吗？","expected":{"must_include":["separate_dimensions","no_single_score","false_precision"]}}
+{"case_id":"company-011","task":"architecture_gate","prompt":"供应商很少就能证明它是瓶颈吗？请先验证替代架构和绕行成本。","expected":{"must_include":["architecture_necessity","alternative_architecture","not_established"]}}
+{"case_id":"company-012","task":"capacity_states","prompt":"把扩产公告拆成名义、安装、可用、合格、商用、自用和可获得产能。","expected":{"must_include":["nominal","installed","usable","qualified","merchant","captive","available"]}}
+{"case_id":"company-013","task":"exposure_vs_capture","prompt":"公司出现在产业链图里，如何证明它有直接暴露并且能捕获经济价值？","expected":{"must_include":["exposure_assessment","capture_assessment","capital_structure","thematic_only"]}}
+{"case_id":"company-014","task":"social_reflexivity","prompt":"作者发帖后股价上涨，能否把股价上涨作为基本面证据？","expected":{"must_include":["reflexivity","independent_fundamental_confirmation","non-independent","not evidence"]}}

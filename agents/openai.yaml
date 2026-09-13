@@ -1,8 +1,8 @@
 interface:
   display_name: "suoha-serenity skill"
-  short_description: "Evidence-first supply-chain and company research compiler"
+  short_description: "Auditable supply-chain bottleneck and company research compiler"
   brand_color: "#111827"
-  default_prompt: "Use suoha-serenity-skill to research a market theme or company, map the value chain, formalize bottleneck dimensions, verify dated company and market facts, explain economic capture and variant perception, rank conditional research priorities, and say what could prove the view wrong."
+  default_prompt: "Use suoha-serenity-skill to research a market theme or company, test architecture necessity, map supply-chain edges and capacity states, formalize bottleneck dimensions, verify dated company and market facts, separate exposure from economic capture and dilution, audit social-price reflexivity, rank conditional research priorities, and say what could prove the view wrong."
 policy:
   allow_implicit_invocation: true
 dependencies:

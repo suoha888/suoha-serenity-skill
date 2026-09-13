@@ -1,5 +1,5 @@
 {
-  "schema_version": "3",
+  "schema_version": "4",
   "research_output_id": "synthetic-output-001",
   "question": "某数据中心电力组件公司是否值得进入下一轮研究？",
   "market": "US",
@@ -15,6 +15,23 @@
   "research_conclusion": "tentative",
   "research_language": "conditional_interest",
   "why_research_now": "The system constraint is plausible, but the company-level value capture and current market data still require verification.",
+  "validation_ladder": [
+    {"stage":"architecture_necessity","status":"partial","claim":"The target deployment architecture appears to require the specified power-conversion module, but redesign cost is not fully quantified.","evidence_ids":["evidence:synthetic-1"],"missing_proof":["Alternative architecture performance and timing penalty"]},
+    {"stage":"physical_supply","status":"partial","claim":"Specialized equipment and a yield ramp may restrict immediately usable supply.","evidence_ids":["evidence:synthetic-2"],"missing_proof":["Qualified and merchant capacity"]},
+    {"stage":"customer_validation","status":"partial","claim":"Customer urgency and qualification are plausible but a binding customer document is absent.","evidence_ids":["evidence:synthetic-1"],"missing_proof":["Named qualification or repeat order"]},
+    {"stage":"company_capture","status":"partial","claim":"The company has a relevant segment, but direct customer exposure and pricing capture remain incomplete.","evidence_ids":["evidence:synthetic-1"],"missing_proof":["Segment margin and contract economics"]},
+    {"stage":"financial_transmission","status":"partial","claim":"The operating path can be stated, but cash conversion and dilution are not fully verified.","evidence_ids":["evidence:synthetic-1"],"missing_proof":["Working capital, capex, and share-count bridge"]},
+    {"stage":"market_expectations","status":"not_established","claim":"A dated market snapshot and expectation proxy are required before calling the opportunity underappreciated.","evidence_ids":["evidence:synthetic-3"],"missing_proof":["Authoritative quote, market-cap basis, and expectation proxy"]}
+  ],
+  "reflexivity_check": {
+    "social_originated": null,
+    "author_market_influence": "unknown",
+    "post_precedes_price_move": "unknown",
+    "independent_fundamental_confirmation": "unknown",
+    "price_action_is_independent_evidence": "unknown",
+    "evidence_ids": [],
+    "notes": "No social-origin or post-price sequence is present in this synthetic fixture; do not use price movement as fundamental confirmation."
+  },
   "conditional_reasons": [
     {
       "condition": "Customer qualification and repeat orders are confirmed in a dated primary source.",
@@ -80,5 +97,5 @@
     }
   ],
   "review_status": "human_reviewed",
-  "extraction_version": "synthetic-v3"
+  "extraction_version": "synthetic-v4"
 }

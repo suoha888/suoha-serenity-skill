@@ -17,8 +17,9 @@ whether its prose sounds more confident.
 - Tool failure: explicit degradation when search, PDF, market data, or source
   access fails.
 - Company research: identity resolution, dated company basics, price/market-cap
-  basis, bottleneck dimensions, value capture, variant perception, and
-  conditional research reasons.
+  basis, architecture gate, supply-chain edges, capacity states, bottleneck
+  dimensions, value capture, capital structure, variant perception, validation
+  ladder, reflexivity, and conditional research reasons.
 
 ## Release thresholds
 
@@ -34,13 +35,16 @@ whether its prose sounds more confident.
 | cross-market routing | 90% |
 | human research-quality score | 4.2 / 5 |
 
-For v3 company outputs, additionally require:
+For v4 company outputs, additionally require:
 
 | Metric | Minimum |
 |---|---:|
 | company/market field provenance | 100% |
 | stale/unavailable market-data labeling | 100% |
 | bottleneck dimension coverage | 100% |
+| capacity-state coverage | 100% |
+| validation-ladder coverage and order | 100% |
+| reflexivity safety invariant | 100% |
 | conditional-reason completeness | 95% |
 | forbidden composite score or trade instruction | 0 |
 

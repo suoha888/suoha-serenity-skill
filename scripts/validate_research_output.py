@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed checks for the v3 company ResearchOutput contract.
+"""Fail-closed checks for the v4 company ResearchOutput contract.
 
 This validator checks structure and a small set of semantic safety invariants.
 It does not verify that a source is true; source entailment remains an
@@ -35,7 +35,31 @@ BOTTLENECK_DIMENSIONS = {
     "capacity_visibility",
     "pricing_power",
     "economic_value_capture",
+    "architecture_necessity",
+    "yield_manufacturability",
+    "merchant_vs_captive_capacity",
+    "geographic_regulatory_concentration",
+    "capital_intensity",
 }
+
+CAPACITY_STATES = {
+    "nominal",
+    "installed",
+    "usable",
+    "qualified",
+    "merchant",
+    "captive",
+    "available",
+}
+
+VALIDATION_LADDER_STAGES = (
+    "architecture_necessity",
+    "physical_supply",
+    "customer_validation",
+    "company_capture",
+    "financial_transmission",
+    "market_expectations",
+)
 
 
 def parse_iso(value: Any) -> datetime | None:
@@ -124,8 +148,19 @@ def validate_schema_document(value: Any, schema_path: Path) -> list[str]:
     return _schema_errors(value, schema, "document")
 
 
+def _check_not_after_cutoff(
+    value: Any,
+    cutoff: datetime | None,
+    label: str,
+    errors: list[str],
+) -> None:
+    timestamp = parse_iso(value)
+    if cutoff is not None and timestamp is not None and timestamp > cutoff:
+        errors.append(f"{label}_after_cutoff")
+
+
 def validate_component(value: Any, schema_path: Path) -> list[str]:
-    """Validate a v3 component and its cross-field safety invariants."""
+    """Validate a v4 component and its cross-field safety invariants."""
     errors = validate_schema_document(value, schema_path)
     if not isinstance(value, dict):
         return errors
@@ -138,6 +173,42 @@ def validate_component(value: Any, schema_path: Path) -> list[str]:
         errors.extend(f"bottleneck:missing_dimension:{item}" for item in missing)
         errors.extend(f"bottleneck:duplicate_dimension:{item}" for item in duplicates)
         cutoff = parse_iso(value.get("research_cutoff"))
+        for index, dimension in enumerate(dimensions if isinstance(dimensions, list) else []):
+            if isinstance(dimension, dict):
+                _check_not_after_cutoff(
+                    dimension.get("as_of"),
+                    cutoff,
+                    f"bottleneck:dimension_as_of:{index}",
+                    errors,
+                )
+        capacity_states = value.get("capacity_states")
+        capacity_seen = [item.get("state") for item in capacity_states if isinstance(item, dict)] if isinstance(capacity_states, list) else []
+        capacity_missing = sorted(CAPACITY_STATES - set(capacity_seen))
+        capacity_duplicates = sorted({item for item in capacity_seen if capacity_seen.count(item) > 1})
+        errors.extend(f"bottleneck:missing_capacity_state:{item}" for item in capacity_missing)
+        errors.extend(f"bottleneck:duplicate_capacity_state:{item}" for item in capacity_duplicates)
+        edges = value.get("supply_chain_edges")
+        edge_ids = [item.get("edge_id") for item in edges if isinstance(item, dict)] if isinstance(edges, list) else []
+        if not edge_ids:
+            errors.append("bottleneck:supply_chain_edge_required")
+        errors.extend(
+            f"bottleneck:duplicate_supply_chain_edge:{item}"
+            for item in sorted({item for item in edge_ids if edge_ids.count(item) > 1})
+        )
+        for index, edge in enumerate(edges if isinstance(edges, list) else []):
+            if not isinstance(edge, dict):
+                continue
+            _check_not_after_cutoff(edge.get("as_of"), cutoff, f"bottleneck:edge_as_of:{index}", errors)
+            start = parse_iso(edge.get("effective_from"))
+            end = parse_iso(edge.get("effective_to"))
+            _check_not_after_cutoff(
+                edge.get("effective_from"), cutoff, f"bottleneck:edge_effective_from:{index}", errors
+            )
+            _check_not_after_cutoff(
+                edge.get("effective_to"), cutoff, f"bottleneck:edge_effective_to:{index}", errors
+            )
+            if start is not None and end is not None and end < start:
+                errors.append(f"bottleneck:edge_effective_period_reversed:{index}")
         assessed = parse_iso(value.get("assessment_as_of"))
         if cutoff is not None and assessed is not None and assessed > cutoff:
             errors.append("bottleneck:assessment_after_cutoff")
@@ -150,6 +221,19 @@ def validate_component(value: Any, schema_path: Path) -> list[str]:
         as_of = parse_iso(value.get("as_of"))
         if cutoff is not None and as_of is not None and as_of > cutoff:
             errors.append("company:as_of_after_cutoff")
+        exposure = value.get("exposure_assessment")
+        capture = value.get("capture_assessment")
+        if isinstance(exposure, dict) and isinstance(capture, dict):
+            if exposure.get("status") == "thematic_only" and capture.get("status") == "verified":
+                errors.append("company:thematic_only_exposure_cannot_have_verified_capture")
+        for section in (exposure, capture, value.get("capital_structure")):
+            if isinstance(section, dict):
+                _check_not_after_cutoff(
+                    section.get("as_of"),
+                    cutoff,
+                    "company:nested_as_of",
+                    errors,
+                )
     elif name == "market-snapshot.schema.json":
         status = value.get("data_status")
         if status in {"current", "delayed"} and (
@@ -204,6 +288,34 @@ def validate_output(value: dict[str, Any], schema_root: Path) -> list[str]:
         None,
     }:
         errors.append("research_output:invalid_research_language")
+
+    ladder = value.get("validation_ladder")
+    if isinstance(ladder, list):
+        stages = [item.get("stage") for item in ladder if isinstance(item, dict)]
+        missing = [stage for stage in VALIDATION_LADDER_STAGES if stage not in stages]
+        duplicates = sorted({stage for stage in stages if stages.count(stage) > 1})
+        errors.extend(f"research_output:validation_ladder_missing:{stage}" for stage in missing)
+        errors.extend(f"research_output:validation_ladder_duplicate:{stage}" for stage in duplicates)
+        if stages and stages[: len(VALIDATION_LADDER_STAGES)] != list(VALIDATION_LADDER_STAGES):
+            errors.append("research_output:validation_ladder_order_invalid")
+        if value.get("research_conclusion") == "supported":
+            early = {
+                item.get("stage"): item.get("status")
+                for item in ladder
+                if isinstance(item, dict)
+            }
+            for stage in VALIDATION_LADDER_STAGES[:5]:
+                if early.get(stage) not in {"supported", "partial"}:
+                    errors.append(f"research_output:supported_conclusion_requires_ladder_stage:{stage}")
+
+    reflexivity = value.get("reflexivity_check")
+    if isinstance(reflexivity, dict):
+        social_originated = reflexivity.get("social_originated") is True
+        post_precedes = reflexivity.get("post_precedes_price_move") == "yes"
+        independent = reflexivity.get("independent_fundamental_confirmation") == "yes"
+        price_independent = reflexivity.get("price_action_is_independent_evidence") == "yes"
+        if (social_originated or post_precedes) and not independent and price_independent:
+            errors.append("research_output:reflexive_price_action_cannot_be_independent_without_fundamental_confirmation")
     return errors
 
 
@@ -227,7 +339,7 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
-    print(f"OK: ResearchOutput v3 {args.path.resolve()}")
+    print(f"OK: ResearchOutput v4 {args.path.resolve()}")
     return 0
 
 

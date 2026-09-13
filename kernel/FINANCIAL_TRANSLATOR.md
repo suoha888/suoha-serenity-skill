@@ -1,4 +1,4 @@
-# Financial Translator
+# Financial Translator v4
 
 Use this module after the bottleneck and evidence work. It translates an
 operating claim into shareholder economics; it does not create evidence for an
@@ -8,7 +8,7 @@ unverified claim. It is a bridge, not a valuation oracle.
 
 ```text
 industry event
-  -> volume / ASP / utilization
+  -> qualified merchant volume / ASP / utilization
   -> revenue
   -> gross profit
   -> operating profit
@@ -26,8 +26,10 @@ or unknown. Preserve the source and `as_of` date beside the input.
 Select the closest branch before building the bridge. Do not reuse a
 manufacturing formula for a royalty or project business:
 
-- **Capacity manufacturer:** available capacity × utilization × ASP, then
-  yield, mix, gross margin, working capital, and capex.
+- **Capacity manufacturer:** qualified merchant capacity × utilization × ASP,
+  then yield, mix, gross margin, working capital, and capex. Keep nominal,
+  installed, usable, qualified, merchant, captive, and available capacity
+  separate.
 - **Equipment supplier:** systems shipped × ASP + service/consumables, then
   backlog conversion, installation timing, service margin, and customer capex.
 - **Consumable/material supplier:** qualified units × consumption per unit ×
@@ -46,6 +48,10 @@ manufacturing formula for a royalty or project business:
   debt, cash runway, financing method, and new-share risk.
 - Distinguish management targets from signed orders, customer qualification,
   production, and recognized revenue.
+- Separate company exposure from company capture. A system bottleneck does not
+  establish that the candidate owns the edge or retains the rent.
+- Record whether capex creates merchant qualified supply or only captive,
+  reserved, or nominal capacity.
 - Treat a quoted price and market cap as separate dated facts. Record quote
   type, exchange, currency, source, shares basis, market-cap basis, and
   freshness. Do not translate currencies without a dated FX source.

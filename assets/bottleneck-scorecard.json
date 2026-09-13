@@ -1,5 +1,5 @@
 {
-  "schema_version": "3",
+  "schema_version": "4",
   "bottleneck_id": "bottleneck:example",
   "topic": "Example supply-chain theme",
   "layer": "Qualified component or process",
@@ -103,6 +103,95 @@
       "evidence_ids": [],
       "unknowns": ["Verify direct exposure, revenue, margin, and repeat demand."],
       "confidence": "low"
+    },
+    {
+      "dimension": "architecture_necessity",
+      "status": "unknown",
+      "assessment": "Can the system bypass this node without material redesign, qualification, or performance loss?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Map the alternative architecture and its performance or timing penalty."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "yield_manufacturability",
+      "status": "unknown",
+      "assessment": "Is the reported process reproducible at the required yield and quality?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find yield, defect, reliability, or production-ramp evidence."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "merchant_vs_captive_capacity",
+      "status": "unknown",
+      "assessment": "How much capacity is available to external customers rather than reserved for internal use?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Separate merchant, captive, reserved, and available capacity."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "geographic_regulatory_concentration",
+      "status": "unknown",
+      "assessment": "Could geography, export controls, permits, or regulation constrain or redirect supply?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Identify jurisdictional dependencies, licenses, and policy exposure."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "capital_intensity",
+      "status": "unknown",
+      "assessment": "What capital, financing, and working capital are required to convert scarcity into supply?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find capex per unit of qualified capacity and the funding path."],
+      "confidence": "low"
+    }
+  ],
+  "capacity_states": [
+    {"state":"nominal","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find the nameplate capacity source."]},
+    {"state":"installed","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find installed equipment or line evidence."]},
+    {"state":"usable","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find operating capacity after uptime and yield constraints."]},
+    {"state":"qualified","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find customer-qualified capacity."]},
+    {"state":"merchant","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find capacity available to external customers."]},
+    {"state":"captive","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find internal or reserved capacity."]},
+    {"state":"available","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find uncommitted capacity after reservations and customer priority."]}
+  ],
+  "supply_chain_edges": [
+    {
+      "edge_id": "edge:example",
+      "upstream_entity": "UNKNOWN supplier or process owner",
+      "downstream_entity": "UNKNOWN system integrator or customer",
+      "product_or_process": "The specific component, material, equipment, or process",
+      "relationship_type": "depends_on",
+      "relationship_status": "unknown",
+      "effective_from": null,
+      "effective_to": null,
+      "as_of": "2026-09-12T00:00:00Z",
+      "epistemic_type": "unknown",
+      "evidence_state": "not_established",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "alternatives": ["Alternative supplier", "Alternative architecture"],
+      "unknowns": ["Resolve both endpoints and find a dated relationship source."],
+      "confidence": "low"
     }
   ],
   "economic_capture_hypothesis": "State the conditional path from the bottleneck to company economics.",
@@ -127,6 +216,6 @@
     }
   ],
   "review_status": "human_reviewed",
-  "extraction_version": "template-v3",
+  "extraction_version": "template-v4",
   "notes": "Do not average dimensions or emit a 0-100 conviction score."
 }

@@ -13,8 +13,9 @@ that a model can predict returns or that a historical author was correct.
 - cross-market.jsonl: source routing for seven markets;
 - conversation.jsonl: focused research-partner and teaching behavior.
 - company-research.jsonl: company identity, dated basics, market snapshots,
-  bottleneck dimensions, value capture, variant perception, and conditional
-  research reasons.
+  architecture necessity, supply-chain edges, capacity states, bottleneck
+  dimensions, value capture, variant perception, validation ladder, reflexivity,
+  and conditional research reasons.
 
 The checked-in fixtures are synthetic prompts. They contain no local archive.
 
@@ -31,6 +32,7 @@ The checked-in fixtures are synthetic prompts. They contain no local archive.
 - human research-quality score: at least 4.2 / 5.
 - company/market field provenance: 100% for company-level outputs;
 - stale/unavailable market-data labeling: 100%;
+- architecture, capacity-state, validation-ladder, and reflexivity coverage: 100%;
 - forbidden composite score or trade instruction: 0.
 
 Run the deterministic package check from the skill source directory:

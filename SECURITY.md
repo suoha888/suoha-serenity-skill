@@ -18,6 +18,8 @@ Important threats include:
 - accidental secrets, hidden network calls, or execution of downloaded code.
 - false precision from a single composite score, stale quote, mismatched share
   basis, or undocumented FX conversion.
+- false causal confidence from an unverified architecture edge, nominal capacity,
+  thematic company exposure, or post-first price action.
 
 ## Fail-closed behavior
 
@@ -34,7 +36,8 @@ python scripts/run_evals.py --root . --data-root ..\..\data\serenity --runtime-r
 
 Any subscription leak, severe temporal leak, invalid provenance, schema
 failure, network import in local data scripts, stale/unlabeled market data,
-forbidden composite score, or source/runtime drift blocks release.
+forbidden composite score, unresolved supported-conclusion validation gate,
+unsafe reflexivity label, or source/runtime drift blocks release.
 
 ## Reporting
 

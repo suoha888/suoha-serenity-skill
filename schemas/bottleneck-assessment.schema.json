@@ -14,6 +14,8 @@
     "assessment_as_of",
     "research_cutoff",
     "dimensions",
+    "capacity_states",
+    "supply_chain_edges",
     "economic_capture_hypothesis",
     "evidence_ids",
     "counterevidence_ids",
@@ -24,7 +26,7 @@
     "extraction_version"
   ],
   "properties": {
-    "schema_version": { "type": "string", "const": "3" },
+    "schema_version": { "type": "string", "const": "4" },
     "bottleneck_id": { "type": "string", "minLength": 1 },
     "topic": { "type": "string", "minLength": 1 },
     "layer": { "type": "string", "minLength": 1 },
@@ -72,7 +74,12 @@
               "customer_urgency",
               "capacity_visibility",
               "pricing_power",
-              "economic_value_capture"
+              "economic_value_capture",
+              "architecture_necessity",
+              "yield_manufacturability",
+              "merchant_vs_captive_capacity",
+              "geographic_regulatory_concentration",
+              "capital_intensity"
             ]
           },
           "status": {
@@ -104,6 +111,126 @@
             "type": "string",
             "enum": ["low", "medium", "high"]
           }
+        }
+      }
+    },
+    "capacity_states": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "state",
+          "value",
+          "unit",
+          "as_of",
+          "epistemic_type",
+          "evidence_ids",
+          "unknowns"
+        ],
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "nominal",
+              "installed",
+              "usable",
+              "qualified",
+              "merchant",
+              "captive",
+              "available"
+            ]
+          },
+          "value": { "type": ["number", "string", "null"] },
+          "unit": { "type": "string", "minLength": 1 },
+          "as_of": { "type": ["string", "null"], "format": "date-time" },
+          "epistemic_type": {
+            "type": "string",
+            "enum": ["fact", "inference", "hypothesis", "unknown"]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "unknowns": { "type": "array", "items": { "type": "string" } },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "supply_chain_edges": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "edge_id",
+          "upstream_entity",
+          "downstream_entity",
+          "product_or_process",
+          "relationship_type",
+          "relationship_status",
+          "as_of",
+          "epistemic_type",
+          "evidence_state",
+          "evidence_ids",
+          "counterevidence_ids",
+          "alternatives",
+          "unknowns",
+          "confidence"
+        ],
+        "properties": {
+          "edge_id": { "type": "string", "minLength": 1 },
+          "upstream_entity": { "type": "string", "minLength": 1 },
+          "downstream_entity": { "type": "string", "minLength": 1 },
+          "product_or_process": { "type": "string", "minLength": 1 },
+          "relationship_type": {
+            "type": "string",
+            "enum": [
+              "supplies",
+              "design_in",
+              "qualifies",
+              "reserves_capacity",
+              "contracts_with",
+              "depends_on",
+              "alternative_to",
+              "integrates"
+            ]
+          },
+          "relationship_status": {
+            "type": "string",
+            "enum": ["reported", "inferred", "hypothesis", "unknown"]
+          },
+          "effective_from": { "type": ["string", "null"], "format": "date-time" },
+          "effective_to": { "type": ["string", "null"], "format": "date-time" },
+          "as_of": { "type": "string", "format": "date-time" },
+          "epistemic_type": {
+            "type": "string",
+            "enum": ["fact", "inference", "hypothesis", "unknown"]
+          },
+          "evidence_state": {
+            "type": "string",
+            "enum": ["supported", "stale", "contradicted", "not_established"]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "counterevidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "alternatives": { "type": "array", "items": { "type": "string" } },
+          "unknowns": { "type": "array", "items": { "type": "string" } },
+          "confidence": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "notes": { "type": "string" }
         }
       }
     },

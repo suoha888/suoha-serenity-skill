@@ -1,4 +1,4 @@
-# ResearchOutput Contract v3
+# ResearchOutput Contract v4
 
 Every Quick, Standard, and Deep answer uses the same semantics. Modes change
 the evidence budget and prose depth, never the integrity rules. A company-level
@@ -26,6 +26,8 @@ System change:
 Relevant layers:
 Scarce layer:
 Physical mechanism:
+Architecture necessity:
+Supply-chain edges:
 Dimension table:
   supplier concentration:
   substitutability:
@@ -35,6 +37,12 @@ Dimension table:
   capacity visibility:
   pricing power:
   economic value capture:
+  architecture necessity:
+  yield / manufacturability:
+  merchant versus captive capacity:
+  geographic / regulatory concentration:
+  capital intensity:
+Capacity states: nominal | installed | usable | qualified | merchant | captive | available
 Evidence IDs:
 Counterevidence IDs:
 
@@ -44,6 +52,9 @@ Ticker / exchange / market:
 Quote currency:
 Business model:
 Main business:
+Direct exposure assessment:
+Economic capture assessment:
+Funding / dilution assessment:
 Segments and revenue mix:
 Customers and customer concentration:
 Geographies:
@@ -89,6 +100,21 @@ IF condition is confirmed by [dated metric/source]
 THEN [economic or thesis implication]
 BECAUSE [evidence-backed mechanism]
 FAIL IF [specific falsification metric or counterevidence]
+
+# Validation Ladder
+Architecture necessity: supported | partial | not_established | contradicted | unknown
+Physical supply: supported | partial | not_established | contradicted | unknown
+Customer validation: supported | partial | not_established | contradicted | unknown
+Company capture: supported | partial | not_established | contradicted | unknown
+Financial transmission: supported | partial | not_established | contradicted | unknown
+Market expectations: supported | partial | not_established | contradicted | unknown
+
+# Reflexivity Audit
+Social origin:
+Author or community market influence:
+Post before price move:
+Independent fundamental confirmation:
+Price action independent evidence: yes | no | unknown
 
 # Catalysts
 Catalyst / time window / confirmation metric / failure risk:
@@ -143,6 +169,13 @@ Extraction version:
   automatic portfolio actions.
 - Bottleneck, evidence, value capture, valuation context, catalyst timing, and
   risk are separate dimensions. Do not add them into a 0–100 score.
+- Architecture necessity is the first validation gate. An unresolved gate may
+  remain a research lead, but cannot support a fully established bottleneck.
+- Nominal or installed capacity is not qualified, merchant, or available supply
+  without evidence for that state.
+- Strategic chain importance and company economic capture are separate claims.
+- If social origin precedes price action without independent fundamental proof,
+  price action is non-independent market evidence.
 - Later prices, earnings, returns, or outcomes are evaluator-only and cannot
   rewrite a historical research context.
 - Any subscription/private input taints the complete derived output and blocks

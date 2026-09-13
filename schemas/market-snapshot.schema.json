@@ -34,7 +34,7 @@
     "extraction_version"
   ],
   "properties": {
-    "schema_version": { "type": "string", "const": "3" },
+    "schema_version": { "type": "string", "const": "4" },
     "snapshot_id": { "type": "string", "minLength": 1 },
     "company_id": { "type": "string", "minLength": 1 },
     "ticker": { "type": ["string", "null"] },

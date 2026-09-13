@@ -44,7 +44,7 @@ Ask a clarification only when the missing scope would materially change the answ
 
 Write the practical chain:
 
-`demand wave -> system pressure -> required technical change -> constrained layer`
+`demand wave -> system pressure -> required technical change -> architecture necessity -> constrained layer`
 
 Examples:
 
@@ -65,10 +65,13 @@ Use these layers as a checklist:
 7. Materials, consumables, and specialty inputs.
 8. Physical infrastructure.
 
-### 4. Search for scarce layers
+### 4. Test architecture necessity and search for scarce layers
 
-A scarce layer becomes interesting when several signals stack:
+A scarce layer becomes interesting only after an architecture test and several
+additional signals stack:
 
+- the proposed system architecture cannot bypass it without a material redesign,
+  performance loss, or qualification delay;
 - customers cannot scale without it;
 - supplier count is low;
 - qualification is slow;
@@ -76,7 +79,9 @@ A scarce layer becomes interesting when several signals stack:
 - customers show urgency through prepayments, capacity reservations, long-term contracts, expedited orders, or price acceptance;
 - the public market still classifies the company by an older business category.
 
-After this step, write the layer ranking before moving to the final company list.
+Record the supply-chain edge (both endpoints, product/process, relationship
+type, effective period, alternatives, evidence, and counterevidence). Then write
+the layer ranking before moving to the final company list.
 
 Example:
 
@@ -139,8 +144,9 @@ Use `references/evidence-ladder.md` for grading.
 For every shortlisted company, create a CompanyProfile before making a market
 judgment. Resolve the legal entity, ticker, exchange, share class, quote
 currency, business model, segment/revenue mix, customer exposure, geography,
-competitors, financial quality, and main risks. Each field gets its own dated
-source or is explicitly `UNKNOWN`.
+competitors, financial quality, main risks, direct exposure, economic capture,
+and capital structure. Each field gets its own dated source or is explicitly
+`UNKNOWN`.
 
 Create a MarketSnapshot separately for price, price type, market cap, shares,
 share basis, currency, `price_as_of`, `market_cap_as_of`, source, and freshness.
@@ -157,10 +163,21 @@ For deep current scans, aim for 25+ sources before the final ranking. A good mix
 
 ### 7. Translate value capture and market expectations
 
-For each top candidate, connect the scarce layer to the company’s actual
+For each top candidate, walk the validation ladder in order:
+
+```text
+architecture necessity -> physical supply -> customer validation
+-> company capture -> financial transmission -> market expectations
+```
+
+Then connect the scarce layer to the company’s actual
 business model: capacity manufacturer, equipment, consumables/materials,
 IP/royalty, project/infrastructure, or diversified. Separate industry growth,
 company revenue, margin, cash flow, funding, dilution, and per-share economics.
+
+If a social post or influential public source is part of the lead, run the
+reflexivity audit. A post-first price move is non-independent evidence until
+independent fundamentals confirm the mechanism.
 
 Then state the variant-perception hypothesis:
 

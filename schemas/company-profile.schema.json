@@ -15,6 +15,9 @@
     "identity_status",
     "business_model",
     "business_description",
+    "exposure_assessment",
+    "capture_assessment",
+    "capital_structure",
     "as_of",
     "research_cutoff",
     "segments",
@@ -32,7 +35,7 @@
     "extraction_version"
   ],
   "properties": {
-    "schema_version": { "type": "string", "const": "3" },
+    "schema_version": { "type": "string", "const": "4" },
     "company_id": { "type": "string", "minLength": 1 },
     "legal_name": { "type": "string", "minLength": 1 },
     "ticker": { "type": ["string", "null"] },
@@ -66,6 +69,157 @@
       "type": "array",
       "items": { "type": "string", "minLength": 1 },
       "uniqueItems": true
+    },
+    "exposure_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "product_or_process",
+        "relationship_type",
+        "customer_dependency",
+        "as_of",
+        "epistemic_type",
+        "evidence_ids",
+        "counterevidence_ids",
+        "unknowns"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "direct",
+            "qualified",
+            "design_in",
+            "contracted",
+            "inferred",
+            "thematic_only",
+            "unknown"
+          ]
+        },
+        "product_or_process": { "type": "string", "minLength": 1 },
+        "relationship_type": {
+          "type": "string",
+          "enum": [
+            "supplies",
+            "design_in",
+            "qualifies",
+            "reserves_capacity",
+            "contracts_with",
+            "depends_on",
+            "integrates",
+            "unknown"
+          ]
+        },
+        "customer_dependency": {
+          "type": "string",
+          "enum": ["required", "preferred", "replaceable", "unknown"]
+        },
+        "as_of": { "type": "string", "format": "date-time" },
+        "epistemic_type": {
+          "type": "string",
+          "enum": ["fact", "inference", "hypothesis", "unknown"]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "counterevidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "unknowns": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    },
+    "capture_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "mechanism",
+        "value_capture_path",
+        "pricing_power_status",
+        "segment_materiality",
+        "as_of",
+        "epistemic_type",
+        "evidence_ids",
+        "counterevidence_ids",
+        "unknowns"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["verified", "plausible", "not_established", "contradicted", "unknown"]
+        },
+        "mechanism": { "type": "string", "minLength": 1 },
+        "value_capture_path": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "pricing_power_status": {
+          "type": "string",
+          "enum": ["observed", "plausible", "absent", "unknown"]
+        },
+        "segment_materiality": {
+          "type": "string",
+          "enum": ["material", "emerging", "immaterial", "unknown"]
+        },
+        "as_of": { "type": "string", "format": "date-time" },
+        "epistemic_type": {
+          "type": "string",
+          "enum": ["fact", "inference", "hypothesis", "unknown"]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "counterevidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "unknowns": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    },
+    "capital_structure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "funding_status",
+        "dilution_risk",
+        "share_count_basis",
+        "as_of",
+        "evidence_ids",
+        "unknowns"
+      ],
+      "properties": {
+        "funding_status": {
+          "type": "string",
+          "enum": ["self_funded", "debt", "equity", "mixed", "unknown"]
+        },
+        "dilution_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "unknown"]
+        },
+        "share_count_basis": {
+          "type": "string",
+          "enum": ["current_basic", "current_diluted", "weighted_average", "unknown"]
+        },
+        "debt_or_liquidity_note": { "type": "string" },
+        "as_of": { "type": "string", "format": "date-time" },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "unknowns": { "type": "array", "items": { "type": "string" } }
+      }
     },
     "as_of": { "type": "string", "format": "date-time" },
     "research_cutoff": { "type": "string", "format": "date-time" },

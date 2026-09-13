@@ -1,0 +1,37 @@
+name: Validate public skill
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate skill structure and public boundary
+        run: python scripts/validate_skill.py . --strict
+
+      - name: Validate research integrity contract
+        run: python evals/validate_research_integrity.py .
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Validate synthetic research output
+        run: python scripts/validate_research_output.py evals/fixtures/research-output.synthetic.json
+
+      - name: Build and verify public runtime
+        run: |
+          python scripts/build_runtime.py --source . --output "$RUNNER_TEMP/suoha-serenity-skill"
+          python scripts/verify_runtime.py --source . --runtime "$RUNNER_TEMP/suoha-serenity-skill"

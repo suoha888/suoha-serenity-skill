@@ -45,14 +45,14 @@ FIXTURE_GROUPS = {
     "conversation": ("conversation.jsonl", 10),
     "company_research": ("company-research.jsonl", 10),
 }
-V3_SCHEMA_FILES = (
+RESEARCH_SCHEMA_FILES = (
     "bottleneck-assessment.schema.json",
     "company-profile.schema.json",
     "market-snapshot.schema.json",
     "valuation-snapshot.schema.json",
     "research-output.schema.json",
 )
-V3_COMPONENTS = {
+RESEARCH_COMPONENTS = {
     "bottleneck_assessment": "bottleneck-assessment.schema.json",
     "company_profile": "company-profile.schema.json",
     "market_snapshot": "market-snapshot.schema.json",
@@ -305,25 +305,25 @@ def check_fixtures(root: Path, errors: list[str]) -> dict[str, int]:
     return counts
 
 
-def check_v3_research_contract(root: Path, errors: list[str]) -> dict[str, Any]:
+def check_research_contract(root: Path, errors: list[str]) -> dict[str, Any]:
     result: dict[str, Any] = {"schemas": {}, "fixture": None, "components_fixture": None, "errors": 0}
-    for filename in V3_SCHEMA_FILES:
+    for filename in RESEARCH_SCHEMA_FILES:
         path = root / "schemas" / filename
         if not path.is_file():
-            errors.append(f"v3_schema_missing:{filename}")
+            errors.append(f"research_schema_missing:{filename}")
             continue
         try:
             parsed = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as exc:
-            errors.append(f"v3_schema_invalid:{filename}:{exc}")
+            errors.append(f"research_schema_invalid:{filename}:{exc}")
             continue
         if not isinstance(parsed, dict) or parsed.get("type") != "object":
-            errors.append(f"v3_schema_not_object:{filename}")
+            errors.append(f"research_schema_not_object:{filename}")
         result["schemas"][filename] = "valid"
 
     fixture = root / "evals" / "fixtures" / "research-output.synthetic.json"
     if not fixture.is_file():
-        errors.append("v3_research_output_fixture_missing")
+        errors.append("research_output_fixture_missing")
     else:
         fixture_errors = validate_research_output_file(fixture, root / "schemas")
         result["fixture"] = str(fixture)
@@ -332,15 +332,15 @@ def check_v3_research_contract(root: Path, errors: list[str]) -> dict[str, Any]:
 
     components_fixture = root / "evals" / "fixtures" / "company-research-components.synthetic.json"
     if not components_fixture.is_file():
-        errors.append("v3_components_fixture_missing")
+        errors.append("research_components_fixture_missing")
     else:
         try:
             components = json.loads(components_fixture.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as exc:
             components = {}
-            errors.append(f"v3_components_fixture_invalid:{exc}")
+            errors.append(f"research_components_fixture_invalid:{exc}")
         result["components_fixture"] = str(components_fixture)
-        for key, schema_name in V3_COMPONENTS.items():
+        for key, schema_name in RESEARCH_COMPONENTS.items():
             value = components.get(key) if isinstance(components, dict) else None
             schema_errors = (
                 [f"missing component:{key}"]
@@ -374,6 +374,9 @@ def check_skill_source(root: Path, errors: list[str]) -> dict[str, Any]:
         "MarketSnapshot",
         "conditional",
         "single composite",
+        "architecture_necessity",
+        "validation ladder",
+        "reflexivity",
     )
     for term in required_terms:
         if term.lower() not in text.lower():
@@ -591,7 +594,7 @@ def run(root: Path, data_root: Path, runtime_root: Path | None) -> dict[str, Any
     source = check_skill_source(root, errors)
     security = check_python_security(root, errors)
     fixtures = check_fixtures(root, errors)
-    v3_research = check_v3_research_contract(root, errors)
+    research_contract = check_research_contract(root, errors)
     normalized = check_normalized(data_root, errors)
     derived = check_derived(data_root, errors)
     schema_validation = check_schema_collections(root, data_root, errors)
@@ -610,7 +613,7 @@ def run(root: Path, data_root: Path, runtime_root: Path | None) -> dict[str, Any
         "temporal_holdout_integrity": 1 if holdout and not any("holdout_" in error for error in errors) else 0,
         "runtime_integrity": 1 if runtime.get("status") in {"pass", "not_requested"} else 0,
         "index_integrity": 1 if index.get("status") == "pass" else 0,
-        "research_output_contract": 1 if v3_research["errors"] == 0 else 0,
+        "research_output_contract": 1 if research_contract["errors"] == 0 else 0,
         "human_quality_status": "not_automated",
         "citation_entailment_status": "requires_human_or_model_evaluator",
     }
@@ -630,7 +633,7 @@ def run(root: Path, data_root: Path, runtime_root: Path | None) -> dict[str, Any
         "source": source,
         "security": security,
         "fixtures": fixtures,
-        "v3_research": v3_research,
+        "research_contract": research_contract,
         "normalized": normalized,
         "derived": derived,
         "schema_validation": schema_validation,

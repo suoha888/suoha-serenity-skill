@@ -1,4 +1,4 @@
-# Research Kernel
+# Research Kernel v4
 
 The Research Kernel is the single research procedure shared by Quick, Standard,
 and Deep modes. Modes change the evidence budget and report depth; they must not
@@ -9,21 +9,29 @@ create three different reasoning systems.
 1. Parse the question, market, entities, and intended decision.
 2. Set an explicit `research_cutoff` before retrieving evidence.
 3. Translate the narrative into a system change and map the value chain.
-4. Create a first-class BottleneckAssessment and assess its dimensions
+4. Test architecture necessity and record candidate supply-chain edges and
+   alternative architectures.
+5. Create a first-class BottleneckAssessment, classify nominal/installed/usable/
+   qualified/merchant/captive/available capacity, and assess all dimensions
    independently; never sum them into conviction.
-5. Retrieve evidence through source-appropriate adapters.
-6. Resolve candidate entities into CompanyProfile objects.
-7. Create a dated MarketSnapshot for price, market cap, shares, currency, and
+6. Retrieve evidence through source-appropriate adapters.
+7. Resolve candidate entities into CompanyProfile objects, separating direct
+   exposure, economic capture, and capital structure.
+8. Create a dated MarketSnapshot for price, market cap, shares, currency, and
    freshness; distinguish reported, calculated, stale, and unavailable data.
-8. Write a Claim Ledger and grade each material claim.
-9. Independently verify material claims and supply-chain edges.
-10. Search deliberately for contradictory evidence and alternative explanations.
-11. Translate the operating thesis using the business-model-specific financial
+9. Write a Claim Ledger and grade each material claim.
+10. Independently verify material claims and supply-chain edges.
+11. Search deliberately for contradictory evidence and alternative explanations.
+12. Walk the validation ladder: architecture necessity, physical supply, customer
+    validation, company capture, financial transmission, and market expectations.
+13. Run the reflexivity audit when social or influential public sources are part
+    of the lead.
+14. Translate the operating thesis using the business-model-specific financial
     bridge, then state market-implied expectations and a conditional research
     case.
-12. Update the thesis state only with evidence available by the cutoff.
-13. State unknowns, stale inputs, invalidation conditions, and next checks.
-14. Render the [output contract](../contracts/output-contract.md).
+15. Update the thesis state only with evidence available by the cutoff.
+16. State unknowns, stale inputs, invalidation conditions, and next checks.
+17. Render the [output contract](../contracts/output-contract.md).
 
 ## Evidence and epistemic discipline
 
@@ -43,11 +51,12 @@ collection time; never substitute one for the other.
 
 ## Bottleneck and candidate rules
 
-For each layer, test supplier concentration, qualification time, expansion
-difficulty, substitution resistance, capacity, customer validation, pricing
-power, and the path from the constraint to company economics. Treat every
-graph edge as a claim, not as a visual fact. Preserve these dimensions
-separately in the BottleneckAssessment.
+For each layer, test architecture necessity, supplier concentration,
+qualification time, expansion difficulty, substitution resistance, capacity
+states, yield, customer validation, pricing power, geographic/regulatory
+concentration, capital intensity, and the path from the constraint to company
+economics. Treat every graph edge as a claim, not as a visual fact. Preserve
+these dimensions separately in the BottleneckAssessment.
 
 Rank research priority, not an automatic buy/sell signal. Keep these dimensions
 separate in the report:
@@ -88,4 +97,6 @@ risk boundary in `../references/risk-and-compliance.md`.
 - **Deep**: multi-source verification, alternative thesis, full provenance, temporal history, and deeper financial analysis.
 
 All modes still use the same cutoff, Claim Ledger, contradiction search, and
-output contract.
+output contract. Standard and Deep modes must also render the validation ladder
+and reflexivity audit; Quick mode may mark unverified rungs UNKNOWN but cannot
+skip them.

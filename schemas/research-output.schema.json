@@ -21,6 +21,8 @@
     "research_conclusion",
     "research_language",
     "why_research_now",
+    "validation_ladder",
+    "reflexivity_check",
     "conditional_reasons",
     "variant_perception",
     "catalysts",
@@ -38,7 +40,7 @@
     "extraction_version"
   ],
   "properties": {
-    "schema_version": { "type": "string", "const": "3" },
+    "schema_version": { "type": "string", "const": "4" },
     "research_output_id": { "type": "string", "minLength": 1 },
     "question": { "type": "string", "minLength": 1 },
     "market": { "type": "string", "minLength": 1 },
@@ -80,6 +82,77 @@
       ]
     },
     "why_research_now": { "type": "string", "minLength": 1 },
+    "validation_ladder": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stage", "status", "claim", "evidence_ids", "missing_proof"],
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": [
+              "architecture_necessity",
+              "physical_supply",
+              "customer_validation",
+              "company_capture",
+              "financial_transmission",
+              "market_expectations"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["supported", "partial", "not_established", "contradicted", "unknown"]
+          },
+          "claim": { "type": "string", "minLength": 1 },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "missing_proof": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "reflexivity_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "social_originated",
+        "author_market_influence",
+        "post_precedes_price_move",
+        "independent_fundamental_confirmation",
+        "price_action_is_independent_evidence",
+        "evidence_ids",
+        "notes"
+      ],
+      "properties": {
+        "social_originated": { "type": ["boolean", "null"] },
+        "author_market_influence": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "unknown"]
+        },
+        "post_precedes_price_move": {
+          "type": "string",
+          "enum": ["yes", "no", "unknown"]
+        },
+        "independent_fundamental_confirmation": {
+          "type": "string",
+          "enum": ["yes", "partial", "no", "unknown"]
+        },
+        "price_action_is_independent_evidence": {
+          "type": "string",
+          "enum": ["yes", "no", "unknown"]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "notes": { "type": "string", "minLength": 1 }
+      }
+    },
     "conditional_reasons": {
       "type": "array",
       "minItems": 1,
