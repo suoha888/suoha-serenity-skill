@@ -1,0 +1,490 @@
+{
+  "schema_version": "6.0",
+  "lens_id": "lens:mu-2026-10-18",
+  "mode": "single_ticker",
+  "subject": {
+    "ticker": "MU",
+    "resolved_symbol": "MU",
+    "exchange": "NasdaqGS",
+    "company_name": "Micron Technology, Inc.",
+    "currency": "USD",
+    "company_type": "other",
+    "taxonomy_codes": [
+      "L2.MEM.HBM"
+    ]
+  },
+  "research_cutoff": "2026-10-18T04:43:33Z",
+  "as_of": "2026-10-18T04:43:33Z",
+  "one_liner": "TODO: 一句话结论（≤200 字）",
+  "thirty_second_summary": "TODO: 30 秒摘要（≤700 字，带数字）",
+  "capex_certainty": {
+    "demand_source": "unknown",
+    "statement": "TODO: 需求来自谁、多确定",
+    "evidence_ids": []
+  },
+  "chain_map": {
+    "theme": "AI 存储（HBM / NAND / 遗留 DRAM）",
+    "layers": [
+      {
+        "layer": "upstream_material",
+        "taxonomy_code": "L2.MEM.HBM",
+        "nodes": [
+          {
+            "name": "Micron Technology, Inc.",
+            "ticker": "MU",
+            "role": "TODO: 该公司在链条中的位置",
+            "is_subject": true,
+            "listing_status": "listed"
+          },
+          {
+            "name": "000660.KS",
+            "ticker": "000660.KS",
+            "role": "同层（图谱）",
+            "listing_status": "listed"
+          },
+          {
+            "name": "005930.KS",
+            "ticker": "005930.KS",
+            "role": "同层（图谱）",
+            "listing_status": "listed"
+          }
+        ]
+      },
+      {
+        "layer": "cross_theme_root",
+        "nodes": [
+          {
+            "name": "存储工序设备与 IP",
+            "ticker": "VECO",
+            "role": "上游节点（图谱状态 filling）",
+            "listing_status": "listed"
+          },
+          {
+            "name": "HBM 压缩成型",
+            "ticker": "6315.T",
+            "role": "上游节点（图谱状态 monopoly_not_bottleneck）",
+            "listing_status": "listed"
+          }
+        ]
+      }
+    ]
+  },
+  "chokepoint_of_chokepoint": {
+    "statement": "TODO: 瓶颈的瓶颈",
+    "node": "TODO: 节点",
+    "status": "unknown",
+    "evidence_ids": []
+  },
+  "archetype_hits": [
+    {
+      "archetype": "ARC-SUPER-SUPPLIER",
+      "applies": "unknown",
+      "why": "TODO: 是否成立"
+    }
+  ],
+  "gates": {
+    "real_bottleneck": {
+      "status": "unknown",
+      "why": "TODO: 理由",
+      "evidence_ids": []
+    },
+    "pre_institutional": {
+      "status": "unknown",
+      "why": "TODO: 理由",
+      "evidence_ids": []
+    },
+    "cheap_derisked": {
+      "status": "unknown",
+      "why": "TODO: 理由",
+      "evidence_ids": []
+    }
+  },
+  "red_flags": [
+    {
+      "flag": "beneficial_owner_filings",
+      "severity": "watch",
+      "triggered": "unknown",
+      "detail": "TODO: 核实：New 13G/13D filers = institutional discovery or activist; read filer name and %.（PB-SIG-09）",
+      "evidence_ids": []
+    },
+    {
+      "flag": "insider_form4_activity",
+      "severity": "watch",
+      "triggered": "unknown",
+      "detail": "TODO: 核实：Classify open-market buys (code P) vs sales/grants; buys after a run-up are rarer signals.（PB-SIG-10）",
+      "evidence_ids": []
+    },
+    {
+      "flag": "going_concern_exhibit_only",
+      "severity": "watch",
+      "triggered": "unknown",
+      "detail": "TODO: 核实：4 going-concern hits are exhibits only (acquired-company or counterparty financials?) — not the registrant's own warning until read（PB-PHASE-01）",
+      "evidence_ids": []
+    },
+    {
+      "flag": "supply_concentration",
+      "severity": "watch",
+      "triggered": "unknown",
+      "detail": "TODO: 核实：sole/single-source language: is the company the sole source, or dependent on one?（ARC-SOLE-SOURCE）",
+      "evidence_ids": []
+    },
+    {
+      "flag": "capacity_language",
+      "severity": "watch",
+      "triggered": "unknown",
+      "detail": "TODO: 核实：capacity/lead-time language in filings — demand-limited or capacity-limited?（PB-CAP-04）",
+      "evidence_ids": []
+    }
+  ],
+  "valuation": {
+    "current": {
+      "price": 878.84,
+      "shares_outstanding": 1131423212.0,
+      "market_cap": 994339975634.08,
+      "currency": "USD",
+      "price_as_of": "2026-10-16T20:00:00Z",
+      "shares_as_of": "2026-10-02T00:00:00Z",
+      "evidence_ids": [
+        "E-LIVE-QUOTE",
+        "E-LIVE-SHARES"
+      ],
+      "net_debt": -40642000000.0
+    },
+    "ruler": "chokepoint_comparable",
+    "scenarios": [
+      {
+        "name": "bear",
+        "label": "hypothesis",
+        "horizon_years": 2,
+        "assumptions": {
+          "revenue": "TODO: 收入假设",
+          "multiple": "TODO: 倍数",
+          "multiple_basis": "ps",
+          "dilution_pct": 0.0
+        },
+        "implied_market_cap": 0,
+        "implied_per_share": 0,
+        "vs_current_pct": 0,
+        "assumption_sources": [
+          "E-LIVE-FIN"
+        ],
+        "narrative": "TODO: 情景叙述（≥20 字）"
+      },
+      {
+        "name": "base",
+        "label": "hypothesis",
+        "horizon_years": 2,
+        "assumptions": {
+          "revenue": "TODO: 收入假设",
+          "multiple": "TODO: 倍数",
+          "multiple_basis": "ps",
+          "dilution_pct": 0.0
+        },
+        "implied_market_cap": 0,
+        "implied_per_share": 0,
+        "vs_current_pct": 0,
+        "assumption_sources": [
+          "E-LIVE-FIN"
+        ],
+        "narrative": "TODO: 情景叙述（≥20 字）"
+      },
+      {
+        "name": "bull",
+        "label": "hypothesis",
+        "horizon_years": 2,
+        "assumptions": {
+          "revenue": "TODO: 收入假设",
+          "multiple": "TODO: 倍数",
+          "multiple_basis": "ps",
+          "dilution_pct": 0.0
+        },
+        "implied_market_cap": 0,
+        "implied_per_share": 0,
+        "vs_current_pct": 0,
+        "assumption_sources": [
+          "E-LIVE-FIN"
+        ],
+        "narrative": "TODO: 情景叙述（≥20 字）"
+      }
+    ]
+  },
+  "leading_signals": [
+    {
+      "signal": "TODO: 领先指标",
+      "type": "filing",
+      "confirms_if": "TODO: 确认条件",
+      "refutes_if": "TODO: 否定条件"
+    }
+  ],
+  "osint_leads": [],
+  "red_team": {
+    "not_real_bottleneck": "TODO: ",
+    "not_monetized": "TODO: ",
+    "already_priced": "TODO: ",
+    "better_alternative": {
+      "ticker": "VECO",
+      "why": "TODO: "
+    },
+    "biggest_kill_shot": "TODO: "
+  },
+  "falsification": [
+    {
+      "condition": "TODO: 可证伪条件",
+      "machine_checkable": false
+    }
+  ],
+  "serenity_memory": {
+    "status": "unavailable",
+    "note": "No Serenity stance ledger supplied (--ledger). Silence in this pack is not a view."
+  },
+  "serenity_view": {
+    "would_he_care": "maybe",
+    "why": "TODO: 按 Serenity 框架会怎么看",
+    "playbook_rules": []
+  },
+  "research_tier": "amber",
+  "tier_reason": "TODO: 分级理由",
+  "rerate_triggers": [
+    "TODO: 重估触发器"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E-LIVE-QUOTE",
+      "title": "MU quote 878.84 USD (NasdaqGS)",
+      "locator": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1y&interval=1d",
+      "published_at": "2026-10-16T20:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "market_data"
+    },
+    {
+      "evidence_id": "E-LIVE-SHARES",
+      "title": "Shares outstanding 1,131,423,212 as of 2026-10-02 (sec_companyfacts)",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+      "published_at": "2026-10-02T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-FIN",
+      "title": "Latest quarterly revenue 54,229,000,000 USD (period end 2026-09-03); TTM 133188000000; YoY 379.27%; GM 86.76%",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+      "published_at": "2026-09-03T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-01",
+      "title": "10-K filed 2026-10-09",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm",
+      "published_at": "2026-10-09T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-02",
+      "title": "10-Q filed 2026-06-25",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+      "published_at": "2026-06-25T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-03",
+      "title": "8-K filed 2026-09-30 (results of operations, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/mu-20260930.htm",
+      "published_at": "2026-09-30T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-04",
+      "title": "8-K filed 2026-08-26 (officer/director change, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000110465926101067/tm2624017d1_8k.htm",
+      "published_at": "2026-08-26T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-05",
+      "title": "8-K filed 2026-06-24 (results of operations, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/mu-20260624.htm",
+      "published_at": "2026-06-24T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-06",
+      "title": "8-K filed 2026-06-09 (officer/director change, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000110465926071845/tm2617112d1_8k.htm",
+      "published_at": "2026-06-09T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-07",
+      "title": "SCHEDULE 13G/A filed 2026-05-14",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000142284926000099/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-05-14T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-08",
+      "title": "SCHEDULE 13G filed 2026-04-30",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000210011926000795/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-04-30T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-01",
+      "title": "[lead] Micron Stock’s Drop Triggers ‘Buy the Dip’ Calls. No One’s Listening. - Barron's",
+      "locator": "https://news.google.com/rss/articles/CBMieEFVX3lxTE8xSUt3YVV0N3FhRFU4cTItNHB3UTJyMHUwY1NCbERhVG90SmVFcHowWnFLNUJRY2wzLXpaSHZyRzNKejBva3B0aEdRVnpqQ0V0NXIyUWpxWHhHRU94WWFkdDdOT1BreHhvU2RFV3Q0b0RYZzczT1JSTA?oc=5",
+      "published_at": "2026-10-16T17:59:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-02",
+      "title": "[lead] Micron Technology (MU) Pledges $50 Million For US Memory Research - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUTRveEp4eXNGNEt1RWloSEVnUlQzX19zRHEtRkdQREotZlJFVFZWeGdmMldMbG55cndOdGtlWEVqNk90MHE5OTc4cmdPZW5JYWg4QTFRWTlITTZZMmF6ZDUybVJ2M1FfYTZuWVVNQ1dpV2lRT2tzYlhpYzVPUEltcEJvVnAwdENLTlk4QlRXeVZySW1YWHhJ?oc=5",
+      "published_at": "2026-10-16T16:17:58Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-03",
+      "title": "[lead] Here is What to Know Beyond Why Micron Technology, Inc. (MU) is a Trending Stock - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQOFM1NW9lT1EwakNaTm5XNGplZjd2em1JVVJTdFFiczllMEoxMDNidnNXWUd1a1FfNVdncU5QUzdadWRHaGxnY0w3UUZwRzlYT01jRHRWY3lYVkZtbnBYdGZPbFNSVFBSeEFMb2dYXy10V1dqc0FHTFRvdHRPbDlzdmdROHo2Mmw3UE8tVUl0ZW5tUFE0TThYZUdyemdNSHM?oc=5",
+      "published_at": "2026-10-16T12:00:08Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-04",
+      "title": "[lead] Micron Is Down 23% From Its High. History Suggests This Is What Happens Next. - The Motley Fool",
+      "locator": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTkRqNGdUd3dpWFZOOTNkRkVzanIxZU8zTEsxcmRGVEhoTUFBWTc3X2tvaUkwYWtTd05TN2ttUk5fN3FjTi1tM2toU1laQ1J6QVpObk1PYU84T3ZRSklDcG45TjZFaFN1c2RnVExhNHNYVmg1V0JscVJfdk9BRkEtODQ0cERfb0FUVXkwQTVqZEFjX0FveDNfbQ?oc=5",
+      "published_at": "2026-10-16T05:30:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-05",
+      "title": "[lead] I Just Bought Micron Stock. Here's Why - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdDZvT3I1OXpUN3hwS2xocHdoem9qeUdPeWlINnIwV2JtTVY0TzFiZVlGMlh6SWtKZnRlZTBmd0VDWFM4Q3oxcFo4NnBaX2pWWjBCMkRFZmlmNW03UzJtNnN2Yl9JMUktRHZqa3hrNFNGS2hkc2dvU2FQS2dBSlhLUEdhSmQ1eHZHVEFnVERtdTFId1dvMzVmY3hDWQ?oc=5",
+      "published_at": "2026-10-15T20:05:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-06",
+      "title": "[lead] Why Is Micron Stock Still Dropping? - The Motley Fool",
+      "locator": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPVTBMeGcxaEdOLURGdzdyaHBJalRfckoxOE5lUXoyMGVSaFNmMVRkTFU4a2V1ZkdpZ1FRZ1RCdk5CSG0wSTBxNms4d21kOXNjWko2NEhjYVZieEo0c25KU2d6bjk5WmZhYWdnWk1NU1VOeHlCSUZlaEpnT2xqYlVPdnA3UQ?oc=5",
+      "published_at": "2026-10-15T15:55:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-DOC-01",
+      "title": "10-K filed 2026-10-09 (primary document)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm",
+      "published_at": "2026-10-09T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-DOC-02",
+      "title": "10-Q filed 2026-06-25 (primary document)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+      "published_at": "2026-06-25T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    }
+  ],
+  "live_data": {
+    "snapshot_path": "examples/live/mu-pack-2026-10-18/snapshots/MU.json",
+    "retrieved_at": "2026-10-18T04:43:33Z",
+    "source_hosts": [
+      "data.sec.gov",
+      "news.google.com",
+      "query1.finance.yahoo.com",
+      "www.sec.gov"
+    ],
+    "warnings_addressed": []
+  },
+  "framework_fit": {
+    "role": "chokepoint",
+    "fit": "strong",
+    "rationale": "TODO: 机械猜测 chokepoint/strong，需确认",
+    "rule_ids": [
+      "PB-FIT-01"
+    ]
+  },
+  "bottleneck_status": {
+    "status": "now",
+    "kind": "material",
+    "rationale": "TODO: 用实时数据确认图谱状态",
+    "evidence_ids": []
+  },
+  "phase": {
+    "stage": "volume_ramp",
+    "evidence": "TODO: 机械猜测 volume_ramp",
+    "evidence_ids": []
+  },
+  "purity": {
+    "exposure_pct_estimate": null,
+    "basis": "unknown",
+    "rationale": "TODO: 相关业务占比"
+  },
+  "risk_tier": "rerating",
+  "variant_perception": {
+    "consensus": "TODO: 市场共识",
+    "consensus_sources": [],
+    "our_view": "TODO: 差异化观点（需带数字）",
+    "reason_codes": [
+      "PB-VP-01"
+    ],
+    "when_market_sees": "TODO: 市场何时看到",
+    "first_number_to_prove_wrong": {
+      "metric": "TODO: ",
+      "operator": "<",
+      "threshold": 0,
+      "check_by": "TODO: YYYY-MM-DD"
+    },
+    "what_changed_since_archive": "TODO: 档案截止后的变化"
+  },
+  "next_hop_picks": [
+    {
+      "ticker": "VECO",
+      "name": "Veeco",
+      "relation": "upstream",
+      "node": "存储工序设备与 IP",
+      "why": "TODO: 为什么它是更好的下一跳",
+      "basis": "serenity_lead",
+      "verify_first": "python connectors/live_data.py snapshot VECO"
+    },
+    {
+      "ticker": "RMBS",
+      "name": "Rambus",
+      "relation": "upstream",
+      "node": "存储工序设备与 IP",
+      "why": "TODO: 为什么它是更好的下一跳",
+      "basis": "serenity_lead",
+      "verify_first": "python connectors/live_data.py snapshot RMBS"
+    },
+    {
+      "ticker": "ONTO",
+      "name": "Onto Innovation",
+      "relation": "upstream",
+      "node": "存储工序设备与 IP",
+      "why": "TODO: 为什么它是更好的下一跳",
+      "basis": "serenity_lead",
+      "verify_first": "python connectors/live_data.py snapshot ONTO"
+    }
+  ],
+  "audit_link": {
+    "research_output_id": "research:mu-2026-10-18",
+    "bundle_validated": false
+  },
+  "disclaimer": "框架声明：本 skill 根据 Serenity 公开发布的内容提炼研究框架，用于回测与研究分析；报告由框架生成，不代表 Serenity 本人观点，亦非投资建议。"
+}

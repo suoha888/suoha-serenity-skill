@@ -1,0 +1,10 @@
+{"case_id":"cross-market-001","task":"us_sources","prompt":"美国公司客户集中度和订单应先查哪些一手资料？","expected":{"must_include":["SEC","company_IR","transcript","source_routing"]}}
+{"case_id":"cross-market-002","task":"hk_sources","prompt":"港股公司融资、关联交易和流动性应查哪里？","expected":{"must_include":["HKEX","connected_transactions","placings","liquidity"]}}
+{"case_id":"cross-market-003","task":"a_share_sources","prompt":"A 股供应商客户和产能如何交叉核验？","expected":{"must_include":["交易所","公告","互动易","招投标"]}}
+{"case_id":"cross-market-004","task":"taiwan_sources","prompt":"台股半导体公司的月营收和客户线索去哪里查？","expected":{"must_include":["MOPS","monthly_revenue","company_IR"]}}
+{"case_id":"cross-market-005","task":"japan_sources","prompt":"日股设备公司的披露和汇率风险怎样处理？","expected":{"must_include":["TDnet","EDINET","FX","segment_disclosure"]}}
+{"case_id":"cross-market-006","task":"korea_sources","prompt":"韩股存储供应链应查哪些本地材料？","expected":{"must_include":["exchange_filings","company_IR","trade_sources","FX"]}}
+{"case_id":"cross-market-007","task":"europe_sources","prompt":"欧洲电力设备企业应如何做监管和项目文件核验？","expected":{"must_include":["local_exchange","regulator","project_documents","currency"]}}
+{"case_id":"cross-market-008","task":"same_chain","prompt":"同一条产业链迁移到不同市场时，哪些证据不能直接横向套用？","expected":{"must_include":["market_specific_sources","policy","currency","unknowns"]}}
+{"case_id":"cross-market-009","task":"listing_resolution","prompt":"同名公司在多个市场上市时，怎样先完成实体解析？","expected":{"must_include":["entity_resolution","listing","market","unknown"]}}
+{"case_id":"cross-market-010","task":"source_failure","prompt":"某市场本地资料打不开时，不要用另一个市场的二手资料冒充。","expected":{"must_include":["tool_failure","market_specific","not_established"]}}

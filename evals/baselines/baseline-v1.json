@@ -1,0 +1,7 @@
+{
+  "baseline_id": "baseline-v1",
+  "description": "Frozen reference for pre-v2 behavior comparison.",
+  "status": "reference_only",
+  "human_scores_required": true,
+  "notes": "Do not replace this metadata without recording a new baseline version."
+}

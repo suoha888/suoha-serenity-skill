@@ -1,0 +1,539 @@
+{
+  "schema_version": "6.0",
+  "kind": "live_snapshot",
+  "connector_version": "6.1.0",
+  "retrieved_at": "2026-10-18T04:43:33Z",
+  "subject": {
+    "input": "005930.KS",
+    "symbol": "005930.KS",
+    "confidence": 0.95,
+    "review_needed": false,
+    "reason": "explicit exchange suffix",
+    "exchange": "KOSPI",
+    "currency": "KRW",
+    "us_listed": false
+  },
+  "quote": {
+    "symbol": "005930.KS",
+    "name": "Samsung Electronics Co., Ltd.",
+    "exchange": "KSE",
+    "currency": "KRW",
+    "price": 215500.0,
+    "price_as_of": "2026-10-16T06:30:05Z",
+    "fifty_two_week_high": 374500.0,
+    "fifty_two_week_low": 94500.0,
+    "drawdown_from_52w_high_pct": -42.46,
+    "return_pct": {
+      "1m": -14.99,
+      "3m": -15.49,
+      "6m": -0.23,
+      "1y": 121.03
+    },
+    "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/005930.KS?range=1y&interval=1d",
+    "status": "ok"
+  },
+  "fundamentals": {
+    "provider": "yahoo_timeseries",
+    "summary": {
+      "shares_outstanding": 5792563304.0,
+      "shares_as_of": "2026-06-30",
+      "share_count_change_pct_vs_4_obs_ago": -1.43,
+      "revenue_quarterly": [
+        {
+          "as_of": "2025-06-30",
+          "value": 74566317000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 86061747000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 93837371000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 133873444000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 171499470000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "reporting_currency": "KRW",
+      "revenue_ttm": 485272032000000.0,
+      "revenue_yoy_pct": 130.0,
+      "revenue_qoq_pct": 28.11,
+      "revenue_annual_latest": {
+        "as_of": "2025-12-31",
+        "value": 333605938000000.0,
+        "currency": "KRW"
+      },
+      "gross_margin_quarterly": [
+        {
+          "as_of": "2025-06-30",
+          "pct": 34.19
+        },
+        {
+          "as_of": "2025-09-30",
+          "pct": 38.92
+        },
+        {
+          "as_of": "2025-12-31",
+          "pct": 47.16
+        },
+        {
+          "as_of": "2026-03-31",
+          "pct": 61.19
+        },
+        {
+          "as_of": "2026-06-30",
+          "pct": 69.56
+        }
+      ],
+      "gross_margin_change_yoy_pp": 35.37
+    },
+    "series": {
+      "annualGrossProfit": [
+        {
+          "as_of": "2024-12-31",
+          "value": 114308635000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 131370425000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyOperatingCashFlow": [
+        {
+          "as_of": "2025-06-30",
+          "value": 17360136000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 22574494000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 28799652000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 40274106000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 105081086000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "annualTotalRevenue": [
+        {
+          "as_of": "2024-12-31",
+          "value": 300870903000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 333605938000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyOperatingIncome": [
+        {
+          "as_of": "2025-06-30",
+          "value": 4676057000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 12166062000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 20073660000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 57232797000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 89492412000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyOrdinarySharesNumber": [
+        {
+          "as_of": "2025-06-30",
+          "value": 5876745450.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 5828224765.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 6630180138.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 5792563304.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 5792563304.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyTotalDebt": [
+        {
+          "as_of": "2025-06-30",
+          "value": 14029673000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 16672280000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 25239139000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 28138794000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 22408721000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyTotalRevenue": [
+        {
+          "as_of": "2025-06-30",
+          "value": 74566317000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 86061747000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 93837371000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 133873444000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 171499470000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyCapitalExpenditure": [
+        {
+          "as_of": "2025-06-30",
+          "value": -15484918000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": -10523263000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": -12759490000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": -18176955000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": -14783327000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyCashAndCashEquivalents": [
+        {
+          "as_of": "2025-06-30",
+          "value": 47120025000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 53399483000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 57856378000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 73306751000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 92916382000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyGrossProfit": [
+        {
+          "as_of": "2025-06-30",
+          "value": 25496751000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 33492127000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 44250975000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 81913173000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 119300711000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyNetIncome": [
+        {
+          "as_of": "2025-06-30",
+          "value": 4934034000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 12006461000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 19292054000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 47101190000000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 71269468000000.0,
+          "currency": "KRW"
+        }
+      ],
+      "quarterlyMarketCap": [
+        {
+          "as_of": "2025-06-30",
+          "value": 391820123778000.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-09-30",
+          "value": 542728079469900.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2025-12-31",
+          "value": 776814700154200.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-03-31",
+          "value": 1059986901570800.0,
+          "currency": "KRW"
+        },
+        {
+          "as_of": "2026-06-30",
+          "value": 2095342790638000.0,
+          "currency": "KRW"
+        }
+      ]
+    },
+    "source_url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/005930.KS?type=quarterlyOrdinarySharesNumber,quarterlyTotalRevenue,quarterlyGrossProfit,quarterlyOperatingIncome,quarterlyNetIncome,quarterlyCashAndCashEquivalents,quarterlyTotalDebt,quarterlyOperatingCashFlow,quarterlyCapitalExpenditure,annualTotalRevenue,annualGrossProfit,quarterlyMarketCap&period1=1714608000&period2=1792368000",
+    "status": "ok"
+  },
+  "filings": {
+    "status": "unavailable",
+    "error": "non_US_issuer: use exchange filings (see references/market-source-playbook.md)"
+  },
+  "market_current": {
+    "price": 215500.0,
+    "currency": "KRW",
+    "quote_currency": "KRW",
+    "price_as_of": "2026-10-16T06:30:05Z",
+    "shares_outstanding": 5792563304.0,
+    "shares_as_of": "2026-06-30T00:00:00Z",
+    "market_cap": 1248297392012000.0,
+    "evidence_ids": [
+      "E-LIVE-QUOTE",
+      "E-LIVE-SHARES"
+    ],
+    "basis": "price x latest reported shares (calculated, not provider market cap)",
+    "notes": [
+      "Samsung Electronics preferred shares (005935.KS) are excluded; common-only value understates group equity."
+    ]
+  },
+  "usd_view": {
+    "rates": {
+      "KRW": {
+        "pair": "KRWUSD",
+        "rate": 0.0008,
+        "as_of": "2026-10-18T03:30:30Z",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/KRWUSD%3DX?range=5d&interval=1d",
+        "status": "ok"
+      }
+    },
+    "market_cap_usd": 998637913609.6,
+    "revenue_ttm_usd": 388217625600.0,
+    "revenue_basis": "ttm",
+    "ps_ttm": 2.57,
+    "note": "USD values use spot FX for comparison only; lens arithmetic stays in the quote currency."
+  },
+  "evidence": [
+    {
+      "evidence_id": "E-LIVE-QUOTE",
+      "title": "005930.KS quote 215500.0 KRW (KSE)",
+      "locator": "https://query1.finance.yahoo.com/v8/finance/chart/005930.KS?range=1y&interval=1d",
+      "published_at": "2026-10-16T06:30:05Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "market_data"
+    },
+    {
+      "evidence_id": "E-LIVE-SHARES",
+      "title": "Shares outstanding 5,792,563,304 as of 2026-06-30 (yahoo_timeseries)",
+      "locator": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/005930.KS?type=quarterlyOrdinarySharesNumber,quarterlyTotalRevenue,quarterlyGrossProfit,quarterlyOperatingIncome,quarterlyNetIncome,quarterlyCashAndCashEquivalents,quarterlyTotalDebt,quarterlyOperatingCashFlow,quarterlyCapitalExpenditure,annualTotalRevenue,annualGrossProfit,quarterlyMarketCap&period1=1714608000&period2=1792368000",
+      "published_at": "2026-06-30T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "market_data"
+    },
+    {
+      "evidence_id": "E-LIVE-FIN",
+      "title": "Latest quarterly revenue 171,499,470,000,000 KRW (period end 2026-06-30); TTM 485272032000000.0; YoY 130.0%; GM 69.56%",
+      "locator": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/005930.KS?type=quarterlyOrdinarySharesNumber,quarterlyTotalRevenue,quarterlyGrossProfit,quarterlyOperatingIncome,quarterlyNetIncome,quarterlyCashAndCashEquivalents,quarterlyTotalDebt,quarterlyOperatingCashFlow,quarterlyCapitalExpenditure,annualTotalRevenue,annualGrossProfit,quarterlyMarketCap&period1=1714608000&period2=1792368000",
+      "published_at": "2026-06-30T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "market_data"
+    },
+    {
+      "evidence_id": "E-LIVE-FX-KRW",
+      "title": "FX KRWUSD 0.0008",
+      "locator": "https://query1.finance.yahoo.com/v8/finance/chart/KRWUSD%3DX?range=5d&interval=1d",
+      "published_at": "2026-10-18T03:30:30Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "market_data"
+    }
+  ],
+  "warnings": [
+    "share_class_note_partial: Samsung Electronics preferred shares (005935.KS) are excluded; common-only value understates group equity.",
+    "sec_filings_not_applicable_non_us: read exchange filings (DART/MOPS/TDnet/RNS) for financing and contracts"
+  ],
+  "fetch_log": [
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1y&interval=1d",
+      "cache": "hit"
+    },
+    {
+      "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000660.KS?range=1y&interval=1d",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/000660.KS?type=quarterlyOrdinarySharesNumber,quarterlyTotalRevenue,quarterlyGrossProfit,quarterlyOperatingIncome,quarterlyNetIncome,quarterlyCashAndCashEquivalents,quarterlyTotalDebt,quarterlyOperatingCashFlow,quarterlyCapitalExpenditure,annualTotalRevenue,annualGrossProfit,quarterlyMarketCap&period1=1714608000&period2=1792368000",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/005930.KS?type=quarterlyOrdinarySharesNumber,quarterlyTotalRevenue,quarterlyGrossProfit,quarterlyOperatingIncome,quarterlyNetIncome,quarterlyCashAndCashEquivalents,quarterlyTotalDebt,quarterlyOperatingCashFlow,quarterlyCapitalExpenditure,annualTotalRevenue,annualGrossProfit,quarterlyMarketCap&period1=1714608000&period2=1792368000",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/005930.KS?range=1y&interval=1d",
+      "cache": "hit"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000723125.json",
+      "cache": "hit"
+    },
+    {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22sole+source%22+OR+%22single+source%22+OR+%22sole+supplier%22+OR+%22single+supplier%22+OR+%22limited+number+of+suppliers%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22largest+customer%22+OR+%22one+customer+accounted%22+OR+%22two+customers+accounted%22+OR+%22customer+concentration%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KRWUSD%3DX?range=5d&interval=1d",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22at-the-market%22+OR+%22at+the+market+offering%22+OR+%22equity+distribution+agreement%22+OR+%22sales+agreement%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22substantial+doubt%22+OR+%22going+concern%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22capacity+constrained%22+OR+%22supply+constrained%22+OR+%22lead+times%22+OR+%22sold+out%22+OR+%22allocation%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KRWUSD%3DX?range=5d&interval=1d",
+      "cache": "memo"
+    }
+  ],
+  "elapsed_seconds": 0.09,
+  "disclaimer": "Live data leads for research only; not investment advice. Verify material claims in primary sources."
+}

@@ -1,0 +1,1281 @@
+{
+ "truth_version": "1",
+ "as_of": "2026-10-18",
+ "description": "Official identities (name, currency, exchange) per symbol from dated live snapshots. A guard against wrong-ticker reports, not investment data.",
+ "entries": {
+  "000660.KS": {
+   "symbol": "000660.KS",
+   "official_name": "SK hynix Inc.",
+   "names": [
+    "SK hynix Inc."
+   ],
+   "currency": "KRW",
+   "exchange": "KSE",
+   "venue": "KOSPI",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/000660.KS?range=1y&interval=1d"
+   ]
+  },
+  "002050.SZ": {
+   "symbol": "002050.SZ",
+   "official_name": "Zhejiang Sanhua Intelligent Controls Co.,Ltd",
+   "names": [
+    "Zhejiang Sanhua Intelligent Controls Co.,Ltd",
+    "三花智控"
+   ],
+   "currency": "CNY",
+   "exchange": "Shenzhen",
+   "venue": "Shenzhen",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/002050.SZ?range=1y&interval=1d",
+    "https://qt.gtimg.cn/q=sz002050"
+   ]
+  },
+  "005930.KS": {
+   "symbol": "005930.KS",
+   "official_name": "Samsung Electronics Co., Ltd.",
+   "names": [
+    "Samsung Electronics Co., Ltd."
+   ],
+   "currency": "KRW",
+   "exchange": "KSE",
+   "venue": "KOSPI",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/005930.KS?range=1y&interval=1d"
+   ]
+  },
+  "011790.KS": {
+   "symbol": "011790.KS",
+   "official_name": "SKC Co., Ltd.",
+   "names": [
+    "SKC Co., Ltd."
+   ],
+   "currency": "KRW",
+   "exchange": "KSE",
+   "venue": "KOSPI",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/011790.KS?range=1y&interval=1d"
+   ]
+  },
+  "2337.TW": {
+   "symbol": "2337.TW",
+   "official_name": "Macronix International Co., Ltd.",
+   "names": [
+    "Macronix International Co., Ltd.",
+    "旺宏"
+   ],
+   "currency": "TWD",
+   "exchange": "Taiwan",
+   "venue": "TWSE",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/2337.TW?range=1y&interval=1d"
+   ]
+  },
+  "2408.TW": {
+   "symbol": "2408.TW",
+   "official_name": "Nanya Technology Corporation",
+   "names": [
+    "Nanya Technology Corporation",
+    "南亞科"
+   ],
+   "currency": "TWD",
+   "exchange": "Taiwan",
+   "venue": "TWSE",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/2408.TW?range=1y&interval=1d"
+   ]
+  },
+  "2802.T": {
+   "symbol": "2802.T",
+   "official_name": "Ajinomoto Co., Inc.",
+   "names": [
+    "Ajinomoto Co., Inc."
+   ],
+   "currency": "JPY",
+   "exchange": "Tokyo",
+   "venue": "Tokyo",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:13:02Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/2802.T?range=1y&interval=1d"
+   ]
+  },
+  "300308.SZ": {
+   "symbol": "300308.SZ",
+   "official_name": "Zhongji Innolight Co., Ltd.",
+   "names": [
+    "Zhongji Innolight Co., Ltd.",
+    "中际旭创"
+   ],
+   "currency": "CNY",
+   "exchange": "Shenzhen",
+   "venue": "Shenzhen",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/300308.SZ?range=1y&interval=1d",
+    "https://qt.gtimg.cn/q=sz300308"
+   ]
+  },
+  "3081.TWO": {
+   "symbol": "3081.TWO",
+   "official_name": "LandMark Optoelectronics Corporation",
+   "names": [
+    "LandMark Optoelectronics Corporation",
+    "聯亞"
+   ],
+   "currency": "TWD",
+   "exchange": "Taipei Exchange",
+   "venue": "TPEx",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:14:43Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/3081.TWO?range=1y&interval=1d"
+   ]
+  },
+  "3105.TWO": {
+   "symbol": "3105.TWO",
+   "official_name": "WIN Semiconductors Corp.",
+   "names": [
+    "WIN Semiconductors Corp.",
+    "穩懋"
+   ],
+   "currency": "TWD",
+   "exchange": "Taipei Exchange",
+   "venue": "TPEx",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/3105.TWO?range=1y&interval=1d"
+   ]
+  },
+  "3110.T": {
+   "symbol": "3110.T",
+   "official_name": "Nitto Boseki Co., Ltd.",
+   "names": [
+    "Nitto Boseki Co., Ltd."
+   ],
+   "currency": "JPY",
+   "exchange": "Tokyo",
+   "venue": "Tokyo",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:13:02Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/3110.T?range=1y&interval=1d"
+   ]
+  },
+  "3363.TWO": {
+   "symbol": "3363.TWO",
+   "official_name": "FOCI Fiber Optic Communications, Inc.",
+   "names": [
+    "FOCI Fiber Optic Communications, Inc.",
+    "上詮"
+   ],
+   "currency": "TWD",
+   "exchange": "Taipei Exchange",
+   "venue": "TPEx",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/3363.TWO?range=1y&interval=1d"
+   ]
+  },
+  "4063.T": {
+   "symbol": "4063.T",
+   "official_name": "Shin-Etsu Chemical Co., Ltd.",
+   "names": [
+    "Shin-Etsu Chemical Co., Ltd."
+   ],
+   "currency": "JPY",
+   "exchange": "Tokyo",
+   "venue": "Tokyo",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:13:02Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/4063.T?range=1y&interval=1d"
+   ]
+  },
+  "4092.T": {
+   "symbol": "4092.T",
+   "official_name": "Nippon Chemical Industrial Co., Ltd.",
+   "names": [
+    "Nippon Chemical Industrial Co., Ltd."
+   ],
+   "currency": "JPY",
+   "exchange": "Tokyo",
+   "venue": "Tokyo",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:13:02Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/4092.T?range=1y&interval=1d"
+   ]
+  },
+  "4971.TWO": {
+   "symbol": "4971.TWO",
+   "official_name": "IntelliEPI Inc. (Cayman)",
+   "names": [
+    "IntelliEPI Inc. (Cayman)",
+    "IET-KY"
+   ],
+   "currency": "TWD",
+   "exchange": "Taipei Exchange",
+   "venue": "TPEx",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/4971.TWO?range=1y&interval=1d"
+   ]
+  },
+  "5016.T": {
+   "symbol": "5016.T",
+   "official_name": "JX Advanced Metals Corporation",
+   "names": [
+    "JX Advanced Metals Corporation"
+   ],
+   "currency": "JPY",
+   "exchange": "Tokyo",
+   "venue": "Tokyo",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:13:02Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/5016.T?range=1y&interval=1d"
+   ]
+  },
+  "5714.T": {
+   "symbol": "5714.T",
+   "official_name": "Dowa Holdings Co., Ltd.",
+   "names": [
+    "Dowa Holdings Co., Ltd."
+   ],
+   "currency": "JPY",
+   "exchange": "Tokyo",
+   "venue": "Tokyo",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:13:02Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/5714.T?range=1y&interval=1d"
+   ]
+  },
+  "5802.T": {
+   "symbol": "5802.T",
+   "official_name": "Sumitomo Electric Industries, Ltd.",
+   "names": [
+    "Sumitomo Electric Industries, Ltd."
+   ],
+   "currency": "JPY",
+   "exchange": "Tokyo",
+   "venue": "Tokyo",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:13:02Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/5802.T?range=1y&interval=1d"
+   ]
+  },
+  "6315.T": {
+   "symbol": "6315.T",
+   "official_name": "TOWA Corporation",
+   "names": [
+    "TOWA Corporation"
+   ],
+   "currency": "JPY",
+   "exchange": "Tokyo",
+   "venue": "Tokyo",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:13:02Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/6315.T?range=1y&interval=1d"
+   ]
+  },
+  "6324.T": {
+   "symbol": "6324.T",
+   "official_name": "Harmonic Drive Systems Inc.",
+   "names": [
+    "Harmonic Drive Systems Inc."
+   ],
+   "currency": "JPY",
+   "exchange": "Tokyo",
+   "venue": "Tokyo",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:13:02Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/6324.T?range=1y&interval=1d"
+   ]
+  },
+  "6451.TW": {
+   "symbol": "6451.TW",
+   "official_name": "ShunSin Technology Holdings Limited",
+   "names": [
+    "ShunSin Technology Holdings Limited",
+    "訊芯-KY"
+   ],
+   "currency": "TWD",
+   "exchange": "Taiwan",
+   "venue": "TWSE",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/6451.TW?range=1y&interval=1d"
+   ]
+  },
+  "6830.TW": {
+   "symbol": "6830.TW",
+   "official_name": "Msscorps Co., Ltd.",
+   "names": [
+    "Msscorps Co., Ltd.",
+    "汎銓"
+   ],
+   "currency": "TWD",
+   "exchange": "Taiwan",
+   "venue": "TWSE",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/6830.TW?range=1y&interval=1d"
+   ]
+  },
+  "688017.SS": {
+   "symbol": "688017.SS",
+   "official_name": "Leader Harmonious Drive Systems Co., Ltd.",
+   "names": [
+    "Leader Harmonious Drive Systems Co., Ltd.",
+    "绿的谐波"
+   ],
+   "currency": "CNY",
+   "exchange": "Shanghai",
+   "venue": "Shanghai",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/688017.SS?range=1y&interval=1d",
+    "https://qt.gtimg.cn/q=sh688017"
+   ]
+  },
+  "8147.TWO": {
+   "symbol": "8147.TWO",
+   "official_name": "Nextronics Engineering Corp.",
+   "names": [
+    "Nextronics Engineering Corp.",
+    "正淩"
+   ],
+   "currency": "TWD",
+   "exchange": "Taipei Exchange",
+   "venue": "TPEx",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/8147.TWO?range=1y&interval=1d"
+   ]
+  },
+  "8299.TWO": {
+   "symbol": "8299.TWO",
+   "official_name": "Phison Electronics Corp.",
+   "names": [
+    "Phison Electronics Corp.",
+    "群聯"
+   ],
+   "currency": "TWD",
+   "exchange": "Taipei Exchange",
+   "venue": "TPEx",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/8299.TWO?range=1y&interval=1d"
+   ]
+  },
+  "AA": {
+   "symbol": "AA",
+   "official_name": "Alcoa Corporation",
+   "names": [
+    "Alcoa Corporation",
+    "Alcoa Corp"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1675149,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/AA?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "AAOI": {
+   "symbol": "AAOI",
+   "official_name": "Applied Optoelectronics, Inc.",
+   "names": [
+    "Applied Optoelectronics, Inc.",
+    "APPLIED OPTOELECTRONICS, INC."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGM",
+   "venue": "US",
+   "sec_cik": 1158114,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/AAOI?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "AEHR": {
+   "symbol": "AEHR",
+   "official_name": "Aehr Test Systems, Inc.",
+   "names": [
+    "Aehr Test Systems, Inc.",
+    "AEHR TEST SYSTEMS"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqCM",
+   "venue": "US",
+   "sec_cik": 1040470,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/AEHR?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "AEVA": {
+   "symbol": "AEVA",
+   "official_name": "Aeva Technologies, Inc.",
+   "names": [
+    "Aeva Technologies, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1789029,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/AEVA?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "ALM": {
+   "symbol": "ALM",
+   "official_name": "Almonty Industries Inc.",
+   "names": [
+    "Almonty Industries Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqCM",
+   "venue": "US",
+   "sec_cik": 1670061,
+   "verified_at": "2026-10-18T07:14:43Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/ALM?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "ALRIB.PA": {
+   "symbol": "ALRIB.PA",
+   "official_name": "Riber S.A.",
+   "names": [
+    "Riber S.A."
+   ],
+   "currency": "EUR",
+   "exchange": "Paris",
+   "venue": "Euronext Paris",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/ALRIB.PA?range=1y&interval=1d"
+   ]
+  },
+  "AMD": {
+   "symbol": "AMD",
+   "official_name": "Advanced Micro Devices, Inc.",
+   "names": [
+    "Advanced Micro Devices, Inc.",
+    "ADVANCED MICRO DEVICES INC"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 2488,
+   "verified_at": "2026-10-18T07:13:58Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "AMKR": {
+   "symbol": "AMKR",
+   "official_name": "Amkor Technology, Inc.",
+   "names": [
+    "Amkor Technology, Inc.",
+    "AMKOR TECHNOLOGY, INC."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1047127,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/AMKR?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "ASX": {
+   "symbol": "ASX",
+   "official_name": "ASE Technology Holding Co., Ltd.",
+   "names": [
+    "ASE Technology Holding Co., Ltd."
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1122411,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/ASX?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "AVGO": {
+   "symbol": "AVGO",
+   "official_name": "Broadcom Inc.",
+   "names": [
+    "Broadcom Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1730168,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "AXTI": {
+   "symbol": "AXTI",
+   "official_name": "AXT, Inc.",
+   "names": [
+    "AXT, Inc.",
+    "AXT INC"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1051627,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/AXTI?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "BESI.AS": {
+   "symbol": "BESI.AS",
+   "official_name": "BE Semiconductor Industries N.V.",
+   "names": [
+    "BE Semiconductor Industries N.V."
+   ],
+   "currency": "EUR",
+   "exchange": "Amsterdam",
+   "venue": "Euronext Amsterdam",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/BESI.AS?range=1y&interval=1d"
+   ]
+  },
+  "CODA": {
+   "symbol": "CODA",
+   "official_name": "Coda Octopus Group, Inc.",
+   "names": [
+    "Coda Octopus Group, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqCM",
+   "venue": "US",
+   "sec_cik": 1334325,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/CODA?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "COHR": {
+   "symbol": "COHR",
+   "official_name": "Coherent Corp.",
+   "names": [
+    "Coherent Corp.",
+    "COHERENT CORP."
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 820318,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "EXA.PA": {
+   "symbol": "EXA.PA",
+   "official_name": "Exail Technologies",
+   "names": [
+    "Exail Technologies"
+   ],
+   "currency": "EUR",
+   "exchange": "Paris",
+   "venue": "Euronext Paris",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/EXA.PA?range=1y&interval=1d"
+   ]
+  },
+  "FLNC": {
+   "symbol": "FLNC",
+   "official_name": "Fluence Energy, Inc.",
+   "names": [
+    "Fluence Energy, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1868941,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/FLNC?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "FN": {
+   "symbol": "FN",
+   "official_name": "Fabrinet",
+   "names": [
+    "Fabrinet"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1408710,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/FN?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "FORM": {
+   "symbol": "FORM",
+   "official_name": "FormFactor, Inc.",
+   "names": [
+    "FormFactor, Inc.",
+    "FORMFACTOR INC"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1039399,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/FORM?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "GFS": {
+   "symbol": "GFS",
+   "official_name": "GLOBALFOUNDRIES Inc.",
+   "names": [
+    "GLOBALFOUNDRIES Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1709048,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/GFS?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "HIMX": {
+   "symbol": "HIMX",
+   "official_name": "Himax Technologies, Inc.",
+   "names": [
+    "Himax Technologies, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1342338,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/HIMX?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "HPS-A.TO": {
+   "symbol": "HPS-A.TO",
+   "official_name": "Hammond Power Solutions Inc.",
+   "names": [
+    "Hammond Power Solutions Inc."
+   ],
+   "currency": "CAD",
+   "exchange": "Toronto",
+   "venue": "TSX",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/HPS-A.TO?range=1y&interval=1d"
+   ]
+  },
+  "IQE.L": {
+   "symbol": "IQE.L",
+   "official_name": "IQE plc",
+   "names": [
+    "IQE plc"
+   ],
+   "currency": "GBp",
+   "exchange": "LSE",
+   "venue": "London",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/IQE.L?range=1y&interval=1d"
+   ]
+  },
+  "LASR": {
+   "symbol": "LASR",
+   "official_name": "nLIGHT, Inc.",
+   "names": [
+    "nLIGHT, Inc.",
+    "NLIGHT, INC."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1124796,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/LASR?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "LEU": {
+   "symbol": "LEU",
+   "official_name": "Centrus Energy Corp.",
+   "names": [
+    "Centrus Energy Corp.",
+    "CENTRUS ENERGY CORP"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1065059,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/LEU?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "LITE": {
+   "symbol": "LITE",
+   "official_name": "Lumentum Holdings Inc.",
+   "names": [
+    "Lumentum Holdings Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1633978,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/LITE?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "LPK.DE": {
+   "symbol": "LPK.DE",
+   "official_name": "LPKF Laser & Electronics SE",
+   "names": [
+    "LPKF Laser & Electronics SE"
+   ],
+   "currency": "EUR",
+   "exchange": "XETRA",
+   "venue": "XETRA",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/LPK.DE?range=1y&interval=1d"
+   ]
+  },
+  "LPTH": {
+   "symbol": "LPTH",
+   "official_name": "LightPath Technologies, Inc.",
+   "names": [
+    "LightPath Technologies, Inc.",
+    "LIGHTPATH TECHNOLOGIES INC"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqCM",
+   "venue": "US",
+   "sec_cik": 889971,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/LPTH?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "MP": {
+   "symbol": "MP",
+   "official_name": "MP Materials Corp.",
+   "names": [
+    "MP Materials Corp.",
+    "MP Materials Corp. / DE"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1801368,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/MP?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "MRVL": {
+   "symbol": "MRVL",
+   "official_name": "Marvell Technology, Inc.",
+   "names": [
+    "Marvell Technology, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1835632,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "MTRN": {
+   "symbol": "MTRN",
+   "official_name": "Materion Corporation",
+   "names": [
+    "Materion Corporation",
+    "MATERION Corp"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1104657,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/MTRN?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "MTSI": {
+   "symbol": "MTSI",
+   "official_name": "MACOM Technology Solutions Holdings, Inc.",
+   "names": [
+    "MACOM Technology Solutions Holdings, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1493594,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/MTSI?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "MU": {
+   "symbol": "MU",
+   "official_name": "Micron Technology, Inc.",
+   "names": [
+    "Micron Technology, Inc.",
+    "MICRON TECHNOLOGY INC"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 723125,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "NVDA": {
+   "symbol": "NVDA",
+   "official_name": "NVIDIA Corporation",
+   "names": [
+    "NVIDIA Corporation",
+    "NVIDIA CORP"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1045810,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "NVTS": {
+   "symbol": "NVTS",
+   "official_name": "Navitas Semiconductor Corporation",
+   "names": [
+    "Navitas Semiconductor Corporation",
+    "Navitas Semiconductor Corp"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGM",
+   "venue": "US",
+   "sec_cik": 1821769,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/NVTS?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "ONTO": {
+   "symbol": "ONTO",
+   "official_name": "Onto Innovation Inc.",
+   "names": [
+    "Onto Innovation Inc.",
+    "ONTO INNOVATION INC."
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 704532,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/ONTO?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "PFGC": {
+   "symbol": "PFGC",
+   "official_name": "Performance Food Group Company",
+   "names": [
+    "Performance Food Group Company",
+    "Performance Food Group Co"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1618673,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/PFGC?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "POET": {
+   "symbol": "POET",
+   "official_name": "POET Technologies Inc.",
+   "names": [
+    "POET Technologies Inc.",
+    "POET TECHNOLOGIES INC."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqCM",
+   "venue": "US",
+   "sec_cik": 1437424,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/POET?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "RMBS": {
+   "symbol": "RMBS",
+   "official_name": "Rambus Inc.",
+   "names": [
+    "Rambus Inc.",
+    "RAMBUS INC"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 917273,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/RMBS?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "SIVE.ST": {
+   "symbol": "SIVE.ST",
+   "official_name": "Sivers Semiconductors AB (publ)",
+   "names": [
+    "Sivers Semiconductors AB (publ)"
+   ],
+   "currency": "SEK",
+   "exchange": "Stockholm",
+   "venue": "Nasdaq Stockholm",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/SIVE.ST?range=1y&interval=1d"
+   ]
+  },
+  "SNDK": {
+   "symbol": "SNDK",
+   "official_name": "Sandisk Corporation",
+   "names": [
+    "Sandisk Corporation",
+    "Sandisk Corp"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 2023554,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/SNDK?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "SOI.PA": {
+   "symbol": "SOI.PA",
+   "official_name": "Soitec SA",
+   "names": [
+    "Soitec SA"
+   ],
+   "currency": "EUR",
+   "exchange": "Paris",
+   "venue": "Euronext Paris",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/SOI.PA?range=1y&interval=1d"
+   ]
+  },
+  "SSYS": {
+   "symbol": "SSYS",
+   "official_name": "Stratasys Ltd.",
+   "names": [
+    "Stratasys Ltd.",
+    "STRATASYS LTD."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1517396,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/SSYS?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "SYY": {
+   "symbol": "SYY",
+   "official_name": "Sysco Corporation",
+   "names": [
+    "Sysco Corporation",
+    "SYSCO CORP"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 96021,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/SYY?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "TECK": {
+   "symbol": "TECK",
+   "official_name": "Teck Resources Limited",
+   "names": [
+    "Teck Resources Limited",
+    "TECK RESOURCES LTD"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 886986,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/TECK?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "TSEM": {
+   "symbol": "TSEM",
+   "official_name": "Tower Semiconductor Ltd.",
+   "names": [
+    "Tower Semiconductor Ltd.",
+    "TOWER SEMICONDUCTOR LTD"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 928876,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/TSEM?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "TSM": {
+   "symbol": "TSM",
+   "official_name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "names": [
+    "Taiwan Semiconductor Manufacturing Company Limited",
+    "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1046179,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/TSM?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "UAMY": {
+   "symbol": "UAMY",
+   "official_name": "United States Antimony Corporation",
+   "names": [
+    "United States Antimony Corporation",
+    "UNITED STATES ANTIMONY CORP"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 101538,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/UAMY?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "USAR": {
+   "symbol": "USAR",
+   "official_name": "USA Rare Earth, Inc.",
+   "names": [
+    "USA Rare Earth, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGM",
+   "venue": "US",
+   "sec_cik": 1970622,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/USAR?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "VECO": {
+   "symbol": "VECO",
+   "official_name": "Veeco Instruments Inc.",
+   "names": [
+    "Veeco Instruments Inc.",
+    "VEECO INSTRUMENTS INC"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 103145,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/VECO?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "VIAV": {
+   "symbol": "VIAV",
+   "official_name": "Viavi Solutions Inc.",
+   "names": [
+    "Viavi Solutions Inc.",
+    "VIAVI SOLUTIONS INC."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 912093,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/VIAV?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "VNP.TO": {
+   "symbol": "VNP.TO",
+   "official_name": "5N Plus Inc.",
+   "names": [
+    "5N Plus Inc."
+   ],
+   "currency": "CAD",
+   "exchange": "Toronto",
+   "venue": "TSX",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/VNP.TO?range=1y&interval=1d"
+   ]
+  },
+  "VPG": {
+   "symbol": "VPG",
+   "official_name": "Vishay Precision Group, Inc.",
+   "names": [
+    "Vishay Precision Group, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1487952,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/VPG?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "VRT": {
+   "symbol": "VRT",
+   "official_name": "Vertiv Holdings Co",
+   "names": [
+    "Vertiv Holdings Co"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1674101,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "XFAB.PA": {
+   "symbol": "XFAB.PA",
+   "official_name": "X-FAB Silicon Foundries SE",
+   "names": [
+    "X-FAB Silicon Foundries SE"
+   ],
+   "currency": "EUR",
+   "exchange": "Paris",
+   "venue": "Euronext Paris",
+   "sec_cik": null,
+   "verified_at": "2026-10-18T07:10:36Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/XFAB.PA?range=1y&interval=1d"
+   ]
+  }
+ }
+}

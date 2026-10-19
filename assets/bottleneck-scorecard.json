@@ -1,0 +1,221 @@
+{
+  "schema_version": "4",
+  "bottleneck_id": "bottleneck:example",
+  "topic": "Example supply-chain theme",
+  "layer": "Qualified component or process",
+  "constraint_type": "qualification",
+  "physical_mechanism": "Describe the physical or process constraint in one sentence.",
+  "assessment_as_of": "2026-09-12T00:00:00Z",
+  "research_cutoff": "2026-09-12T00:00:00Z",
+  "dimensions": [
+    {
+      "dimension": "supplier_concentration",
+      "status": "unknown",
+      "assessment": "How many credible suppliers can meet the required specification?",
+      "value": null,
+      "unit": "count or qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Name the source or metric that would resolve this."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "substitutability",
+      "status": "unknown",
+      "assessment": "Can the customer switch without a redesign or requalification?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Identify qualified alternatives."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "qualification_burden",
+      "status": "unknown",
+      "assessment": "Record qualification duration, cost, and production gate.",
+      "value": null,
+      "unit": "months or qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find a dated engineering or customer source."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "expansion_lead_time",
+      "status": "unknown",
+      "assessment": "Record the time and capital needed to add qualified supply.",
+      "value": null,
+      "unit": "months or qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find capacity, capex, permit, and yield evidence."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "customer_urgency",
+      "status": "unknown",
+      "assessment": "Explain the operational cost of a late or missing supply.",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find a deployment or production schedule."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "capacity_visibility",
+      "status": "unknown",
+      "assessment": "Separate visible orders/backlog/utilization from vague demand language.",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find a dated order, backlog, or utilization metric."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "pricing_power",
+      "status": "unknown",
+      "assessment": "Test ASP, gross margin, contract terms, and mix rather than volume alone.",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find a dated margin or pricing indicator."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "economic_value_capture",
+      "status": "unknown",
+      "assessment": "Trace the exact company from the bottleneck to segment economics.",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Verify direct exposure, revenue, margin, and repeat demand."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "architecture_necessity",
+      "status": "unknown",
+      "assessment": "Can the system bypass this node without material redesign, qualification, or performance loss?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Map the alternative architecture and its performance or timing penalty."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "yield_manufacturability",
+      "status": "unknown",
+      "assessment": "Is the reported process reproducible at the required yield and quality?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find yield, defect, reliability, or production-ramp evidence."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "merchant_vs_captive_capacity",
+      "status": "unknown",
+      "assessment": "How much capacity is available to external customers rather than reserved for internal use?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Separate merchant, captive, reserved, and available capacity."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "geographic_regulatory_concentration",
+      "status": "unknown",
+      "assessment": "Could geography, export controls, permits, or regulation constrain or redirect supply?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Identify jurisdictional dependencies, licenses, and policy exposure."],
+      "confidence": "low"
+    },
+    {
+      "dimension": "capital_intensity",
+      "status": "unknown",
+      "assessment": "What capital, financing, and working capital are required to convert scarcity into supply?",
+      "value": null,
+      "unit": "qualitative",
+      "as_of": null,
+      "epistemic_type": "unknown",
+      "evidence_ids": [],
+      "unknowns": ["Find capex per unit of qualified capacity and the funding path."],
+      "confidence": "low"
+    }
+  ],
+  "capacity_states": [
+    {"state":"nominal","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find the nameplate capacity source."]},
+    {"state":"installed","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find installed equipment or line evidence."]},
+    {"state":"usable","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find operating capacity after uptime and yield constraints."]},
+    {"state":"qualified","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find customer-qualified capacity."]},
+    {"state":"merchant","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find capacity available to external customers."]},
+    {"state":"captive","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find internal or reserved capacity."]},
+    {"state":"available","value":null,"unit":"unknown","as_of":null,"epistemic_type":"unknown","evidence_ids":[],"unknowns":["Find uncommitted capacity after reservations and customer priority."]}
+  ],
+  "supply_chain_edges": [
+    {
+      "edge_id": "edge:example",
+      "upstream_entity": "UNKNOWN supplier or process owner",
+      "downstream_entity": "UNKNOWN system integrator or customer",
+      "product_or_process": "The specific component, material, equipment, or process",
+      "relationship_type": "depends_on",
+      "relationship_status": "unknown",
+      "effective_from": null,
+      "effective_to": null,
+      "as_of": "2026-09-12T00:00:00Z",
+      "epistemic_type": "unknown",
+      "evidence_state": "not_established",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "alternatives": ["Alternative supplier", "Alternative architecture"],
+      "unknowns": ["Resolve both endpoints and find a dated relationship source."],
+      "confidence": "low"
+    }
+  ],
+  "economic_capture_hypothesis": "State the conditional path from the bottleneck to company economics.",
+  "capture_path": [
+    "physical constraint",
+    "qualification/capacity/utilization/yield",
+    "volume/ASP/mix/repeat rate",
+    "segment revenue and margin",
+    "cash/capex/funding/dilution"
+  ],
+  "candidate_company_ids": [],
+  "evidence_ids": [],
+  "counterevidence_ids": [],
+  "access_level": "synthetic",
+  "source_partition": "synthetic",
+  "source_lineage": [
+    {
+      "source_partition": "synthetic",
+      "source_record_id": "fixture:bottleneck-scorecard",
+      "source_locator": "synthetic://bottleneck-scorecard",
+      "content_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "review_status": "human_reviewed",
+  "extraction_version": "template-v4",
+  "notes": "Do not average dimensions or emit a 0-100 conviction score."
+}

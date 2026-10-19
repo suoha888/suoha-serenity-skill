@@ -1,0 +1,95 @@
+name: Validate public skill
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate skill structure and public boundary
+        run: python scripts/validate_skill.py . --strict
+
+      - name: Validate research integrity contract
+        run: python evals/validate_research_integrity.py .
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Validate synthetic research output
+        run: python scripts/validate_research_output.py evals/fixtures/research-output.synthetic.json
+
+      - name: Validate linked synthetic research bundle
+        run: python scripts/validate_research_bundle.py evals/fixtures/research-bundle.synthetic.json
+
+      - name: Validate example reports
+        run: |
+          python scripts/serenity_lens.py validate examples/amd-serenity-lens.json
+          python scripts/verify_report.py examples/amd-serenity-report.html
+          python scripts/verify_report.py examples/amd-serenity-report.md --lens examples/amd-serenity-lens.json
+
+      - name: Validate atlas and lead scan (offline)
+        run: |
+          python scripts/serenity_lens.py validate examples/axti-serenity-lens.json
+          python scripts/verify_report.py examples/axti-serenity-report.html
+          python scripts/verify_report.py examples/axti-serenity-report.md --lens examples/axti-serenity-lens.json
+          python scripts/atlas.py validate
+          python scripts/atlas.py render --check
+          python scripts/chokepoint_scan.py examples/live/axti-snapshot-2026-10-18.json --md "$RUNNER_TEMP/axti-leads.md"
+
+      - name: Public-boundary check for Serenity post text
+        run: |
+          python -c "import json; m=json.load(open('assets/serenity-archive-manifest.json')); assert 'posts' not in m"
+          python scripts/serenity_update.py check
+
+      - name: Ticker truth, ETF audit and doctor (offline)
+        run: |
+          python scripts/ticker_truth.py check
+          python scripts/etf_audit.py --md "$RUNNER_TEMP/etf-audit.md"
+          python suoha.py doctor
+
+      - name: Installer smoke test
+        run: |
+          HOME="$RUNNER_TEMP/home" ./install.sh all
+          test -f "$RUNNER_TEMP/home/.claude/skills/suoha-serenity-skill/suoha.py"
+
+      - name: Build and verify public runtime
+        run: |
+          python scripts/build_runtime.py --source . --output "$RUNNER_TEMP/suoha-serenity-skill"
+          python scripts/verify_runtime.py --source . --runtime "$RUNNER_TEMP/suoha-serenity-skill"
+
+  portable-install:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Standard-library tests on Python 3.10
+        run: python -m unittest discover -s tests
+      - name: Windows install in isolated directory
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $env:SUOHA_INSTALL_ROOT = Join-Path $env:RUNNER_TEMP 'install smoke'
+          .\install.ps1
+      - name: macOS install in isolated directory
+        if: runner.os == 'macOS'
+        run: SUOHA_INSTALL_ROOT="$RUNNER_TEMP/install smoke" ./install.sh

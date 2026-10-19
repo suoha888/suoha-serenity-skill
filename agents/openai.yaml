@@ -1,0 +1,9 @@
+interface:
+  display_name: "suoha-serenity skill"
+  short_description: "Chokepoint research with exchange-native live data and verified, source-cited reports"
+  brand_color: "#111827"
+  default_prompt: "Use suoha-serenity-skill on a ticker or theme. Pull a live data pack first, map the supply chain to its chokepoint layer, recompute every number with serenity_lens.py, compare against the point-in-time Serenity stance ledger when a local archive exists, assign a green/amber/red research tier with falsifiers, finish with a validated Markdown and HTML report, and record it in the forward-tracking ledger (python suoha.py finish). For non-US listings use the exchange block (CNINFO, HKEXnews, TDnet, TWSE/TPEx monthly revenue); for any A-share, Hong Kong or US company, including ones outside the chokepoint atlas, read the company health check (python suoha.py check, brief section 2c) and confirm aggregator figures in the filed report."
+policy:
+  allow_implicit_invocation: true
+dependencies:
+  tools: []

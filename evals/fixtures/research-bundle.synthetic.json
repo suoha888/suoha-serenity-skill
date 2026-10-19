@@ -1,0 +1,976 @@
+{
+  "research_output": {
+    "schema_version": "4.1",
+    "research_output_id": "synthetic-output-001",
+    "question": "\u67d0\u6570\u636e\u4e2d\u5fc3\u7535\u529b\u7ec4\u4ef6\u516c\u53f8\u662f\u5426\u503c\u5f97\u8fdb\u5165\u4e0b\u4e00\u8f6e\u7814\u7a76\uff1f",
+    "market": "US",
+    "mode": "standard",
+    "research_cutoff": "2026-09-12T00:00:00Z",
+    "as_of": "2026-09-12T00:00:00Z",
+    "bottleneck_assessment_ids": [
+      "bottleneck:synthetic-power"
+    ],
+    "company_profile_ids": [
+      "company:synthetic-power"
+    ],
+    "market_snapshot_ids": [
+      "snapshot:synthetic-power"
+    ],
+    "valuation_snapshot_ids": [
+      "valuation:synthetic-power"
+    ],
+    "primary_candidate_id": "company:synthetic-power",
+    "priority": "medium",
+    "research_conclusion": "tentative",
+    "research_language": "conditional_interest",
+    "method_application": {
+      "status": "no_approved_match",
+      "cards": []
+    },
+    "historical_thesis_timeline": {
+      "status": "none_found",
+      "event_ids": []
+    },
+    "why_research_now": "The system constraint is plausible, but the company-level value capture and current market data still require verification.",
+    "validation_ladder": [
+      {
+        "stage": "architecture_necessity",
+        "status": "partial",
+        "claim": "The target deployment architecture appears to require the specified power-conversion module, but redesign cost is not fully quantified.",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ],
+        "missing_proof": [
+          "Alternative architecture performance and timing penalty"
+        ]
+      },
+      {
+        "stage": "physical_supply",
+        "status": "partial",
+        "claim": "Specialized equipment and a yield ramp may restrict immediately usable supply.",
+        "evidence_ids": [
+          "evidence:synthetic-2"
+        ],
+        "missing_proof": [
+          "Qualified and merchant capacity"
+        ]
+      },
+      {
+        "stage": "customer_validation",
+        "status": "partial",
+        "claim": "Customer urgency and qualification are plausible but a binding customer document is absent.",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ],
+        "missing_proof": [
+          "Named qualification or repeat order"
+        ]
+      },
+      {
+        "stage": "company_capture",
+        "status": "partial",
+        "claim": "The company has a relevant segment, but direct customer exposure and pricing capture remain incomplete.",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ],
+        "missing_proof": [
+          "Segment margin and contract economics"
+        ]
+      },
+      {
+        "stage": "financial_transmission",
+        "status": "partial",
+        "claim": "The operating path can be stated, but cash conversion and dilution are not fully verified.",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ],
+        "missing_proof": [
+          "Working capital, capex, and share-count bridge"
+        ]
+      },
+      {
+        "stage": "market_expectations",
+        "status": "not_established",
+        "claim": "A dated market snapshot and expectation proxy are required before calling the opportunity underappreciated.",
+        "evidence_ids": [
+          "evidence:synthetic-3"
+        ],
+        "missing_proof": [
+          "Authoritative quote, market-cap basis, and expectation proxy"
+        ]
+      }
+    ],
+    "reflexivity_check": {
+      "social_originated": null,
+      "author_market_influence": "unknown",
+      "post_precedes_price_move": "unknown",
+      "independent_fundamental_confirmation": "unknown",
+      "price_action_is_independent_evidence": "unknown",
+      "evidence_ids": [],
+      "notes": "No social-origin or post-price sequence is present in this synthetic fixture; do not use price movement as fundamental confirmation."
+    },
+    "conditional_reasons": [
+      {
+        "condition": "Customer qualification and repeat orders are confirmed in a dated primary source.",
+        "implication": "The company may capture part of the constrained power-delivery economics.",
+        "mechanism": "Qualification can reduce substitution and support repeat volume at the required specification.",
+        "confirm_with": "Next filing, customer project document, or dated order/production metric within two reporting periods.",
+        "fail_if": "A qualified alternate appears or reported margins and repeat volume deteriorate.",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ],
+        "status": "open"
+      }
+    ],
+    "variant_perception": {
+      "market_proxy": "The current market snapshot is unavailable in this synthetic fixture.",
+      "what_market_appears_to_price": "UNKNOWN",
+      "what_may_be_missing": "UNKNOWN until a dated price, share count, and market-cap basis are available.",
+      "hypothesis": "The market may underappreciate qualification duration, but this is not established.",
+      "evidence_ids": [
+        "evidence:synthetic-1"
+      ],
+      "confidence": "low",
+      "unknowns": [
+        "Current quote, shares, market cap, and market-implied expectations."
+      ],
+      "disconfirming_check": "Obtain an authoritative dated market snapshot and compare the implied expectation with the operating bridge."
+    },
+    "catalysts": [
+      {
+        "catalyst": "A dated qualification or production milestone.",
+        "time_window": "Next two reporting periods",
+        "confirmation_metric": "Qualified capacity and recognized segment revenue",
+        "failure_risk": "Milestone slips or only reflects management guidance.",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ]
+      }
+    ],
+    "counterarguments": [
+      {
+        "argument": "The component may be replaceable and the company may only have thematic exposure.",
+        "evidence_ids": [
+          "evidence:synthetic-2"
+        ],
+        "effect_on_thesis": "Downgrade the bottleneck and company value-capture conclusions to not established."
+      }
+    ],
+    "invalidation_conditions": [
+      "Independent alternatives qualify without a meaningful redesign.",
+      "The relevant segment remains immaterial or margins compress despite volume."
+    ],
+    "next_checks": [
+      {
+        "unknown": "Whether the company has direct qualified exposure.",
+        "resolving_source_or_metric": "Exchange filing, customer filing, or project document.",
+        "next_action": "Verify the chain position and segment economics before ranking the company."
+      }
+    ],
+    "claim_ids": [
+      "claim:synthetic-1"
+    ],
+    "evidence_ids": [
+      "evidence:synthetic-1",
+      "evidence:synthetic-2",
+      "evidence:synthetic-3"
+    ],
+    "no_trade_execution": true,
+    "no_return_prediction": true,
+    "access_level": "synthetic",
+    "source_partition": "synthetic",
+    "source_lineage": [
+      {
+        "source_partition": "synthetic",
+        "source_record_id": "fixture:research-output-001",
+        "source_locator": "synthetic://research-output-001",
+        "content_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "published_at": "2026-09-12T00:00:00Z",
+        "known_at": "2026-09-12T00:00:00Z"
+      }
+    ],
+    "review_status": "human_reviewed",
+    "extraction_version": "synthetic-v4.1"
+  },
+  "method_cards": [],
+  "thesis_events": [],
+  "method_reviews": [],
+  "bottleneck_assessments": [
+    {
+      "schema_version": "4",
+      "bottleneck_id": "bottleneck:synthetic-power",
+      "topic": "Synthetic power-delivery theme",
+      "layer": "Qualified power conversion module",
+      "constraint_type": "qualification",
+      "physical_mechanism": "The module must meet a narrow reliability and thermal specification before deployment.",
+      "demand_trigger": "Higher-density data-center loads",
+      "assessment_as_of": "2026-09-12T00:00:00Z",
+      "research_cutoff": "2026-09-12T00:00:00Z",
+      "dimensions": [
+        {
+          "dimension": "supplier_concentration",
+          "status": "medium",
+          "assessment": "Two qualified suppliers are visible in the synthetic evidence.",
+          "value": 2,
+          "unit": "qualified suppliers",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "fact",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ],
+          "unknowns": [],
+          "confidence": "medium"
+        },
+        {
+          "dimension": "substitutability",
+          "status": "medium",
+          "assessment": "A replacement requires requalification.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "inference",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ],
+          "unknowns": [],
+          "confidence": "low"
+        },
+        {
+          "dimension": "qualification_burden",
+          "status": "high",
+          "assessment": "Qualification is a multi-quarter gate.",
+          "value": 2,
+          "unit": "quarters",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "hypothesis",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ],
+          "unknowns": [
+            "Customer-specific duration"
+          ],
+          "confidence": "low"
+        },
+        {
+          "dimension": "expansion_lead_time",
+          "status": "medium",
+          "assessment": "Capacity requires specialized equipment and yield ramp.",
+          "value": 12,
+          "unit": "months",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "inference",
+          "evidence_ids": [
+            "evidence:synthetic-2"
+          ],
+          "unknowns": [],
+          "confidence": "medium"
+        },
+        {
+          "dimension": "customer_urgency",
+          "status": "medium",
+          "assessment": "Late delivery delays a deployment schedule.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "inference",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ],
+          "unknowns": [],
+          "confidence": "low"
+        },
+        {
+          "dimension": "capacity_visibility",
+          "status": "medium",
+          "assessment": "A disclosed project milestone provides partial visibility.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "fact",
+          "evidence_ids": [
+            "evidence:synthetic-2"
+          ],
+          "unknowns": [],
+          "confidence": "medium"
+        },
+        {
+          "dimension": "pricing_power",
+          "status": "unknown",
+          "assessment": "No reliable ASP or margin evidence is available in this fixture.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": null,
+          "epistemic_type": "unknown",
+          "evidence_ids": [],
+          "unknowns": [
+            "ASP and gross-margin trend"
+          ],
+          "confidence": "low"
+        },
+        {
+          "dimension": "economic_value_capture",
+          "status": "medium",
+          "assessment": "The company has a relevant segment but its share of group economics needs confirmation.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "hypothesis",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ],
+          "unknowns": [
+            "Segment margin"
+          ],
+          "confidence": "low"
+        },
+        {
+          "dimension": "architecture_necessity",
+          "status": "medium",
+          "assessment": "The target deployment architecture requires this specification unless a redesign is accepted.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "inference",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ],
+          "unknowns": [
+            "Performance penalty of the alternative architecture"
+          ],
+          "confidence": "low"
+        },
+        {
+          "dimension": "yield_manufacturability",
+          "status": "medium",
+          "assessment": "Specialized equipment and a yield ramp limit immediately usable output.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "inference",
+          "evidence_ids": [
+            "evidence:synthetic-2"
+          ],
+          "unknowns": [
+            "Production yield"
+          ],
+          "confidence": "low"
+        },
+        {
+          "dimension": "merchant_vs_captive_capacity",
+          "status": "unknown",
+          "assessment": "External availability is not separated from reserved or internal capacity.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": null,
+          "epistemic_type": "unknown",
+          "evidence_ids": [],
+          "unknowns": [
+            "Merchant versus captive capacity"
+          ],
+          "confidence": "low"
+        },
+        {
+          "dimension": "geographic_regulatory_concentration",
+          "status": "unknown",
+          "assessment": "Jurisdictional and export-control exposure is not established in this fixture.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": null,
+          "epistemic_type": "unknown",
+          "evidence_ids": [],
+          "unknowns": [
+            "Relevant permits and policy dependencies"
+          ],
+          "confidence": "low"
+        },
+        {
+          "dimension": "capital_intensity",
+          "status": "medium",
+          "assessment": "Specialized equipment and yield ramp imply material capital requirements.",
+          "value": null,
+          "unit": "qualitative",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "inference",
+          "evidence_ids": [
+            "evidence:synthetic-2"
+          ],
+          "unknowns": [
+            "Capex per qualified unit"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "capacity_states": [
+        {
+          "state": "nominal",
+          "value": 200,
+          "unit": "units/year",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "fact",
+          "evidence_ids": [
+            "evidence:synthetic-2"
+          ],
+          "unknowns": []
+        },
+        {
+          "state": "installed",
+          "value": 160,
+          "unit": "units/year",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "inference",
+          "evidence_ids": [
+            "evidence:synthetic-2"
+          ],
+          "unknowns": []
+        },
+        {
+          "state": "usable",
+          "value": 120,
+          "unit": "units/year",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "hypothesis",
+          "evidence_ids": [
+            "evidence:synthetic-2"
+          ],
+          "unknowns": [
+            "Uptime and yield"
+          ]
+        },
+        {
+          "state": "qualified",
+          "value": null,
+          "unit": "units/year",
+          "as_of": null,
+          "epistemic_type": "unknown",
+          "evidence_ids": [],
+          "unknowns": [
+            "Customer-qualified output"
+          ]
+        },
+        {
+          "state": "merchant",
+          "value": null,
+          "unit": "units/year",
+          "as_of": null,
+          "epistemic_type": "unknown",
+          "evidence_ids": [],
+          "unknowns": [
+            "External customer allocation"
+          ]
+        },
+        {
+          "state": "captive",
+          "value": null,
+          "unit": "units/year",
+          "as_of": null,
+          "epistemic_type": "unknown",
+          "evidence_ids": [],
+          "unknowns": [
+            "Internal or reserved allocation"
+          ]
+        },
+        {
+          "state": "available",
+          "value": null,
+          "unit": "units/year",
+          "as_of": null,
+          "epistemic_type": "unknown",
+          "evidence_ids": [],
+          "unknowns": [
+            "Uncommitted output after reservations"
+          ]
+        }
+      ],
+      "supply_chain_edges": [
+        {
+          "edge_id": "edge:synthetic-power-1",
+          "upstream_entity": "Synthetic Power Systems Co.",
+          "downstream_entity": "Synthetic data-center integrator",
+          "product_or_process": "Qualified power-conversion equipment",
+          "relationship_type": "qualifies",
+          "relationship_status": "inferred",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": null,
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "inference",
+          "evidence_state": "supported",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ],
+          "counterevidence_ids": [
+            "evidence:synthetic-2"
+          ],
+          "alternatives": [
+            "Alternate Supplier",
+            "Architecture redesign"
+          ],
+          "unknowns": [
+            "Binding customer relationship"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "economic_capture_hypothesis": "Qualification and repeat volume could allow the company to retain value if the segment becomes supply constrained.",
+      "capture_path": [
+        "qualification",
+        "qualified capacity",
+        "repeat volume",
+        "segment margin"
+      ],
+      "candidate_company_ids": [
+        "company:synthetic-power"
+      ],
+      "evidence_ids": [
+        "evidence:synthetic-1",
+        "evidence:synthetic-2"
+      ],
+      "counterevidence_ids": [
+        "evidence:synthetic-2"
+      ],
+      "access_level": "synthetic",
+      "source_partition": "synthetic",
+      "source_lineage": [
+        {
+          "source_partition": "synthetic",
+          "source_record_id": "fixture:component-1",
+          "source_locator": "synthetic://component-1",
+          "content_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "review_status": "human_reviewed",
+      "extraction_version": "synthetic-v4"
+    }
+  ],
+  "company_profiles": [
+    {
+      "schema_version": "4",
+      "company_id": "company:synthetic-power",
+      "legal_name": "Synthetic Power Systems Co.",
+      "ticker": "SYN",
+      "exchange": "SYNTHETIC",
+      "market": "US",
+      "share_class": "common",
+      "isin": null,
+      "quote_currency": "USD",
+      "country": "US",
+      "identity_status": "resolved",
+      "business_model": "equipment_supplier",
+      "business_description": "Synthetic supplier of qualified power-conversion equipment.",
+      "chain_position": "Power conversion module supplier",
+      "bottleneck_ids": [
+        "bottleneck:synthetic-power"
+      ],
+      "exposure_assessment": {
+        "status": "qualified",
+        "product_or_process": "Qualified power-conversion equipment",
+        "relationship_type": "qualifies",
+        "customer_dependency": "preferred",
+        "as_of": "2026-09-12T00:00:00Z",
+        "epistemic_type": "inference",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ],
+        "counterevidence_ids": [
+          "evidence:synthetic-2"
+        ],
+        "unknowns": [
+          "Binding customer relationship"
+        ]
+      },
+      "capture_assessment": {
+        "status": "plausible",
+        "mechanism": "Qualification and repeat volume could support value capture if external supply remains constrained.",
+        "value_capture_path": [
+          "qualified capacity",
+          "repeat volume",
+          "segment revenue",
+          "segment margin",
+          "operating cash flow"
+        ],
+        "pricing_power_status": "plausible",
+        "segment_materiality": "material",
+        "as_of": "2026-09-12T00:00:00Z",
+        "epistemic_type": "hypothesis",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ],
+        "counterevidence_ids": [
+          "evidence:synthetic-2"
+        ],
+        "unknowns": [
+          "Segment margin and repeat pricing"
+        ]
+      },
+      "capital_structure": {
+        "funding_status": "mixed",
+        "dilution_risk": "medium",
+        "share_count_basis": "current_basic",
+        "debt_or_liquidity_note": "Synthetic fixture does not establish the funding runway.",
+        "as_of": "2026-09-12T00:00:00Z",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ],
+        "unknowns": [
+          "Future capex funding and dilution terms"
+        ]
+      },
+      "as_of": "2026-09-12T00:00:00Z",
+      "research_cutoff": "2026-09-12T00:00:00Z",
+      "segments": [
+        {
+          "name": "Power modules",
+          "description": "Qualified power-delivery equipment",
+          "period": "FY2025",
+          "revenue_value": 100000000,
+          "revenue_currency": "USD",
+          "revenue_share": 0.6,
+          "reported_or_estimated": "reported",
+          "as_of": "2026-09-12T00:00:00Z",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ],
+          "epistemic_type": "fact"
+        }
+      ],
+      "revenue_mix": [
+        {
+          "segment": "Power modules",
+          "period": "FY2025",
+          "value": 100000000,
+          "unit": "USD",
+          "currency": "USD",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "fact",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ]
+        }
+      ],
+      "customers": [
+        {
+          "label": "Customer A",
+          "relationship_status": "unnamed",
+          "concentration": null,
+          "period": "FY2025",
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ],
+          "unknowns": [
+            "Exact concentration"
+          ]
+        }
+      ],
+      "geographies": [
+        {
+          "label": "North America",
+          "exposure_status": "reported",
+          "revenue_share": 0.7,
+          "evidence_ids": [
+            "evidence:synthetic-1"
+          ]
+        }
+      ],
+      "competitors": [
+        {
+          "label": "Alternate Supplier",
+          "relationship_status": "direct",
+          "evidence_ids": [
+            "evidence:synthetic-2"
+          ]
+        }
+      ],
+      "financial_quality": {
+        "status": "mixed",
+        "period": "FY2025",
+        "metrics": [
+          {
+            "metric": "operating_cash_flow",
+            "value": 12000000,
+            "unit": "USD",
+            "currency": "USD",
+            "as_of": "2026-09-12T00:00:00Z",
+            "epistemic_type": "fact",
+            "evidence_ids": [
+              "evidence:synthetic-1"
+            ]
+          }
+        ],
+        "unknowns": [
+          "Dilution sensitivity"
+        ]
+      },
+      "main_risks": [
+        {
+          "risk": "Qualified alternate supply expands faster than expected.",
+          "status": "open",
+          "evidence_ids": [
+            "evidence:synthetic-2"
+          ]
+        }
+      ],
+      "unknowns": [
+        "Customer concentration and segment margin require a primary filing."
+      ],
+      "evidence_ids": [
+        "evidence:synthetic-1",
+        "evidence:synthetic-2"
+      ],
+      "access_level": "synthetic",
+      "source_partition": "synthetic",
+      "source_lineage": [
+        {
+          "source_partition": "synthetic",
+          "source_record_id": "fixture:component-2",
+          "source_locator": "synthetic://component-2",
+          "content_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "review_status": "human_reviewed",
+      "extraction_version": "synthetic-v4"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "schema_version": "4",
+      "snapshot_id": "snapshot:synthetic-power",
+      "company_id": "company:synthetic-power",
+      "ticker": "SYN",
+      "exchange": "SYNTHETIC",
+      "market": "US",
+      "quote_currency": "USD",
+      "price": 42.5,
+      "price_type": "official_close",
+      "price_as_of": "2026-09-12T00:00:00Z",
+      "price_source_evidence_ids": [
+        "evidence:synthetic-3"
+      ],
+      "market_cap": 4250000000,
+      "market_cap_currency": "USD",
+      "market_cap_basis": "price_times_basic_shares",
+      "market_cap_as_of": "2026-09-12T00:00:00Z",
+      "shares_outstanding": 100000000,
+      "shares_basis": "basic",
+      "shares_as_of": "2026-09-12T00:00:00Z",
+      "data_status": "current",
+      "freshness_note": "Synthetic fixture only; not a live quote.",
+      "captured_at": "2026-09-12T00:00:00Z",
+      "research_cutoff": "2026-09-12T00:00:00Z",
+      "evidence_ids": [
+        "evidence:synthetic-3"
+      ],
+      "access_level": "synthetic",
+      "source_partition": "synthetic",
+      "source_lineage": [
+        {
+          "source_partition": "synthetic",
+          "source_record_id": "fixture:component-3",
+          "source_locator": "synthetic://component-3",
+          "content_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "review_status": "human_reviewed",
+      "extraction_version": "synthetic-v4"
+    }
+  ],
+  "valuation_snapshots": [
+    {
+      "schema_version": "4",
+      "valuation_id": "valuation:synthetic-power",
+      "company_id": "company:synthetic-power",
+      "as_of": "2026-09-12T00:00:00Z",
+      "research_cutoff": "2026-09-12T00:00:00Z",
+      "currency": "USD",
+      "market_cap": 4250000000,
+      "enterprise_value": 4200000000,
+      "valuation_basis": "calculated",
+      "metrics": [
+        {
+          "name": "market_cap_to_revenue",
+          "value": 42.5,
+          "unit": "x",
+          "period": "FY2025",
+          "as_of": "2026-09-12T00:00:00Z",
+          "epistemic_type": "inference",
+          "evidence_ids": [
+            "evidence:synthetic-3"
+          ]
+        }
+      ],
+      "expectation_gap": {
+        "market_proxy": "Synthetic market cap and FY2025 revenue",
+        "what_market_appears_to_price": "Continued growth and successful qualification",
+        "underappreciated_hypothesis": "Qualification duration may support repeat economics but is not established",
+        "mechanism": "A qualified module can be harder to substitute during constrained deployment",
+        "evidence_ids": [
+          "evidence:synthetic-1"
+        ],
+        "confidence": "low",
+        "unknowns": [
+          "Forward margin and customer timing"
+        ],
+        "disconfirming_check": "Check qualification and margin evidence in the next primary filing."
+      },
+      "scenario_bridges": [
+        {
+          "case": "bear",
+          "assumptions": [
+            "Alternates qualify"
+          ],
+          "operating_drivers": [
+            "Lower repeat volume"
+          ],
+          "sensitivity": [
+            "Margin and utilization"
+          ],
+          "disconfirming_metric": "Qualified alternate share"
+        },
+        {
+          "case": "base",
+          "assumptions": [
+            "Qualification persists"
+          ],
+          "operating_drivers": [
+            "Measured repeat volume"
+          ],
+          "sensitivity": [
+            "ASP and utilization"
+          ],
+          "disconfirming_metric": "Segment revenue and gross margin"
+        },
+        {
+          "case": "bull",
+          "assumptions": [
+            "Urgent demand and limited qualified supply"
+          ],
+          "operating_drivers": [
+            "Higher volume and mix"
+          ],
+          "sensitivity": [
+            "Capacity ramp and capex"
+          ],
+          "disconfirming_metric": "Recognized revenue without severe dilution"
+        }
+      ],
+      "evidence_ids": [
+        "evidence:synthetic-1",
+        "evidence:synthetic-3"
+      ],
+      "counterevidence_ids": [
+        "evidence:synthetic-2"
+      ],
+      "research_only_disclaimer": "Synthetic research context only; no trade or return conclusion.",
+      "no_return_prediction": true,
+      "no_trade_execution": true,
+      "access_level": "synthetic",
+      "source_partition": "synthetic",
+      "source_lineage": [
+        {
+          "source_partition": "synthetic",
+          "source_record_id": "fixture:component-4",
+          "source_locator": "synthetic://component-4",
+          "content_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "review_status": "human_reviewed",
+      "extraction_version": "synthetic-v4"
+    }
+  ],
+  "evidence": [
+    {
+      "schema_version": "2",
+      "evidence_id": "evidence:synthetic-1",
+      "source": "synthetic://source",
+      "source_type": "company_ir",
+      "published_at": "2026-09-12T00:00:00Z",
+      "known_at": "2026-09-12T00:00:00Z",
+      "captured_at": "2026-09-12T00:00:00Z",
+      "content_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "excerpt": "Synthetic fixture, not real market evidence.",
+      "provenance": {
+        "adapter": "synthetic",
+        "locator": "synthetic://source",
+        "extraction_version": "test"
+      },
+      "access_level": "synthetic",
+      "source_partition": "synthetic",
+      "evidence_grade": "primary",
+      "independence_group": "evidence:synthetic-1",
+      "review_status": "human_reviewed"
+    },
+    {
+      "schema_version": "2",
+      "evidence_id": "evidence:synthetic-2",
+      "source": "synthetic://source",
+      "source_type": "company_ir",
+      "published_at": "2026-09-12T00:00:00Z",
+      "known_at": "2026-09-12T00:00:00Z",
+      "captured_at": "2026-09-12T00:00:00Z",
+      "content_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "excerpt": "Synthetic fixture, not real market evidence.",
+      "provenance": {
+        "adapter": "synthetic",
+        "locator": "synthetic://source",
+        "extraction_version": "test"
+      },
+      "access_level": "synthetic",
+      "source_partition": "synthetic",
+      "evidence_grade": "primary",
+      "independence_group": "evidence:synthetic-2",
+      "review_status": "human_reviewed"
+    },
+    {
+      "schema_version": "2",
+      "evidence_id": "evidence:synthetic-3",
+      "source": "synthetic://source",
+      "source_type": "company_ir",
+      "published_at": "2026-09-12T00:00:00Z",
+      "known_at": "2026-09-12T00:00:00Z",
+      "captured_at": "2026-09-12T00:00:00Z",
+      "content_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "excerpt": "Synthetic fixture, not real market evidence.",
+      "provenance": {
+        "adapter": "synthetic",
+        "locator": "synthetic://source",
+        "extraction_version": "test"
+      },
+      "access_level": "synthetic",
+      "source_partition": "synthetic",
+      "evidence_grade": "primary",
+      "independence_group": "evidence:synthetic-3",
+      "review_status": "human_reviewed"
+    }
+  ],
+  "claims": [
+    {
+      "schema_version": "2",
+      "claim_id": "claim:synthetic-1",
+      "text": "Synthetic partial claim",
+      "epistemic_type": "hypothesis",
+      "entity_ids": [],
+      "as_of": "2026-09-12T00:00:00Z",
+      "asserted_at": "2026-09-12T00:00:00Z",
+      "known_at": "2026-09-12T00:00:00Z",
+      "evidence_ids": [
+        "evidence:synthetic-1"
+      ],
+      "counterevidence_ids": [],
+      "evidence_state": "not_established",
+      "confidence": "low",
+      "access_level": "synthetic",
+      "source_partition": "synthetic",
+      "source_record_ids": [
+        "fixture:1"
+      ],
+      "source_lineage": [
+        {
+          "source_partition": "synthetic",
+          "source_file": "synthetic://source",
+          "source_record_id": "fixture:1",
+          "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "review_status": "pending",
+      "extraction_version": "test"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+ "etf": "SMH",
+ "fund": "VanEck Semiconductor ETF",
+ "registrant": "VanEck ETF Trust",
+ "series_id": "S000034411",
+ "period_end": "2026-06-30",
+ "filed": "2026-08-26",
+ "net_assets_usd": 77198271229.21,
+ "source_url": "https://www.sec.gov/Archives/edgar/data/1137360/000141036826086937/primary_doc.xml",
+ "note": "N-PORT holdings are quarter-end and filed ~60 days later; weights are a dated snapshot.",
+ "holdings": [
+  {
+   "name": "NVIDIA Corp",
+   "isin": "US67066G1040",
+   "cusip": "67066G104",
+   "pct": 17.5486,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+   "isin": "US8740391003",
+   "cusip": "874039100",
+   "pct": 9.2891,
+   "country": "TW",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Applied Materials Inc",
+   "isin": "US0382221051",
+   "cusip": "038222105",
+   "pct": 5.7396,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Micron Technology Inc",
+   "isin": "US5951121038",
+   "cusip": "595112103",
+   "pct": 5.6738,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Advanced Micro Devices Inc",
+   "isin": "US0079031078",
+   "cusip": "007903107",
+   "pct": 5.6292,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "KLA Corp",
+   "isin": "US4824801009",
+   "cusip": "482480100",
+   "pct": 5.574,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Lam Research Corp",
+   "isin": "US5128073062",
+   "cusip": "512807306",
+   "pct": 5.313,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Broadcom Inc",
+   "isin": "US11135F1012",
+   "cusip": "11135F101",
+   "pct": 5.2803,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Intel Corp",
+   "isin": "US4581401001",
+   "cusip": "458140100",
+   "pct": 5.1468,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "ASML Holding NV",
+   "isin": "USN070592100",
+   "cusip": "000000000",
+   "pct": 5.0411,
+   "country": "NL",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Marvell Technology Inc",
+   "isin": "US5738741041",
+   "cusip": "573874104",
+   "pct": 4.6642,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Texas Instruments Inc",
+   "isin": "US8825081040",
+   "cusip": "882508104",
+   "pct": 4.1702,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Analog Devices Inc",
+   "isin": "US0326541051",
+   "cusip": "032654105",
+   "pct": 4.0003,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "QUALCOMM Inc",
+   "isin": "US7475251036",
+   "cusip": "747525103",
+   "pct": 3.7377,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Cadence Design Systems Inc",
+   "isin": "US1273871087",
+   "cusip": "127387108",
+   "pct": 2.1506,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Synopsys Inc",
+   "isin": "US8716071076",
+   "cusip": "871607107",
+   "pct": 1.7921,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Teradyne Inc",
+   "isin": "US8807701029",
+   "cusip": "880770102",
+   "pct": 1.4958,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Astera Labs Inc",
+   "isin": "US04626A1034",
+   "cusip": "04626A103",
+   "pct": 1.2741,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "STMicroelectronics NV",
+   "isin": "US8610121027",
+   "cusip": "861012102",
+   "pct": 1.2603,
+   "country": "NL",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Monolithic Power Systems Inc",
+   "isin": "US6098391054",
+   "cusip": "609839105",
+   "pct": 1.2193,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "ARM Holdings PLC",
+   "isin": "US0420682058",
+   "cusip": "042068205",
+   "pct": 1.1656,
+   "country": "GB",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "NXP Semiconductors NV",
+   "isin": "NL0009538784",
+   "cusip": "000000000",
+   "pct": 1.1465,
+   "country": "NL",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Microchip Technology Inc",
+   "isin": "US5950171042",
+   "cusip": "595017104",
+   "pct": 0.8981,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "ON Semiconductor Corp",
+   "isin": "US6821891057",
+   "cusip": "682189105",
+   "pct": 0.5783,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Skyworks Solutions Inc",
+   "isin": "US83088M1027",
+   "cusip": "83088M102",
+   "pct": 0.1592,
+   "country": "US",
+   "asset_cat": "EC"
+  }
+ ]
+}

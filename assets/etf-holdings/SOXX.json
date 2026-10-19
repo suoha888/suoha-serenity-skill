@@ -1,0 +1,253 @@
+{
+ "etf": "SOXX",
+ "fund": "iShares Semiconductor ETF",
+ "registrant": "iShares Trust",
+ "series_id": "S000004354",
+ "period_end": "2026-06-30",
+ "filed": "2026-08-25",
+ "net_assets_usd": 47824829758.05,
+ "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000207169126019781/primary_doc.xml",
+ "note": "N-PORT holdings are quarter-end and filed ~60 days later; weights are a dated snapshot.",
+ "holdings": [
+  {
+   "name": "Micron Technology, Inc.",
+   "isin": "US5951121038",
+   "cusip": "595112103",
+   "pct": 8.5442,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Advanced Micro Devices, Inc.",
+   "isin": "US0079031078",
+   "cusip": "007903107",
+   "pct": 8.0901,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "NVIDIA Corp.",
+   "isin": "US67066G1040",
+   "cusip": "67066G104",
+   "pct": 6.8114,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Intel Corp.",
+   "isin": "US4581401001",
+   "cusip": "458140100",
+   "pct": 6.3302,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Broadcom, Inc.",
+   "isin": "US11135F1012",
+   "cusip": "11135F101",
+   "pct": 6.0771,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Applied Materials, Inc.",
+   "isin": "US0382221051",
+   "cusip": "038222105",
+   "pct": 5.7732,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "KLA Corp.",
+   "isin": "US4824801009",
+   "cusip": "482480100",
+   "pct": 5.6422,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Marvell Technology, Inc.",
+   "isin": "US5738741041",
+   "cusip": "573874104",
+   "pct": 5.2222,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Lam Research Corp.",
+   "isin": "US5128073062",
+   "cusip": "512807306",
+   "pct": 4.8943,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Taiwan Semiconductor Manufacturing Co. Ltd.",
+   "isin": "US8740391003",
+   "cusip": "874039100",
+   "pct": 4.2635,
+   "country": "TW",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Texas Instruments, Inc.",
+   "isin": "US8825081040",
+   "cusip": "882508104",
+   "pct": 3.5043,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Analog Devices, Inc.",
+   "isin": "US0326541051",
+   "cusip": "032654105",
+   "pct": 3.4489,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Teradyne, Inc.",
+   "isin": "US8807701029",
+   "cusip": "880770102",
+   "pct": 3.3648,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "NXP Semiconductors NV",
+   "isin": "NL0009538784",
+   "cusip": "N/A",
+   "pct": 3.1428,
+   "country": "NL",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Astera Labs, Inc.",
+   "isin": "US04626A1034",
+   "cusip": "04626A103",
+   "pct": 3.0224,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Monolithic Power Systems, Inc.",
+   "isin": "US6098391054",
+   "cusip": "609839105",
+   "pct": 2.9282,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "QUALCOMM, Inc.",
+   "isin": "US7475251036",
+   "cusip": "747525103",
+   "pct": 2.6456,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "ASML Holding NV",
+   "isin": "USN070592100",
+   "cusip": "N/A",
+   "pct": 2.3041,
+   "country": "NL",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Microchip Technology, Inc.",
+   "isin": "US5950171042",
+   "cusip": "595017104",
+   "pct": 2.1673,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Credo Technology Group Holding Ltd.",
+   "isin": "KYG254571055",
+   "cusip": "N/A",
+   "pct": 2.0113,
+   "country": "KY",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "ON Semiconductor Corp.",
+   "isin": "US6821891057",
+   "cusip": "682189105",
+   "pct": 1.6469,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Entegris, Inc.",
+   "isin": "US29362U1043",
+   "cusip": "29362U104",
+   "pct": 1.219,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "ASE Technology Holding Co. Ltd.",
+   "isin": "US00215W1009",
+   "cusip": "00215W100",
+   "pct": 1.2162,
+   "country": "TW",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "MACOM Technology Solutions Holdings, Inc.",
+   "isin": "US55405Y1001",
+   "cusip": "55405Y100",
+   "pct": 1.1737,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "United Microelectronics Corp.",
+   "isin": "US9108734057",
+   "cusip": "910873405",
+   "pct": 1.0168,
+   "country": "TW",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "ARM Holdings plc",
+   "isin": "US0420682058",
+   "cusip": "042068205",
+   "pct": 0.7906,
+   "country": "GB",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "STMicroelectronics NV",
+   "isin": "US8610121027",
+   "cusip": "861012102",
+   "pct": 0.7893,
+   "country": "NL",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Nova Ltd.",
+   "isin": "IL0010845571",
+   "cusip": "N/A",
+   "pct": 0.7707,
+   "country": "IL",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Rambus, Inc.",
+   "isin": "US7509171069",
+   "cusip": "750917106",
+   "pct": 0.6369,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Skyworks Solutions, Inc.",
+   "isin": "US83088M1027",
+   "cusip": "83088M102",
+   "pct": 0.4542,
+   "country": "US",
+   "asset_cat": "EC"
+  }
+ ]
+}

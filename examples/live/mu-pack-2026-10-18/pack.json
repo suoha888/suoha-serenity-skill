@@ -1,0 +1,767 @@
+{
+  "schema_version": "6.1",
+  "kind": "research_pack",
+  "connector_version": "6.1.0",
+  "retrieved_at": "2026-10-18T04:43:33Z",
+  "subject": "MU",
+  "peers": [
+    "000660.KS",
+    "005930.KS"
+  ],
+  "snapshots": {
+    "MU": "examples/live/mu-pack-2026-10-18/snapshots/MU.json",
+    "000660.KS": "examples/live/mu-pack-2026-10-18/snapshots/000660.KS.json",
+    "005930.KS": "examples/live/mu-pack-2026-10-18/snapshots/005930.KS.json"
+  },
+  "compare": [
+    {
+      "symbol": "MU",
+      "name": "Micron Technology, Inc.",
+      "price": 878.84,
+      "currency": "USD",
+      "price_as_of": "2026-10-16T20:00:00Z",
+      "market_cap": 994339975634.08,
+      "market_cap_usd": 994339975634.08,
+      "drawdown_pct": -29.97,
+      "return_1y_pct": 334.45,
+      "revenue_ttm_usd": 133188000000.0,
+      "revenue_yoy_pct": 379.27,
+      "revenue_qoq_pct": 30.81,
+      "gross_margin_pct": 86.76,
+      "gross_margin_end": "2026-09-03",
+      "gross_margin_yoy_pp": 42.09,
+      "ps_ttm": 7.47,
+      "revenue_basis": "ttm",
+      "share_change_pct": 0.8,
+      "fit_guess": {
+        "role": "chokepoint",
+        "fit": "strong",
+        "rule": "PB-FIT-01"
+      },
+      "flags": [
+        "pricing_power",
+        "acceleration",
+        "beneficial_owner_filings",
+        "insider_form4_activity",
+        "going_concern_exhibit_only",
+        "supply_concentration",
+        "capacity_language"
+      ],
+      "warnings": []
+    },
+    {
+      "symbol": "000660.KS",
+      "name": "SK hynix Inc.",
+      "price": 1272000.0,
+      "currency": "KRW",
+      "price_as_of": "2026-10-16T06:30:25Z",
+      "market_cap": 900953810712000.0,
+      "market_cap_usd": 720763048569.6,
+      "drawdown_pct": -57.42,
+      "return_1y_pct": 165.55,
+      "revenue_ttm_usd": 151336492000.0,
+      "revenue_yoy_pct": 256.78,
+      "revenue_qoq_pct": 50.86,
+      "gross_margin_pct": 83.2,
+      "gross_margin_end": "2026-06-30",
+      "gross_margin_yoy_pp": 29.3,
+      "ps_ttm": 4.76,
+      "revenue_basis": "ttm",
+      "share_change_pct": 2.59,
+      "fit_guess": {
+        "role": "chokepoint",
+        "fit": "strong",
+        "rule": "PB-FIT-01"
+      },
+      "flags": [
+        "pricing_power",
+        "acceleration",
+        "drawdown"
+      ],
+      "warnings": [
+        "sec_filings_not_applicable_non_us: read exchange filings (DART/MOPS/TDnet/RNS) for financing and contracts"
+      ]
+    },
+    {
+      "symbol": "005930.KS",
+      "name": "Samsung Electronics Co., Ltd.",
+      "price": 215500.0,
+      "currency": "KRW",
+      "price_as_of": "2026-10-16T06:30:05Z",
+      "market_cap": 1248297392012000.0,
+      "market_cap_usd": 998637913609.6,
+      "drawdown_pct": -42.46,
+      "return_1y_pct": 121.03,
+      "revenue_ttm_usd": 388217625600.0,
+      "revenue_yoy_pct": 130.0,
+      "revenue_qoq_pct": 28.11,
+      "gross_margin_pct": 69.56,
+      "gross_margin_end": "2026-06-30",
+      "gross_margin_yoy_pp": 35.37,
+      "ps_ttm": 2.57,
+      "revenue_basis": "ttm",
+      "share_change_pct": -1.43,
+      "fit_guess": {
+        "role": "chokepoint",
+        "fit": "strong",
+        "rule": "PB-FIT-01"
+      },
+      "flags": [
+        "pricing_power",
+        "acceleration"
+      ],
+      "warnings": [
+        "share_class_note_partial: Samsung Electronics preferred shares (005935.KS) are excluded; common-only value understates group equity.",
+        "sec_filings_not_applicable_non_us: read exchange filings (DART/MOPS/TDnet/RNS) for financing and contracts"
+      ]
+    }
+  ],
+  "scan": {
+    "MU": {
+      "symbol": "MU",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "price": 878.84,
+      "currency": "USD",
+      "market_cap_calc": 994339975634.08,
+      "drawdown_from_52w_high_pct": -29.97,
+      "revenue_ttm": 133188000000,
+      "revenue_yoy_pct": 379.27,
+      "atlas": [
+        {
+          "chain": "memory",
+          "node": "hbm_dram",
+          "status": "now",
+          "peers": [
+            "000660.KS",
+            "005930.KS"
+          ]
+        }
+      ],
+      "signals": [
+        {
+          "signal": "pricing_power",
+          "direction": "positive",
+          "detail": "gross margin +42.1pp y/y (latest 86.76%)",
+          "rule": "PB-SIG-04"
+        },
+        {
+          "signal": "acceleration",
+          "direction": "positive",
+          "detail": "revenue +379% y/y, +31% q/q",
+          "rule": "PB-PHASE-04"
+        },
+        {
+          "signal": "beneficial_owner_filings",
+          "direction": "check",
+          "detail": "New 13G/13D filers = institutional discovery or activist; read filer name and %.",
+          "rule": "PB-SIG-09"
+        },
+        {
+          "signal": "insider_form4_activity",
+          "direction": "check",
+          "detail": "Classify open-market buys (code P) vs sales/grants; buys after a run-up are rarer signals.",
+          "rule": "PB-SIG-10"
+        },
+        {
+          "signal": "going_concern_exhibit_only",
+          "direction": "check",
+          "detail": "4 going-concern hits are exhibits only (acquired-company or counterparty financials?) — not the registrant's own warning until read",
+          "rule": "PB-PHASE-01"
+        },
+        {
+          "signal": "supply_concentration",
+          "direction": "check",
+          "detail": "sole/single-source language: is the company the sole source, or dependent on one?",
+          "rule": "ARC-SOLE-SOURCE"
+        },
+        {
+          "signal": "capacity_language",
+          "direction": "check",
+          "detail": "capacity/lead-time language in filings — demand-limited or capacity-limited?",
+          "rule": "PB-CAP-04"
+        }
+      ],
+      "framework_fit_guess": {
+        "role": "chokepoint",
+        "fit": "strong",
+        "rule": "PB-FIT-01"
+      },
+      "phase_guess": "volume_ramp",
+      "next_hop_candidates": [
+        {
+          "ticker": "VECO",
+          "name": "Veeco",
+          "node": "存储工序设备与 IP",
+          "status": "filling",
+          "basis": "serenity_lead"
+        },
+        {
+          "ticker": "RMBS",
+          "name": "Rambus",
+          "node": "存储工序设备与 IP",
+          "status": "filling",
+          "basis": "serenity_lead"
+        },
+        {
+          "ticker": "ONTO",
+          "name": "Onto Innovation",
+          "node": "存储工序设备与 IP",
+          "status": "filling",
+          "basis": "serenity_lead"
+        },
+        {
+          "ticker": "6315.T",
+          "name": "Towa",
+          "node": "HBM 压缩成型",
+          "status": "monopoly_not_bottleneck",
+          "basis": "serenity_lead"
+        }
+      ],
+      "questions": [
+        "Who are the top customers and what share of capacity does the company hold? (PB-LAW-03)",
+        "Can the largest customer build this in-house within 3 years? (PB-LAW-02)",
+        "What does the latest call say about allocation, lead times, or capacity? (PB-HUNT-11)"
+      ],
+      "snapshot_warnings": [],
+      "note": "Mechanical first pass; confirm every guess with primary sources before writing a lens."
+    },
+    "000660.KS": {
+      "symbol": "000660.KS",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "price": 1272000.0,
+      "currency": "KRW",
+      "market_cap_calc": 900953810712000.0,
+      "drawdown_from_52w_high_pct": -57.42,
+      "revenue_ttm": 189170615000000.0,
+      "revenue_yoy_pct": 256.78,
+      "atlas": [
+        {
+          "chain": "memory",
+          "node": "hbm_dram",
+          "status": "now",
+          "peers": [
+            "005930.KS",
+            "MU"
+          ]
+        }
+      ],
+      "signals": [
+        {
+          "signal": "pricing_power",
+          "direction": "positive",
+          "detail": "gross margin +29.3pp y/y (latest 83.2%)",
+          "rule": "PB-SIG-04"
+        },
+        {
+          "signal": "acceleration",
+          "direction": "positive",
+          "detail": "revenue +257% y/y, +51% q/q",
+          "rule": "PB-PHASE-04"
+        },
+        {
+          "signal": "drawdown",
+          "direction": "check",
+          "detail": "-57% from 52-week high — macro correction or thesis break?",
+          "rule": "PB-TIME-06"
+        }
+      ],
+      "framework_fit_guess": {
+        "role": "chokepoint",
+        "fit": "strong",
+        "rule": "PB-FIT-01"
+      },
+      "phase_guess": "volume_ramp",
+      "next_hop_candidates": [
+        {
+          "ticker": "VECO",
+          "name": "Veeco",
+          "node": "存储工序设备与 IP",
+          "status": "filling",
+          "basis": "serenity_lead"
+        },
+        {
+          "ticker": "RMBS",
+          "name": "Rambus",
+          "node": "存储工序设备与 IP",
+          "status": "filling",
+          "basis": "serenity_lead"
+        },
+        {
+          "ticker": "ONTO",
+          "name": "Onto Innovation",
+          "node": "存储工序设备与 IP",
+          "status": "filling",
+          "basis": "serenity_lead"
+        },
+        {
+          "ticker": "6315.T",
+          "name": "Towa",
+          "node": "HBM 压缩成型",
+          "status": "monopoly_not_bottleneck",
+          "basis": "serenity_lead"
+        }
+      ],
+      "questions": [
+        "Who are the top customers and what share of capacity does the company hold? (PB-LAW-03)",
+        "Can the largest customer build this in-house within 3 years? (PB-LAW-02)",
+        "What does the latest call say about allocation, lead times, or capacity? (PB-HUNT-11)"
+      ],
+      "snapshot_warnings": [
+        "sec_filings_not_applicable_non_us: read exchange filings (DART/MOPS/TDnet/RNS) for financing and contracts"
+      ],
+      "note": "Mechanical first pass; confirm every guess with primary sources before writing a lens."
+    },
+    "005930.KS": {
+      "symbol": "005930.KS",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "price": 215500.0,
+      "currency": "KRW",
+      "market_cap_calc": 1248297392012000.0,
+      "drawdown_from_52w_high_pct": -42.46,
+      "revenue_ttm": 485272032000000.0,
+      "revenue_yoy_pct": 130.0,
+      "atlas": [
+        {
+          "chain": "memory",
+          "node": "hbm_dram",
+          "status": "now",
+          "peers": [
+            "000660.KS",
+            "MU"
+          ]
+        }
+      ],
+      "signals": [
+        {
+          "signal": "pricing_power",
+          "direction": "positive",
+          "detail": "gross margin +35.4pp y/y (latest 69.56%)",
+          "rule": "PB-SIG-04"
+        },
+        {
+          "signal": "acceleration",
+          "direction": "positive",
+          "detail": "revenue +130% y/y, +28% q/q",
+          "rule": "PB-PHASE-04"
+        }
+      ],
+      "framework_fit_guess": {
+        "role": "chokepoint",
+        "fit": "strong",
+        "rule": "PB-FIT-01"
+      },
+      "phase_guess": "volume_ramp",
+      "next_hop_candidates": [
+        {
+          "ticker": "VECO",
+          "name": "Veeco",
+          "node": "存储工序设备与 IP",
+          "status": "filling",
+          "basis": "serenity_lead"
+        },
+        {
+          "ticker": "RMBS",
+          "name": "Rambus",
+          "node": "存储工序设备与 IP",
+          "status": "filling",
+          "basis": "serenity_lead"
+        },
+        {
+          "ticker": "ONTO",
+          "name": "Onto Innovation",
+          "node": "存储工序设备与 IP",
+          "status": "filling",
+          "basis": "serenity_lead"
+        },
+        {
+          "ticker": "6315.T",
+          "name": "Towa",
+          "node": "HBM 压缩成型",
+          "status": "monopoly_not_bottleneck",
+          "basis": "serenity_lead"
+        }
+      ],
+      "questions": [
+        "Who are the top customers and what share of capacity does the company hold? (PB-LAW-03)",
+        "Can the largest customer build this in-house within 3 years? (PB-LAW-02)",
+        "What does the latest call say about allocation, lead times, or capacity? (PB-HUNT-11)"
+      ],
+      "snapshot_warnings": [
+        "share_class_note_partial: Samsung Electronics preferred shares (005935.KS) are excluded; common-only value understates group equity.",
+        "sec_filings_not_applicable_non_us: read exchange filings (DART/MOPS/TDnet/RNS) for financing and contracts"
+      ],
+      "note": "Mechanical first pass; confirm every guess with primary sources before writing a lens."
+    }
+  },
+  "atlas": {
+    "ticker": "MU",
+    "atlas_as_of": "2026-06-05",
+    "found": true,
+    "positions": [
+      {
+        "chain_id": "memory",
+        "chain": "AI 存储（HBM / NAND / 遗留 DRAM）",
+        "node_id": "hbm_dram",
+        "node": "HBM / 先进 DRAM",
+        "taxonomy": "L2.MEM.HBM",
+        "status": "now",
+        "kind": "material",
+        "archetypes": [
+          "ARC-SUPER-SUPPLIER"
+        ],
+        "holder": {
+          "ticker": "MU",
+          "name": "Micron",
+          "role": "存储，供给时间表来源",
+          "basis": "serenity_lead",
+          "post_ids": [
+            "2060034817954333158"
+          ]
+        },
+        "peers": [
+          "000660.KS",
+          "005930.KS"
+        ],
+        "upstream_path": [
+          {
+            "depth": 1,
+            "node_id": "mem_equipment",
+            "name": "存储工序设备与 IP",
+            "status": "filling",
+            "holders": [
+              "VECO",
+              "RMBS",
+              "ONTO"
+            ]
+          },
+          {
+            "depth": 1,
+            "node_id": "hbm_molding",
+            "name": "HBM 压缩成型",
+            "status": "monopoly_not_bottleneck",
+            "holders": [
+              "6315.T"
+            ]
+          }
+        ],
+        "downstream": [],
+        "next_hop_candidates": [
+          {
+            "ticker": "VECO",
+            "name": "Veeco",
+            "node_id": "mem_equipment",
+            "node": "存储工序设备与 IP",
+            "status": "filling",
+            "depth": 1,
+            "basis": "serenity_lead",
+            "post_ids": [
+              "2014368177682292774"
+            ]
+          },
+          {
+            "ticker": "RMBS",
+            "name": "Rambus",
+            "node_id": "mem_equipment",
+            "node": "存储工序设备与 IP",
+            "status": "filling",
+            "depth": 1,
+            "basis": "serenity_lead",
+            "post_ids": [
+              "2014354847202681059"
+            ]
+          },
+          {
+            "ticker": "ONTO",
+            "name": "Onto Innovation",
+            "node_id": "mem_equipment",
+            "node": "存储工序设备与 IP",
+            "status": "filling",
+            "depth": 1,
+            "basis": "serenity_lead",
+            "post_ids": [
+              "2014368177682292774"
+            ]
+          },
+          {
+            "ticker": "6315.T",
+            "name": "Towa",
+            "node_id": "hbm_molding",
+            "node": "HBM 压缩成型",
+            "status": "monopoly_not_bottleneck",
+            "depth": 1,
+            "basis": "serenity_lead",
+            "post_ids": [
+              "2049529141083701417"
+            ]
+          }
+        ]
+      }
+    ],
+    "note": "Atlas statuses are research leads as of atlas_as_of; verify with live data."
+  },
+  "serenity_memory": {
+    "status": "unavailable",
+    "note": "No Serenity stance ledger supplied (--ledger). Silence in this pack is not a view."
+  },
+  "filing_excerpts": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm",
+      "chars": 367744,
+      "sha256_16": "de117bb1beaac937",
+      "terms": {
+        "take_or_pay": {
+          "count": 5,
+          "excerpts": [
+            {
+              "offset": 32407,
+              "match": "take-or-pay",
+              "excerpt": "…istributors. We maintain inventory at locations in close proximity to certain key customers to facilitate rapid delivery of products. Contracts with certain of our customers are short-term in duration. We also have strategic customer agreements structured as take-or-pay agreements, with binding commitments for specific contractually enforceable volumes over the multi-year contract terms. Pricing for our contracts is either fixed or periodically negotiated, with the majority of the strategic customer agreements having pricing…"
+            },
+            {
+              "offset": 215436,
+              "match": "take-or-pay",
+              "excerpt": "…ustomer agreements. These agreements provide customers with contracted supply assurance and greater pricing visibility, and provide us with greater visibility and improved stability in our business performance. Strategic customer agreements are structured as take-or-pay agreements, with binding commitments for specific volumes over the multi-year contract terms. Pricing for our contracts is either fixed or periodically negotiated, with the majority of the strategic customer agreements having pricing that is subject to minimu…"
+            }
+          ]
+        },
+        "remaining_performance_obligations": {
+          "count": 7,
+          "excerpts": [
+            {
+              "offset": 322660,
+              "match": "remaining performance obligations",
+              "excerpt": "…t terms. Pricing for our contracts is either fixed or periodically negotiated, with the majority of the strategic customer agreements having pricing that is subject to minimum and maximum bands. As of September 3, 2026, the transaction price allocated to our remaining performance obligations was approximately $134 billion, of which $13 billion has been recognized as contract liabilities. Contract liabilities primarily consisted of customer deposits associated with strategic customer agreements. Nearly all of the deposits are scheduled to be repai…"
+            },
+            {
+              "offset": 323010,
+              "match": "remaining performance obligations",
+              "excerpt": "…been recognized as contract liabilities. Contract liabilities primarily consisted of customer deposits associated with strategic customer agreements. Nearly all of the deposits are scheduled to be repaid between 2029 and 2031. Approximately one-fourth of the remaining performance obligations as of September 3, 2026 are expected to be recognized as revenue over the next twelve months. The remaining performance obligations are expected to be fully recognized within the next five years. As of August 28, 2025, our remaining performance obligations we…"
+            }
+          ]
+        },
+        "customer_deposits": {
+          "count": 19,
+          "excerpts": [
+            {
+              "offset": 126937,
+              "match": "customer deposits",
+              "excerpt": "…is either fixed or periodically negotiated, with the majority of the strategic customer agreements having pricing that is subject to minimum and maximum bands. In connection with these customer agreements, we have received, and expect to continue to receive, customer deposits and letters of credit. Any failure to perform our obligations under these arrangements could subject us to contractual damages or other financial consequences. These arrangements could also constrain our available supply and limit our flexibility to respond t…"
+            },
+            {
+              "offset": 227673,
+              "match": "customer deposits",
+              "excerpt": "…Compensation Plans •Note 17. Other Operating (Income) Expense, Net •Note 18. Income Taxes Liquidity and Capital Resources Our primary source of liquidity is cash generated from operations. We also receive significant funding from government assistance and customer deposits associated with strategic customer agreements. In prior years, we have obtained significant financing from capital markets and financial institutions. Cash generated from operations is highly dependent on selling prices for our products, which can vary signif…"
+            }
+          ]
+        },
+        "prepayment": {
+          "count": 0,
+          "excerpts": []
+        },
+        "capacity_reservation": {
+          "count": 0,
+          "excerpts": []
+        },
+        "long_term_supply_agreement": {
+          "count": 0,
+          "excerpts": []
+        },
+        "sole_source": {
+          "count": 4,
+          "excerpts": [
+            {
+              "offset": 42987,
+              "match": "sole source",
+              "excerpt": "…supply for our materials and services. However, only a limited number of suppliers are capable of delivering certain materials, components, and services that meet our standards and, in some cases, materials, components, or services are provided by a single or sole source, and we may be unable to qualify new suppliers on a timely basis. The availability of materials or components, such as chemicals, silicon wafers, gases, photoresists, semiconductors, substrates, lead frames, printed circuit boards, targets, and reticle glass…"
+            },
+            {
+              "offset": 110549,
+              "match": "sole source",
+              "excerpt": "…supply for our materials and services. However, only a limited number of suppliers are capable of delivering certain materials, components, and services that meet our standards and, in some cases, materials, components, or services are provided by a single or sole source, and we may be unable to qualify new suppliers on a timely basis. The availability of materials or components, such as chemicals, silicon wafers, gases, photoresists, semiconductors, substrates, lead frames, printed circuit boards, targets, and reticle glass…"
+            }
+          ]
+        },
+        "customer_concentration": {
+          "count": 1,
+          "excerpts": [
+            {
+              "offset": 337776,
+              "match": "customer accounted for 10%",
+              "excerpt": "…on, and $103 million, respectively. 93 | 2026 10-K Table of Contents Note 21. Certain Concentrations Our business units are based on market segments. See Note 20. Segment and Other Information for disclosure of disaggregated revenue by market segment. No customer accounted for 10% or more of total revenue in 2026. Revenue from one customer was 17% (primarily included in the CMBU segment) of total revenue for 2025. Revenue from one customer was 10% (primarily included in the MCBU, AEBU, and CMBU segments) of total revenue for 2024. We…"
+            }
+          ]
+        },
+        "going_concern": {
+          "count": 0,
+          "excerpts": []
+        },
+        "material_weakness": {
+          "count": 0,
+          "excerpts": []
+        },
+        "export_controls": {
+          "count": 8,
+          "excerpts": [
+            {
+              "offset": 34429,
+              "match": "export restrictions",
+              "excerpt": "…vely, new entrants into the memory and storage market could have a significant adverse impact on our competitive position. We operate in different jurisdictions than our competitors and may be impacted by unfavorable changes in currency exchange rates, import/export restrictions, and other trade regulations, including tariffs. In addition, governments have provided, and may continue to provide, significant assistance, financial or otherwise, to some of our competitors or to new entrants and may intervene in support of national indus…"
+            },
+            {
+              "offset": 62693,
+              "match": "export control",
+              "excerpt": "…able of Contents Trade Regulations Sales of our memory and storage products, and the transfer of related technical information and know-how, including support, are subject to laws and regulations governing international trade, including, but not limited to, export control, customs, and sanctions regulations administered by U.S. government agencies, such as the Bureau of Industry and Security (“BIS”) of the U.S. Department of Commerce and the Office of Foreign Asset Control of the U.S. Department of the Treasury. Other jurisdic…"
+            }
+          ]
+        },
+        "at_the_market": {
+          "count": 0,
+          "excerpts": []
+        },
+        "default_covenant": {
+          "count": 3,
+          "excerpts": [
+            {
+              "offset": 229715,
+              "match": "event of default",
+              "excerpt": "…intain letters of credit with third-party financial institutions. Our right to access such letters of credit is contingent upon the occurrence of specified events of default or breach by our customers. Letters of credit are not recognized as revenue unless an event of default or breach has occurred. The aggregate amount of letters of credit issued, or contractually committed to be issued, by third-party financial institutions was $7 billion as of September 3, 2026. In the event of customer default or breach, our contractual recove…"
+            },
+            {
+              "offset": 275835,
+              "match": "event of default",
+              "excerpt": "…to maintain letters of credit with third-party financial institutions. Our right to access letters of credit is contingent upon the occurrence of specified events of default or breach by our customers. Letters of credit are not recognized as revenue unless an event of default or breach has occurred. We estimate a liability for returns using the expected value method based on historical returns. In addition, we generally offer price protection to our distributors, which is a form of variable consideration that decreases the transa…"
+            }
+          ]
+        }
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm",
+      "note": "Excerpts are verbatim SEC text (public record); quote sparingly and cite the URL.",
+      "form": "10-K",
+      "filed": "2026-10-09",
+      "report_date": "2026-09-03",
+      "status": "ok",
+      "evidence_id": "E-LIVE-DOC-01"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+      "chars": 210208,
+      "sha256_16": "d01ab139287bcd10",
+      "terms": {
+        "take_or_pay": {
+          "count": 2,
+          "excerpts": [
+            {
+              "offset": 51091,
+              "match": "take-or-pay",
+              "excerpt": "…ments, Note 17. Segment and Other Information for disclosure of disaggregated revenue by market segment. We recently executed certain strategic customer agreements, including agreements executed subsequent to May 28, 2026. These agreements are structured as take-or-pay agreements, with binding commitments for specific volumes over the multi-year contract terms and include contractually enforceable volumes. Pricing for most agreements is either fixed, or is subject to minimum and maximum pricing. A minority of the agreements…"
+            },
+            {
+              "offset": 66970,
+              "match": "take-or-pay",
+              "excerpt": "…strategic customer agreements. These agreements provide customers contracted supply assurance and greater pricing visibility, and provide us higher visibility and improved stability in our business performance. Strategic customer agreements are structured as take-or-pay agreements, with binding commitments for specific volumes over the multi-year contract terms. Pricing for most agreements is either fixed, or is subject to minimum and maximum pricing. The largest agreements generally have a ceiling price for existing product…"
+            }
+          ]
+        },
+        "remaining_performance_obligations": {
+          "count": 6,
+          "excerpts": [
+            {
+              "offset": 51479,
+              "match": "remaining performance obligations",
+              "excerpt": "…ly enforceable volumes. Pricing for most agreements is either fixed, or is subject to minimum and maximum pricing. A minority of the agreements do not have any fixed pricing or price bands, as pricing for those agreements is subject to market conditions. Our remaining performance obligations disclosure is based on minimum committed volumes and minimum pricing and is not expected to be indicative of future revenue under these contracts. Agreements without fixed pricing or price bands are not included in the remaining performance obligations disclo…"
+            },
+            {
+              "offset": 51887,
+              "match": "remaining performance obligations",
+              "excerpt": "…e revenue under these contracts. Agreements without fixed pricing or price bands are not included in the remaining performance obligations disclosure. As a practical expedient, we have excluded contracts that have an original term of one year or less from our remaining performance obligations disclosure. As of May 28, 2026, the transaction price allocated to our remaining performance obligations was approximately $5 billion, of which $422 million has been recognized as contract liabilities. Contract liabilities primarily consisted of customer de…"
+            }
+          ]
+        },
+        "customer_deposits": {
+          "count": 7,
+          "excerpts": [
+            {
+              "offset": 50475,
+              "match": "Contract Liabilities",
+              "excerpt": "…ion of total unrecognized compensation costs for unvested awards, before the effect of any future forfeitures, was expected to be recognized through the third quarter of 2030, resulting in a weighted-average period of 1.2 years. Note 14. Revenue and Customer Contract Liabilities Revenue by Technology Quarter Ended Nine Months Ended May 28, 2026 May 29, 2025 May 28, 2026 May 29, 2025 DRAM $ 31,328 $ 7,071 $ 60,908 $ 19,594 NAND 9,943 2,155 17,683 6,251 Other (primarily NOR) 185 75 368 218 $ 41,456 $ 9,301 $ 78,959 $ 26,0…"
+            },
+            {
+              "offset": 52103,
+              "match": "contract liabilities",
+              "excerpt": "…original term of one year or less from our remaining performance obligations disclosure. As of May 28, 2026, the transaction price allocated to our remaining performance obligations was approximately $5 billion, of which $422 million has been recognized as contract liabilities. Contract liabilities primarily consisted of customer deposits associated with strategic customer agreements for which revenue has not yet been recognized and are primarily included in other noncurrent liabilities. As of August 28, 2025, our remaining perform…"
+            }
+          ]
+        },
+        "prepayment": {
+          "count": 0,
+          "excerpts": []
+        },
+        "capacity_reservation": {
+          "count": 0,
+          "excerpts": []
+        },
+        "long_term_supply_agreement": {
+          "count": 0,
+          "excerpts": []
+        },
+        "sole_source": {
+          "count": 2,
+          "excerpts": [
+            {
+              "offset": 132919,
+              "match": "sole source",
+              "excerpt": "…supply for our materials and services. However, only a limited number of suppliers are capable of delivering certain materials, components, and services that meet our standards and, in some cases, materials, components, or services are provided by a single or sole source, and we may be unable to qualify new suppliers on a timely basis. The availability of materials or components, such as chemicals, silicon wafers, gases, photoresists, semiconductors, substrates, lead frames, printed circuit boards, targets, and reticle glass…"
+            },
+            {
+              "offset": 138540,
+              "match": "single supplier",
+              "excerpt": "…ons are dependent on our ability to procure advanced semiconductor manufacturing equipment that enables the transition to lower cost manufacturing processes. For certain key types of equipment, including photolithography tools, we are sometimes dependent on a single supplier. From time to time, we have experienced difficulties in obtaining some equipment on a timely basis due to suppliers’ limited capacity. Our inability to obtain equipment on a timely basis could adversely affect our ability to transition to next generation manu…"
+            }
+          ]
+        },
+        "customer_concentration": {
+          "count": 0,
+          "excerpts": []
+        },
+        "going_concern": {
+          "count": 0,
+          "excerpts": []
+        },
+        "material_weakness": {
+          "count": 0,
+          "excerpts": []
+        },
+        "export_controls": {
+          "count": 5,
+          "excerpts": [
+            {
+              "offset": 112758,
+              "match": "export restrictions",
+              "excerpt": "…oducts by third parties. These restrictions may not prohibit our competitors from selling similar products to our customers, which may result in a loss of sales and market share. Even as such restrictions are lifted, financial or other penalties or continuing export restrictions imposed with respect to our customers could have a continuing negative impact on our future revenue and results of operations, and we may not be able to recover any customers or market share we lose, or make such recoveries at acceptable average selling price…"
+            },
+            {
+              "offset": 114796,
+              "match": "export restrictions",
+              "excerpt": "…vely, new entrants into the memory and storage market could have a significant adverse impact on our competitive position. We operate in different jurisdictions than our competitors and may be impacted by unfavorable changes in currency exchange rates, import/export restrictions, and other trade regulations, including tariffs. In addition, governments have provided, and may continue to provide, significant assistance, financial or otherwise, to some of our competitors or to new entrants and may intervene in support of national indus…"
+            }
+          ]
+        },
+        "at_the_market": {
+          "count": 0,
+          "excerpts": []
+        },
+        "default_covenant": {
+          "count": 0,
+          "excerpts": []
+        }
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+      "note": "Excerpts are verbatim SEC text (public record); quote sparingly and cite the URL.",
+      "form": "10-Q",
+      "filed": "2026-06-25",
+      "report_date": "2026-05-28",
+      "status": "ok",
+      "evidence_id": "E-LIVE-DOC-02"
+    }
+  ]
+}

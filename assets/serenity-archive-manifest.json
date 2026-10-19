@@ -1,0 +1,438 @@
+{
+  "schema_version": "6.1",
+  "generated_at": "2026-10-18T04:35:43Z",
+  "subject": "Serenity (public posts)",
+  "post_count": 1505,
+  "first_post": "2025-07-02T10:48:10Z",
+  "archive_through": "2026-06-05T03:51:32Z",
+  "post_id_set_sha256": "9e2d2ed3cc8f1ed498d58014223d36833dfa44a41916bff353566bd8d9005b26",
+  "posts_per_month": {
+    "2025-07": 21,
+    "2025-08": 5,
+    "2025-09": 82,
+    "2025-10": 89,
+    "2025-11": 62,
+    "2025-12": 70,
+    "2026-01": 214,
+    "2026-02": 127,
+    "2026-03": 246,
+    "2026-04": 223,
+    "2026-05": 266,
+    "2026-06": 100
+  },
+  "extractor": "rules-v6.1",
+  "event_count": 3086,
+  "action_counts": {
+    "ADD": 23,
+    "BEARISH": 14,
+    "DENY": 5,
+    "MENTION": 2975,
+    "OPEN": 33,
+    "REAFFIRM": 28,
+    "TRIM": 6,
+    "WATCH": 2
+  },
+  "ticker_mentions_top": [
+    {
+      "ticker": "NVDA",
+      "mentions": 129,
+      "in_atlas": true
+    },
+    {
+      "ticker": "SIVE",
+      "mentions": 123,
+      "in_atlas": true
+    },
+    {
+      "ticker": "NBIS",
+      "mentions": 111,
+      "in_atlas": false
+    },
+    {
+      "ticker": "IREN",
+      "mentions": 85,
+      "in_atlas": false
+    },
+    {
+      "ticker": "LITE",
+      "mentions": 83,
+      "in_atlas": true
+    },
+    {
+      "ticker": "AXTI",
+      "mentions": 77,
+      "in_atlas": true
+    },
+    {
+      "ticker": "AAOI",
+      "mentions": 65,
+      "in_atlas": true
+    },
+    {
+      "ticker": "000660.KS",
+      "mentions": 62,
+      "in_atlas": true
+    },
+    {
+      "ticker": "GOOGL",
+      "mentions": 54,
+      "in_atlas": false
+    },
+    {
+      "ticker": "MRVL",
+      "mentions": 51,
+      "in_atlas": true
+    },
+    {
+      "ticker": "CRWV",
+      "mentions": 45,
+      "in_atlas": false
+    },
+    {
+      "ticker": "TSM",
+      "mentions": 43,
+      "in_atlas": true
+    },
+    {
+      "ticker": "META",
+      "mentions": 43,
+      "in_atlas": false
+    },
+    {
+      "ticker": "SOI",
+      "mentions": 41,
+      "in_atlas": true
+    },
+    {
+      "ticker": "MU",
+      "mentions": 39,
+      "in_atlas": true
+    },
+    {
+      "ticker": "MSFT",
+      "mentions": 38,
+      "in_atlas": false
+    },
+    {
+      "ticker": "COHR",
+      "mentions": 37,
+      "in_atlas": true
+    },
+    {
+      "ticker": "HOOD",
+      "mentions": 36,
+      "in_atlas": false
+    },
+    {
+      "ticker": "IQE",
+      "mentions": 35,
+      "in_atlas": true
+    },
+    {
+      "ticker": "CIFR",
+      "mentions": 34,
+      "in_atlas": false
+    },
+    {
+      "ticker": "SNDK",
+      "mentions": 34,
+      "in_atlas": true
+    },
+    {
+      "ticker": "RKLB",
+      "mentions": 33,
+      "in_atlas": false
+    },
+    {
+      "ticker": "6146.T",
+      "mentions": 32,
+      "in_atlas": false
+    },
+    {
+      "ticker": "AMZN",
+      "mentions": 31,
+      "in_atlas": false
+    },
+    {
+      "ticker": "POET",
+      "mentions": 31,
+      "in_atlas": true
+    },
+    {
+      "ticker": "SIVE.ST",
+      "mentions": 31,
+      "in_atlas": true
+    },
+    {
+      "ticker": "AMD",
+      "mentions": 30,
+      "in_atlas": false
+    },
+    {
+      "ticker": "AEHR",
+      "mentions": 30,
+      "in_atlas": true
+    },
+    {
+      "ticker": "AVGO",
+      "mentions": 28,
+      "in_atlas": true
+    },
+    {
+      "ticker": "RDDT",
+      "mentions": 28,
+      "in_atlas": false
+    },
+    {
+      "ticker": "6451.TW",
+      "mentions": 28,
+      "in_atlas": true
+    },
+    {
+      "ticker": "HIMS",
+      "mentions": 26,
+      "in_atlas": false
+    },
+    {
+      "ticker": "INTC",
+      "mentions": 26,
+      "in_atlas": false
+    },
+    {
+      "ticker": "TSLA",
+      "mentions": 24,
+      "in_atlas": false
+    },
+    {
+      "ticker": "EWY",
+      "mentions": 24,
+      "in_atlas": false
+    },
+    {
+      "ticker": "TSEM",
+      "mentions": 24,
+      "in_atlas": true
+    },
+    {
+      "ticker": "CRCL",
+      "mentions": 22,
+      "in_atlas": false
+    },
+    {
+      "ticker": "ORCL",
+      "mentions": 21,
+      "in_atlas": false
+    },
+    {
+      "ticker": "JBL",
+      "mentions": 21,
+      "in_atlas": false
+    },
+    {
+      "ticker": "AVAV",
+      "mentions": 20,
+      "in_atlas": false
+    },
+    {
+      "ticker": "RPI",
+      "mentions": 20,
+      "in_atlas": false
+    },
+    {
+      "ticker": "SMCI",
+      "mentions": 19,
+      "in_atlas": false
+    },
+    {
+      "ticker": "MTSI",
+      "mentions": 19,
+      "in_atlas": true
+    },
+    {
+      "ticker": "XLU",
+      "mentions": 19,
+      "in_atlas": false
+    },
+    {
+      "ticker": "UPWK",
+      "mentions": 18,
+      "in_atlas": false
+    },
+    {
+      "ticker": "VPG",
+      "mentions": 18,
+      "in_atlas": true
+    },
+    {
+      "ticker": "LPK",
+      "mentions": 18,
+      "in_atlas": true
+    },
+    {
+      "ticker": "WULF",
+      "mentions": 17,
+      "in_atlas": false
+    },
+    {
+      "ticker": "ALAB",
+      "mentions": 17,
+      "in_atlas": false
+    },
+    {
+      "ticker": "OSS",
+      "mentions": 17,
+      "in_atlas": false
+    },
+    {
+      "ticker": "BKKT",
+      "mentions": 16,
+      "in_atlas": false
+    },
+    {
+      "ticker": "ETH",
+      "mentions": 16,
+      "in_atlas": false
+    },
+    {
+      "ticker": "ETOR",
+      "mentions": 16,
+      "in_atlas": false
+    },
+    {
+      "ticker": "VLN",
+      "mentions": 16,
+      "in_atlas": false
+    },
+    {
+      "ticker": "ARM",
+      "mentions": 16,
+      "in_atlas": false
+    },
+    {
+      "ticker": "FLNC",
+      "mentions": 15,
+      "in_atlas": true
+    },
+    {
+      "ticker": "LASR",
+      "mentions": 15,
+      "in_atlas": true
+    },
+    {
+      "ticker": "ALRIB",
+      "mentions": 15,
+      "in_atlas": true
+    },
+    {
+      "ticker": "CRDO",
+      "mentions": 14,
+      "in_atlas": false
+    },
+    {
+      "ticker": "BMNR",
+      "mentions": 14,
+      "in_atlas": false
+    },
+    {
+      "ticker": "AIRO",
+      "mentions": 14,
+      "in_atlas": false
+    },
+    {
+      "ticker": "HPS.A",
+      "mentions": 14,
+      "in_atlas": false
+    },
+    {
+      "ticker": "MSTR",
+      "mentions": 13,
+      "in_atlas": false
+    },
+    {
+      "ticker": "LPTH",
+      "mentions": 13,
+      "in_atlas": true
+    },
+    {
+      "ticker": "BULL",
+      "mentions": 12,
+      "in_atlas": false
+    },
+    {
+      "ticker": "VIRT",
+      "mentions": 12,
+      "in_atlas": false
+    },
+    {
+      "ticker": "SSYS",
+      "mentions": 12,
+      "in_atlas": true
+    },
+    {
+      "ticker": "COIN",
+      "mentions": 11,
+      "in_atlas": false
+    },
+    {
+      "ticker": "SNAP",
+      "mentions": 11,
+      "in_atlas": false
+    },
+    {
+      "ticker": "SOI.PA",
+      "mentions": 11,
+      "in_atlas": true
+    },
+    {
+      "ticker": "IBIT",
+      "mentions": 10,
+      "in_atlas": false
+    },
+    {
+      "ticker": "WYFI",
+      "mentions": 10,
+      "in_atlas": false
+    },
+    {
+      "ticker": "SLNH",
+      "mentions": 10,
+      "in_atlas": false
+    },
+    {
+      "ticker": "CVX",
+      "mentions": 10,
+      "in_atlas": false
+    },
+    {
+      "ticker": "NVO",
+      "mentions": 9,
+      "in_atlas": false
+    },
+    {
+      "ticker": "LTC",
+      "mentions": 9,
+      "in_atlas": false
+    },
+    {
+      "ticker": "WLAC",
+      "mentions": 9,
+      "in_atlas": false
+    },
+    {
+      "ticker": "KRKNF",
+      "mentions": 9,
+      "in_atlas": false
+    },
+    {
+      "ticker": "ALRIB.PA",
+      "mentions": 9,
+      "in_atlas": true
+    },
+    {
+      "ticker": "DPRO",
+      "mentions": 9,
+      "in_atlas": false
+    }
+  ],
+  "note": "Counts and IDs only. Post text lives in the maintainer's private archive and is never committed to the public skill repo. The skill is a framework distilled from Serenity's public posts for research/backtesting; it does not speak for Serenity."
+}

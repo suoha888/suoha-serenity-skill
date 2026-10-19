@@ -1,0 +1,1257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/suoha888/suoha-serenity-skill/schemas/serenity-lens.schema.json",
+  "title": "SerenityLens",
+  "description": "v5 Serenity-style chokepoint lens for one ticker or one theme. Scenario valuations are labelled hypotheses, never price targets or trade instructions. Deterministic checks live in scripts/serenity_lens.py.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "lens_id",
+    "mode",
+    "subject",
+    "research_cutoff",
+    "as_of",
+    "one_liner",
+    "thirty_second_summary",
+    "capex_certainty",
+    "chain_map",
+    "chokepoint_of_chokepoint",
+    "archetype_hits",
+    "gates",
+    "red_flags",
+    "valuation",
+    "leading_signals",
+    "osint_leads",
+    "red_team",
+    "falsification",
+    "serenity_memory",
+    "serenity_view",
+    "research_tier",
+    "tier_reason",
+    "evidence",
+    "disclaimer"
+  ],
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "5.0",
+        "6.0"
+      ]
+    },
+    "lens_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "mode": {
+      "enum": [
+        "single_ticker",
+        "theme_scan"
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "ticker",
+        "resolved_symbol",
+        "company_name",
+        "currency",
+        "company_type"
+      ],
+      "properties": {
+        "ticker": {
+          "type": "string"
+        },
+        "resolved_symbol": {
+          "type": "string"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "company_name": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string",
+          "minLength": 3
+        },
+        "company_type": {
+          "enum": [
+            "upstream_material",
+            "component_supplier",
+            "equipment_test",
+            "foundry_osat",
+            "fabless_designer",
+            "system_integrator",
+            "infrastructure_power",
+            "hyperscaler_platform",
+            "software_application",
+            "value_cyclical",
+            "other"
+          ]
+        },
+        "taxonomy_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "research_cutoff": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "one_liner": {
+      "type": "string",
+      "minLength": 10
+    },
+    "thirty_second_summary": {
+      "type": "string",
+      "minLength": 60
+    },
+    "capex_certainty": {
+      "type": "object",
+      "required": [
+        "demand_source",
+        "statement",
+        "evidence_ids"
+      ],
+      "properties": {
+        "demand_source": {
+          "enum": [
+            "hyperscaler_commercial",
+            "government_defense",
+            "consumer",
+            "industrial",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "statement": {
+          "type": "string"
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "chain_map": {
+      "type": "object",
+      "required": [
+        "theme",
+        "layers"
+      ],
+      "properties": {
+        "theme": {
+          "type": "string"
+        },
+        "layers": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "layer",
+              "nodes"
+            ],
+            "properties": {
+              "layer": {
+                "enum": [
+                  "downstream_reference",
+                  "midstream_system",
+                  "midstream_component",
+                  "upstream_equipment",
+                  "upstream_material",
+                  "cross_theme_root"
+                ]
+              },
+              "taxonomy_code": {
+                "type": "string"
+              },
+              "nodes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "role"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "ticker": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "type": "string"
+                    },
+                    "is_subject": {
+                      "type": "boolean"
+                    },
+                    "listing_status": {
+                      "enum": [
+                        "listed",
+                        "private",
+                        "subsidiary",
+                        "acquired",
+                        "delisted",
+                        "unknown"
+                      ]
+                    },
+                    "archetypes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "chokepoint_of_chokepoint": {
+      "type": "object",
+      "required": [
+        "statement",
+        "node",
+        "status",
+        "evidence_ids"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "node": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "established",
+            "inferred",
+            "hypothesis",
+            "unknown"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "archetype_hits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "archetype",
+          "applies",
+          "why"
+        ],
+        "properties": {
+          "archetype": {
+            "type": "string"
+          },
+          "applies": {
+            "enum": [
+              "yes",
+              "partial",
+              "no",
+              "unknown"
+            ]
+          },
+          "why": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "required": [
+        "real_bottleneck",
+        "pre_institutional",
+        "cheap_derisked"
+      ],
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "status",
+          "why"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "pass",
+              "partial",
+              "fail",
+              "unknown"
+            ]
+          },
+          "why": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "red_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "flag",
+          "severity",
+          "triggered",
+          "detail"
+        ],
+        "properties": {
+          "flag": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "veto",
+              "downgrade",
+              "watch"
+            ]
+          },
+          "triggered": {
+            "enum": [
+              "yes",
+              "no",
+              "unknown"
+            ]
+          },
+          "detail": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "valuation": {
+      "type": "object",
+      "required": [
+        "current",
+        "ruler",
+        "scenarios"
+      ],
+      "properties": {
+        "current": {
+          "type": "object",
+          "required": [
+            "price",
+            "shares_outstanding",
+            "market_cap",
+            "currency",
+            "price_as_of",
+            "shares_as_of",
+            "evidence_ids"
+          ],
+          "properties": {
+            "price": {
+              "type": "number",
+              "minimum": 0
+            },
+            "shares_outstanding": {
+              "type": "number",
+              "minimum": 0
+            },
+            "market_cap": {
+              "type": "number",
+              "minimum": 0
+            },
+            "net_debt": {
+              "type": "number"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "price_as_of": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "shares_as_of": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ruler": {
+          "enum": [
+            "hypergrowth_forward",
+            "chokepoint_comparable",
+            "capacity_revenue",
+            "deep_value"
+          ]
+        },
+        "scenarios": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "label",
+              "horizon_years",
+              "assumptions",
+              "implied_market_cap",
+              "implied_per_share",
+              "vs_current_pct",
+              "assumption_sources",
+              "narrative"
+            ],
+            "properties": {
+              "name": {
+                "enum": [
+                  "bear",
+                  "base",
+                  "bull"
+                ]
+              },
+              "label": {
+                "const": "hypothesis"
+              },
+              "horizon_years": {
+                "type": "number",
+                "maximum": 5,
+                "minimum": 0
+              },
+              "assumptions": {
+                "type": "object",
+                "required": [
+                  "revenue",
+                  "multiple",
+                  "multiple_basis"
+                ],
+                "properties": {
+                  "revenue": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "net_margin": {
+                    "type": "number",
+                    "minimum": -1,
+                    "maximum": 1
+                  },
+                  "multiple": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "multiple_basis": {
+                    "enum": [
+                      "pe",
+                      "ps",
+                      "ev_sales"
+                    ]
+                  },
+                  "dilution_pct": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 2
+                  }
+                }
+              },
+              "implied_market_cap": {
+                "type": "number"
+              },
+              "implied_per_share": {
+                "type": "number"
+              },
+              "vs_current_pct": {
+                "type": "number"
+              },
+              "assumption_sources": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "narrative": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "asymmetry": {
+          "type": "object",
+          "properties": {
+            "tam": {
+              "type": "number",
+              "minimum": 0
+            },
+            "tam_year": {
+              "type": "integer"
+            },
+            "tam_source": {
+              "type": "string"
+            },
+            "plausible_share": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "mcap_to_tam": {
+              "type": "number"
+            },
+            "mcap_to_capturable_revenue": {
+              "type": "number"
+            }
+          }
+        },
+        "comparables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "ticker",
+              "note"
+            ],
+            "properties": {
+              "ticker": {
+                "type": "string"
+              },
+              "market_cap": {
+                "type": "number"
+              },
+              "note": {
+                "type": "string"
+              },
+              "evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "leading_signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "signal",
+          "type",
+          "confirms_if",
+          "refutes_if"
+        ],
+        "properties": {
+          "signal": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "spot_price",
+              "peer_earnings",
+              "customer_capex",
+              "anchor_customer_action",
+              "policy_export",
+              "index_inclusion",
+              "hiring_osint",
+              "trade_data",
+              "capacity_announcement",
+              "filing",
+              "other"
+            ]
+          },
+          "confirms_if": {
+            "type": "string"
+          },
+          "refutes_if": {
+            "type": "string"
+          },
+          "next_check": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "osint_leads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "lead",
+          "source_type",
+          "status"
+        ],
+        "properties": {
+          "lead": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "open",
+              "confirmed",
+              "refuted"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "red_team": {
+      "type": "object",
+      "required": [
+        "not_real_bottleneck",
+        "not_monetized",
+        "already_priced",
+        "better_alternative",
+        "biggest_kill_shot"
+      ],
+      "properties": {
+        "not_real_bottleneck": {
+          "type": "string"
+        },
+        "not_monetized": {
+          "type": "string"
+        },
+        "already_priced": {
+          "type": "string"
+        },
+        "better_alternative": {
+          "type": "object",
+          "required": [
+            "ticker",
+            "why"
+          ],
+          "properties": {
+            "ticker": {
+              "type": "string"
+            },
+            "why": {
+              "type": "string"
+            }
+          }
+        },
+        "biggest_kill_shot": {
+          "type": "string"
+        }
+      }
+    },
+    "falsification": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "condition",
+          "machine_checkable"
+        ],
+        "properties": {
+          "condition": {
+            "type": "string"
+          },
+          "machine_checkable": {
+            "type": "boolean"
+          },
+          "metric": {
+            "type": "string"
+          },
+          "operator": {
+            "enum": [
+              "<",
+              "<=",
+              ">",
+              ">=",
+              "=="
+            ]
+          },
+          "threshold": {
+            "type": "number"
+          },
+          "check_by": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "serenity_memory": {
+      "type": "object",
+      "required": [
+        "status",
+        "note"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "available",
+            "no_mentions",
+            "unavailable"
+          ]
+        },
+        "source": {
+          "type": "string"
+        },
+        "current_state": {
+          "type": "string"
+        },
+        "first_mention": {
+          "type": "string"
+        },
+        "last_mention": {
+          "type": "string"
+        },
+        "mention_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "timeline": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "required": [
+              "date",
+              "post_id",
+              "action"
+            ],
+            "properties": {
+              "date": {
+                "type": "string"
+              },
+              "post_id": {
+                "type": "string",
+                "pattern": "^[0-9]{5,25}$"
+              },
+              "action": {
+                "enum": [
+                  "OPEN",
+                  "ADD",
+                  "TRIM",
+                  "CLOSE",
+                  "DENY",
+                  "REAFFIRM",
+                  "BEARISH",
+                  "WATCH",
+                  "MENTION"
+                ]
+              },
+              "conviction": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "summary": {
+                "type": "string"
+              },
+              "stance": {
+                "enum": [
+                  "bullish",
+                  "bearish",
+                  "neutral"
+                ]
+              }
+            }
+          }
+        },
+        "note": {
+          "type": "string"
+        },
+        "archive_through": {
+          "type": "string",
+          "description": "Last post date covered by the local Serenity archive; silence after it is unknown, not a view."
+        }
+      }
+    },
+    "serenity_view": {
+      "type": "object",
+      "required": [
+        "would_he_care",
+        "why",
+        "playbook_rules"
+      ],
+      "properties": {
+        "would_he_care": {
+          "enum": [
+            "yes",
+            "maybe",
+            "no"
+          ]
+        },
+        "why": {
+          "type": "string"
+        },
+        "playbook_rules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^PB-[A-Z0-9-]+$"
+          }
+        }
+      }
+    },
+    "research_tier": {
+      "enum": [
+        "green",
+        "amber",
+        "red"
+      ]
+    },
+    "tier_reason": {
+      "type": "string"
+    },
+    "rerate_triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit_link": {
+      "type": "object",
+      "properties": {
+        "research_output_id": {
+          "type": "string"
+        },
+        "bundle_path": {
+          "type": "string"
+        },
+        "bundle_validated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "title",
+          "locator",
+          "published_at",
+          "source_type"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string"
+          },
+          "retrieved_at": {
+            "type": "string"
+          },
+          "source_type": {
+            "enum": [
+              "filing",
+              "company_release",
+              "earnings_call",
+              "market_data",
+              "news",
+              "industry_data",
+              "social_lead",
+              "analysis",
+              "other"
+            ]
+          }
+        }
+      }
+    },
+    "disclaimer": {
+      "type": "string",
+      "minLength": 20
+    },
+    "live_data": {
+      "type": "object",
+      "required": [
+        "snapshot_path",
+        "retrieved_at",
+        "source_hosts",
+        "warnings_addressed"
+      ],
+      "properties": {
+        "snapshot_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrieved_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_hosts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "warnings_addressed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "warning",
+              "handling"
+            ],
+            "properties": {
+              "warning": {
+                "type": "string",
+                "minLength": 1
+              },
+              "handling": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "framework_fit": {
+      "type": "object",
+      "required": [
+        "role",
+        "fit",
+        "rationale",
+        "rule_ids"
+      ],
+      "properties": {
+        "role": {
+          "enum": [
+            "chokepoint",
+            "price_setter_anchor",
+            "downstream_platform",
+            "integrator_or_commodity",
+            "diluter_or_story",
+            "non_ai_compounder"
+          ]
+        },
+        "fit": {
+          "enum": [
+            "strong",
+            "partial",
+            "weak",
+            "not_applicable"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 10
+        },
+        "rule_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "bottleneck_status": {
+      "type": "object",
+      "required": [
+        "status",
+        "kind",
+        "rationale",
+        "evidence_ids"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "now",
+            "filling",
+            "coming",
+            "monopoly_not_bottleneck",
+            "diluted_exposure",
+            "resolving",
+            "not_bottleneck",
+            "unknown"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "material",
+            "demand",
+            "none"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 10
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "phase": {
+      "type": "object",
+      "required": [
+        "stage",
+        "evidence",
+        "evidence_ids"
+      ],
+      "properties": {
+        "stage": {
+          "enum": [
+            "rnd",
+            "sampling",
+            "qualification",
+            "volume_ramp",
+            "steady_state",
+            "decline"
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 10
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "purity": {
+      "type": "object",
+      "required": [
+        "exposure_pct_estimate",
+        "basis",
+        "rationale"
+      ],
+      "properties": {
+        "exposure_pct_estimate": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "basis": {
+          "enum": [
+            "reported_segment",
+            "inferred",
+            "unknown"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    },
+    "risk_tier": {
+      "enum": [
+        "moonshot",
+        "rerating",
+        "western_twin",
+        "binary_restructuring",
+        "steady_compounder",
+        "anchor",
+        "avoid"
+      ]
+    },
+    "variant_perception": {
+      "type": "object",
+      "required": [
+        "consensus",
+        "consensus_sources",
+        "our_view",
+        "reason_codes",
+        "when_market_sees",
+        "first_number_to_prove_wrong",
+        "what_changed_since_archive"
+      ],
+      "properties": {
+        "consensus": {
+          "type": "string",
+          "minLength": 10
+        },
+        "consensus_sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "our_view": {
+          "type": "string",
+          "minLength": 20
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "when_market_sees": {
+          "type": "string",
+          "minLength": 5
+        },
+        "first_number_to_prove_wrong": {
+          "type": "object",
+          "required": [
+            "metric",
+            "operator",
+            "threshold",
+            "check_by"
+          ],
+          "properties": {
+            "metric": {
+              "type": "string",
+              "minLength": 1
+            },
+            "operator": {
+              "enum": [
+                "<",
+                "<=",
+                ">",
+                ">=",
+                "==",
+                "!="
+              ]
+            },
+            "threshold": {
+              "type": [
+                "number",
+                "string"
+              ]
+            },
+            "check_by": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "what_changed_since_archive": {
+          "type": "string",
+          "minLength": 20
+        }
+      }
+    },
+    "next_hop_picks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ticker",
+          "name",
+          "relation",
+          "node",
+          "why",
+          "basis",
+          "verify_first"
+        ],
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation": {
+            "enum": [
+              "upstream",
+              "downstream",
+              "peer",
+              "western_twin",
+              "anchor"
+            ]
+          },
+          "node": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why": {
+            "type": "string",
+            "minLength": 10
+          },
+          "archetypes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "basis": {
+            "enum": [
+              "serenity_lead",
+              "author_lead",
+              "industry_knowledge",
+              "live_data",
+              "inference"
+            ]
+          },
+          "verify_first": {
+            "type": "string",
+            "minLength": 5
+          }
+        }
+      },
+      "minItems": 1
+    }
+  }
+}

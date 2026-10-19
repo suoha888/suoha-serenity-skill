@@ -1,0 +1,48 @@
+name: 实测反馈 / Field test report
+description: 报告安装、股票研究或数据问题 / Report installation, research or data issues
+title: "[实测反馈 / Field test report] "
+labels: [field-test]
+body:
+  - type: markdown
+    attributes:
+      value: "请勿上传密钥、推文原文或私有档案。Do not share secrets, tweet text or private archives."
+  - type: dropdown
+    id: market
+    attributes:
+      label: 市场 / Market
+      options: [A股, 港股, 美股, 其他]
+  - type: input
+    id: ticker
+    attributes:
+      label: 股票代码或名称 / Ticker or company
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: 使用方式 / Usage
+      options: [对 AI 说, 命令行]
+  - type: textarea
+    id: command
+    attributes:
+      label: 使用的命令或对 AI 说的话 / Command or prompt
+  - type: input
+    id: version
+    attributes:
+      label: Skill 版本 / Version
+      value: v8.0.0
+  - type: textarea
+    id: actual
+    attributes:
+      label: 发生了什么 / 哪里不对 / Actual result
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你期望的结果 / Expected result
+  - type: textarea
+    id: output
+    attributes:
+      label: 报错或输出片段 / Redacted output
+      render: text

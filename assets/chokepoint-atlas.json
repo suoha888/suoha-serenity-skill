@@ -1,0 +1,1358 @@
+{
+ "atlas_version": "6.0",
+ "as_of": "2026-06-05",
+ "description": "自写卡点地图：链 → 节点（自上游至下游）→ 持有者。节点状态是档案期（截至 as_of）的研究判断，不是实时事实；使用前用 connectors/live_data.py 复核。",
+ "basis_legend": {
+  "serenity_lead": "Serenity 档案帖子中的研究线索（附 post_ids）",
+  "industry_knowledge": "公开行业常识补充，未出现在档案中或仅间接提及",
+  "inferred": "基于链路逻辑的推断，需一手证据确认"
+ },
+ "disclaimer": "研究线索，不构成投资建议。代码为 Yahoo 风格，以实时解析为准。",
+ "chains": [
+  {
+   "chain_id": "ai_photonics",
+   "name": "AI 光子链（InP 激光 / 硅光 / CPO）",
+   "demand_driver": "超大厂 AI 集群光互连：可插拔 800G/1.6T → CPO",
+   "nodes": [
+    {
+     "node_id": "inp_raw",
+     "name": "高纯红磷 / 铟 / 6N-7N InP 多晶原料",
+     "taxonomy": "L0.RAW",
+     "status": "now",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-BOTTLENECK-OF-BOTTLENECK",
+      "ARC-RAW-MATERIAL"
+     ],
+     "holders": [
+      {
+       "ticker": "4092.T",
+       "name": "Nippon Chemical Industrial",
+       "role": "高纯红磷龙头",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2043915653682475401",
+        "2044189972274786728"
+       ]
+      },
+      {
+       "ticker": "AXTI",
+       "name": "AXT Inc.",
+       "role": "自有原料/坩埚/前驱体（垂直整合）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2058620094532718772"
+       ]
+      },
+      {
+       "ticker": "5714.T",
+       "name": "Dowa Holdings",
+       "role": "原料/化合物材料",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2004952198275571862"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "inp_substrate",
+     "name": "InP 衬底",
+     "taxonomy": "L1.MAT.SUBSTRATE",
+     "status": "now",
+     "kind": "material",
+     "upstream": [
+      "inp_raw"
+     ],
+     "archetypes": [
+      "ARC-SOLE-SOURCE",
+      "ARC-RAW-MATERIAL"
+     ],
+     "holders": [
+      {
+       "ticker": "AXTI",
+       "name": "AXT Inc.",
+       "role": "衬底双寡头之一（中国工厂）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2004577553714163817",
+        "2034981779447455793"
+       ]
+      },
+      {
+       "ticker": "5802.T",
+       "name": "Sumitomo Electric",
+       "role": "衬底双寡头之一（日本）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2004952198275571862"
+       ]
+      },
+      {
+       "ticker": "5016.T",
+       "name": "JX Advanced Metals",
+       "role": "衬底第三供应商",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2043918867349811626"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "soi_substrate",
+     "name": "SOI / 硅光衬底",
+     "taxonomy": "L1.MAT.SUBSTRATE",
+     "status": "monopoly_not_bottleneck",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-LICENSOR-MONOPOLY"
+     ],
+     "holders": [
+      {
+       "ticker": "SOI.PA",
+       "name": "Soitec",
+       "role": "Smart Cut 许可方",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2031648475310616604",
+        "2041521462075633945"
+       ]
+      },
+      {
+       "ticker": "4063.T",
+       "name": "Shin-Etsu Chemical",
+       "role": "被许可方",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2028813150544699902"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "epiwafer",
+     "name": "化合物外延片",
+     "taxonomy": "L1.MAT.SUBSTRATE",
+     "status": "filling",
+     "kind": "material",
+     "upstream": [
+      "inp_substrate"
+     ],
+     "archetypes": [
+      "ARC-WESTERN-SUBSTITUTE"
+     ],
+     "holders": [
+      {
+       "ticker": "IQE.L",
+       "name": "IQE",
+       "role": "西方外延片（重组中）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2005945821989368245",
+        "2048822871527682152"
+       ]
+      },
+      {
+       "ticker": "3081.TWO",
+       "name": "LandMark Optoelectronics",
+       "role": "外延片",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2029160940604739625"
+       ]
+      },
+      {
+       "ticker": "4971.TWO",
+       "name": "IntelliEPI",
+       "role": "外延片",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2053270948414099915"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "compound_foundry",
+     "name": "InP/GaAs 激光代工",
+     "taxonomy": "L1.FAB",
+     "status": "coming",
+     "kind": "material",
+     "upstream": [
+      "epiwafer",
+      "inp_substrate"
+     ],
+     "archetypes": [
+      "ARC-CAPACITY-LOCK"
+     ],
+     "holders": [
+      {
+       "ticker": "3105.TWO",
+       "name": "Win Semiconductors",
+       "role": "化合物代工（低覆盖）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2042687596166615445",
+        "2059079948980363774"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "siph_foundry",
+     "name": "硅光代工",
+     "taxonomy": "L1.FAB",
+     "status": "filling",
+     "kind": "demand",
+     "upstream": [
+      "soi_substrate"
+     ],
+     "archetypes": [
+      "ARC-CAPACITY-LOCK",
+      "ARC-REFERENCE-DESIGN"
+     ],
+     "holders": [
+      {
+       "ticker": "TSEM",
+       "name": "Tower Semiconductor",
+       "role": "硅光代工，预订率高",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2041521462075633945",
+        "2054532386239693206"
+       ]
+      },
+      {
+       "ticker": "GFS",
+       "name": "GlobalFoundries",
+       "role": "硅光平台与参考设计",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2061718299139100931"
+       ]
+      },
+      {
+       "ticker": "XFAB.PA",
+       "name": "X-FAB",
+       "role": "特色代工，欧盟芯片法案映射",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2062045895500419101"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "eml_laser",
+     "name": "EML 激光（可插拔）",
+     "taxonomy": "L2.OPT.LASER",
+     "status": "now",
+     "kind": "material",
+     "upstream": [
+      "inp_substrate",
+      "epiwafer"
+     ],
+     "archetypes": [
+      "ARC-FIRST-MOVER-LOCK"
+     ],
+     "holders": [
+      {
+       "ticker": "LITE",
+       "name": "Lumentum",
+       "role": "EML 龙头，订满至 2028",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2036874293653680515",
+        "2051820971510866428"
+       ]
+      },
+      {
+       "ticker": "COHR",
+       "name": "Coherent",
+       "role": "综合厂（敞口被稀释）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2041521462075633945"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "cw_laser",
+     "name": "CW DFB 激光（硅光/CPO 光源）",
+     "taxonomy": "L2.OPT.LASER",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [
+      "compound_foundry",
+      "inp_substrate"
+     ],
+     "archetypes": [
+      "ARC-KINGMAKER",
+      "ARC-REFERENCE-DESIGN",
+      "ARC-DEMAND-SPILLOVER"
+     ],
+     "holders": [
+      {
+       "ticker": "SIVE.ST",
+       "name": "Sivers Semiconductors",
+       "role": "无晶圆厂 CW 激光",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2041521462075633945",
+        "2057720796613873805"
+       ]
+      },
+      {
+       "ticker": "MTSI",
+       "name": "MACOM",
+       "role": "CW 激光",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2036657811179155561"
+       ]
+      },
+      {
+       "ticker": "AAOI",
+       "name": "Applied Optoelectronics",
+       "role": "自有 InP 激光",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2039709630217994270"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "fau_passive",
+     "name": "FAU / 光纤阵列与无源光器件",
+     "taxonomy": "L2.OPT.CPO",
+     "status": "filling",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-HIDDEN-SUPPLIER"
+     ],
+     "holders": [
+      {
+       "ticker": "3363.TWO",
+       "name": "FOCI Fiber Optic Communications",
+       "role": "FAU",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2054365028820881794",
+        "2055127004970938373"
+       ]
+      },
+      {
+       "ticker": "HIMX",
+       "name": "Himax",
+       "role": "WLO/光学",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2058764325326856414"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "siph_test",
+     "name": "硅光/CPO 检测与良率",
+     "taxonomy": "L1.EQP.TEST",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-TESTING-YIELD",
+      "ARC-FUNCTIONAL-MONOPOLY"
+     ],
+     "holders": [
+      {
+       "ticker": "6830.TW",
+       "name": "MSSCorps",
+       "role": "CPO 检测，目标高份额",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2051105661220774266"
+       ]
+      },
+      {
+       "ticker": "FORM",
+       "name": "FormFactor",
+       "role": "探针/测试（领先指标）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2049604721766494640"
+       ]
+      },
+      {
+       "ticker": "AEHR",
+       "name": "Aehr Test Systems",
+       "role": "老化测试，认证转量产",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2041612047058924009"
+       ]
+      },
+      {
+       "ticker": "VIAV",
+       "name": "Viavi Solutions",
+       "role": "光测试（领先指标）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2049604721766494640"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "cpo_packaging",
+     "name": "CPO / 硅光封装",
+     "taxonomy": "L1.PKG.OSAT",
+     "status": "filling",
+     "kind": "demand",
+     "upstream": [
+      "siph_foundry",
+      "cw_laser",
+      "fau_passive",
+      "siph_test"
+     ],
+     "archetypes": [
+      "ARC-PARENT-CARRY"
+     ],
+     "holders": [
+      {
+       "ticker": "6451.TW",
+       "name": "Shunsin",
+       "role": "鸿海体系 CPO 封装",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2049609993071259684",
+        "2060685584365150508"
+       ]
+      },
+      {
+       "ticker": "ASX",
+       "name": "ASE Technology",
+       "role": "OSAT，CPO 量产",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2042797823574634991"
+       ]
+      },
+      {
+       "ticker": "POET",
+       "name": "POET Technologies",
+       "role": "光学中介层（单一客户风险反例）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2048785899610427809"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "cpo_connector",
+     "name": "CPO 连接器 / 笼体散热",
+     "taxonomy": "L2.CONN",
+     "status": "filling",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-HIDDEN-SUPPLIER"
+     ],
+     "holders": [
+      {
+       "ticker": "8147.TWO",
+       "name": "Nextronics Engineering",
+       "role": "卖方附注发现的微型股",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2053643213723013507"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "optical_module",
+     "name": "光模块 / 可插拔",
+     "taxonomy": "L2.OPT.MODULE",
+     "status": "filling",
+     "kind": "material",
+     "upstream": [
+      "eml_laser",
+      "cw_laser",
+      "fau_passive"
+     ],
+     "archetypes": [
+      "ARC-DEMAND-SPILLOVER"
+     ],
+     "holders": [
+      {
+       "ticker": "AAOI",
+       "name": "Applied Optoelectronics",
+       "role": "美国本土最大可用产能",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2042533797405823299"
+       ]
+      },
+      {
+       "ticker": "FN",
+       "name": "Fabrinet",
+       "role": "代工组装",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2029160940604739625"
+       ]
+      },
+      {
+       "ticker": "300308.SZ",
+       "name": "Zhongji Innolight",
+       "role": "光模块龙头",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2029160940604739625"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "photonic_platform",
+     "name": "光子 IP / 平台（CPO 交换、光计算）",
+     "taxonomy": "L2.OPT.CPO",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [
+      "cpo_packaging",
+      "optical_module"
+     ],
+     "archetypes": [
+      "ARC-TRANSITION-GATE"
+     ],
+     "holders": [
+      {
+       "ticker": "MRVL",
+       "name": "Marvell",
+       "role": "Celestial 光子互连",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2039259000336949457"
+       ]
+      },
+      {
+       "ticker": "AVGO",
+       "name": "Broadcom",
+       "role": "CPO 交换",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2036657811179155561"
+       ]
+      },
+      {
+       "ticker": "NVDA",
+       "name": "NVIDIA",
+       "role": "CPO 交换与需求方",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2030432044434784733"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chain_id": "memory",
+   "name": "AI 存储（HBM / NAND / 遗留 DRAM）",
+   "demand_driver": "HBM 与企业级 SSD 挤占产能，推理带动存储需求",
+   "nodes": [
+    {
+     "node_id": "mem_equipment",
+     "name": "存储工序设备与 IP",
+     "taxonomy": "L1.EQP.FRONT",
+     "status": "filling",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-EQUIPMENT-PHASE"
+     ],
+     "holders": [
+      {
+       "ticker": "VECO",
+       "name": "Veeco",
+       "role": "激光退火",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2014368177682292774"
+       ]
+      },
+      {
+       "ticker": "RMBS",
+       "name": "Rambus",
+       "role": "接口 IP",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2014354847202681059"
+       ]
+      },
+      {
+       "ticker": "ONTO",
+       "name": "Onto Innovation",
+       "role": "量测",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2014368177682292774"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "hbm_molding",
+     "name": "HBM 压缩成型",
+     "taxonomy": "L1.EQP.BACK",
+     "status": "monopoly_not_bottleneck",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-FUNCTIONAL-MONOPOLY"
+     ],
+     "holders": [
+      {
+       "ticker": "6315.T",
+       "name": "Towa",
+       "role": "压缩成型垄断",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2049529141083701417"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "hbm_dram",
+     "name": "HBM / 先进 DRAM",
+     "taxonomy": "L2.MEM.HBM",
+     "status": "now",
+     "kind": "material",
+     "upstream": [
+      "mem_equipment",
+      "hbm_molding"
+     ],
+     "archetypes": [
+      "ARC-SUPER-SUPPLIER"
+     ],
+     "holders": [
+      {
+       "ticker": "000660.KS",
+       "name": "SK hynix",
+       "role": "HBM 龙头",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2026529571990839302"
+       ]
+      },
+      {
+       "ticker": "005930.KS",
+       "name": "Samsung Electronics",
+       "role": "存储",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2026529571990839302"
+       ]
+      },
+      {
+       "ticker": "MU",
+       "name": "Micron",
+       "role": "存储，供给时间表来源",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2060034817954333158"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "nand",
+     "name": "NAND / 企业级 SSD",
+     "taxonomy": "L2.MEM.STORAGE",
+     "status": "now",
+     "kind": "material",
+     "upstream": [
+      "mem_equipment"
+     ],
+     "archetypes": [
+      "ARC-SUPER-SUPPLIER"
+     ],
+     "holders": [
+      {
+       "ticker": "SNDK",
+       "name": "SanDisk",
+       "role": "NAND 价格领导者",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2029889046399566190"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "legacy_memory",
+     "name": "遗留 DRAM / MLC NAND / NOR",
+     "taxonomy": "L2.MEM.STORAGE",
+     "status": "now",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-LEGACY-VOID"
+     ],
+     "holders": [
+      {
+       "ticker": "2408.TW",
+       "name": "Nanya Technology",
+       "role": "遗留 DRAM",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2017097752535322767",
+        "2036760616376107309"
+       ]
+      },
+      {
+       "ticker": "2337.TW",
+       "name": "Macronix",
+       "role": "MLC NAND / NOR",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2017097752535322767"
+       ]
+      },
+      {
+       "ticker": "8299.TWO",
+       "name": "Phison",
+       "role": "库存套利",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2017097752535322767"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chain_id": "advanced_packaging",
+   "name": "先进封装与基板（CoWoS / 玻璃基板 / T-glass）",
+   "demand_driver": "AI 加速器封装面积与层数增长",
+   "nodes": [
+    {
+     "node_id": "tglass",
+     "name": "高端玻璃纤维布（T-glass）",
+     "taxonomy": "L1.MAT.GLASS",
+     "status": "now",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-FUNCTIONAL-MONOPOLY"
+     ],
+     "holders": [
+      {
+       "ticker": "3110.T",
+       "name": "Nitto Boseki",
+       "role": "高端 T-glass 高份额",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2014505817509355841"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "abf_film",
+     "name": "ABF 增层膜",
+     "taxonomy": "L1.MAT.CHEM",
+     "status": "monopoly_not_bottleneck",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-SOLE-SOURCE"
+     ],
+     "holders": [
+      {
+       "ticker": "2802.T",
+       "name": "Ajinomoto",
+       "role": "ABF 近垄断，提价空间",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2042950601550762021"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "glass_core",
+     "name": "玻璃基板（TGV / LIDE）",
+     "taxonomy": "L1.MAT.GLASS",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-FUNCTIONAL-MONOPOLY",
+      "ARC-QUAL-TO-VOLUME"
+     ],
+     "holders": [
+      {
+       "ticker": "LPK.DE",
+       "name": "LPKF Laser",
+       "role": "LIDE 工艺设备",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2052308880961810532"
+       ]
+      },
+      {
+       "ticker": "011790.KS",
+       "name": "SKC",
+       "role": "玻璃基板（Absolics）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2052184498620834237"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "cowos",
+     "name": "CoWoS / 先进封装产能",
+     "taxonomy": "L1.PKG.COWOS",
+     "status": "filling",
+     "kind": "demand",
+     "upstream": [
+      "tglass",
+      "abf_film",
+      "glass_core"
+     ],
+     "archetypes": [
+      "ARC-CAPACITY-LOCK"
+     ],
+     "holders": [
+      {
+       "ticker": "TSM",
+       "name": "TSMC",
+       "role": "价格制定者/锚",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "1985952468266860967",
+        "2062417736832270610"
+       ]
+      },
+      {
+       "ticker": "AMKR",
+       "name": "Amkor",
+       "role": "第二来源封装",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "1995559972525294001"
+       ]
+      },
+      {
+       "ticker": "BESI.AS",
+       "name": "BE Semiconductor",
+       "role": "混合键合设备",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2032582703149887843"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chain_id": "power",
+   "name": "AI 电力（变压器 / 800V / 储能 / 发电）",
+   "demand_driver": "数据中心用电与并网瓶颈",
+   "nodes": [
+    {
+     "node_id": "transformer",
+     "name": "变压器（干式/配电）",
+     "taxonomy": "L3.PWR",
+     "status": "now",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-BACKLOG-COMPOUNDER",
+      "ARC-SOVEREIGN-BACKSTOP"
+     ],
+     "holders": [
+      {
+       "ticker": "HPS-A.TO",
+       "name": "Hammond Power Solutions",
+       "role": "干式变压器，积压增长",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2041519692985344500",
+        "2051796147031949708"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "hv_dc",
+     "name": "800V DC 功率器件（SiC/GaN）",
+     "taxonomy": "L3.PWR",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-TRANSITION-GATE"
+     ],
+     "holders": [
+      {
+       "ticker": "NVTS",
+       "name": "Navitas",
+       "role": "800V 合作伙伴中纯度最高",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2047019381637677061"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "storage_bess",
+     "name": "储能系统",
+     "taxonomy": "L3.PWR",
+     "status": "filling",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-HIDDEN-SUPPLIER"
+     ],
+     "holders": [
+      {
+       "ticker": "FLNC",
+       "name": "Fluence Energy",
+       "role": "超大厂 MSA",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2052695450869014930"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "power_gen",
+     "name": "独立发电 / 表后电力",
+     "taxonomy": "L0.POWER",
+     "status": "now",
+     "kind": "material",
+     "upstream": [
+      "transformer"
+     ],
+     "archetypes": [
+      "ARC-CAPEX-PICKS-SHOVELS"
+     ],
+     "holders": [
+      {
+       "ticker": "VRT",
+       "name": "Vertiv",
+       "role": "电力与热管理（定价权例子）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "1991506376342843438"
+       ]
+      },
+      {
+       "ticker": "LEU",
+       "name": "Centrus Energy",
+       "role": "美国唯一 HALEU",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2016584615679643966"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chain_id": "critical_minerals",
+   "name": "关键矿产（出口管制清单 = 购物清单）",
+   "demand_driver": "中国出口管制与西方供应链重建",
+   "nodes": [
+    {
+     "node_id": "ge_substitute",
+     "name": "锗 / 红外光学替代",
+     "taxonomy": "L0.RAW",
+     "status": "now",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-WESTERN-SUBSTITUTE"
+     ],
+     "holders": [
+      {
+       "ticker": "LPTH",
+       "name": "LightPath Technologies",
+       "role": "硫系玻璃替代锗",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2012963701389967869"
+       ]
+      },
+      {
+       "ticker": "TECK",
+       "name": "Teck Resources",
+       "role": "铟/锗",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2015805598265479518"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "rare_earth",
+     "name": "稀土磁材",
+     "taxonomy": "L0.RAW",
+     "status": "now",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-SOVEREIGN-BACKSTOP",
+      "ARC-WESTERN-SUBSTITUTE"
+     ],
+     "holders": [
+      {
+       "ticker": "MP",
+       "name": "MP Materials",
+       "role": "美国稀土，政府入股",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "1983742080058061281",
+        "2038556249592119671"
+       ]
+      },
+      {
+       "ticker": "USAR",
+       "name": "USA Rare Earth",
+       "role": "本土磁材",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2038556249592119671"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "minor_metals",
+     "name": "钨 / 锑 / 镓 / 铋碲 / 铍",
+     "taxonomy": "L0.RAW",
+     "status": "now",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-RAW-MATERIAL",
+      "ARC-WESTERN-SUBSTITUTE"
+     ],
+     "holders": [
+      {
+       "ticker": "ALM",
+       "name": "Almonty Industries",
+       "role": "钨（Nasdaq: ALM；另在 TSX: AII.TO、ASX: AII.AX 上市）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2015805598265479518",
+        "2040500149877891563"
+       ]
+      },
+      {
+       "ticker": "UAMY",
+       "name": "United States Antimony",
+       "role": "锑",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2015805598265479518"
+       ]
+      },
+      {
+       "ticker": "VNP.TO",
+       "name": "5N Plus",
+       "role": "铋/碲（“西方 AXTI”）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2036467416218108244"
+       ]
+      },
+      {
+       "ticker": "AA",
+       "name": "Alcoa",
+       "role": "镓",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2015805598265479518"
+       ]
+      },
+      {
+       "ticker": "MTRN",
+       "name": "Materion",
+       "role": "约 65% 铍",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2012961292966117410"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chain_id": "robotics",
+   "name": "人形机器人与自主系统",
+   "demand_driver": "人形机器人量产（5 年以上视角）",
+   "nodes": [
+    {
+     "node_id": "harmonic_reducer",
+     "name": "谐波减速器 / 执行器",
+     "taxonomy": "OTHER",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-PER-UNIT-CONTENT"
+     ],
+     "holders": [
+      {
+       "ticker": "688017.SS",
+       "name": "Leaderdrive",
+       "role": "国内谐波减速器龙头",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2062723471847858638"
+       ]
+      },
+      {
+       "ticker": "6324.T",
+       "name": "Harmonic Drive Systems",
+       "role": "西方谐波龙头",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2055116243582247014"
+       ]
+      },
+      {
+       "ticker": "002050.SZ",
+       "name": "Sanhua Intelligent Controls",
+       "role": "执行器",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2012076432122630269"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "force_sensing",
+     "name": "精密力/应变传感",
+     "taxonomy": "OTHER",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-PER-UNIT-CONTENT"
+     ],
+     "holders": [
+      {
+       "ticker": "VPG",
+       "name": "Vishay Precision Group",
+       "role": "单机价值量算术（设计出局风险）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2016651304027009278",
+        "2019546899666419753"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "fmcw_lidar",
+     "name": "FMCW 4D 激光雷达",
+     "taxonomy": "L2.OPT.LASER",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-TRANSITION-GATE"
+     ],
+     "holders": [
+      {
+       "ticker": "AEVA",
+       "name": "Aeva Technologies",
+       "role": "FMCW 激光雷达（风投型）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2020926882624176300",
+        "2058644487224848654"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "robot_frames",
+     "name": "认证材料 / 结构件",
+     "taxonomy": "OTHER",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-POLICY-MOAT"
+     ],
+     "holders": [
+      {
+       "ticker": "SSYS",
+       "name": "Stratasys",
+       "role": "认证垄断（链底部）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2011879749610815814"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chain_id": "defense",
+   "name": "国防 / 无人机 / 定向能",
+   "demand_driver": "国防预算与无人机主导计划",
+   "nodes": [
+    {
+     "node_id": "directed_energy",
+     "name": "高能激光",
+     "taxonomy": "L2.OPT.LASER",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-SOLE-SOURCE"
+     ],
+     "holders": [
+      {
+       "ticker": "LASR",
+       "name": "nLIGHT",
+       "role": "首次实战验证",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2028455727996752242"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "mine_countermeasure",
+     "name": "水下探测 / 反水雷",
+     "taxonomy": "OTHER",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-HIDDEN-SUPPLIER"
+     ],
+     "holders": [
+      {
+       "ticker": "CODA",
+       "name": "Coda Octopus",
+       "role": "高毛利声呐",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2031448823164436895"
+       ]
+      },
+      {
+       "ticker": "EXA.PA",
+       "name": "Exail Technologies",
+       "role": "识别与处置",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2031497121468383529"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "food_distribution",
+     "name": "军需分销合同通道",
+     "taxonomy": "OTHER",
+     "status": "monopoly_not_bottleneck",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-DISTRIBUTION-CHOKE"
+     ],
+     "holders": [
+      {
+       "ticker": "SYY",
+       "name": "Sysco",
+       "role": "DLA 合同分销",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2031632009618161879"
+       ]
+      },
+      {
+       "ticker": "PFGC",
+       "name": "Performance Food Group",
+       "role": "DLA 合同分销",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2031632009618161879"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chain_id": "quantum",
+   "name": "量子（设备先行）",
+   "demand_driver": "超大厂量子项目研发期资本开支",
+   "nodes": [
+    {
+     "node_id": "mbe_tools",
+     "name": "MBE 外延设备",
+     "taxonomy": "L1.EQP.FRONT",
+     "status": "filling",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-EQUIPMENT-PHASE"
+     ],
+     "holders": [
+      {
+       "ticker": "ALRIB.PA",
+       "name": "Riber",
+       "role": "MBE 双寡头之一，开源情报发现客户",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2042161215968051652"
+       ]
+      },
+      {
+       "ticker": "VECO",
+       "name": "Veeco",
+       "role": "MBE 双寡头之一",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2043977582564229249"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "taxonomy_note": "taxonomy 使用 references/supply-chain-taxonomy.md 的编码；非 AI 基础设施节点标为 OTHER。"
+}

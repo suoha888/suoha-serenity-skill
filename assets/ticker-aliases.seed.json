@@ -1,0 +1,919 @@
+{
+ "schema_version": "5.0",
+ "description": "Hand-curated public seed of cross-market aliases frequently needed for chokepoint research. Maintainers verify additions against the exchange before merging. Local overlays can extend this file without publishing it.",
+ "aliases": [
+  {
+   "symbol": "SIVE.ST",
+   "names": [
+    "SIVE",
+    "Sivers",
+    "Sivers Semiconductors",
+    "西弗斯半导体"
+   ],
+   "exchange": "Nasdaq Stockholm"
+  },
+  {
+   "symbol": "ALRIB.PA",
+   "names": [
+    "ALRIB",
+    "Riber",
+    "Riber S.A."
+   ],
+   "exchange": "Euronext Paris"
+  },
+  {
+   "symbol": "SOI.PA",
+   "names": [
+    "Soitec",
+    "SLOIF",
+    "索泰克"
+   ],
+   "exchange": "Euronext Paris"
+  },
+  {
+   "symbol": "XFAB.PA",
+   "names": [
+    "X-Fab",
+    "X-FAB",
+    "X-Fab Silicon Foundries"
+   ],
+   "exchange": "Euronext Paris"
+  },
+  {
+   "symbol": "AIXA.DE",
+   "names": [
+    "Aixtron",
+    "AIXTRON"
+   ],
+   "exchange": "XETRA"
+  },
+  {
+   "symbol": "IQE.L",
+   "names": [
+    "IQE",
+    "IQE plc",
+    "IQE公司"
+   ],
+   "exchange": "London"
+  },
+  {
+   "symbol": "ASML.AS",
+   "names": [
+    "ASML Holding"
+   ],
+   "exchange": "Euronext Amsterdam"
+  },
+  {
+   "symbol": "BESI.AS",
+   "names": [
+    "BESI",
+    "BE Semiconductor"
+   ],
+   "exchange": "Euronext Amsterdam"
+  },
+  {
+   "symbol": "2330.TW",
+   "names": [
+    "TSMC",
+    "台积电",
+    "台積電"
+   ],
+   "exchange": "TWSE"
+  },
+  {
+   "symbol": "6451.TW",
+   "names": [
+    "Shunsin",
+    "ShunSin",
+    "讯芯-KY",
+    "訊芯-KY",
+    "顺新",
+    "顺芯"
+   ],
+   "exchange": "TWSE"
+  },
+  {
+   "symbol": "2455.TW",
+   "names": [
+    "Visual Photonics",
+    "VPEC",
+    "全新光电",
+    "全新光電"
+   ],
+   "exchange": "TWSE"
+  },
+  {
+   "symbol": "3363.TWO",
+   "names": [
+    "FOCI",
+    "FOCI Fiber Optic",
+    "上诠",
+    "上詮"
+   ],
+   "exchange": "TPEx"
+  },
+  {
+   "symbol": "3081.TWO",
+   "names": [
+    "LandMark Optoelectronics",
+    "联亚",
+    "聯亞"
+   ],
+   "exchange": "TPEx"
+  },
+  {
+   "symbol": "3105.TWO",
+   "names": [
+    "WIN Semiconductors",
+    "稳懋",
+    "稳懋半导体",
+    "穩懋"
+   ],
+   "exchange": "TPEx"
+  },
+  {
+   "symbol": "6315.T",
+   "names": [
+    "TOWA",
+    "TOWCF"
+   ],
+   "exchange": "Tokyo"
+  },
+  {
+   "symbol": "5802.T",
+   "names": [
+    "Sumitomo Electric",
+    "住友电工",
+    "住友電工"
+   ],
+   "exchange": "Tokyo"
+  },
+  {
+   "symbol": "5801.T",
+   "names": [
+    "Furukawa Electric",
+    "古河电工",
+    "古河電工",
+    "古河"
+   ],
+   "exchange": "Tokyo"
+  },
+  {
+   "symbol": "5803.T",
+   "names": [
+    "Fujikura",
+    "藤仓",
+    "藤倉"
+   ],
+   "exchange": "Tokyo"
+  },
+  {
+   "symbol": "5706.T",
+   "names": [
+    "Mitsui Kinzoku",
+    "Mitsui Mining & Smelting",
+    "三井金属"
+   ],
+   "exchange": "Tokyo"
+  },
+  {
+   "symbol": "6920.T",
+   "names": [
+    "Lasertec"
+   ],
+   "exchange": "Tokyo"
+  },
+  {
+   "symbol": "6146.T",
+   "names": [
+    "Disco",
+    "DISCO Corporation"
+   ],
+   "exchange": "Tokyo"
+  },
+  {
+   "symbol": "6857.T",
+   "names": [
+    "Advantest",
+    "爱德万"
+   ],
+   "exchange": "Tokyo"
+  },
+  {
+   "symbol": "000660.KS",
+   "names": [
+    "SK Hynix",
+    "SK海力士",
+    "海力士"
+   ],
+   "exchange": "KOSPI"
+  },
+  {
+   "symbol": "005930.KS",
+   "names": [
+    "Samsung Electronics",
+    "三星电子",
+    "三星電子"
+   ],
+   "exchange": "KOSPI"
+  },
+  {
+   "symbol": "011790.KS",
+   "names": [
+    "SKC"
+   ],
+   "exchange": "KOSPI"
+  },
+  {
+   "symbol": "078150.KQ",
+   "names": [
+    "HB Technology",
+    "HB technologies"
+   ],
+   "exchange": "KOSDAQ"
+  },
+  {
+   "symbol": "688017.SS",
+   "names": [
+    "绿的谐波",
+    "綠的諧波",
+    "Leaderdrive",
+    "LeaderDrive"
+   ],
+   "exchange": "SSE STAR"
+  },
+  {
+   "symbol": "300376.SZ",
+   "names": [
+    "易事特",
+    "East Group"
+   ],
+   "exchange": "SZSE ChiNext"
+  },
+  {
+   "symbol": "300308.SZ",
+   "names": [
+    "中际旭创",
+    "Innolight",
+    "旭创"
+   ],
+   "exchange": "SZSE ChiNext"
+  },
+  {
+   "symbol": "300502.SZ",
+   "names": [
+    "新易盛",
+    "Eoptolink"
+   ],
+   "exchange": "SZSE ChiNext"
+  },
+  {
+   "symbol": "AXTI",
+   "names": [
+    "AXT",
+    "AXT Inc",
+    "AXT Inc."
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "AAOI",
+   "names": [
+    "Applied Optoelectronics",
+    "应用光电公司"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "LITE",
+   "names": [
+    "Lumentum"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "COHR",
+   "names": [
+    "Coherent"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "MU",
+   "names": [
+    "Micron",
+    "美光",
+    "美光科技"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "AMD",
+   "names": [
+    "Advanced Micro Devices",
+    "超威",
+    "超威半导体"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "NVDA",
+   "names": [
+    "Nvidia",
+    "NVIDIA",
+    "英伟达",
+    "輝達"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "AAPL",
+   "names": [
+    "Apple",
+    "苹果",
+    "蘋果"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "MSFT",
+   "names": [
+    "Microsoft",
+    "微软",
+    "微軟"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "GOOGL",
+   "names": [
+    "Alphabet",
+    "Google",
+    "谷歌",
+    "字母表"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "AMZN",
+   "names": [
+    "Amazon",
+    "亚马逊",
+    "亞馬遜"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "META",
+   "names": [
+    "Meta Platforms",
+    "Facebook",
+    "脸书",
+    "臉書"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "TSLA",
+   "names": [
+    "Tesla",
+    "特斯拉"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "BRK-B",
+   "names": [
+    "Berkshire Hathaway",
+    "伯克希尔",
+    "伯克希尔哈撒韦",
+    "波克夏"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "AVGO",
+   "names": [
+    "Broadcom",
+    "博通"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "TSM",
+   "names": [
+    "TSMC ADR",
+    "台积电ADR",
+    "台積電ADR"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "INTC",
+   "names": [
+    "Intel",
+    "英特尔",
+    "英特爾"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "QCOM",
+   "names": [
+    "Qualcomm",
+    "高通"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "TXN",
+   "names": [
+    "Texas Instruments",
+    "德州仪器",
+    "德州儀器"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "AMAT",
+   "names": [
+    "Applied Materials",
+    "应用材料",
+    "應用材料"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "LRCX",
+   "names": [
+    "Lam Research",
+    "泛林",
+    "泛林集团"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "KLAC",
+   "names": [
+    "KLA",
+    "科磊"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "ON",
+   "names": [
+    "onsemi",
+    "ON Semiconductor",
+    "安森美"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "MRVL",
+   "names": [
+    "Marvell",
+    "迈威尔",
+    "美满电子"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "ARM",
+   "names": [
+    "Arm Holdings",
+    "安谋"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "ORCL",
+   "names": [
+    "Oracle",
+    "甲骨文"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "CRM",
+   "names": [
+    "Salesforce",
+    "赛富时"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "ADBE",
+   "names": [
+    "Adobe",
+    "奥多比"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "NFLX",
+   "names": [
+    "Netflix",
+    "奈飞",
+    "网飞"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "PLTR",
+   "names": [
+    "Palantir",
+    "帕兰提尔"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "SMCI",
+   "names": [
+    "Super Micro Computer",
+    "超微电脑",
+    "美超微"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "DELL",
+   "names": [
+    "Dell Technologies",
+    "戴尔"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "CSCO",
+   "names": [
+    "Cisco",
+    "思科"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "JPM",
+   "names": [
+    "JPMorgan Chase",
+    "摩根大通",
+    "小摩"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "BAC",
+   "names": [
+    "Bank of America",
+    "美国银行",
+    "美銀"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "GS",
+   "names": [
+    "Goldman Sachs",
+    "高盛"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "MS",
+   "names": [
+    "Morgan Stanley",
+    "摩根士丹利",
+    "大摩"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "WFC",
+   "names": [
+    "Wells Fargo",
+    "富国银行"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "V",
+   "names": [
+    "Visa",
+    "维萨"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "MA",
+   "names": [
+    "Mastercard",
+    "万事达"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "KO",
+   "names": [
+    "Coca-Cola",
+    "可口可乐"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "PEP",
+   "names": [
+    "PepsiCo",
+    "百事",
+    "百事可乐"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "PG",
+   "names": [
+    "Procter & Gamble",
+    "宝洁"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "WMT",
+   "names": [
+    "Walmart",
+    "沃尔玛"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "COST",
+   "names": [
+    "Costco",
+    "好市多",
+    "开市客"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "MCD",
+   "names": [
+    "McDonald's",
+    "麦当劳"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "SBUX",
+   "names": [
+    "Starbucks",
+    "星巴克"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "NKE",
+   "names": [
+    "Nike",
+    "耐克"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "DIS",
+   "names": [
+    "Walt Disney",
+    "迪士尼"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "JNJ",
+   "names": [
+    "Johnson & Johnson",
+    "强生"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "LLY",
+   "names": [
+    "Eli Lilly",
+    "礼来"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "PFE",
+   "names": [
+    "Pfizer",
+    "辉瑞"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "MRK",
+   "names": [
+    "Merck",
+    "默沙东",
+    "默克"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "ABBV",
+   "names": [
+    "AbbVie",
+    "艾伯维"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "UNH",
+   "names": [
+    "UnitedHealth",
+    "联合健康"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "NVO",
+   "names": [
+    "Novo Nordisk ADR",
+    "诺和诺德"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "XOM",
+   "names": [
+    "Exxon Mobil",
+    "埃克森美孚"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "CVX",
+   "names": [
+    "Chevron",
+    "雪佛龙"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "BA",
+   "names": [
+    "Boeing",
+    "波音"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "CAT",
+   "names": [
+    "Caterpillar",
+    "卡特彼勒"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "LMT",
+   "names": [
+    "Lockheed Martin",
+    "洛克希德马丁"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "PDD",
+   "names": [
+    "PDD Holdings",
+    "拼多多"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "FUTU",
+   "names": [
+    "Futu",
+    "富途",
+    "富途控股"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "COIN",
+   "names": [
+    "Coinbase"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "MSTR",
+   "names": [
+    "Strategy",
+    "MicroStrategy",
+    "微策略"
+   ],
+   "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "UBER",
+   "names": [
+    "Uber",
+    "优步"
+   ],
+   "exchange": "NYSE"
+  },
+  {
+   "symbol": "SPY",
+   "names": [
+    "SPDR S&P 500 ETF",
+    "标普500ETF"
+   ],
+   "exchange": "NYSE Arca"
+  },
+  {
+   "symbol": "QQQ",
+   "names": [
+    "Invesco QQQ",
+    "纳指100ETF",
+    "纳斯达克100ETF"
+   ],
+   "exchange": "NASDAQ"
+  }
+ ],
+ "cross_listings": {
+  "description": "Companies listed both in Hong Kong and as a US ADR. Chinese names resolve to the Hong Kong line; the US line is reported alongside.",
+  "rows": [
+   [
+    "9988.HK",
+    "BABA",
+    "阿里巴巴"
+   ],
+   [
+    "9618.HK",
+    "JD",
+    "京东"
+   ],
+   [
+    "9999.HK",
+    "NTES",
+    "网易"
+   ],
+   [
+    "9888.HK",
+    "BIDU",
+    "百度"
+   ],
+   [
+    "9866.HK",
+    "NIO",
+    "蔚来"
+   ],
+   [
+    "9868.HK",
+    "XPEV",
+    "小鹏汽车"
+   ],
+   [
+    "2015.HK",
+    "LI",
+    "理想汽车"
+   ],
+   [
+    "9961.HK",
+    "TCOM",
+    "携程"
+   ],
+   [
+    "9626.HK",
+    "BILI",
+    "哔哩哔哩"
+   ],
+   [
+    "1698.HK",
+    "TME",
+    "腾讯音乐"
+   ],
+   [
+    "2057.HK",
+    "ZTO",
+    "中通快递"
+   ],
+   [
+    "9901.HK",
+    "EDU",
+    "新东方"
+   ],
+   [
+    "6160.HK",
+    "ONC",
+    "百济神州"
+   ],
+   [
+    "9688.HK",
+    "ZLAB",
+    "再鼎医药"
+   ]
+  ]
+ }
+}

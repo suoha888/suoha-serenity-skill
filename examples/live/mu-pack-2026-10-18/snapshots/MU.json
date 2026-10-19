@@ -1,0 +1,2141 @@
+{
+  "schema_version": "6.0",
+  "kind": "live_snapshot",
+  "connector_version": "6.1.0",
+  "retrieved_at": "2026-10-18T04:43:33Z",
+  "subject": {
+    "input": "MU",
+    "symbol": "MU",
+    "confidence": 0.9,
+    "review_needed": false,
+    "reason": "alias table",
+    "exchange": "NASDAQ",
+    "currency": "USD",
+    "us_listed": true
+  },
+  "sec_identity": {
+    "cik": 723125,
+    "name": "MICRON TECHNOLOGY INC",
+    "exchange": "Nasdaq",
+    "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
+    "status": "ok"
+  },
+  "quote": {
+    "symbol": "MU",
+    "name": "Micron Technology, Inc.",
+    "exchange": "NasdaqGS",
+    "currency": "USD",
+    "price": 878.84,
+    "price_as_of": "2026-10-16T20:00:00Z",
+    "fifty_two_week_high": 1255.0,
+    "fifty_two_week_low": 192.4,
+    "drawdown_from_52w_high_pct": -29.97,
+    "return_pct": {
+      "1m": -5.15,
+      "3m": 3.52,
+      "6m": 93.12,
+      "1y": 334.45
+    },
+    "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1y&interval=1d",
+    "status": "ok"
+  },
+  "filings": {
+    "window_days": 400,
+    "dilution": [],
+    "ownership": [
+      {
+        "form": "SCHEDULE 13G/A",
+        "filed": "2026-05-14",
+        "report_date": null,
+        "items": [],
+        "accession": "0001422849-26-000099",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000142284926000099/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G",
+        "filed": "2026-04-30",
+        "report_date": null,
+        "items": [],
+        "accession": "0002100119-26-000795",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000210011926000795/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G/A",
+        "filed": "2026-03-27",
+        "report_date": null,
+        "items": [],
+        "accession": "0000102909-26-001910",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000010290926001910/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G/A",
+        "filed": "2026-02-13",
+        "report_date": null,
+        "items": [],
+        "accession": "0001422849-26-000035",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000142284926000035/xslSCHEDULE_13G_X01/primary_doc.xml",
+        "description": ""
+      }
+    ],
+    "insider": [
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001242654-26-000016",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000124265426000016/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-14",
+        "items": [],
+        "accession": "0001593199-26-000005",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000159319926000005/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001593199-26-000004",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000159319926000004/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001498287-26-000001",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000149828726000001/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001689498-26-000002",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000168949826000002/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001568238-26-000001",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000156823826000001/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001632063-26-000005",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000163206326000005/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001201490-26-000004",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000120149026000004/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001652149-26-000006",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000165214926000006/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001453368-26-000002",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000145336826000002/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0002058769-26-000006",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000205876926000006/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0002058781-26-000003",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000205878126000003/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001224095-26-000003",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000122409526000003/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001798757-26-000009",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000179875726000009/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001790292-26-000003",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000179029226000003/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001354116-26-000001",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000135411626000001/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-15",
+        "report_date": "2026-10-13",
+        "items": [],
+        "accession": "0001218363-26-000005",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000121836326000005/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "144",
+        "filed": "2026-10-15",
+        "report_date": null,
+        "items": [],
+        "accession": "0001965301-26-000160",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000196530126000160/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "144",
+        "filed": "2026-10-14",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-010220",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000195004726010220/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-02",
+        "report_date": "2026-09-30",
+        "items": [],
+        "accession": "0002058769-26-000005",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000205876926000005/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-02",
+        "report_date": "2026-09-30",
+        "items": [],
+        "accession": "0001798757-26-000008",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000179875726000008/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-10-02",
+        "report_date": "2026-09-30",
+        "items": [],
+        "accession": "0001218363-26-000004",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000121836326000004/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-28",
+        "report_date": "2026-06-26",
+        "items": [],
+        "accession": "0001798757-26-000007",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000179875726000007/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-25",
+        "report_date": "2026-08-21",
+        "items": [],
+        "accession": "0001242654-26-000015",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000124265426000015/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-21",
+        "report_date": null,
+        "items": [],
+        "accession": "0001969223-26-000947",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000196922326000947/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-20",
+        "report_date": "2026-08-18",
+        "items": [],
+        "accession": "0001311079-26-000003",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000131107926000003/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-18",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-008365",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000195004726008365/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-07-28",
+        "report_date": "2026-07-24",
+        "items": [],
+        "accession": "0001242654-26-000014",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000124265426000014/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-07-28",
+        "report_date": "2026-07-24",
+        "items": [],
+        "accession": "0001242654-26-000013",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000124265426000013/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      },
+      {
+        "form": "4",
+        "filed": "2026-07-27",
+        "report_date": "2026-07-23",
+        "items": [],
+        "accession": "0001652149-26-000005",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000165214926000005/xslF345X06/primarydocument.xml",
+        "description": "PRIMARY DOCUMENT"
+      }
+    ],
+    "reports": [
+      {
+        "form": "10-K",
+        "filed": "2026-10-09",
+        "report_date": "2026-09-03",
+        "items": [],
+        "accession": "0000723125-26-000023",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm",
+        "description": "10-K"
+      },
+      {
+        "form": "10-Q",
+        "filed": "2026-06-25",
+        "report_date": "2026-05-28",
+        "items": [],
+        "accession": "0000723125-26-000015",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+        "description": "10-Q"
+      },
+      {
+        "form": "10-Q",
+        "filed": "2026-03-19",
+        "report_date": "2026-02-26",
+        "items": [],
+        "accession": "0000723125-26-000006",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000006/mu-20260226.htm",
+        "description": "10-Q"
+      },
+      {
+        "form": "10-Q",
+        "filed": "2025-12-18",
+        "report_date": "2025-11-27",
+        "items": [],
+        "accession": "0000723125-25-000046",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000046/mu-20251127.htm",
+        "description": "10-Q"
+      },
+      {
+        "form": "10-K",
+        "filed": "2025-10-03",
+        "report_date": "2025-08-28",
+        "items": [],
+        "accession": "0000723125-25-000028",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm",
+        "description": "10-K"
+      }
+    ],
+    "events_8k": [
+      {
+        "form": "8-K",
+        "filed": "2026-09-30",
+        "report_date": "2026-09-30",
+        "items": [
+          "2.02",
+          "9.01"
+        ],
+        "accession": "0000723125-26-000018",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/mu-20260930.htm",
+        "description": "8-K",
+        "item_labels": [
+          "results of operations",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-08-26",
+        "report_date": "2026-08-24",
+        "items": [
+          "5.02",
+          "9.01"
+        ],
+        "accession": "0001104659-26-101067",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000110465926101067/tm2624017d1_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "officer/director change",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-06-24",
+        "report_date": "2026-06-24",
+        "items": [
+          "2.02",
+          "9.01"
+        ],
+        "accession": "0000723125-26-000013",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/mu-20260624.htm",
+        "description": "8-K",
+        "item_labels": [
+          "results of operations",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-06-09",
+        "report_date": "2026-06-09",
+        "items": [
+          "5.02",
+          "9.01"
+        ],
+        "accession": "0001104659-26-071845",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000110465926071845/tm2617112d1_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "officer/director change",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-04-01",
+        "report_date": "2026-03-31",
+        "items": [
+          "8.01",
+          "9.01"
+        ],
+        "accession": "0001104659-26-038249",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000110465926038249/tm2610810d1_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "other events",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-03-25",
+        "report_date": "2026-03-25",
+        "items": [
+          "8.01",
+          "9.01"
+        ],
+        "accession": "0001104659-26-034174",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000110465926034174/tm269755d1_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "other events",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-03-18",
+        "report_date": "2026-03-18",
+        "items": [
+          "2.02",
+          "9.01"
+        ],
+        "accession": "0000723125-26-000004",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000004/mu-20260318.htm",
+        "description": "8-K",
+        "item_labels": [
+          "results of operations",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-01-21",
+        "report_date": "2026-01-15",
+        "items": [
+          "5.03",
+          "5.07",
+          "9.01"
+        ],
+        "accession": "0001104659-26-005366",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000110465926005366/tm263707d1_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "charter/bylaw amendment",
+          "5.07",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2025-12-17",
+        "report_date": "2025-12-17",
+        "items": [
+          "2.02",
+          "9.01"
+        ],
+        "accession": "0000723125-25-000044",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000044/mu-20251217.htm",
+        "description": "8-K",
+        "item_labels": [
+          "results of operations",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2025-10-21",
+        "report_date": "2025-10-15",
+        "items": [
+          "5.02",
+          "9.01"
+        ],
+        "accession": "0001104659-25-101237",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000110465925101237/tm2529116d1_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "officer/director change",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2025-09-23",
+        "report_date": "2025-09-23",
+        "items": [
+          "2.02",
+          "9.01"
+        ],
+        "accession": "0000723125-25-000024",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000024/mu-20250923.htm",
+        "description": "8-K",
+        "item_labels": [
+          "results of operations",
+          "exhibits"
+        ]
+      }
+    ],
+    "flags": [
+      {
+        "flag": "beneficial_owner_filings",
+        "count": 4,
+        "latest": "2026-05-14",
+        "doctrine": "PB-SIG-09",
+        "check": "New 13G/13D filers = institutional discovery or activist; read filer name and %."
+      },
+      {
+        "flag": "insider_form4_activity",
+        "count": 95,
+        "latest": "2026-10-15",
+        "doctrine": "PB-SIG-10",
+        "check": "Classify open-market buys (code P) vs sales/grants; buys after a run-up are rarer signals."
+      }
+    ],
+    "source_url": "https://data.sec.gov/submissions/CIK0000723125.json",
+    "issuer": "MICRON TECHNOLOGY INC",
+    "sic": "Semiconductors & Related Devices",
+    "status": "ok"
+  },
+  "sec_profile": {
+    "foreign_private_issuer": false,
+    "annual_form": "10-K",
+    "fiscal_year_end": "0903",
+    "sic": "Semiconductors & Related Devices",
+    "state_of_incorporation": "DE"
+  },
+  "fundamentals": {
+    "provider": "sec_companyfacts",
+    "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+    "tags": {
+      "revenue": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "gross_profit": "us-gaap:GrossProfit",
+      "cost_of_revenue": "us-gaap:CostOfGoodsAndServicesSold",
+      "operating_income": "us-gaap:OperatingIncomeLoss",
+      "net_income": "us-gaap:NetIncomeLoss",
+      "operating_cash_flow": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "capex": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "rnd": "us-gaap:ResearchAndDevelopmentExpense",
+      "cash": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+      "short_term_investments": "us-gaap:AvailableForSaleSecuritiesDebtSecuritiesCurrent",
+      "total_debt": "us-gaap:LongTermDebt",
+      "inventory": "us-gaap:InventoryNet",
+      "equity": "us-gaap:StockholdersEquity"
+    },
+    "series": {
+      "revenue": [
+        {
+          "end": "2023-11-30",
+          "value": 4726000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 5824000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 6811000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 7750000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 8709000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 8053000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 9301000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 11315000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 13643000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 23860000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 41456000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 54229000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "gross_profit": [
+        {
+          "end": "2023-11-30",
+          "value": -35000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 1079000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 1832000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 2737000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 3348000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 2963000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 3508000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 5054000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 7646000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 17755000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 35056000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 47047000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "cost_of_revenue": [
+        {
+          "end": "2023-11-30",
+          "value": 4761000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 4745000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 4979000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 5013000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 5361000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 5090000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 5793000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 6261000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 5997000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 6105000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 6400000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 7182000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "operating_income": [
+        {
+          "end": "2023-11-30",
+          "value": -1128000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 191000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 719000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 1522000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 2174000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 1773000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 2169000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 3654000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 6136000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 16135000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 33318000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 43751000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "net_income": [
+        {
+          "end": "2023-11-30",
+          "value": -1234000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 793000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 332000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 887000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 1870000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 1583000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 1885000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 3201000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 5240000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 13785000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 28243000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 37701000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "operating_cash_flow": [
+        {
+          "end": "2023-11-30",
+          "value": 1401000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 1219000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 2482000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 3405000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 3244000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 3942000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 4609000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 5730000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 8411000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 11903000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 25388000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 43973000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "capex": [
+        {
+          "end": "2023-11-30",
+          "value": 1796000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 1384000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 2086000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 3120000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 3206000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 4055000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 2938000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 5658000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 5389000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 6387000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 7826000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 11110000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "rnd": [
+        {
+          "end": "2023-11-30",
+          "value": 845000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 832000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 850000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 903000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 888000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 898000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 965000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 1047000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 1171000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 1250000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 1316000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 1913000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "cash": [
+        {
+          "end": "2023-11-30",
+          "value": 8075000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 8016000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 7594000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 7041000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 6693000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 7552000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 10163000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 9642000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 9731000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 13908000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 24995000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 38364000000,
+          "unit": "USD"
+        }
+      ],
+      "short_term_investments": [
+        {
+          "end": "2023-11-30",
+          "value": 973000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 990000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 785000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 1065000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 895000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 663000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 648000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 665000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 587000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 681000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 1027000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 5070000000,
+          "unit": "USD"
+        }
+      ],
+      "total_debt": [
+        {
+          "end": "2023-06-01",
+          "value": 12074000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-08-31",
+          "value": 12049000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-11-30",
+          "value": 12024000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 12018000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 11332000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 11343000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 11306000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 11541000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 12434000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 11533000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 8844000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 2792000000,
+          "unit": "USD"
+        }
+      ],
+      "inventory": [
+        {
+          "end": "2023-11-30",
+          "value": 8276000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 8443000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 8512000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 8875000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 8705000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 9007000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 8727000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 8355000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 8205000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 8267000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 8567000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 10372000000,
+          "unit": "USD"
+        }
+      ],
+      "equity": [
+        {
+          "end": "2023-11-30",
+          "value": 42885000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-02-29",
+          "value": 43870000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-05-30",
+          "value": 44225000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-08-29",
+          "value": 45131000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-11-28",
+          "value": 46797000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-02-27",
+          "value": 48633000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-05-29",
+          "value": 50748000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-08-28",
+          "value": 54165000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-11-27",
+          "value": 58806000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-02-26",
+          "value": 72459000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-05-28",
+          "value": 100724000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-09-03",
+          "value": 138378000000,
+          "unit": "USD"
+        }
+      ],
+      "shares_outstanding_dei": [
+        {
+          "end": "2024-12-12",
+          "value": 1114171932,
+          "filed": "2024-12-19",
+          "form": "10-Q"
+        },
+        {
+          "end": "2025-03-13",
+          "value": 1117571525,
+          "filed": "2025-03-21",
+          "form": "10-Q"
+        },
+        {
+          "end": "2025-06-18",
+          "value": 1119125101,
+          "filed": "2025-06-26",
+          "form": "10-Q"
+        },
+        {
+          "end": "2025-09-26",
+          "value": 1122466035,
+          "filed": "2025-10-03",
+          "form": "10-K"
+        },
+        {
+          "end": "2025-12-10",
+          "value": 1125509261,
+          "filed": "2025-12-18",
+          "form": "10-Q"
+        },
+        {
+          "end": "2026-03-11",
+          "value": 1127734051,
+          "filed": "2026-03-19",
+          "form": "10-Q"
+        },
+        {
+          "end": "2026-06-17",
+          "value": 1129393151,
+          "filed": "2026-06-25",
+          "form": "10-Q"
+        },
+        {
+          "end": "2026-10-02",
+          "value": 1131423212,
+          "filed": "2026-10-09",
+          "form": "10-K"
+        }
+      ]
+    },
+    "summary": {
+      "revenue_latest_quarter": {
+        "end": "2026-09-03",
+        "value": 54229000000,
+        "unit": "USD",
+        "derived": "YTD-diff"
+      },
+      "reporting_currency": "USD",
+      "revenue_ttm": 133188000000,
+      "revenue_yoy_pct": 379.27,
+      "revenue_qoq_pct": 30.81,
+      "gross_margin_quarterly": [
+        {
+          "end": "2024-11-28",
+          "pct": 38.44
+        },
+        {
+          "end": "2025-02-27",
+          "pct": 36.79
+        },
+        {
+          "end": "2025-05-29",
+          "pct": 37.72
+        },
+        {
+          "end": "2025-08-28",
+          "pct": 44.67
+        },
+        {
+          "end": "2025-11-27",
+          "pct": 56.04
+        },
+        {
+          "end": "2026-02-26",
+          "pct": 74.41
+        },
+        {
+          "end": "2026-05-28",
+          "pct": 84.56
+        },
+        {
+          "end": "2026-09-03",
+          "pct": 86.76
+        }
+      ],
+      "gross_margin_change_yoy_pp": 42.09,
+      "operating_margin_quarterly": [
+        {
+          "end": "2024-11-28",
+          "pct": 24.96
+        },
+        {
+          "end": "2025-02-27",
+          "pct": 22.02
+        },
+        {
+          "end": "2025-05-29",
+          "pct": 23.32
+        },
+        {
+          "end": "2025-08-28",
+          "pct": 32.29
+        },
+        {
+          "end": "2025-11-27",
+          "pct": 44.98
+        },
+        {
+          "end": "2026-02-26",
+          "pct": 67.62
+        },
+        {
+          "end": "2026-05-28",
+          "pct": 80.37
+        },
+        {
+          "end": "2026-09-03",
+          "pct": 80.68
+        }
+      ],
+      "cash_and_st_investments": {
+        "end": "2026-09-03",
+        "value": 43434000000
+      },
+      "fcf_last_4q": [
+        {
+          "end": "2025-11-27",
+          "value": 3022000000
+        },
+        {
+          "end": "2026-02-26",
+          "value": 5516000000
+        },
+        {
+          "end": "2026-05-28",
+          "value": 17562000000
+        },
+        {
+          "end": "2026-09-03",
+          "value": 32863000000
+        }
+      ],
+      "total_debt_latest": {
+        "end": "2026-09-03",
+        "value": 2792000000,
+        "unit": "USD"
+      },
+      "shares_outstanding": 1131423212,
+      "shares_as_of": "2026-10-02",
+      "share_count_change_pct_vs_4_obs_ago": 0.8
+    },
+    "status": "ok"
+  },
+  "fts": {
+    "supply_concentration": {
+      "query": "\"sole source\" OR \"single source\" OR \"sole supplier\" OR \"single supplier\" OR \"limited number of suppliers\"",
+      "total": 11,
+      "hits": [
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "ARS",
+          "file_type": "ARS",
+          "primary_document": false,
+          "filed": "2024-11-26",
+          "period": "2024-08-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312524000041/a2024q4copyforarsfilingxne.pdf"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "ARS",
+          "file_type": "ARS",
+          "primary_document": false,
+          "filed": "2025-11-25",
+          "period": "2025-08-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000040/202510karscopy.pdf"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-K",
+          "file_type": "10-K",
+          "primary_document": true,
+          "filed": "2024-10-04",
+          "period": "2024-08-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312524000027/mu-20240829.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-K",
+          "file_type": "10-K",
+          "primary_document": true,
+          "filed": "2026-10-09",
+          "period": "2026-09-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-K",
+          "file_type": "10-K",
+          "primary_document": true,
+          "filed": "2025-10-03",
+          "period": "2025-08-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2024-12-19",
+          "period": "2024-11-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312524000047/mu-20241128.htm"
+        }
+      ],
+      "primary_hits": 4,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22sole+source%22+OR+%22single+source%22+OR+%22sole+supplier%22+OR+%22single+supplier%22+OR+%22limited+number+of+suppliers%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    },
+    "customer_concentration": {
+      "query": "\"largest customer\" OR \"one customer accounted\" OR \"two customers accounted\" OR \"customer concentration\"",
+      "total": 0,
+      "hits": [],
+      "primary_hits": 0,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22largest+customer%22+OR+%22one+customer+accounted%22+OR+%22two+customers+accounted%22+OR+%22customer+concentration%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    },
+    "atm_program": {
+      "query": "\"at-the-market\" OR \"at the market offering\" OR \"equity distribution agreement\" OR \"sales agreement\"",
+      "total": 0,
+      "hits": [],
+      "primary_hits": 0,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22at-the-market%22+OR+%22at+the+market+offering%22+OR+%22equity+distribution+agreement%22+OR+%22sales+agreement%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    },
+    "capacity_signal": {
+      "query": "\"capacity constrained\" OR \"supply constrained\" OR \"lead times\" OR \"sold out\" OR \"allocation\"",
+      "total": 17,
+      "hits": [
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-K",
+          "file_type": "10-K",
+          "primary_document": true,
+          "filed": "2026-10-09",
+          "period": "2026-09-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2025-12-18",
+          "period": "2025-11-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000046/mu-20251127.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2026-03-19",
+          "period": "2026-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000006/mu-20260226.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2026-06-25",
+          "period": "2026-05-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "ARS",
+          "file_type": "ARS",
+          "primary_document": false,
+          "filed": "2025-11-25",
+          "period": "2025-08-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000040/202510karscopy.pdf"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "ARS",
+          "file_type": "ARS",
+          "primary_document": false,
+          "filed": "2024-11-26",
+          "period": "2024-08-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312524000041/a2024q4copyforarsfilingxne.pdf"
+        }
+      ],
+      "primary_hits": 4,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22capacity+constrained%22+OR+%22supply+constrained%22+OR+%22lead+times%22+OR+%22sold+out%22+OR+%22allocation%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    },
+    "going_concern": {
+      "query": "\"substantial doubt\" OR \"going concern\"",
+      "total": 4,
+      "hits": [
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-Q",
+          "file_type": "EX-10.9",
+          "primary_document": false,
+          "filed": "2025-03-21",
+          "period": "2025-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000009/ex109chips-micronsponsorgu.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-K",
+          "file_type": "EX-10.34",
+          "primary_document": false,
+          "filed": "2025-10-03",
+          "period": "2025-08-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/ex1034-amendedandrestatedp.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-Q",
+          "file_type": "EX-10.7",
+          "primary_document": false,
+          "filed": "2025-03-21",
+          "period": "2025-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000009/ex107iddirectfundingagreem.htm"
+        },
+        {
+          "entity": "MICRON TECHNOLOGY INC  (MU)  (CIK 0000723125)",
+          "form": "10-Q",
+          "file_type": "EX-10.8",
+          "primary_document": false,
+          "filed": "2025-03-21",
+          "period": "2025-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000009/ex108nydirectfundingagreem.htm"
+        }
+      ],
+      "primary_hits": 0,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22substantial+doubt%22+OR+%22going+concern%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    }
+  },
+  "news": {
+    "query": "Micron Technology",
+    "items": [
+      {
+        "title": "Micron Stock’s Drop Triggers ‘Buy the Dip’ Calls. No One’s Listening. - Barron's",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE8xSUt3YVV0N3FhRFU4cTItNHB3UTJyMHUwY1NCbERhVG90SmVFcHowWnFLNUJRY2wzLXpaSHZyRzNKejBva3B0aEdRVnpqQ0V0NXIyUWpxWHhHRU94WWFkdDdOT1BreHhvU2RFV3Q0b0RYZzczT1JSTA?oc=5",
+        "published_at": "2026-10-16T17:59:00Z",
+        "publisher": "Barron's"
+      },
+      {
+        "title": "Micron Technology (MU) Pledges $50 Million For US Memory Research - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUTRveEp4eXNGNEt1RWloSEVnUlQzX19zRHEtRkdQREotZlJFVFZWeGdmMldMbG55cndOdGtlWEVqNk90MHE5OTc4cmdPZW5JYWg4QTFRWTlITTZZMmF6ZDUybVJ2M1FfYTZuWVVNQ1dpV2lRT2tzYlhpYzVPUEltcEJvVnAwdENLTlk4QlRXeVZySW1YWHhJ?oc=5",
+        "published_at": "2026-10-16T16:17:58Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "Here is What to Know Beyond Why Micron Technology, Inc. (MU) is a Trending Stock - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQOFM1NW9lT1EwakNaTm5XNGplZjd2em1JVVJTdFFiczllMEoxMDNidnNXWUd1a1FfNVdncU5QUzdadWRHaGxnY0w3UUZwRzlYT01jRHRWY3lYVkZtbnBYdGZPbFNSVFBSeEFMb2dYXy10V1dqc0FHTFRvdHRPbDlzdmdROHo2Mmw3UE8tVUl0ZW5tUFE0TThYZUdyemdNSHM?oc=5",
+        "published_at": "2026-10-16T12:00:08Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "Micron Is Down 23% From Its High. History Suggests This Is What Happens Next. - The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTkRqNGdUd3dpWFZOOTNkRkVzanIxZU8zTEsxcmRGVEhoTUFBWTc3X2tvaUkwYWtTd05TN2ttUk5fN3FjTi1tM2toU1laQ1J6QVpObk1PYU84T3ZRSklDcG45TjZFaFN1c2RnVExhNHNYVmg1V0JscVJfdk9BRkEtODQ0cERfb0FUVXkwQTVqZEFjX0FveDNfbQ?oc=5",
+        "published_at": "2026-10-16T05:30:00Z",
+        "publisher": "The Motley Fool"
+      },
+      {
+        "title": "I Just Bought Micron Stock. Here's Why - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdDZvT3I1OXpUN3hwS2xocHdoem9qeUdPeWlINnIwV2JtTVY0TzFiZVlGMlh6SWtKZnRlZTBmd0VDWFM4Q3oxcFo4NnBaX2pWWjBCMkRFZmlmNW03UzJtNnN2Yl9JMUktRHZqa3hrNFNGS2hkc2dvU2FQS2dBSlhLUEdhSmQ1eHZHVEFnVERtdTFId1dvMzVmY3hDWQ?oc=5",
+        "published_at": "2026-10-15T20:05:00Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "Why Is Micron Stock Still Dropping? - The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPVTBMeGcxaEdOLURGdzdyaHBJalRfckoxOE5lUXoyMGVSaFNmMVRkTFU4a2V1ZkdpZ1FRZ1RCdk5CSG0wSTBxNms4d21kOXNjWko2NEhjYVZieEo0c25KU2d6bjk5WmZhYWdnWk1NU1VOeHlCSUZlaEpnT2xqYlVPdnA3UQ?oc=5",
+        "published_at": "2026-10-15T15:55:00Z",
+        "publisher": "The Motley Fool"
+      },
+      {
+        "title": "Why Is Micron Stock Still Dropping? - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNME1JMkU0M1dLOUNjV2dzUDJ3RGMyWXd4cV9KaUVVcEpueDQtWUkyWHh4SW5RYlpTRDlETW5CM3FBUnFwaTl1MkJEblZsd3BybzVzOFhUWWpodkI5VGtBZ01kaWp6Rk5lV1Q3TGxOSXVoN2NrNGJZSjMxdW9wWTJhdXZ5bU9XdGFvYzIwanZ3a1VPSVhGTFc1R250cTk?oc=5",
+        "published_at": "2026-10-15T15:15:36Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "Mapping the Market: Micron shares appear set for further losses - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOUlZwdXhDclVXOTh0V3VReV9vNzkwMjROYWI5ZDdqc3ItdU4yNGJ5ekRBaUxCZUVfWGVIQWhhZE5nMzlpOXBrbHltTHhRMWUtTUlvTEQxeTc5a3VtMTl5bXNCcC1EMk9uZ1hHeDFORVVFYTR3dm1nYnJLbU12U1RzRmpNRmlaeXFvR2JLWA?oc=5",
+        "published_at": "2026-10-15T10:02:33Z",
+        "publisher": "Reuters"
+      },
+      {
+        "title": "Micron Stock Slides Again Thursday: What's Going On? - Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOLTBwVElTQmVQVXJ0eHFJY25fVWxTb2FIanl4a09LLWNFZ0Q5Q0ljZS1LN0VPUVBoRmMzd3o5bWFvOFpnNkl5WmlkenVHclR1a01zVHNzd2I4M0xiY2pWM2xOTEZaTkNQVkRYZmo2dkVvLTdEMU5nT0pnbGFwWUFIMkpIRmJ6UUF4b3VTS09nT3VXQUZmOXMtZ29wMGw4U0NQS21sSA?oc=5",
+        "published_at": "2026-10-15T09:47:10Z",
+        "publisher": "Benzinga"
+      },
+      {
+        "title": "Taiwan president calls for Micron, workers to negotiate 'sincerely' ahead of possible strike - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQcTFwdXItQUpwWG1SRlRyaXpsLTlkdFdxcUxQZmdSOWVZdG1oVnkxRlBObkxJQ1U4M2FnUjZTTUZrN1M5bFE3VUpWbl8taHVpWWVmSHFkb2JCZkZsYS1OSjZxLTFoUnlkQmUwNmFOQzFtcExrN1RUTnhZaWI5NUpjaENiWnNvcVVTTVFSNUNMcEV4WEw5c3dCelNDbFk3MVVpQ3ZzYXN1Z205X1NLV0J4c2hDNGt5S0xrN0Q4eG9HejRHZGs3S0JSZjhQMVRzMjA?oc=5",
+        "published_at": "2026-10-15T07:21:07Z",
+        "publisher": "Reuters"
+      },
+      {
+        "title": "Nvidia and Micron Technology Just Received Some Very Bad News From an Unlikely Place - The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWlcyNzRVcXpNVzBQclJNNTllUV9na0ZlbkRNNmxOaE1UY2RLWTg1X1dOa1UwUTRxQnV3bmlQazdjLUhYRlMzdk9ULWtZbmdqUVFDUENOaTBKMDJWZWNiSTQ2OXNrdG5ibWR2NEhFSGRQbzRmNFdFTkJhaXVDOTUwTkxhVmxvWVF6VW9JMzVaX29yWDNsNF9tRQ?oc=5",
+        "published_at": "2026-10-12T11:06:00Z",
+        "publisher": "The Motley Fool"
+      },
+      {
+        "title": "Why Is Micron Technology (MU) Facing New Supply Chain Risk In Taiwan? - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTXlFcXRPbktDQ1hqekFyaTlVRFhYdmk4RV9IUE8zMzZYOU42RkQ4MEprQVlzNm5CZ1ZjRTEycVV4RTB5REhKcDdZVVBMdWVGcXlWcDNSRUdJM3hONWY5SHdIeTg4Z0N6d0lDcklMNXktRzE3ZE1CQ1FLRHF2bHdaZG5nOXkwakotbng0SXFzN2JZY1ZHcWp0dnNvVEs?oc=5",
+        "published_at": "2026-10-10T10:09:44Z",
+        "publisher": "Yahoo Finance"
+      }
+    ],
+    "source_url": "https://news.google.com/rss/search?q=Micron+Technology+when%3A120d&hl=en-US&gl=US&ceid=US%3Aen",
+    "note": "Headlines are leads, not facts; open the primary source before citing a material claim.",
+    "status": "ok"
+  },
+  "market_current": {
+    "price": 878.84,
+    "currency": "USD",
+    "quote_currency": "USD",
+    "price_as_of": "2026-10-16T20:00:00Z",
+    "shares_outstanding": 1131423212.0,
+    "shares_as_of": "2026-10-02T00:00:00Z",
+    "market_cap": 994339975634.08,
+    "evidence_ids": [
+      "E-LIVE-QUOTE",
+      "E-LIVE-SHARES"
+    ],
+    "basis": "price x latest reported shares (calculated, not provider market cap)"
+  },
+  "usd_view": {
+    "rates": {
+      "USD": {
+        "pair": "USDUSD",
+        "rate": 1.0,
+        "as_of": null,
+        "source_url": null,
+        "status": "ok"
+      }
+    },
+    "market_cap_usd": 994339975634.08,
+    "revenue_ttm_usd": 133188000000.0,
+    "revenue_basis": "ttm",
+    "ps_ttm": 7.47,
+    "note": "USD values use spot FX for comparison only; lens arithmetic stays in the quote currency."
+  },
+  "evidence": [
+    {
+      "evidence_id": "E-LIVE-QUOTE",
+      "title": "MU quote 878.84 USD (NasdaqGS)",
+      "locator": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1y&interval=1d",
+      "published_at": "2026-10-16T20:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "market_data"
+    },
+    {
+      "evidence_id": "E-LIVE-SHARES",
+      "title": "Shares outstanding 1,131,423,212 as of 2026-10-02 (sec_companyfacts)",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+      "published_at": "2026-10-02T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-FIN",
+      "title": "Latest quarterly revenue 54,229,000,000 USD (period end 2026-09-03); TTM 133188000000; YoY 379.27%; GM 86.76%",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+      "published_at": "2026-09-03T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-01",
+      "title": "10-K filed 2026-10-09",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm",
+      "published_at": "2026-10-09T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-02",
+      "title": "10-Q filed 2026-06-25",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm",
+      "published_at": "2026-06-25T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-03",
+      "title": "8-K filed 2026-09-30 (results of operations, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/mu-20260930.htm",
+      "published_at": "2026-09-30T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-04",
+      "title": "8-K filed 2026-08-26 (officer/director change, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000110465926101067/tm2624017d1_8k.htm",
+      "published_at": "2026-08-26T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-05",
+      "title": "8-K filed 2026-06-24 (results of operations, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/mu-20260624.htm",
+      "published_at": "2026-06-24T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-06",
+      "title": "8-K filed 2026-06-09 (officer/director change, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000110465926071845/tm2617112d1_8k.htm",
+      "published_at": "2026-06-09T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-07",
+      "title": "SCHEDULE 13G/A filed 2026-05-14",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000142284926000099/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-05-14T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-08",
+      "title": "SCHEDULE 13G filed 2026-04-30",
+      "locator": "https://www.sec.gov/Archives/edgar/data/723125/000210011926000795/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-04-30T00:00:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-01",
+      "title": "[lead] Micron Stock’s Drop Triggers ‘Buy the Dip’ Calls. No One’s Listening. - Barron's",
+      "locator": "https://news.google.com/rss/articles/CBMieEFVX3lxTE8xSUt3YVV0N3FhRFU4cTItNHB3UTJyMHUwY1NCbERhVG90SmVFcHowWnFLNUJRY2wzLXpaSHZyRzNKejBva3B0aEdRVnpqQ0V0NXIyUWpxWHhHRU94WWFkdDdOT1BreHhvU2RFV3Q0b0RYZzczT1JSTA?oc=5",
+      "published_at": "2026-10-16T17:59:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-02",
+      "title": "[lead] Micron Technology (MU) Pledges $50 Million For US Memory Research - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUTRveEp4eXNGNEt1RWloSEVnUlQzX19zRHEtRkdQREotZlJFVFZWeGdmMldMbG55cndOdGtlWEVqNk90MHE5OTc4cmdPZW5JYWg4QTFRWTlITTZZMmF6ZDUybVJ2M1FfYTZuWVVNQ1dpV2lRT2tzYlhpYzVPUEltcEJvVnAwdENLTlk4QlRXeVZySW1YWHhJ?oc=5",
+      "published_at": "2026-10-16T16:17:58Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-03",
+      "title": "[lead] Here is What to Know Beyond Why Micron Technology, Inc. (MU) is a Trending Stock - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQOFM1NW9lT1EwakNaTm5XNGplZjd2em1JVVJTdFFiczllMEoxMDNidnNXWUd1a1FfNVdncU5QUzdadWRHaGxnY0w3UUZwRzlYT01jRHRWY3lYVkZtbnBYdGZPbFNSVFBSeEFMb2dYXy10V1dqc0FHTFRvdHRPbDlzdmdROHo2Mmw3UE8tVUl0ZW5tUFE0TThYZUdyemdNSHM?oc=5",
+      "published_at": "2026-10-16T12:00:08Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-04",
+      "title": "[lead] Micron Is Down 23% From Its High. History Suggests This Is What Happens Next. - The Motley Fool",
+      "locator": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTkRqNGdUd3dpWFZOOTNkRkVzanIxZU8zTEsxcmRGVEhoTUFBWTc3X2tvaUkwYWtTd05TN2ttUk5fN3FjTi1tM2toU1laQ1J6QVpObk1PYU84T3ZRSklDcG45TjZFaFN1c2RnVExhNHNYVmg1V0JscVJfdk9BRkEtODQ0cERfb0FUVXkwQTVqZEFjX0FveDNfbQ?oc=5",
+      "published_at": "2026-10-16T05:30:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-05",
+      "title": "[lead] I Just Bought Micron Stock. Here's Why - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdDZvT3I1OXpUN3hwS2xocHdoem9qeUdPeWlINnIwV2JtTVY0TzFiZVlGMlh6SWtKZnRlZTBmd0VDWFM4Q3oxcFo4NnBaX2pWWjBCMkRFZmlmNW03UzJtNnN2Yl9JMUktRHZqa3hrNFNGS2hkc2dvU2FQS2dBSlhLUEdhSmQ1eHZHVEFnVERtdTFId1dvMzVmY3hDWQ?oc=5",
+      "published_at": "2026-10-15T20:05:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-06",
+      "title": "[lead] Why Is Micron Stock Still Dropping? - The Motley Fool",
+      "locator": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPVTBMeGcxaEdOLURGdzdyaHBJalRfckoxOE5lUXoyMGVSaFNmMVRkTFU4a2V1ZkdpZ1FRZ1RCdk5CSG0wSTBxNms4d21kOXNjWko2NEhjYVZieEo0c25KU2d6bjk5WmZhYWdnWk1NU1VOeHlCSUZlaEpnT2xqYlVPdnA3UQ?oc=5",
+      "published_at": "2026-10-15T15:55:00Z",
+      "retrieved_at": "2026-10-18T04:43:33Z",
+      "source_type": "news"
+    }
+  ],
+  "warnings": [],
+  "fetch_log": [
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1y&interval=1d",
+      "cache": "hit"
+    },
+    {
+      "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/000660.KS?range=1y&interval=1d",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/000660.KS?type=quarterlyOrdinarySharesNumber,quarterlyTotalRevenue,quarterlyGrossProfit,quarterlyOperatingIncome,quarterlyNetIncome,quarterlyCashAndCashEquivalents,quarterlyTotalDebt,quarterlyOperatingCashFlow,quarterlyCapitalExpenditure,annualTotalRevenue,annualGrossProfit,quarterlyMarketCap&period1=1714608000&period2=1792368000",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/005930.KS?type=quarterlyOrdinarySharesNumber,quarterlyTotalRevenue,quarterlyGrossProfit,quarterlyOperatingIncome,quarterlyNetIncome,quarterlyCashAndCashEquivalents,quarterlyTotalDebt,quarterlyOperatingCashFlow,quarterlyCapitalExpenditure,annualTotalRevenue,annualGrossProfit,quarterlyMarketCap&period1=1714608000&period2=1792368000",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/005930.KS?range=1y&interval=1d",
+      "cache": "hit"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000723125.json",
+      "cache": "hit"
+    },
+    {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22sole+source%22+OR+%22single+source%22+OR+%22sole+supplier%22+OR+%22single+supplier%22+OR+%22limited+number+of+suppliers%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22largest+customer%22+OR+%22one+customer+accounted%22+OR+%22two+customers+accounted%22+OR+%22customer+concentration%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KRWUSD%3DX?range=5d&interval=1d",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22at-the-market%22+OR+%22at+the+market+offering%22+OR+%22equity+distribution+agreement%22+OR+%22sales+agreement%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22substantial+doubt%22+OR+%22going+concern%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22capacity+constrained%22+OR+%22supply+constrained%22+OR+%22lead+times%22+OR+%22sold+out%22+OR+%22allocation%22&ciks=0000723125&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "hit"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KRWUSD%3DX?range=5d&interval=1d",
+      "cache": "memo"
+    },
+    {
+      "url": "https://news.google.com/rss/search?q=Micron+Technology+when%3A120d&hl=en-US&gl=US&ceid=US%3Aen",
+      "cache": "miss"
+    }
+  ],
+  "elapsed_seconds": 0.58,
+  "disclaimer": "Live data leads for research only; not investment advice. Verify material claims in primary sources."
+}

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/suoha888/suoha-serenity-skill/schemas/stance-event.schema.json",
+  "title": "StanceEvent",
+  "description": "One author action on one ticker in one post. Carries IDs and labels only; never the post text. Produced by scripts/stance_ledger.py extract (rule baseline) or by a host-agent LLM following assets/stance-extraction-prompt.md.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "post_id",
+    "created_at",
+    "ticker",
+    "action",
+    "conviction",
+    "extractor",
+    "access_level",
+    "source_partition"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "5.0"
+    },
+    "post_id": {
+      "type": "string",
+      "pattern": "^[0-9]{5,25}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ticker": {
+      "type": "string",
+      "minLength": 1
+    },
+    "resolved_symbol": {
+      "type": "string"
+    },
+    "action": {
+      "enum": [
+        "OPEN",
+        "ADD",
+        "TRIM",
+        "CLOSE",
+        "DENY",
+        "REAFFIRM",
+        "BEARISH",
+        "WATCH",
+        "MENTION"
+      ]
+    },
+    "conviction": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "cue": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "is_reply": {
+      "type": "boolean"
+    },
+    "extractor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_status": {
+      "enum": [
+        "machine",
+        "pending",
+        "human_reviewed",
+        "rejected"
+      ]
+    },
+    "access_level": {
+      "enum": [
+        "public",
+        "subscription",
+        "private",
+        "synthetic"
+      ]
+    },
+    "source_partition": {
+      "enum": [
+        "public",
+        "subscription",
+        "private",
+        "synthetic"
+      ]
+    },
+    "stance": {
+      "enum": [
+        "bullish",
+        "bearish",
+        "neutral"
+      ]
+    }
+  }
+}

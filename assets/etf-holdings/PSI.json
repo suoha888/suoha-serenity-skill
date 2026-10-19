@@ -1,0 +1,253 @@
+{
+ "etf": "PSI",
+ "fund": "Invesco Semiconductors ETF",
+ "registrant": "Invesco Exchange-Traded Fund Trust",
+ "series_id": "S000003032",
+ "period_end": "2026-07-31",
+ "filed": "2026-09-29",
+ "net_assets_usd": 2377473287.95,
+ "source_url": "https://www.sec.gov/Archives/edgar/data/1209466/000120946626001443/primary_doc.xml",
+ "note": "N-PORT holdings are quarter-end and filed ~60 days later; weights are a dated snapshot.",
+ "holdings": [
+  {
+   "name": "Applied Materials, Inc.",
+   "isin": "US0382221051",
+   "cusip": "038222105",
+   "pct": 6.5468,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Advanced Micro Devices, Inc.",
+   "isin": "US0079031078",
+   "cusip": "007903107",
+   "pct": 5.5428,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "NVIDIA Corp.",
+   "isin": "US67066G1040",
+   "cusip": "67066G104",
+   "pct": 5.4804,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Micron Technology, Inc.",
+   "isin": "US5951121038",
+   "cusip": "595112103",
+   "pct": 5.3893,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "KLA Corp.",
+   "isin": "US4824801009",
+   "cusip": "482480100",
+   "pct": 5.3316,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Lam Research Corp.",
+   "isin": "US5128073062",
+   "cusip": "512807306",
+   "pct": 5.3265,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Analog Devices, Inc.",
+   "isin": "US0326541051",
+   "cusip": "032654105",
+   "pct": 5.132,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Intel Corp.",
+   "isin": "US4581401001",
+   "cusip": "458140100",
+   "pct": 4.2829,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Ichor Holdings, Ltd.",
+   "isin": "KYG4740B1059",
+   "cusip": "G4740B105",
+   "pct": 3.3107,
+   "country": "KY",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Cohu, Inc.",
+   "isin": "US1925761066",
+   "cusip": "192576106",
+   "pct": 3.0744,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Ultra Clean Holdings, Inc.",
+   "isin": "US90385V1070",
+   "cusip": "90385V107",
+   "pct": 3.047,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Teradyne, Inc.",
+   "isin": "US8807701029",
+   "cusip": "880770102",
+   "pct": 3.0232,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Onto Innovation Inc.",
+   "isin": "US6833441057",
+   "cusip": "683344105",
+   "pct": 3.0175,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "MKS Inc.",
+   "isin": "US55306N1046",
+   "cusip": "55306N104",
+   "pct": 2.8483,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Monolithic Power Systems, Inc.",
+   "isin": "US6098391054",
+   "cusip": "609839105",
+   "pct": 2.744,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "nLight, Inc.",
+   "isin": "US65487K1007",
+   "cusip": "65487K100",
+   "pct": 2.6984,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Entegris, Inc.",
+   "isin": "US29362U1043",
+   "cusip": "29362U104",
+   "pct": 2.68,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Lattice Semiconductor Corp.",
+   "isin": "US5184151042",
+   "cusip": "518415104",
+   "pct": 2.6442,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Kulicke and Soffa Industries, Inc.",
+   "isin": "US5012421013",
+   "cusip": "501242101",
+   "pct": 2.6287,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "FormFactor, Inc.",
+   "isin": "US3463751087",
+   "cusip": "346375108",
+   "pct": 2.4896,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Tower Semiconductor Ltd.",
+   "isin": "IL0010823792",
+   "cusip": "M87915274",
+   "pct": 2.4355,
+   "country": "IL",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Diodes Inc.",
+   "isin": "US2545431015",
+   "cusip": "254543101",
+   "pct": 2.4331,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Cirrus Logic, Inc.",
+   "isin": "US1727551004",
+   "cusip": "172755100",
+   "pct": 2.3208,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "SiTime Corp.",
+   "isin": "US82982T1060",
+   "cusip": "82982T106",
+   "pct": 2.3046,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Semtech Corp.",
+   "isin": "US8168501018",
+   "cusip": "816850101",
+   "pct": 2.2918,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "MaxLinear, Inc.",
+   "isin": "US57776J1007",
+   "cusip": "57776J100",
+   "pct": 2.224,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Amkor Technology, Inc.",
+   "isin": "US0316521006",
+   "cusip": "031652100",
+   "pct": 2.1719,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "MACOM Technology Solutions Holdings, Inc.",
+   "isin": "US55405Y1001",
+   "cusip": "55405Y100",
+   "pct": 1.9635,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "Photronics, Inc.",
+   "isin": "US7194051022",
+   "cusip": "719405102",
+   "pct": 1.7796,
+   "country": "US",
+   "asset_cat": "EC"
+  },
+  {
+   "name": "AXT, Inc.",
+   "isin": "US00246W1036",
+   "cusip": "00246W103",
+   "pct": 1.457,
+   "country": "US",
+   "asset_cat": "EC"
+  }
+ ]
+}

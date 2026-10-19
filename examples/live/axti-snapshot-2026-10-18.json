@@ -1,0 +1,2292 @@
+{
+  "schema_version": "6.0",
+  "kind": "live_snapshot",
+  "connector_version": "6.0.0",
+  "retrieved_at": "2026-10-18T02:27:05Z",
+  "subject": {
+    "input": "AXTI",
+    "symbol": "AXTI",
+    "confidence": 0.9,
+    "review_needed": false,
+    "reason": "alias table",
+    "exchange": "NASDAQ",
+    "currency": "USD",
+    "us_listed": true
+  },
+  "quote": {
+    "symbol": "AXTI",
+    "name": "AXT, Inc.",
+    "exchange": "NasdaqGS",
+    "currency": "USD",
+    "price": 51.47,
+    "price_as_of": "2026-10-16T20:00:01Z",
+    "fifty_two_week_high": 143.16,
+    "fifty_two_week_low": 4.81,
+    "drawdown_from_52w_high_pct": -64.05,
+    "return_pct": {
+      "1m": -19.95,
+      "3m": 12.23,
+      "6m": -37.66,
+      "1y": 895.55
+    },
+    "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AXTI?range=1y&interval=1d",
+    "status": "ok"
+  },
+  "sec_identity": {
+    "cik": 1051627,
+    "name": "AXT INC",
+    "exchange": "Nasdaq",
+    "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
+    "status": "ok"
+  },
+  "filings": {
+    "window_days": 400,
+    "dilution": [
+      {
+        "form": "424B5",
+        "filed": "2026-04-21",
+        "report_date": null,
+        "items": [],
+        "accession": "0001213900-26-046176",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026046176/ea0287123-424b5_axtinc.htm",
+        "description": "PROSPECTUS SUPPLEMENT",
+        "likely_underwritten": true
+      },
+      {
+        "form": "424B5",
+        "filed": "2026-04-20",
+        "report_date": null,
+        "items": [],
+        "accession": "0001213900-26-045643",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045643/ea0286792-424b5_axtinc.htm",
+        "description": "PROSPECTUS SUPPLEMENT",
+        "likely_underwritten": true
+      },
+      {
+        "form": "S-3ASR",
+        "filed": "2026-04-20",
+        "report_date": null,
+        "items": [],
+        "accession": "0001213900-26-045578",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045578/ea0286790-s3asr_axt.htm",
+        "description": "REGISTRATION STATEMENT"
+      },
+      {
+        "form": "424B5",
+        "filed": "2025-12-30",
+        "report_date": null,
+        "items": [],
+        "accession": "0001213900-25-126273",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390025126273/ea0271090-424b5_axtinc.htm",
+        "description": "PROSPECTUS SUPPLEMENT",
+        "likely_underwritten": true
+      },
+      {
+        "form": "424B5",
+        "filed": "2025-12-29",
+        "report_date": null,
+        "items": [],
+        "accession": "0001213900-25-125583",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390025125583/ea0271043-424b5_axtinc.htm",
+        "description": "PROSPECTUS SUPPLEMENT",
+        "likely_underwritten": true
+      },
+      {
+        "form": "S-3",
+        "filed": "2025-11-07",
+        "report_date": null,
+        "items": [],
+        "accession": "0001437749-25-033870",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774925033870/axti20251104_s3.htm",
+        "description": "FORM S-3"
+      }
+    ],
+    "ownership": [
+      {
+        "form": "SCHEDULE 13G/A",
+        "filed": "2026-10-05",
+        "report_date": null,
+        "items": [],
+        "accession": "0002012383-26-003311",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000201238326003311/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G/A",
+        "filed": "2026-08-12",
+        "report_date": null,
+        "items": [],
+        "accession": "0001595888-26-000095",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000159588826000095/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G",
+        "filed": "2026-07-27",
+        "report_date": null,
+        "items": [],
+        "accession": "0002012383-26-002157",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000201238326002157/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G",
+        "filed": "2026-05-18",
+        "report_date": null,
+        "items": [],
+        "accession": "0002127793-26-000002",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000212779326000002/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G/A",
+        "filed": "2026-05-08",
+        "report_date": null,
+        "items": [],
+        "accession": "0000919574-26-002800",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000091957426002800/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G",
+        "filed": "2026-05-06",
+        "report_date": null,
+        "items": [],
+        "accession": "0002048490-26-000011",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000204849026000011/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G/A",
+        "filed": "2026-04-29",
+        "report_date": null,
+        "items": [],
+        "accession": "0001595888-26-000032",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000159588826000032/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G",
+        "filed": "2026-04-29",
+        "report_date": null,
+        "items": [],
+        "accession": "0001595888-26-000031",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000159588826000031/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      }
+    ],
+    "insider": [
+      {
+        "form": "4",
+        "filed": "2026-08-19",
+        "report_date": "2026-06-10",
+        "items": [],
+        "accession": "0001437749-26-028577",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926028577/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-19",
+        "report_date": "2026-08-17",
+        "items": [],
+        "accession": "0001437749-26-028573",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926028573/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-17",
+        "report_date": null,
+        "items": [],
+        "accession": "0001965301-26-000127",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000196530126000127/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-07",
+        "report_date": null,
+        "items": [],
+        "accession": "0001965301-26-000109",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000196530126000109/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-17",
+        "report_date": "2026-06-15",
+        "items": [],
+        "accession": "0001437749-26-020895",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926020895/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-17",
+        "report_date": "2026-06-15",
+        "items": [],
+        "accession": "0001437749-26-020894",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926020894/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-16",
+        "report_date": "2026-06-12",
+        "items": [],
+        "accession": "0001437749-26-020833",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926020833/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-15",
+        "report_date": "2026-06-11",
+        "items": [],
+        "accession": "0001437749-26-020633",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926020633/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-10",
+        "report_date": "2026-06-08",
+        "items": [],
+        "accession": "0001437749-26-020209",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926020209/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-06-08",
+        "report_date": null,
+        "items": [],
+        "accession": "0001949846-26-000357",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000194984626000357/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-05",
+        "report_date": "2026-06-03",
+        "items": [],
+        "accession": "0001437749-26-019750",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926019750/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-05",
+        "report_date": "2026-06-04",
+        "items": [],
+        "accession": "0001437749-26-019724",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926019724/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-05",
+        "report_date": "2026-06-04",
+        "items": [],
+        "accession": "0001437749-26-019723",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926019723/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-06-05",
+        "report_date": null,
+        "items": [],
+        "accession": "0001965301-26-000071",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000196530126000071/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-03",
+        "report_date": "2026-06-01",
+        "items": [],
+        "accession": "0001437749-26-019464",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926019464/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-06-03",
+        "report_date": "2026-06-01",
+        "items": [],
+        "accession": "0001437749-26-019347",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926019347/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-06-02",
+        "report_date": null,
+        "items": [],
+        "accession": "0000764900-26-000026",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000076490026000026/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "144",
+        "filed": "2026-06-01",
+        "report_date": null,
+        "items": [],
+        "accession": "0000764900-26-000025",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000076490026000025/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "144",
+        "filed": "2026-06-01",
+        "report_date": null,
+        "items": [],
+        "accession": "0001949846-26-000334",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000194984626000334/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-05-05",
+        "report_date": "2026-05-01",
+        "items": [],
+        "accession": "0001437749-26-014818",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926014818/xslF345X06/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-03-16",
+        "report_date": "2026-03-12",
+        "items": [],
+        "accession": "0001437749-26-008381",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926008381/xslF345X05/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-03-16",
+        "report_date": "2026-03-13",
+        "items": [],
+        "accession": "0001437749-26-008380",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926008380/xslF345X05/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-03-16",
+        "report_date": "2026-03-12",
+        "items": [],
+        "accession": "0001437749-26-008379",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926008379/xslF345X05/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-03-13",
+        "report_date": null,
+        "items": [],
+        "accession": "0000764900-26-000011",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000076490026000011/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-03-12",
+        "report_date": "2026-03-10",
+        "items": [],
+        "accession": "0001437749-26-007899",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926007899/xslF345X05/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-03-12",
+        "report_date": "2026-03-10",
+        "items": [],
+        "accession": "0001437749-26-007898",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926007898/xslF345X05/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-03-12",
+        "report_date": "2026-03-10",
+        "items": [],
+        "accession": "0001437749-26-007896",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926007896/xslF345X05/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-03-10",
+        "report_date": "2026-03-03",
+        "items": [],
+        "accession": "0001437749-26-007604",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926007604/xslF345X05/rdgdoc.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-03-10",
+        "report_date": null,
+        "items": [],
+        "accession": "0000764900-26-000007",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000076490026000007/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-03-10",
+        "report_date": "2026-03-06",
+        "items": [],
+        "accession": "0001437749-26-007494",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926007494/xslF345X05/rdgdoc.xml",
+        "description": "FORM 4"
+      }
+    ],
+    "reports": [
+      {
+        "form": "10-Q",
+        "filed": "2026-08-13",
+        "report_date": "2026-06-30",
+        "items": [],
+        "accession": "0001437749-26-027677",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926027677/axti20260630_10q.htm",
+        "description": "FORM 10-Q"
+      },
+      {
+        "form": "10-Q",
+        "filed": "2026-05-14",
+        "report_date": "2026-03-31",
+        "items": [],
+        "accession": "0001437749-26-017054",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926017054/axti20260331_10q.htm",
+        "description": "FORM 10-Q"
+      },
+      {
+        "form": "10-K",
+        "filed": "2026-03-17",
+        "report_date": "2025-12-31",
+        "items": [],
+        "accession": "0001437749-26-008612",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926008612/axti20251231_10k.htm",
+        "description": "FORM 10-K"
+      },
+      {
+        "form": "10-Q",
+        "filed": "2025-11-13",
+        "report_date": "2025-09-30",
+        "items": [],
+        "accession": "0001437749-25-034843",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774925034843/axti20250930_10q.htm",
+        "description": "FORM 10-Q"
+      }
+    ],
+    "events_8k": [
+      {
+        "form": "8-K",
+        "filed": "2026-07-30",
+        "report_date": "2026-07-30",
+        "items": [
+          "2.02",
+          "9.01"
+        ],
+        "accession": "0001437749-26-025061",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926025061/axti20260609_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "results of operations",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-07-29",
+        "report_date": "2026-07-26",
+        "items": [
+          "1.01",
+          "9.01"
+        ],
+        "accession": "0001437749-26-024883",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926024883/axti20260715_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "material definitive agreement",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-07-29",
+        "report_date": "2026-07-26",
+        "items": [
+          "3.03",
+          "5.03",
+          "9.01"
+        ],
+        "accession": "0001437749-26-024882",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926024882/axti20260729_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "modification of holder rights",
+          "charter/bylaw amendment",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-07-22",
+        "report_date": "2026-07-16",
+        "items": [
+          "5.02",
+          "9.01"
+        ],
+        "accession": "0001437749-26-024184",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926024184/axti20260720_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "officer/director change",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-07-08",
+        "report_date": "2026-07-08",
+        "items": [
+          "2.04"
+        ],
+        "accession": "0001437749-26-022984",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926022984/axti20260629_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "2.04"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-07-02",
+        "report_date": "2026-06-26",
+        "items": [
+          "1.01",
+          "9.01"
+        ],
+        "accession": "0001437749-26-022557",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926022557/axti20260630_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "material definitive agreement",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-06-22",
+        "report_date": "2026-06-17",
+        "items": [
+          "5.02",
+          "7.01",
+          "9.01"
+        ],
+        "accession": "0001437749-26-021307",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926021307/axti20260622_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "officer/director change",
+          "Reg FD disclosure",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-06-17",
+        "report_date": "2026-06-11",
+        "items": [
+          "1.01",
+          "9.01"
+        ],
+        "accession": "0001437749-26-020978",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926020978/axti20260615_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "material definitive agreement",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-06-09",
+        "report_date": "2026-06-04",
+        "items": [
+          "3.03",
+          "5.03",
+          "5.07",
+          "9.01"
+        ],
+        "accession": "0001437749-26-020004",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926020004/axti20260608_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "modification of holder rights",
+          "charter/bylaw amendment",
+          "5.07",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-05-15",
+        "report_date": "2026-05-14",
+        "items": [
+          "8.01",
+          "9.01"
+        ],
+        "accession": "0001213900-26-057122",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026057122/ea0290937-8k_axt.htm",
+        "description": "CURRENT REPORT",
+        "item_labels": [
+          "other events",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-04-30",
+        "report_date": "2026-04-30",
+        "items": [
+          "2.02",
+          "9.01"
+        ],
+        "accession": "0001437749-26-014204",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926014204/axti20260109_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "results of operations",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-04-21",
+        "report_date": "2026-04-20",
+        "items": [
+          "1.01",
+          "8.01",
+          "9.01"
+        ],
+        "accession": "0001213900-26-045867",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045867/ea0286957-8k_axt.htm",
+        "description": "CURRENT REPORT",
+        "item_labels": [
+          "material definitive agreement",
+          "other events",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-04-20",
+        "report_date": "2026-04-20",
+        "items": [
+          "2.02"
+        ],
+        "accession": "0001213900-26-045652",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045652/ea0286900-8k_axt.htm",
+        "description": "CURRENT REPORT",
+        "item_labels": [
+          "results of operations"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-02-19",
+        "report_date": "2026-02-19",
+        "items": [
+          "2.02",
+          "9.01"
+        ],
+        "accession": "0001437749-26-004731",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926004731/axti20251028_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "results of operations",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-01-29",
+        "report_date": "2026-01-26",
+        "items": [
+          "5.02"
+        ],
+        "accession": "0001213900-26-009482",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026009482/ea0274550-8k_axt.htm",
+        "description": "CURRENT REPORT",
+        "item_labels": [
+          "officer/director change"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-01-09",
+        "report_date": "2026-01-08",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ],
+        "accession": "0001213900-26-002690",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026002690/ea0272358-8k_axtinc.htm",
+        "description": "CURRENT REPORT",
+        "item_labels": [
+          "results of operations",
+          "Reg FD disclosure",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2025-12-30",
+        "report_date": "2025-12-29",
+        "items": [
+          "1.01",
+          "8.01",
+          "9.01"
+        ],
+        "accession": "0001213900-25-126296",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390025126296/ea0271065-8k_axtinc.htm",
+        "description": "CURRENT REPORT",
+        "item_labels": [
+          "material definitive agreement",
+          "other events",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2025-10-30",
+        "report_date": "2025-10-30",
+        "items": [
+          "2.02",
+          "9.01"
+        ],
+        "accession": "0001437749-25-032429",
+        "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774925032429/axti20250815_8k.htm",
+        "description": "FORM 8-K",
+        "item_labels": [
+          "results of operations",
+          "exhibits"
+        ]
+      }
+    ],
+    "flags": [
+      {
+        "flag": "shelf_registration_on_file",
+        "count": 2,
+        "latest": "2026-04-20",
+        "doctrine": "PB-FIN-01",
+        "check": "Read the S-3/424B5 for size vs market cap and whether an ATM sales agreement exists."
+      },
+      {
+        "flag": "repeated_prospectus_takedowns",
+        "count": 4,
+        "latest": "2026-04-21",
+        "likely_underwritten": 4,
+        "doctrine": "PB-FIN-02",
+        "check": "Serial 424B supplements: an 8-K item 1.01 within 2 days usually marks an underwritten follow-on (read the price vs today); without it, suspect an active ATM and size the overhang."
+      },
+      {
+        "flag": "material_agreement_8k_1_01",
+        "doctrine": "PB-SIG-02",
+        "check": "Open the 8-K exhibit: customer/supply/financing agreement? counterparty quality?"
+      },
+      {
+        "flag": "beneficial_owner_filings",
+        "count": 8,
+        "latest": "2026-10-05",
+        "doctrine": "PB-SIG-09",
+        "check": "New 13G/13D filers = institutional discovery or activist; read filer name and %."
+      },
+      {
+        "flag": "insider_form4_activity",
+        "count": 47,
+        "latest": "2026-08-19",
+        "doctrine": "PB-SIG-10",
+        "check": "Classify open-market buys (code P) vs sales/grants; buys after a run-up are rarer signals."
+      }
+    ],
+    "source_url": "https://data.sec.gov/submissions/CIK0001051627.json",
+    "issuer": "AXT INC",
+    "sic": "Semiconductors & Related Devices",
+    "status": "ok"
+  },
+  "fundamentals": {
+    "provider": "sec_companyfacts",
+    "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001051627.json",
+    "tags": {
+      "revenue": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "gross_profit": "us-gaap:GrossProfit",
+      "cost_of_revenue": "us-gaap:CostOfRevenue",
+      "operating_income": "us-gaap:OperatingIncomeLoss",
+      "net_income": "us-gaap:NetIncomeLoss",
+      "operating_cash_flow": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "capex": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "rnd": "us-gaap:ResearchAndDevelopmentExpense",
+      "cash": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+      "short_term_investments": "us-gaap:ShortTermInvestments",
+      "total_debt": null,
+      "inventory": "us-gaap:InventoryNet",
+      "equity": "us-gaap:StockholdersEquity"
+    },
+    "series": {
+      "revenue": [
+        {
+          "end": "2023-09-30",
+          "value": 17366000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": 20429000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-31",
+          "value": 22688000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 27923000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-30",
+          "value": 23645000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-31",
+          "value": 25105000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-31",
+          "value": 19356000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": 17974000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-30",
+          "value": 27955000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 23041000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-31",
+          "value": 26924000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 47589000,
+          "unit": "USD"
+        }
+      ],
+      "gross_profit": [
+        {
+          "end": "2023-09-30",
+          "value": 1866000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": 4627000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-31",
+          "value": 6094000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 7652000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-30",
+          "value": 5682000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-31",
+          "value": 4408000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-31",
+          "value": -1241000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": 1433000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-30",
+          "value": 6224000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 4826000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-31",
+          "value": 7978000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 21366000,
+          "unit": "USD"
+        }
+      ],
+      "cost_of_revenue": [
+        {
+          "end": "2023-09-30",
+          "value": 15500000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": 15802000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-31",
+          "value": 16594000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 20271000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-30",
+          "value": 17963000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-31",
+          "value": 20697000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-31",
+          "value": 20597000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": 16541000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-30",
+          "value": 21731000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 18215000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-31",
+          "value": 18946000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 26223000,
+          "unit": "USD"
+        }
+      ],
+      "operating_income": [
+        {
+          "end": "2023-09-30",
+          "value": -6727000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": -3560000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-31",
+          "value": -3347000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": -1885000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-30",
+          "value": -3406000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-31",
+          "value": -6165000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-31",
+          "value": -10275000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": -6745000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-30",
+          "value": -1123000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": -3833000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-31",
+          "value": -1585000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 10423000,
+          "unit": "USD"
+        }
+      ],
+      "net_income": [
+        {
+          "end": "2023-09-30",
+          "value": -5823000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": -3621000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-31",
+          "value": -2083000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": -1516000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-30",
+          "value": -2937000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-31",
+          "value": -5088000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-31",
+          "value": -8798000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": -7008000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-30",
+          "value": -1906000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": -3548000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-31",
+          "value": -1620000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 11128000,
+          "unit": "USD"
+        }
+      ],
+      "operating_cash_flow": [
+        {
+          "end": "2023-09-30",
+          "value": -792000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2023-12-31",
+          "value": 1429000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-31",
+          "value": -8806000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 843000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-09-30",
+          "value": -5419000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-12-31",
+          "value": 1270000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-31",
+          "value": -3346000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": -4576000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-09-30",
+          "value": -9151000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 4290000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-31",
+          "value": -11684000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 10784000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "capex": [
+        {
+          "end": "2023-09-30",
+          "value": 4386000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2023-12-31",
+          "value": -703000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-31",
+          "value": 4392000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 271000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-09-30",
+          "value": 941000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-12-31",
+          "value": 167000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-31",
+          "value": 510000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": 279000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-09-30",
+          "value": 2175000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 3031000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-31",
+          "value": 1372000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 7226000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "rnd": [
+        {
+          "end": "2023-09-30",
+          "value": 2926000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": 2820000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-31",
+          "value": 3214000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 3758000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-30",
+          "value": 3438000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-31",
+          "value": 4133000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-31",
+          "value": 3118000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": 2525000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-30",
+          "value": 1013000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 2393000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-31",
+          "value": 3012000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 3651000,
+          "unit": "USD"
+        }
+      ],
+      "cash": [
+        {
+          "end": "2023-09-30",
+          "value": 28522000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": 37752000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-31",
+          "value": 25793000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 27808000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-30",
+          "value": 24898000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-31",
+          "value": 22833000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-31",
+          "value": 31584000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": 27007000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-30",
+          "value": 23110000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 120266000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-31",
+          "value": 41769000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 412167000,
+          "unit": "USD"
+        }
+      ],
+      "short_term_investments": [
+        {
+          "end": "2022-06-30",
+          "value": 4471000,
+          "unit": "USD"
+        },
+        {
+          "end": "2022-09-30",
+          "value": 7207000,
+          "unit": "USD"
+        },
+        {
+          "end": "2022-12-31",
+          "value": 9339000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-03-31",
+          "value": 7016000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-06-30",
+          "value": 7088000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-09-30",
+          "value": 4270000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": 2140000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-31",
+          "value": 1667000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 1675000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 0,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-31",
+          "value": 65375000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 5031000,
+          "unit": "USD"
+        }
+      ],
+      "total_debt": [],
+      "inventory": [
+        {
+          "end": "2023-09-30",
+          "value": 86383000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": 86503000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-31",
+          "value": 85943000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 85774000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-30",
+          "value": 86109000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-31",
+          "value": 85077000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-31",
+          "value": 80409000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": 80063000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-30",
+          "value": 77656000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 81651000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-31",
+          "value": 90168000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 96322000,
+          "unit": "USD"
+        }
+      ],
+      "equity": [
+        {
+          "end": "2023-09-30",
+          "value": 204229000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-31",
+          "value": 203989000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-31",
+          "value": 201084000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-30",
+          "value": 199672000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-30",
+          "value": 200733000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-31",
+          "value": 192770000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-31",
+          "value": 185037000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-30",
+          "value": 179714000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-30",
+          "value": 179148000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-31",
+          "value": 273290000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-31",
+          "value": 274874000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-30",
+          "value": 887274000,
+          "unit": "USD"
+        }
+      ],
+      "shares_outstanding_dei": [
+        {
+          "end": "2024-11-01",
+          "value": 44750581,
+          "filed": "2024-11-12",
+          "form": "10-Q"
+        },
+        {
+          "end": "2025-03-01",
+          "value": 45597995,
+          "filed": "2025-03-14",
+          "form": "10-K"
+        },
+        {
+          "end": "2025-05-01",
+          "value": 45603682,
+          "filed": "2025-05-14",
+          "form": "10-Q"
+        },
+        {
+          "end": "2025-08-01",
+          "value": 46124935,
+          "filed": "2025-08-13",
+          "form": "10-Q"
+        },
+        {
+          "end": "2025-11-01",
+          "value": 46623170,
+          "filed": "2025-11-13",
+          "form": "10-Q"
+        },
+        {
+          "end": "2026-03-02",
+          "value": 55573599,
+          "filed": "2026-03-17",
+          "form": "10-K"
+        },
+        {
+          "end": "2026-05-04",
+          "value": 65423184,
+          "filed": "2026-05-14",
+          "form": "10-Q"
+        },
+        {
+          "end": "2026-08-03",
+          "value": 65573212,
+          "filed": "2026-08-13",
+          "form": "10-Q"
+        }
+      ]
+    },
+    "summary": {
+      "revenue_latest_quarter": {
+        "end": "2026-06-30",
+        "value": 47589000,
+        "unit": "USD"
+      },
+      "reporting_currency": "USD",
+      "revenue_ttm": 125509000,
+      "revenue_yoy_pct": 164.77,
+      "revenue_qoq_pct": 76.75,
+      "gross_margin_quarterly": [
+        {
+          "end": "2024-09-30",
+          "pct": 24.03
+        },
+        {
+          "end": "2024-12-31",
+          "pct": 17.56
+        },
+        {
+          "end": "2025-03-31",
+          "pct": -6.41
+        },
+        {
+          "end": "2025-06-30",
+          "pct": 7.97
+        },
+        {
+          "end": "2025-09-30",
+          "pct": 22.26
+        },
+        {
+          "end": "2025-12-31",
+          "pct": 20.95
+        },
+        {
+          "end": "2026-03-31",
+          "pct": 29.63
+        },
+        {
+          "end": "2026-06-30",
+          "pct": 44.9
+        }
+      ],
+      "gross_margin_change_yoy_pp": 36.93,
+      "operating_margin_quarterly": [
+        {
+          "end": "2024-09-30",
+          "pct": -14.4
+        },
+        {
+          "end": "2024-12-31",
+          "pct": -24.56
+        },
+        {
+          "end": "2025-03-31",
+          "pct": -53.08
+        },
+        {
+          "end": "2025-06-30",
+          "pct": -37.53
+        },
+        {
+          "end": "2025-09-30",
+          "pct": -4.02
+        },
+        {
+          "end": "2025-12-31",
+          "pct": -16.64
+        },
+        {
+          "end": "2026-03-31",
+          "pct": -5.89
+        },
+        {
+          "end": "2026-06-30",
+          "pct": 21.9
+        }
+      ],
+      "cash_and_st_investments": {
+        "end": "2026-06-30",
+        "value": 417198000
+      },
+      "fcf_last_4q": [
+        {
+          "end": "2025-09-30",
+          "value": -11326000
+        },
+        {
+          "end": "2025-12-31",
+          "value": 1259000
+        },
+        {
+          "end": "2026-03-31",
+          "value": -13056000
+        },
+        {
+          "end": "2026-06-30",
+          "value": 3558000
+        }
+      ],
+      "runway_quarters_at_avg_fcf_burn": 85.3,
+      "shares_outstanding": 65573212,
+      "shares_as_of": "2026-08-03",
+      "share_count_change_pct_vs_4_obs_ago": 42.16
+    },
+    "status": "ok"
+  },
+  "fts": {
+    "supply_concentration": {
+      "query": "\"sole source\" OR \"single source\" OR \"sole supplier\" OR \"single supplier\" OR \"limited number of suppliers\"",
+      "total": 8,
+      "hits": [
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-K",
+          "filed": "2025-03-14",
+          "period": "2024-12-31",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000155837025003004/axti-20241231x10k.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-K",
+          "filed": "2026-03-17",
+          "period": "2025-12-31",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926008612/axti20251231_10k.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-Q",
+          "filed": "2026-05-14",
+          "period": "2026-03-31",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926017054/axti20260331_10q.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-Q",
+          "filed": "2025-05-14",
+          "period": "2025-03-31",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000155837025007751/axti-20250331x10q.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-Q",
+          "filed": "2025-08-13",
+          "period": "2025-06-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774925026516/axti20250630_10q.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-Q",
+          "filed": "2024-11-12",
+          "period": "2024-09-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000155837024015320/axti-20240930x10q.htm"
+        }
+      ],
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22sole+source%22+OR+%22single+source%22+OR+%22sole+supplier%22+OR+%22single+supplier%22+OR+%22limited+number+of+suppliers%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    },
+    "customer_concentration": {
+      "query": "\"largest customer\" OR \"one customer accounted\" OR \"two customers accounted\" OR \"customer concentration\"",
+      "total": 8,
+      "hits": [
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-Q",
+          "filed": "2025-05-14",
+          "period": "2025-03-31",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000155837025007751/axti-20250331x10q.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-Q",
+          "filed": "2025-08-13",
+          "period": "2025-06-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774925026516/axti20250630_10q.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-Q",
+          "filed": "2026-08-13",
+          "period": "2026-06-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926027677/axti20260630_10q.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-Q",
+          "filed": "2024-11-12",
+          "period": "2024-09-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000155837024015320/axti-20240930x10q.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-Q",
+          "filed": "2025-11-13",
+          "period": "2025-09-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774925034843/axti20250930_10q.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-K",
+          "filed": "2025-03-14",
+          "period": "2024-12-31",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000155837025003004/axti-20241231x10k.htm"
+        }
+      ],
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22largest+customer%22+OR+%22one+customer+accounted%22+OR+%22two+customers+accounted%22+OR+%22customer+concentration%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    },
+    "atm_program": {
+      "query": "\"at-the-market\" OR \"at the market offering\" OR \"equity distribution agreement\" OR \"sales agreement\"",
+      "total": 6,
+      "hits": [
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "S-3ASR",
+          "filed": "2026-04-20",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045578/ea0286790-s3asr_axt.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "S-3",
+          "filed": "2025-11-07",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774925033870/axti20251104_s3.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "424B5",
+          "filed": "2026-04-21",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026046176/ea0287123-424b5_axtinc.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "424B5",
+          "filed": "2026-04-20",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045643/ea0286792-424b5_axtinc.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "424B5",
+          "filed": "2025-12-29",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390025125583/ea0271043-424b5_axtinc.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "424B5",
+          "filed": "2025-12-30",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390025126273/ea0271090-424b5_axtinc.htm"
+        }
+      ],
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22at-the-market%22+OR+%22at+the+market+offering%22+OR+%22equity+distribution+agreement%22+OR+%22sales+agreement%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    },
+    "capacity_signal": {
+      "query": "\"capacity constrained\" OR \"supply constrained\" OR \"lead times\" OR \"sold out\" OR \"allocation\"",
+      "total": 21,
+      "hits": [
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "424B5",
+          "filed": "2026-04-21",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026046176/ea0287123-424b5_axtinc.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "424B5",
+          "filed": "2026-04-20",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045643/ea0286792-424b5_axtinc.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "S-3ASR",
+          "filed": "2026-04-20",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045578/ea0286790-s3asr_axt.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-K",
+          "filed": "2025-03-14",
+          "period": "2024-12-31",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000155837025003004/axti-20241231x10k.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "10-K",
+          "filed": "2026-03-17",
+          "period": "2025-12-31",
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926008612/axti20251231_10k.htm"
+        },
+        {
+          "entity": "AXT INC  (AXTI)  (CIK 0001051627)",
+          "form": "424B5",
+          "filed": "2025-12-29",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/1051627/000121390025125583/ea0271043-424b5_axtinc.htm"
+        }
+      ],
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22capacity+constrained%22+OR+%22supply+constrained%22+OR+%22lead+times%22+OR+%22sold+out%22+OR+%22allocation%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    },
+    "going_concern": {
+      "query": "\"substantial doubt\" OR \"going concern\"",
+      "total": 0,
+      "hits": [],
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22substantial+doubt%22+OR+%22going+concern%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "status": "ok"
+    }
+  },
+  "news": {
+    "query": "AXT",
+    "items": [
+      {
+        "title": "AXT: The AI Infrastructure Bottleneck Wall Street May Be Underestimating (NASDAQ:AXTI) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxONjVIdnFtbi14a1FhMEVJdFhEelpzQTg1eFdWU01sVnVMSlZ5ZGtEQlZ2akc1UWw5MW5GVk1LMV9XLXRDOE1fbGRZX3FpS2xHZjNDXzB5cGM3TEowRGNucWN0TDcwVkdLQy00WmFUWUlCZ1FJenZSNVIxeGp2RzAtcUUyVmFFWmp1VUhyR1FGS3BtZ2paRkVRd1k4dFVjc3J0b2dIYVhRMjF3YzIxc21UTGN3?oc=5",
+        "published_at": "2026-10-17T12:52:00Z",
+        "publisher": "Seeking Alpha"
+      },
+      {
+        "title": "AXT (AXTI) Stock Trades At A Premium To Its Sales Base - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOMFZWTHViS3dwdTU2YlpJY3JoNnFseUN1X2N5S0JFQkk5WFNrcmhDSnVFdW1JR3hEbC1YeENQSnJvcDZoQkdOaTl0ZzA3eFNEMGI5eXFIYkE1NDhOS2REdjJZUjBuM29MdmNWSzFwNk9VZW1neExmTVVZOHkxdzUzX1Eycm5aLWY2WFlBYXdQVFY5SzZxRnlZcGJ3?oc=5",
+        "published_at": "2026-10-16T11:16:46Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "Rapidly Growing and Cheap, AXT Is a Top-Notch Data Center Play - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQmtheVBGaXVmaElOSUhCdEJMS01vUWJsc2RmYm1jUzd6R0dZOXlWeWU4WWpUVnZPZV9Jc2JpazA1U1ZwcHJ4ZmtEdUZPWHF5ZmIzVHNGX2hQRVFqOF9zT0g2MUNHT1A2UVZUT0s3dFY4NDV6dktsRnlxYTkyNGNjdUN4SzVYbS1NNXJsTDdxTThvS1pS?oc=5",
+        "published_at": "2026-10-15T13:49:51Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "AXT (Nasdaq:AXTI) - Stock Analysis - Simply Wall Street",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5ocEtkajlpbEkwdHVNakxwM21Vb1dmS04yN0RXNy1UeDVabnNSQ3BSNnNFdklYaHhyVExmTUMxVTB6T1hNUEpnb1VuN1hKdFdOS2toQTZZR1cyMy1sRVFNOWVPMWhMNzFpR2ZoeXp1cw?oc=5",
+        "published_at": "2026-10-15T07:00:00Z",
+        "publisher": "Simply Wall Street"
+      },
+      {
+        "title": "AXT's Inventory Rises Sharply: Will Working Capital Pressure Grow? - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNV1p5T3QxanA3Nkp2cG5KQmlsV1Z4SGxvV25yQkpPR2RkSVBuVXZ0clVTTW5PV1lRNXpDNXVBbXhvdm9VMXVwb0NTUk9EMW9zUGI3LWNNMEtmbk8wekFLbkhUdDZBN0VtbHdYbldaUkZPejd5UmtXckpoaDlqSTJKcEdOY25uSEtEaFU2SGdlM2dONGVOT3pnYnkzZ0lnYUtfZ01Z?oc=5",
+        "published_at": "2026-10-13T15:08:00Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "AXT Stock Fell 10% in a Day Even as Analysts More Than Doubled Their 2027 Revenue Estimates. Here’s Where the Stock Could Go - TIKR.com",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPdksya2pzY0xrVFhSNEJ3LURBN0JybkJJbGd5UnByM2ZtX0swbk5hY1pfemItNUZ3M296OVFSc3RQWlVwSFhQTGZQcGxDZVZqZFN4WUxhNVR6NWotaHNVdk8xVl83TnlfNTN5MDlKOVZYZ1FrYXRxazVNQzIxcW9MREFQNjFZSENQeVpZQkJTUVh3amlJRUZuYTlib1I1eHhGRFFXSGcxa1l5bFRMTzQ2aUVHSUhwVTFrZ0hydzc0ZjhBeDYtREkya3ZuS0lIeEZiNXl0NFRqWmIyR2hud29WTA?oc=5",
+        "published_at": "2026-10-09T16:45:16Z",
+        "publisher": "TIKR.com"
+      },
+      {
+        "title": "Can Surging InP Demand Strengthen AXT's Long-Term Growth Potential? - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZnRJaXRKWXQ5cHNIMFBJODFHTlRKT0FXcHhMNzk1RnhvUVp4cnBmZjBJbm9vT1RCVmZNOFFYa2pZY2ZGb1dJMUJpckNmZndHZG1mc2FVT200MlF0dVBBSnNyODJ1V0FqNTJ2LWVjYUdwUlptTEpmWlM1VnFYRnRLMTNLbDlYMUNzRmFBN3hqbnVtb0lCbWV6ZHh4SVRRTGM?oc=5",
+        "published_at": "2026-10-05T07:00:00Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "AXT: Explosive Growth, Expanding Margins, And A Long InP Runway (NASDAQ:AXTI) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNOHNHM0Vodk4xMnNlTXcydkdFV0pFeWU2U2YtTkpnN200WWdMLThvWGxoMHV4M0pTcW80TkpKS0xpcnZrUFR2c0dNc3djMWpuT3puZE9JSk9EazhsUm94RmZPV1ozYkh4YWxRZ2ozS0hzZHo4NXZoQURQa092UnJic2FsUUVpNDQySk5aVXZOUF9fYi03VHNSWDlHdlZvRDgzei1n?oc=5",
+        "published_at": "2026-10-02T07:00:00Z",
+        "publisher": "Seeking Alpha"
+      },
+      {
+        "title": "AXT, Inc. Schedules Third Quarter 2026 Earnings Release for October 29, 2026 - Business Wire",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPZ2F1Q3BlcC1qQkM3bXNKTGtqTmZmYk1QaXhaQ1J4bXBCV2E0blNRQ2p2R252eWFweG1lZ1E0YVFHV0EtVUQ5eXlQUTZndGUxOEI1RW1MX2s3TlNERlB3dXM5bTlJb0FuenF4YjRwTGQxRXJFaTdDYlNOcVJHbTF5R0c5QVN6SWpQRjN0ZnVVcG02TzFwZm9uOElaenlkV05FRk5nc1l5ME5uYzEtTG96Zm1xWGtWWWJrUWRkMk5QajZ2dno1ajF5b0EwOA?oc=5",
+        "published_at": "2026-10-01T07:00:00Z",
+        "publisher": "Business Wire"
+      },
+      {
+        "title": "AXT (AXTI) Is Up 12.72% in One Week: What You Should Know - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUGU3dERlb3RyZXA1LUNNYW5xcXBuSXlUM0pxM3hJdU9VeFp4Mm9ma1c5ZW45OTRCTWhEQnlyZW93TEtJVjgwcVN6cFpJM2xuQzMxVDFobTBleHZsYmpTcmJiN2cxcU1xcWFNeS1hVHJFWUJ3OXA3QXdCUWt0NHkzWFBiWFpyeW5HYWJN?oc=5",
+        "published_at": "2026-09-29T07:00:00Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "Amkor vs. AXT: Which Semiconductor Stock Is the Better Buy Now? - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNThzdXlicjJyeXNrclZueVdnLW5sTnFWd0FRQmNPT0Frd3d5YlZ0cWd5SnpYSnFUdHkxZ2lkdzV6aHB3RzNUWVhQVlJua0JhUWpkM0xsbXI1SUkxd1FYUTBjTXRNaGtQbGdOazkySFluRklIVkMzc1VIQWxNdW9NUjJPSU9mZTZjWHZfRTR0aHRTOXhQNjdTVHZ4amFoQQ?oc=5",
+        "published_at": "2026-09-24T07:00:00Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "AXT Inc. (AXTI) Climbs 16% on S&P 600 Addition - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSzN5RGlpUGJSSzFVYVNDNjhIdkNBdG8yRFpQMm14aHQzaHg0R1N4WDg3YkttYTFJaG4zNFdDVUIzQm01UFlSQlBwelJ0eDNHYVBxNlFvRmhvUks0TXF2clh3Y09qUDRBZlFrNzhwdkI5SG8wLXZZd1hQUUlvVk5MdE5XSVRseVB6bHBBMHNwc2o?oc=5",
+        "published_at": "2026-09-21T07:00:00Z",
+        "publisher": "Yahoo Finance"
+      }
+    ],
+    "source_url": "https://news.google.com/rss/search?q=AXT+when%3A120d&hl=en-US&gl=US&ceid=US%3Aen",
+    "note": "Headlines are leads, not facts; open the primary source before citing a material claim.",
+    "status": "ok"
+  },
+  "evidence": [
+    {
+      "evidence_id": "E-LIVE-QUOTE",
+      "title": "AXTI quote 51.47 USD (NasdaqGS)",
+      "locator": "https://query1.finance.yahoo.com/v8/finance/chart/AXTI?range=1y&interval=1d",
+      "published_at": "2026-10-16T20:00:01Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "market_data"
+    },
+    {
+      "evidence_id": "E-LIVE-SHARES",
+      "title": "Shares outstanding 65,573,212 as of 2026-08-03 (sec_companyfacts)",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001051627.json",
+      "published_at": "2026-08-03T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-FIN",
+      "title": "Latest quarterly revenue 47,589,000 (period end 2026-06-30); TTM 125509000; YoY 164.77%",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001051627.json",
+      "published_at": "2026-06-30T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-01",
+      "title": "10-Q filed 2026-08-13",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926027677/axti20260630_10q.htm",
+      "published_at": "2026-08-13T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-02",
+      "title": "10-Q filed 2026-05-14",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926017054/axti20260331_10q.htm",
+      "published_at": "2026-05-14T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-03",
+      "title": "424B5 filed 2026-04-21",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026046176/ea0287123-424b5_axtinc.htm",
+      "published_at": "2026-04-21T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-04",
+      "title": "424B5 filed 2026-04-20",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045643/ea0286792-424b5_axtinc.htm",
+      "published_at": "2026-04-20T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-05",
+      "title": "S-3ASR filed 2026-04-20",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000121390026045578/ea0286790-s3asr_axt.htm",
+      "published_at": "2026-04-20T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-06",
+      "title": "8-K filed 2026-07-30 (results of operations, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926025061/axti20260609_8k.htm",
+      "published_at": "2026-07-30T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-07",
+      "title": "8-K filed 2026-07-29 (material definitive agreement, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926024883/axti20260715_8k.htm",
+      "published_at": "2026-07-29T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-08",
+      "title": "8-K filed 2026-07-29 (modification of holder rights, charter/bylaw amendment, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926024882/axti20260729_8k.htm",
+      "published_at": "2026-07-29T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-09",
+      "title": "8-K filed 2026-07-22 (officer/director change, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926024184/axti20260720_8k.htm",
+      "published_at": "2026-07-22T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-10",
+      "title": "SCHEDULE 13G/A filed 2026-10-05",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000201238326003311/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-10-05T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-11",
+      "title": "SCHEDULE 13G/A filed 2026-08-12",
+      "locator": "https://www.sec.gov/Archives/edgar/data/1051627/000159588826000095/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-08-12T00:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-01",
+      "title": "[lead] AXT: The AI Infrastructure Bottleneck Wall Street May Be Underestimating (NASDAQ:AXTI) - Seeking Alpha",
+      "locator": "https://news.google.com/rss/articles/CBMisgFBVV95cUxONjVIdnFtbi14a1FhMEVJdFhEelpzQTg1eFdWU01sVnVMSlZ5ZGtEQlZ2akc1UWw5MW5GVk1LMV9XLXRDOE1fbGRZX3FpS2xHZjNDXzB5cGM3TEowRGNucWN0TDcwVkdLQy00WmFUWUlCZ1FJenZSNVIxeGp2RzAtcUUyVmFFWmp1VUhyR1FGS3BtZ2paRkVRd1k4dFVjc3J0b2dIYVhRMjF3YzIxc21UTGN3?oc=5",
+      "published_at": "2026-10-17T12:52:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-02",
+      "title": "[lead] AXT (AXTI) Stock Trades At A Premium To Its Sales Base - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOMFZWTHViS3dwdTU2YlpJY3JoNnFseUN1X2N5S0JFQkk5WFNrcmhDSnVFdW1JR3hEbC1YeENQSnJvcDZoQkdOaTl0ZzA3eFNEMGI5eXFIYkE1NDhOS2REdjJZUjBuM29MdmNWSzFwNk9VZW1neExmTVVZOHkxdzUzX1Eycm5aLWY2WFlBYXdQVFY5SzZxRnlZcGJ3?oc=5",
+      "published_at": "2026-10-16T11:16:46Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-03",
+      "title": "[lead] Rapidly Growing and Cheap, AXT Is a Top-Notch Data Center Play - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQmtheVBGaXVmaElOSUhCdEJMS01vUWJsc2RmYm1jUzd6R0dZOXlWeWU4WWpUVnZPZV9Jc2JpazA1U1ZwcHJ4ZmtEdUZPWHF5ZmIzVHNGX2hQRVFqOF9zT0g2MUNHT1A2UVZUT0s3dFY4NDV6dktsRnlxYTkyNGNjdUN4SzVYbS1NNXJsTDdxTThvS1pS?oc=5",
+      "published_at": "2026-10-15T13:49:51Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-04",
+      "title": "[lead] AXT (Nasdaq:AXTI) - Stock Analysis - Simply Wall Street",
+      "locator": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5ocEtkajlpbEkwdHVNakxwM21Vb1dmS04yN0RXNy1UeDVabnNSQ3BSNnNFdklYaHhyVExmTUMxVTB6T1hNUEpnb1VuN1hKdFdOS2toQTZZR1cyMy1sRVFNOWVPMWhMNzFpR2ZoeXp1cw?oc=5",
+      "published_at": "2026-10-15T07:00:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-05",
+      "title": "[lead] AXT's Inventory Rises Sharply: Will Working Capital Pressure Grow? - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNV1p5T3QxanA3Nkp2cG5KQmlsV1Z4SGxvV25yQkpPR2RkSVBuVXZ0clVTTW5PV1lRNXpDNXVBbXhvdm9VMXVwb0NTUk9EMW9zUGI3LWNNMEtmbk8wekFLbkhUdDZBN0VtbHdYbldaUkZPejd5UmtXckpoaDlqSTJKcEdOY25uSEtEaFU2SGdlM2dONGVOT3pnYnkzZ0lnYUtfZ01Z?oc=5",
+      "published_at": "2026-10-13T15:08:00Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-06",
+      "title": "[lead] AXT Stock Fell 10% in a Day Even as Analysts More Than Doubled Their 2027 Revenue Estimates. Here’s Where the Stock Could Go - TIKR.com",
+      "locator": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPdksya2pzY0xrVFhSNEJ3LURBN0JybkJJbGd5UnByM2ZtX0swbk5hY1pfemItNUZ3M296OVFSc3RQWlVwSFhQTGZQcGxDZVZqZFN4WUxhNVR6NWotaHNVdk8xVl83TnlfNTN5MDlKOVZYZ1FrYXRxazVNQzIxcW9MREFQNjFZSENQeVpZQkJTUVh3amlJRUZuYTlib1I1eHhGRFFXSGcxa1l5bFRMTzQ2aUVHSUhwVTFrZ0hydzc0ZjhBeDYtREkya3ZuS0lIeEZiNXl0NFRqWmIyR2hud29WTA?oc=5",
+      "published_at": "2026-10-09T16:45:16Z",
+      "retrieved_at": "2026-10-18T02:27:05Z",
+      "source_type": "news"
+    }
+  ],
+  "market_current": {
+    "price": 51.47,
+    "currency": "USD",
+    "price_as_of": "2026-10-16T20:00:01Z",
+    "shares_outstanding": 65573212,
+    "shares_as_of": "2026-08-03T00:00:00Z",
+    "market_cap": 3375053221.64,
+    "evidence_ids": [
+      "E-LIVE-QUOTE",
+      "E-LIVE-SHARES"
+    ],
+    "basis": "price x latest reported shares (calculated, not provider market cap)"
+  },
+  "warnings": [],
+  "fetch_log": [
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AXTI?range=1y&interval=1d",
+      "cache": "miss"
+    },
+    {
+      "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+      "cache": "miss"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0001051627.json",
+      "cache": "miss"
+    },
+    {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001051627.json",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22sole+source%22+OR+%22single+source%22+OR+%22sole+supplier%22+OR+%22single+supplier%22+OR+%22limited+number+of+suppliers%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22largest+customer%22+OR+%22one+customer+accounted%22+OR+%22two+customers+accounted%22+OR+%22customer+concentration%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22at-the-market%22+OR+%22at+the+market+offering%22+OR+%22equity+distribution+agreement%22+OR+%22sales+agreement%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22capacity+constrained%22+OR+%22supply+constrained%22+OR+%22lead+times%22+OR+%22sold+out%22+OR+%22allocation%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22substantial+doubt%22+OR+%22going+concern%22&ciks=0001051627&dateRange=custom&startdt=2024-09-18&enddt=2026-10-18",
+      "cache": "miss"
+    },
+    {
+      "url": "https://news.google.com/rss/search?q=AXT+when%3A120d&hl=en-US&gl=US&ceid=US%3Aen",
+      "cache": "miss"
+    }
+  ],
+  "disclaimer": "Live data leads for research only; not investment advice. Verify material claims in primary sources."
+}
