@@ -9,34 +9,15 @@
 
 **最完整的 Serenity 卡脖子理论研究 Skill**：A股、港股、美股任意一只股票，都能帮你研究供应链卡点、查官方财报、标出财务红旗。
 
-## 它能帮你做什么
+## 看一遍就懂：研究 AMD
 
-### 📖 学理论：把 Serenity 的卡脖子理论讲给你听
+<p align="center"><img src="assets/brand/demo.gif" alt="演示：对 AI 说“帮我研究股票：AMD（美股）”，自动抓取 SEC 财报、校验数字、生成报告" width="100%"></p>
 
-理论全书、历史案例库、他过去怎么判断，都整理好了。直接问，它按理论一步步讲。
+<sub>动图用 2026-10-19 一次真实运行的输出合成（命令、数字和报告都是真的），不是某个 AI 客户端的录屏。</sub>
 
-<img src="assets/brand/learn.png" alt="学理论" width="100%">
+## 3 步开始用
 
-### 🔍 研究个股：任意一只股票，先给结论再给证据
-
-自动抓取官方财报和公告（美股 SEC、A股巨潮、港股披露易），按卡脖子框架逐项判断，标出财务红旗，每个数字都能追到来源。
-
-<img src="assets/brand/report.png" alt="研究个股" width="100%">
-
-## 直接对 AI 说
-
-| 你说 | 你会得到 |
-|---|---|
-| 用 suoha-serenity-skill 讲讲 Serenity 的卡脖子理论 | 理论要点 + 历史案例 |
-| 用 suoha-serenity-skill 体检 600519，先给结论再给证据 | 财务体检：哪里正常、哪里要留意、有没有红旗 |
-| 用 suoha-serenity-skill 研究腾讯（00700）的供应链卡点 | 一份完整研究报告：结论、证据、风险 |
-| 用 suoha-serenity-skill 看看 NVDA 有没有财务红旗 | 逐项检查结果，每项附公式 |
-
-## 安装
-
-需要 Git 和 Python 3.10+，**不需要任何 API Key**。
-
-**① 复制一条命令安装**
+**① 复制一条命令安装**（需要 Git 和 Python 3.10+，**不需要任何 API Key**）
 
 macOS / Linux：
 
@@ -50,20 +31,51 @@ Windows（PowerShell）：
 git clone https://github.com/suoha888/suoha-serenity-skill.git; cd suoha-serenity-skill; .\install.ps1
 ```
 
-**② 在支持 Skills 的 AI 里直接说**（Claude Code、Codex 等），例如上面表格里的任意一句。
+**② 打开支持 Skills 的 AI**（Claude Code、Codex 等）
 
-**③ 也可以在命令行试一只**：`python suoha.py check 600519`（不知道代码就用 `python suoha.py resolve 腾讯`）
+**③ 直接说一句话**：`帮我研究股票：AMD（美股）`（如果 AI 没自动用上，就在前面加“用 suoha-serenity-skill”）
 
 Windows 被拦截或想手动安装，见 [使用手册 · 安装](docs/GUIDE.md#安装)。
 
-## 为什么说“最完整”
+## 怎么用
 
-| | 内容 |
+| 你对 AI 说 | 你会得到 |
 |---|---|
-| **理论** | 14 条定律、18 章理论、30+ 历史案例，每条标注出处帖子编号 |
-| **数据** | 自动抓取官方数据：美股 SEC、A股巨潮、港股披露易，以及日本、韩国、台湾交易所 |
-| **体检** | 按公司类型（银行、保险、券商、地产、一般企业）逐项检查，每项附公式和阈值 |
-| **质量** | 190+ 自动测试，报告里的数字全部由脚本复算 |
+| 帮我研究股票：AMD（美股） | 一份完整研究报告：结论、卡点地图、三道闸门、红旗、证据 |
+| 用 suoha-serenity-skill 体检 600519，先给结论再给证据 | 财务体检：哪里正常、哪里要留意、有没有红旗 |
+| 用 suoha-serenity-skill 研究腾讯（00700）的供应链卡点 | 港股也一样：官方公告 + 卡点判断 |
+| 用 suoha-serenity-skill 讲讲 Serenity 的卡脖子理论 | 理论要点 + 历史案例 |
+
+也可以在命令行直接跑：
+
+```bash
+python suoha.py check 600519     # 财务体检（几秒出结果）
+python suoha.py research AMD     # 抓取官方数据，生成研究包
+python suoha.py resolve 腾讯      # 不知道代码时先查代码
+```
+
+## 真实报告长这样（AMD，2026-10-19）
+
+**① 结论先行：分级 + 一句话 + 30 秒看懂**
+
+<img src="assets/brand/shot-1.png" alt="AMD 报告：结论与 30 秒摘要" width="100%">
+
+**② 卡点地图 + 三道闸门：它是不是真正的卡点**
+
+<img src="assets/brand/shot-2.png" alt="AMD 报告：卡点地图与三道闸门" width="100%">
+
+**③ 红旗筛查 + 证据来源：每个数字都能追到官方文件**
+
+<img src="assets/brand/shot-3.png" alt="AMD 报告：红旗筛查与证据来源" width="100%">
+
+完整报告：[examples/amd-serenity-report.html](examples/amd-serenity-report.html)（下载后用浏览器打开）· [Markdown 版](examples/amd-serenity-report.md)
+
+## 它能做什么
+
+- **研究个股**：自动抓取官方财报和公告（美股 SEC、A股巨潮、港股披露易，以及日本、韩国、台湾交易所），按卡脖子框架逐项判断，先给结论再给证据。
+- **财务体检**：按公司类型（银行、保险、券商、地产、一般企业）逐项检查，每项附公式和阈值：✅ 正常、👀 留意、🚩 红旗。
+- **学理论**：14 条定律、18 章理论、30+ 历史案例，每条标注出处帖子编号。
+- **数字可信**：报告里的数字全部由脚本复算，证据缺失或过期会被拦下；190+ 自动测试。
 
 ## 更多
 

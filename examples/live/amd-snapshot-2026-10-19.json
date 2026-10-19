@@ -1,0 +1,2749 @@
+{
+  "schema_version": "6.0",
+  "kind": "live_snapshot",
+  "connector_version": "8.0.0",
+  "retrieved_at": "2026-10-19T13:31:14Z",
+  "subject": {
+    "input": "AMD",
+    "symbol": "AMD",
+    "confidence": 0.9,
+    "review_needed": false,
+    "reason": "alias table",
+    "exchange": "NASDAQ",
+    "currency": "USD",
+    "name": "ADVANCED MICRO DEVICES INC",
+    "us_listed": true
+  },
+  "sec_identity": {
+    "cik": 2488,
+    "name": "ADVANCED MICRO DEVICES INC",
+    "exchange": "Nasdaq",
+    "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
+    "status": "ok"
+  },
+  "quote": {
+    "symbol": "AMD",
+    "name": "Advanced Micro Devices, Inc.",
+    "exchange": "NasdaqGS",
+    "currency": "USD",
+    "price": 548.6,
+    "price_as_of": "2026-10-19T13:30:35Z",
+    "fifty_two_week_high": 658.52,
+    "fifty_two_week_low": 188.22,
+    "drawdown_from_52w_high_pct": -16.69,
+    "return_pct": {
+      "1m": -2.0,
+      "3m": 8.94,
+      "6m": 99.53,
+      "1y": 116.91
+    },
+    "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1y&interval=1d",
+    "status": "ok"
+  },
+  "filings": {
+    "window_days": 400,
+    "dilution": [
+      {
+        "form": "424B5",
+        "filed": "2026-08-14",
+        "report_date": null,
+        "items": [],
+        "accession": "0001193125-26-352628",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526352628/d173126d424b5.htm",
+        "description": "424B5",
+        "likely_underwritten": false
+      },
+      {
+        "form": "424B5",
+        "filed": "2026-08-13",
+        "report_date": null,
+        "items": [],
+        "accession": "0001193125-26-348029",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526348029/d173126d424b5.htm",
+        "description": "424B5",
+        "likely_underwritten": false
+      },
+      {
+        "form": "S-3ASR",
+        "filed": "2026-08-13",
+        "report_date": null,
+        "items": [],
+        "accession": "0001193125-26-348013",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526348013/d97381ds3asr.htm",
+        "description": "S-3ASR"
+      }
+    ],
+    "ownership": [
+      {
+        "form": "SCHEDULE 13G",
+        "filed": "2026-04-29",
+        "report_date": null,
+        "items": [],
+        "accession": "0002100119-26-000052",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000210011926000052/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "SCHEDULE 13G/A",
+        "filed": "2026-03-26",
+        "report_date": null,
+        "items": [],
+        "accession": "0000102909-26-000540",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000010290926000540/xslSCHEDULE_13G_X02/primary_doc.xml",
+        "description": ""
+      }
+    ],
+    "insider": [
+      {
+        "form": "144",
+        "filed": "2026-10-15",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-010251",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726010251/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-09-17",
+        "report_date": "2026-09-15",
+        "items": [],
+        "accession": "0000002488-26-000180",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000180/xslF345X06/wk-form4_1789676486.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-09-15",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-009483",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726009483/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-09-14",
+        "report_date": "2026-09-10",
+        "items": [],
+        "accession": "0000002488-26-000178",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000178/xslF345X06/wk-form4_1789417189.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-09-10",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-009301",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726009301/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "144",
+        "filed": "2026-09-10",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-009300",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726009300/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-27",
+        "report_date": "2026-08-25",
+        "items": [],
+        "accession": "0001452385-26-000008",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000145238526000008/xslF345X06/wk-form4_1787864688.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-26",
+        "report_date": "2026-08-24",
+        "items": [],
+        "accession": "0000002488-26-000176",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000176/xslF345X06/wk-form4_1787776918.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-25",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-008657",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726008657/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-25",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-008646",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726008646/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-24",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-008576",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726008576/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-21",
+        "report_date": "2026-08-19",
+        "items": [],
+        "accession": "0000002488-26-000174",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000174/xslF345X06/wk-form4_1787349005.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-20",
+        "report_date": "2026-08-19",
+        "items": [],
+        "accession": "0000002488-26-000172",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000172/xslF345X06/wk-form4_1787258149.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-20",
+        "report_date": "2026-08-18",
+        "items": [],
+        "accession": "0000002488-26-000167",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000167/xslF345X06/wk-form4_1787257549.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-20",
+        "report_date": "2026-08-18",
+        "items": [],
+        "accession": "0000002488-26-000165",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000165/xslF345X06/wk-form4_1787257137.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-20",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-008444",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726008444/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-18",
+        "report_date": "2026-08-15",
+        "items": [],
+        "accession": "0000002488-26-000161",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000161/xslF345X06/wk-form4_1787086197.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-18",
+        "report_date": "2026-08-15",
+        "items": [],
+        "accession": "0000002488-26-000159",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000159/xslF345X06/wk-form4_1787085960.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-18",
+        "report_date": "2026-08-15",
+        "items": [],
+        "accession": "0000002488-26-000157",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000157/xslF345X06/wk-form4_1787085741.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-18",
+        "report_date": "2026-08-15",
+        "items": [],
+        "accession": "0000002488-26-000155",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000155/xslF345X06/wk-form4_1787085578.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-18",
+        "report_date": "2026-08-15",
+        "items": [],
+        "accession": "0000002488-26-000153",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000153/xslF345X06/wk-form4_1787085348.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-18",
+        "report_date": "2026-08-15",
+        "items": [],
+        "accession": "0000002488-26-000151",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000151/xslF345X06/wk-form4_1787085206.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-18",
+        "report_date": "2026-08-15",
+        "items": [],
+        "accession": "0000002488-26-000149",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000149/xslF345X06/wk-form4_1787085044.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-18",
+        "report_date": "2026-08-15",
+        "items": [],
+        "accession": "0000002488-26-000147",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000147/xslF345X06/wk-form4_1787084868.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-18",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-008336",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726008336/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-18",
+        "report_date": "2026-08-14",
+        "items": [],
+        "accession": "0000002488-26-000145",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000145/xslF345X06/wk-form4_1787084733.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-18",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-008301",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726008301/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-17",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-008286",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726008286/xsl144X01/primary_doc.xml",
+        "description": ""
+      },
+      {
+        "form": "4",
+        "filed": "2026-08-17",
+        "report_date": "2026-08-13",
+        "items": [],
+        "accession": "0000002488-26-000143",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000143/xslF345X06/wk-form4_1786998173.xml",
+        "description": "FORM 4"
+      },
+      {
+        "form": "144",
+        "filed": "2026-08-14",
+        "report_date": null,
+        "items": [],
+        "accession": "0001950047-26-008142",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000195004726008142/xsl144X01/primary_doc.xml",
+        "description": ""
+      }
+    ],
+    "reports": [
+      {
+        "form": "10-Q",
+        "filed": "2026-08-05",
+        "report_date": "2026-06-27",
+        "items": [],
+        "accession": "0000002488-26-000123",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm",
+        "description": "10-Q"
+      },
+      {
+        "form": "10-Q",
+        "filed": "2026-05-06",
+        "report_date": "2026-03-28",
+        "items": [],
+        "accession": "0000002488-26-000076",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000076/amd-20260328.htm",
+        "description": "10-Q"
+      },
+      {
+        "form": "10-K/A",
+        "filed": "2026-02-04",
+        "report_date": "2025-12-27",
+        "items": [],
+        "accession": "0000002488-26-000021",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000021/amd-20251227.htm",
+        "description": "10-K/A"
+      },
+      {
+        "form": "10-K",
+        "filed": "2026-02-04",
+        "report_date": "2025-12-27",
+        "items": [],
+        "accession": "0000002488-26-000018",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+        "description": "10-K"
+      },
+      {
+        "form": "10-Q",
+        "filed": "2025-11-05",
+        "report_date": "2025-09-27",
+        "items": [],
+        "accession": "0000002488-25-000166",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000166/amd-20250927.htm",
+        "description": "10-Q"
+      }
+    ],
+    "events_8k": [
+      {
+        "form": "8-K",
+        "filed": "2026-09-28",
+        "report_date": "2026-09-26",
+        "items": [
+          "3.02"
+        ],
+        "accession": "0000002488-26-000182",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000182/amd-20260926.htm",
+        "description": "8-K",
+        "item_labels": [
+          "unregistered equity sale"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-08-19",
+        "report_date": "2026-08-17",
+        "items": [
+          "5.02",
+          "9.01"
+        ],
+        "accession": "0000002488-26-000163",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000163/amd-20260817.htm",
+        "description": "8-K",
+        "item_labels": [
+          "officer/director change",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-08-17",
+        "report_date": "2026-08-13",
+        "items": [
+          "1.01",
+          "2.03",
+          "9.01"
+        ],
+        "accession": "0001193125-26-354029",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526354029/d142696d8k.htm",
+        "description": "8-K",
+        "item_labels": [
+          "material definitive agreement",
+          "new debt obligation",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-08-04",
+        "report_date": "2026-08-04",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ],
+        "accession": "0000002488-26-000121",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/amd-20260804.htm",
+        "description": "8-K",
+        "item_labels": [
+          "results of operations",
+          "Reg FD disclosure",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-07-01",
+        "report_date": "2026-06-26",
+        "items": [
+          "5.02"
+        ],
+        "accession": "0000002488-26-000115",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000115/amd-20260626.htm",
+        "description": "8-K",
+        "item_labels": [
+          "officer/director change"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-05-15",
+        "report_date": "2026-05-13",
+        "items": [
+          "1.01",
+          "1.02",
+          "2.03",
+          "5.02",
+          "5.07",
+          "9.01"
+        ],
+        "accession": "0001193125-26-226746",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526226746/d118163d8k.htm",
+        "description": "8-K",
+        "item_labels": [
+          "material definitive agreement",
+          "termination of material agreement",
+          "new debt obligation",
+          "officer/director change",
+          "5.07",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-05-05",
+        "report_date": "2026-05-05",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ],
+        "accession": "0000002488-26-000072",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000072/amd-20260505.htm",
+        "description": "8-K",
+        "item_labels": [
+          "results of operations",
+          "Reg FD disclosure",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-02-24",
+        "report_date": "2026-02-23",
+        "items": [
+          "1.01",
+          "3.02",
+          "7.01",
+          "9.01"
+        ],
+        "accession": "0000002488-26-000045",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000045/amd-20260223.htm",
+        "description": "8-K",
+        "item_labels": [
+          "material definitive agreement",
+          "unregistered equity sale",
+          "Reg FD disclosure",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-02-17",
+        "report_date": "2026-02-10",
+        "items": [
+          "5.02"
+        ],
+        "accession": "0000002488-26-000029",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000029/amd-20260210.htm",
+        "description": "8-K",
+        "item_labels": [
+          "officer/director change"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-02-03",
+        "report_date": "2026-02-03",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ],
+        "accession": "0000002488-26-000014",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000014/amd-20260203.htm",
+        "description": "8-K",
+        "item_labels": [
+          "results of operations",
+          "Reg FD disclosure",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2026-01-20",
+        "report_date": "2026-01-16",
+        "items": [
+          "5.02",
+          "9.01"
+        ],
+        "accession": "0000002488-26-000002",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000002/amd-20260116.htm",
+        "description": "8-K",
+        "item_labels": [
+          "officer/director change",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2025-12-15",
+        "report_date": "2025-12-12",
+        "items": [
+          "5.02",
+          "9.01"
+        ],
+        "accession": "0000002488-25-000182",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000182/amd-20251212.htm",
+        "description": "8-K",
+        "item_labels": [
+          "officer/director change",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2025-11-04",
+        "report_date": "2025-11-04",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ],
+        "accession": "0000002488-25-000163",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000163/amd-20251104.htm",
+        "description": "8-K",
+        "item_labels": [
+          "results of operations",
+          "Reg FD disclosure",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2025-10-27",
+        "report_date": "2025-10-27",
+        "items": [
+          "2.01",
+          "7.01",
+          "9.01"
+        ],
+        "accession": "0001193125-25-250803",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312525250803/d917887d8k.htm",
+        "description": "8-K",
+        "item_labels": [
+          "acquisition/disposition",
+          "Reg FD disclosure",
+          "exhibits"
+        ]
+      },
+      {
+        "form": "8-K",
+        "filed": "2025-10-06",
+        "report_date": "2025-10-05",
+        "items": [
+          "1.01",
+          "3.02",
+          "7.01",
+          "9.01"
+        ],
+        "accession": "0001193125-25-230895",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312525230895/d28189d8k.htm",
+        "description": "8-K",
+        "item_labels": [
+          "material definitive agreement",
+          "unregistered equity sale",
+          "Reg FD disclosure",
+          "exhibits"
+        ]
+      }
+    ],
+    "flags": [
+      {
+        "flag": "shelf_registration_on_file",
+        "count": 1,
+        "latest": "2026-08-13",
+        "doctrine": "PB-FIN-01",
+        "check": "Read the S-3/424B5 for size vs market cap and whether an ATM sales agreement exists."
+      },
+      {
+        "flag": "repeated_prospectus_takedowns",
+        "count": 2,
+        "latest": "2026-08-14",
+        "likely_underwritten": 0,
+        "doctrine": "PB-FIN-02",
+        "check": "Serial 424B supplements: an 8-K item 1.01 within 2 days usually marks an underwritten follow-on (read the price vs today); without it, suspect an active ATM and size the overhang."
+      },
+      {
+        "flag": "unregistered_equity_sale_8k_3_02",
+        "doctrine": "PB-FIN-03",
+        "check": "Private placement/PIPE: who bought, price vs market, lockup, warrants."
+      },
+      {
+        "flag": "material_agreement_8k_1_01",
+        "doctrine": "PB-SIG-02",
+        "check": "Open the 8-K exhibit: customer/supply/financing agreement? counterparty quality?"
+      },
+      {
+        "flag": "beneficial_owner_filings",
+        "count": 2,
+        "latest": "2026-04-29",
+        "doctrine": "PB-SIG-09",
+        "check": "New 13G/13D filers = institutional discovery or activist; read filer name and %."
+      },
+      {
+        "flag": "insider_form4_activity",
+        "count": 77,
+        "latest": "2026-09-17",
+        "doctrine": "PB-SIG-10",
+        "check": "Classify open-market buys (code P) vs sales/grants; buys after a run-up are rarer signals."
+      }
+    ],
+    "source_url": "https://data.sec.gov/submissions/CIK0000002488.json",
+    "issuer": "ADVANCED MICRO DEVICES INC",
+    "sic": "Semiconductors & Related Devices",
+    "status": "ok"
+  },
+  "sec_profile": {
+    "foreign_private_issuer": false,
+    "annual_form": "10-K",
+    "fiscal_year_end": "1226",
+    "sic": "Semiconductors & Related Devices",
+    "sic_code": "3674",
+    "state_of_incorporation": "DE"
+  },
+  "fundamentals": {
+    "provider": "sec_companyfacts",
+    "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+    "tags": {
+      "revenue": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "gross_profit": "us-gaap:GrossProfit",
+      "cost_of_revenue": "us-gaap:CostOfGoodsAndServicesSold",
+      "operating_income": "us-gaap:OperatingIncomeLoss",
+      "net_income": "us-gaap:NetIncomeLoss",
+      "operating_cash_flow": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "capex": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "rnd": "us-gaap:ResearchAndDevelopmentExpense",
+      "sbc": "us-gaap:ShareBasedCompensation",
+      "dividends_paid": null,
+      "buybacks": "us-gaap:PaymentsForRepurchaseOfCommonStock",
+      "cash": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+      "short_term_investments": "us-gaap:ShortTermInvestments",
+      "total_debt": "us-gaap:LongTermDebtNoncurrent",
+      "inventory": "us-gaap:InventoryNet",
+      "equity": "us-gaap:StockholdersEquity",
+      "total_assets": "us-gaap:Assets",
+      "total_liabilities": null,
+      "receivables": "us-gaap:AccountsReceivableNetCurrent",
+      "goodwill": "us-gaap:Goodwill",
+      "contract_liabilities": "us-gaap:ContractWithCustomerLiability"
+    },
+    "series": {
+      "revenue": [
+        {
+          "end": "2023-09-30",
+          "value": 5800000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 6168000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 5473000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 5835000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 6819000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 7658000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 7438000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 7685000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 9246000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 10270000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 10253000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 11536000000,
+          "unit": "USD"
+        }
+      ],
+      "gross_profit": [
+        {
+          "end": "2023-09-30",
+          "value": 2747000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 2911000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 2560000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 2864000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 3419000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 3882000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 3736000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 3059000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 4780000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 5577000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 5416000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 6203000000,
+          "unit": "USD"
+        }
+      ],
+      "cost_of_revenue": [
+        {
+          "end": "2023-09-30",
+          "value": 3053000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 3257000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 2913000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 2971000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 3400000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 3776000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 3702000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 4626000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 4466000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 4693000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 4837000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 5333000000,
+          "unit": "USD"
+        }
+      ],
+      "operating_income": [
+        {
+          "end": "2023-09-30",
+          "value": 224000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 342000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 36000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 269000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 724000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 871000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 806000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": -134000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 1270000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 1752000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 1476000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 1990000000,
+          "unit": "USD"
+        }
+      ],
+      "net_income": [
+        {
+          "end": "2023-09-30",
+          "value": 299000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 667000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 123000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 265000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 771000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 482000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 709000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 872000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 1243000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 1511000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 1383000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 2297000000,
+          "unit": "USD"
+        }
+      ],
+      "operating_cash_flow": [
+        {
+          "end": "2023-09-30",
+          "value": 421000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 381000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 521000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 593000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 628000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 1299000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 939000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 2011000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 2159000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 2600000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 2955000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 2366000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "capex": [
+        {
+          "end": "2023-09-30",
+          "value": 124000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 139000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 142000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 154000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 132000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 208000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 212000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 282000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 258000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 222000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 389000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 808000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "rnd": [
+        {
+          "end": "2023-09-30",
+          "value": 1507000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 1511000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 1525000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 1583000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 1636000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 1712000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 1728000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 1894000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 2139000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 2330000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 2397000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 2528000000,
+          "unit": "USD"
+        }
+      ],
+      "sbc": [
+        {
+          "end": "2023-09-30",
+          "value": 353000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 374000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 371000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 346000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 351000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 339000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 364000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 369000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 419000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 486000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 487000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 503000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "dividends_paid": [],
+      "buybacks": [
+        {
+          "end": "2023-09-30",
+          "value": 511000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 233000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 4000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 352000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 250000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 256000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 749000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 478000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 89000000,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 0,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 221000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 0,
+          "unit": "USD",
+          "derived": "YTD-diff"
+        }
+      ],
+      "cash": [
+        {
+          "end": "2023-09-30",
+          "value": 3561000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 3933000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 4190000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 4113000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 3897000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 3787000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 6049000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 4442000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 4808000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 5539000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 5585000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 5086000000,
+          "unit": "USD"
+        }
+      ],
+      "short_term_investments": [
+        {
+          "end": "2023-09-30",
+          "value": 2224000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 1840000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 1845000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 1227000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 647000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 1345000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 1261000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 1425000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 2435000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 5013000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 6762000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 8025000000,
+          "unit": "USD"
+        }
+      ],
+      "total_debt": [
+        {
+          "end": "2023-09-30",
+          "value": 1715000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 1717000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 1718000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 1719000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 1720000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 1721000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 3217000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 3218000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 2347000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 2348000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 2350000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 2351000000,
+          "unit": "USD"
+        }
+      ],
+      "inventory": [
+        {
+          "end": "2023-09-30",
+          "value": 4445000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 4351000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 4652000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 4991000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 5374000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 5734000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 6416000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 6677000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 7313000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 7920000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 8045000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 8468000000,
+          "unit": "USD"
+        }
+      ],
+      "equity": [
+        {
+          "end": "2023-09-30",
+          "value": 54970000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 55892000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 56198000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 56538000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 56985000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 57568000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 57881000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 59665000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 60790000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 62999000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 64462000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 67224000000,
+          "unit": "USD"
+        }
+      ],
+      "total_assets": [
+        {
+          "end": "2023-09-30",
+          "value": 67626000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 67885000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 67895000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 67886000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 69636000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 69226000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 71550000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 74820000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 76891000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 76926000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 79642000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 84464000000,
+          "unit": "USD"
+        }
+      ],
+      "total_liabilities": [],
+      "receivables": [
+        {
+          "end": "2023-09-30",
+          "value": 5054000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 4323000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 5038000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 5749000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 7241000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 6192000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 5443000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 5115000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 6201000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 6315000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 6035000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 7281000000,
+          "unit": "USD"
+        }
+      ],
+      "goodwill": [
+        {
+          "end": "2023-09-30",
+          "value": 24186000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2023-12-30",
+          "value": 24262000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-03-30",
+          "value": 24262000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-06-29",
+          "value": 24262000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-09-28",
+          "value": 24839000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2024-12-28",
+          "value": 24839000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-03-29",
+          "value": 24839000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-06-28",
+          "value": 25083000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-09-27",
+          "value": 25083000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2025-12-27",
+          "value": 25126000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-03-28",
+          "value": 25344000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2026-06-27",
+          "value": 25470000000,
+          "unit": "USD"
+        }
+      ],
+      "contract_liabilities": [
+        {
+          "end": "2017-07-01",
+          "value": 43000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2017-09-30",
+          "value": 75000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2017-12-30",
+          "value": 85000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2018-03-31",
+          "value": 147000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2018-06-30",
+          "value": 67000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2018-09-29",
+          "value": 3000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2018-12-29",
+          "value": 11000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2019-03-30",
+          "value": 2000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2019-06-29",
+          "value": 1000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2019-09-28",
+          "value": 5000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2019-12-28",
+          "value": 2000000,
+          "unit": "USD"
+        },
+        {
+          "end": "2020-12-26",
+          "value": 15000000,
+          "unit": "USD"
+        }
+      ],
+      "shares_outstanding_dei": [
+        {
+          "end": "2024-10-23",
+          "value": 1622807346,
+          "filed": "2024-10-30",
+          "form": "10-Q"
+        },
+        {
+          "end": "2025-01-30",
+          "value": 1620477962,
+          "filed": "2025-02-05",
+          "form": "10-K"
+        },
+        {
+          "end": "2025-05-01",
+          "value": 1621404195,
+          "filed": "2025-05-07",
+          "form": "10-Q"
+        },
+        {
+          "end": "2025-07-30",
+          "value": 1622843689,
+          "filed": "2025-08-06",
+          "form": "10-Q"
+        },
+        {
+          "end": "2025-10-30",
+          "value": 1628041540,
+          "filed": "2025-11-05",
+          "form": "10-Q"
+        },
+        {
+          "end": "2026-01-30",
+          "value": 1630410843,
+          "filed": "2026-02-04",
+          "form": "10-K/A"
+        },
+        {
+          "end": "2026-04-29",
+          "value": 1630600639,
+          "filed": "2026-05-06",
+          "form": "10-Q"
+        },
+        {
+          "end": "2026-07-29",
+          "value": 1632475042,
+          "filed": "2026-08-05",
+          "form": "10-Q"
+        }
+      ]
+    },
+    "summary": {
+      "revenue_latest_quarter": {
+        "end": "2026-06-27",
+        "value": 11536000000,
+        "unit": "USD"
+      },
+      "reporting_currency": "USD",
+      "revenue_ttm": 41305000000,
+      "revenue_yoy_pct": 50.11,
+      "revenue_qoq_pct": 12.51,
+      "gross_margin_quarterly": [
+        {
+          "end": "2024-09-28",
+          "pct": 50.14
+        },
+        {
+          "end": "2024-12-28",
+          "pct": 50.69
+        },
+        {
+          "end": "2025-03-29",
+          "pct": 50.23
+        },
+        {
+          "end": "2025-06-28",
+          "pct": 39.8
+        },
+        {
+          "end": "2025-09-27",
+          "pct": 51.7
+        },
+        {
+          "end": "2025-12-27",
+          "pct": 54.3
+        },
+        {
+          "end": "2026-03-28",
+          "pct": 52.82
+        },
+        {
+          "end": "2026-06-27",
+          "pct": 53.77
+        }
+      ],
+      "gross_margin_change_yoy_pp": 13.97,
+      "operating_margin_quarterly": [
+        {
+          "end": "2024-09-28",
+          "pct": 10.62
+        },
+        {
+          "end": "2024-12-28",
+          "pct": 11.37
+        },
+        {
+          "end": "2025-03-29",
+          "pct": 10.84
+        },
+        {
+          "end": "2025-06-28",
+          "pct": -1.74
+        },
+        {
+          "end": "2025-09-27",
+          "pct": 13.74
+        },
+        {
+          "end": "2025-12-27",
+          "pct": 17.06
+        },
+        {
+          "end": "2026-03-28",
+          "pct": 14.4
+        },
+        {
+          "end": "2026-06-27",
+          "pct": 17.25
+        }
+      ],
+      "cash_and_st_investments": {
+        "end": "2026-06-27",
+        "value": 13111000000
+      },
+      "fcf_last_4q": [
+        {
+          "end": "2025-09-27",
+          "value": 1901000000
+        },
+        {
+          "end": "2025-12-27",
+          "value": 2378000000
+        },
+        {
+          "end": "2026-03-28",
+          "value": 2566000000
+        },
+        {
+          "end": "2026-06-27",
+          "value": 1558000000
+        }
+      ],
+      "total_debt_latest": {
+        "end": "2026-06-27",
+        "value": 2351000000,
+        "unit": "USD"
+      },
+      "net_income_ttm": 6434000000,
+      "operating_income_ttm": 6488000000,
+      "operating_cash_flow_ttm": 10080000000,
+      "capex_ttm": 1677000000,
+      "sbc_ttm": 1895000000,
+      "rnd_ttm": 9394000000,
+      "buybacks_ttm": 310000000,
+      "gross_profit_ttm": 21976000000,
+      "revenue_ttm_year_ago": 29600000000,
+      "net_income_ttm_year_ago": 2834000000,
+      "equity_latest": {
+        "end": "2026-06-27",
+        "value": 67224000000
+      },
+      "equity_year_ago": {
+        "end": "2025-06-28",
+        "value": 59665000000
+      },
+      "total_assets_latest": {
+        "end": "2026-06-27",
+        "value": 84464000000
+      },
+      "total_assets_year_ago": {
+        "end": "2025-06-28",
+        "value": 74820000000
+      },
+      "receivables_latest": {
+        "end": "2026-06-27",
+        "value": 7281000000
+      },
+      "receivables_year_ago": {
+        "end": "2025-06-28",
+        "value": 5115000000
+      },
+      "inventory_latest": {
+        "end": "2026-06-27",
+        "value": 8468000000
+      },
+      "inventory_year_ago": {
+        "end": "2025-06-28",
+        "value": 6677000000
+      },
+      "goodwill_latest": {
+        "end": "2026-06-27",
+        "value": 25470000000
+      },
+      "goodwill_year_ago": {
+        "end": "2025-06-28",
+        "value": 25083000000
+      },
+      "contract_liabilities_latest": {
+        "end": "2020-12-26",
+        "value": 15000000
+      },
+      "contract_liabilities_year_ago": {
+        "end": "2019-12-28",
+        "value": 2000000
+      },
+      "cash_latest": {
+        "end": "2026-06-27",
+        "value": 5086000000
+      },
+      "cash_year_ago": {
+        "end": "2025-06-28",
+        "value": 4442000000
+      },
+      "shares_outstanding": 1632475042,
+      "shares_as_of": "2026-07-29",
+      "share_count_change_pct_vs_4_obs_ago": 0.59
+    },
+    "status": "ok"
+  },
+  "fts": {
+    "supply_concentration": {
+      "query": "\"sole source\" OR \"single source\" OR \"sole supplier\" OR \"single supplier\" OR \"limited number of suppliers\"",
+      "total": 11,
+      "hits": [
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2025-05-07",
+          "period": "2025-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000047/amd-20250329.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2024-10-30",
+          "period": "2024-09-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000163/amd-20240928.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2025-11-05",
+          "period": "2025-09-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000166/amd-20250927.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2025-08-06",
+          "period": "2025-06-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000108/amd-20250628.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2026-05-06",
+          "period": "2026-03-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000076/amd-20260328.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2026-08-05",
+          "period": "2026-06-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm"
+        }
+      ],
+      "primary_hits": 6,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22sole+source%22+OR+%22single+source%22+OR+%22sole+supplier%22+OR+%22single+supplier%22+OR+%22limited+number+of+suppliers%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "status": "ok"
+    },
+    "customer_concentration": {
+      "query": "\"largest customer\" OR \"one customer accounted\" OR \"two customers accounted\" OR \"customer concentration\"",
+      "total": 4,
+      "hits": [
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-K",
+          "file_type": "10-K",
+          "primary_document": true,
+          "filed": "2025-02-05",
+          "period": "2024-12-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "ARS",
+          "file_type": "ARS",
+          "primary_document": false,
+          "filed": "2025-03-28",
+          "period": "2024-12-31",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312525067185/d858533dars.pdf"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "ARS",
+          "file_type": "ARS",
+          "primary_document": false,
+          "filed": "2026-03-27",
+          "period": "2025-12-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129106/d46357dars.pdf"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-K",
+          "file_type": "10-K",
+          "primary_document": true,
+          "filed": "2026-02-04",
+          "period": "2025-12-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm"
+        }
+      ],
+      "primary_hits": 2,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22largest+customer%22+OR+%22one+customer+accounted%22+OR+%22two+customers+accounted%22+OR+%22customer+concentration%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "status": "ok"
+    },
+    "atm_program": {
+      "query": "\"at-the-market\" OR \"at the market offering\" OR \"equity distribution agreement\" OR \"sales agreement\"",
+      "total": 1,
+      "hits": [
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "S-3ASR",
+          "file_type": "S-3ASR",
+          "primary_document": false,
+          "filed": "2025-03-31",
+          "period": null,
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312525067974/d939073ds3asr.htm"
+        }
+      ],
+      "primary_hits": 0,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22at-the-market%22+OR+%22at+the+market+offering%22+OR+%22equity+distribution+agreement%22+OR+%22sales+agreement%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "status": "ok"
+    },
+    "capacity_signal": {
+      "query": "\"capacity constrained\" OR \"supply constrained\" OR \"lead times\" OR \"sold out\" OR \"allocation\"",
+      "total": 18,
+      "hits": [
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2026-05-06",
+          "period": "2026-03-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000076/amd-20260328.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2026-08-05",
+          "period": "2026-06-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "ARS",
+          "file_type": "ARS",
+          "primary_document": false,
+          "filed": "2026-03-27",
+          "period": "2025-12-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129106/d46357dars.pdf"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-K",
+          "file_type": "10-K",
+          "primary_document": true,
+          "filed": "2026-02-04",
+          "period": "2025-12-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2025-05-07",
+          "period": "2025-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000047/amd-20250329.htm"
+        },
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "10-Q",
+          "file_type": "10-Q",
+          "primary_document": true,
+          "filed": "2024-10-30",
+          "period": "2024-09-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000163/amd-20240928.htm"
+        }
+      ],
+      "primary_hits": 5,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22capacity+constrained%22+OR+%22supply+constrained%22+OR+%22lead+times%22+OR+%22sold+out%22+OR+%22allocation%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "status": "ok"
+    },
+    "going_concern": {
+      "query": "\"substantial doubt\" OR \"going concern\"",
+      "total": 1,
+      "hits": [
+        {
+          "entity": "ADVANCED MICRO DEVICES INC  (AMD)  (CIK 0000002488)",
+          "form": "8-K",
+          "file_type": "EX-10.1",
+          "primary_document": false,
+          "filed": "2026-05-15",
+          "period": "2026-05-13",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526226746/d118163dex101.htm"
+        }
+      ],
+      "primary_hits": 0,
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22substantial+doubt%22+OR+%22going+concern%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "status": "ok"
+    }
+  },
+  "news": {
+    "query": "Advanced Micro Devices",
+    "items": [
+      {
+        "title": "Advanced Micro Devices, Inc. (AMD) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRTJ5YzhaNG1LMFJnazZBaXNsV3JWRENRZjBZSno5UVc0a3Rjc28wVkpHRXBYTmpOSzQ0Tm1qXzZpbFNFYVpmVDktMUJtUUFSNnpJTkJVbG16M3dCa3dDamJmcE1lUFJzYmpoYXEyR1RaQTFkUGVmUzM3cTM4X0pmWUNnSDV2ODVvdk5CN29XT1lsZnF6bUU0RHVRQQ?oc=5",
+        "published_at": "2026-10-19T12:00:02Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "ETFs Are Net Sellers of Advanced Micro Devices (AMD) on Oct. 15 - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPeGlBUlFnLW80bW5ac3JyYkJnNmR6QThXVzB1VU15Y3paT2ZhNTY1TlRQU01Va3M5TEM1NkE4OXNSVjd5X3FTaF91bElwVnZCSlV1ZVNVNkU5R0xSS3NoRTYydml3TnZiYTZQYVNxaDdTZHBJNU5nOUIyOWY0YXI4b1ZyRnNaVHNTVm5kSmx2QmwwN3BkSU5Yc0x0UzA?oc=5",
+        "published_at": "2026-10-19T11:02:10Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "Advanced Micro Devices, Inc. $AMD Shares Sold by Wealth Intelligence LLC - MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOS0djVTNPb09IQlN5TlRDM284Z29JRXhWTVBreVo2ZUJyZ2g1VUtqRnl3NzdweHJuaGx4UjJWWWlSMGZrdHdhRmpqOERzX3pURW93bVdyb3VwWVZDazlJYmRkQTNZS3ZqY01ONUlSUmdZOG5jamdSRFA0N3Bkc2ZWN0FaZGVyekV6Rk1MaGNNdENIbkdHeUgwZWRUWWhmMEtacnZYMVRhOTFjNkVDZEF1aXlrajJSUnA3SVBMZjRsV1o2QU8xTmh2RzFR?oc=5",
+        "published_at": "2026-10-18T09:18:13Z",
+        "publisher": "MarketBeat"
+      },
+      {
+        "title": "Why Is Advanced Micro Devices (AMD) Gaining Ground In AI Infrastructure? - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORDFNWFI4R2wzZ2VnVUVGc0ZYVkxMRlM3MkdLeWhzUkZCdWZvWDY0Z3VuSkt3cTExb190N3J3SXhidFVxa095cEtJbkNnaU5JX0J5YU84eEZxcWRGalVJczE5LXp3WmtUVFJvRTdVclhCby1PMUpSbGlpYV9RRHdqald1aGVwVkpnZkw4NzRxZjJzeHBrbmpKR0Fn?oc=5",
+        "published_at": "2026-10-18T05:15:00Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "What Advanced Micro Devices Buyers Were Betting On Before A 137% Rally - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOU2h5aVQyRmhyZ01ObjBaQWhrQVkxc3ZCUFNoMGFoZ09rX2hPT0hRR1p0eFcwd3lGSldjdkJXTWlLQjR1Zl9CcW9NRFFuRHMwM0U3Z21MUzJGQVIxUnJzdGN2Qkt2T1ExMGVZUzVnMnNraks3bkxwQ09ocFUyYk5JSUVLZ09EMjFtc0xzYjFMamlscDFKcGZWQms2Wkk5M0lo?oc=5",
+        "published_at": "2026-10-18T04:17:00Z",
+        "publisher": "Yahoo Finance"
+      },
+      {
+        "title": "What to Expect From Advanced Micro Devices’ Q3 2026 Earnings Report - Barchart.com",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZW14RzdiVVdZRk1UcFNCVWZyRER4aTBCN0JhaFZxbDNDMl96SEFlYmZFdFJVMTk0OFVjd2MzenUyRXZYSVVUbkVjWlBJTUttUzJmRjY0ZzRyVGdIZDdaUnpHRVBsVEZld2pjQ2ZpX2dSckxpWWROVWt5NU5kejYxTzhWWExMVG1FaFRRYVB3cmpYSmhlQ1FfYUU3WWhxc2tBeG9kWXpyaGstQjE1X3NR?oc=5",
+        "published_at": "2026-10-17T22:27:10Z",
+        "publisher": "Barchart.com"
+      },
+      {
+        "title": "Advanced Micro Devices, Inc. $AMD Stock: Franchise GP Ltd Reduces Stake - MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQRVZCMkNOeVRCelU1cVZpeC1IS3IxYkFtUVA5QzdzaUphRGp2QWpUV1lqemZYbjlsMnpnUFZXcGtnQi1oT1FqenpHZVJMa2F2WUJ5N0c3bmQxX0FKc0RXSGJ4dXN6c3p3Ti1DZkFHTUxZNFRrOHVFdWpMRFgtcWtWZzRJcXg1LVZYeTJ0OXhIODBtcHlSZWxRM3JOeTh1b0xOODU2TV9ObkFua0RkS1c5c2Y2N2tYSU85MWdPNTY0dHQ5bVB0dVhR?oc=5",
+        "published_at": "2026-10-17T19:59:28Z",
+        "publisher": "MarketBeat"
+      },
+      {
+        "title": "Advanced Micro Devices, Inc. $AMD Stock Position Raised by Pension & Wealth Management Advisors Inc. - MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOcDVabHdTLXRuemJVQzQ0Yld4dEl4Y3BkVW5KNEQ5TkNoYjZJSUdKRXBzMWNELUw2d2xLS1c3Wi1JNTc1Tk1OOEhRbURzam1nbE51bm1vdXNFdFVRWXpyZzJuRncxdURBeDUyVEI4SGhLRWtOVTdsSUlFVEJlNVFPZUpaLTBtNUxaSHdReXd3MlBCWXQ3amtqbTE2VmdmUTRIMG1vbkdqY040WmozZHpOWG9UMGphcmVMMmQ1UnpjR2s2RlVCMDI2RE9KdXVxX3ZBajlJc1BTZDlyd3NoWUExWWRlc1dRTUpuMzVF?oc=5",
+        "published_at": "2026-10-17T15:43:11Z",
+        "publisher": "MarketBeat"
+      },
+      {
+        "title": "SLT Holdings LLC Sells 1,500 Shares of Advanced Micro Devices, Inc. $AMD - MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSS1BVEFaM19vNTN3dWd5Q29mQVlsZmNIN3dsZEFfWUZZVVI1Y1F2dWF1NFpuYVFZU3cyMS1iN2U4QjBvbk9yendFMkdQWkROOFNBQmhZRlhQaWF5clg5bEtyN084U2xqQ2paVXlreXBYUkQ0endaWjBIZ3psRFpockxDd3JJWGFhNDhWVkExaDZjTjh4UndMWjJ6RDlZZ196djdHVGduU2dGcm5BdnRqUnRsMFNWdHJTV0hfeHV2UVJoN2hxM2l3SQ?oc=5",
+        "published_at": "2026-10-17T15:43:11Z",
+        "publisher": "MarketBeat"
+      },
+      {
+        "title": "4,455 Advanced Micro Devices, Inc. $AMD Shares Sold by NFSG Corp - MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPS2pUNlMtaTFFaGVJdHlDakdiUnZFMDNpVVpXaC04MFVVTGp5cFR1WlMza0xrODNoRTZ4ZGJRSDR2akJ3ZUZUYjRZZFBYTmVjengxMzg2dUcxdG1MQ1IyTlNvQkNwcHN1V0cwbXRrVzV3YTVzTnhaTVJOUjhrc2hkYTgzZ1d6bmRnb05Xd01mMHU3TFJtUjhWWWw2UjY4WFpKejJmMmVWZWhhYzk1N0NNSTRxYVpYalZhNUgzV1VB?oc=5",
+        "published_at": "2026-10-17T15:43:09Z",
+        "publisher": "MarketBeat"
+      },
+      {
+        "title": "Advanced Micro Devices, Inc. $AMD Stock Purchased by Aspiriant LLC - MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSHVtelI1bFlQY3R1N3ptYWFMSnB1NXJ5YkFfbzlnLUdSTjBNV0phclEyY3ZaYjI5QkdzcWI3SFQ3MWd4V1E2RzBkTUdhaElKQjJrNmUtcFo3ZTRncnpUVC1PMXVxaFk4MG41V3M4bDJNU2xkYTJ2ZXdXWmwydk9DUEpYRkVpYXpRWTZJcGlBaVFQYXRUSGRzcmpFY1lkZHV1NHFJYWRXdHVudElwN2JvdkhtZWdreHh4U3BWSm00SW9OQQ?oc=5",
+        "published_at": "2026-10-17T07:37:27Z",
+        "publisher": "MarketBeat"
+      },
+      {
+        "title": "What Advanced Micro Devices Buyers Were Betting On Before A 137% Rally - Simply Wall Street",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZTRfczNmUWVCWGVQczVXY1ppOTRBZUpSNjI3dHdOYUpTQldWc0ZEcGNoZ21vNEZ5YmRLMF9fQlE1d1ltM0dkQWJQRk1kNDE1YlUyWWRULU9aZk5nOTZldWhwcmdZeFJoVjJMZkhkWWZhRlJwSi1udHd0YzFXV1ltcWNyUDlKR1V5NV8wLUNGQ2dTbnplclR5NGE4MVZYS2hpSV9pU25OREo5R3QtTldWR2MtVkpjTGtGWVZwcDVFaVFWZ05jRHFnTVVHQmhuMG9tN3N5YkxtbktLLWo3NmfSAeMBQVVfeXFMTW9nbmg2UmxTYXRFbloxcG1pbThNdk9HSkloa3pLQUZZNFFlV3gybzdTSGhvOTFlOHFtMzNOM01PZ0htLVJOTWZUWnA2NFpUdGxESnl6R2JfUzNMRUw5LWtzUzluMFU4QUhaenp6VDJFN1lmQVNBYlZDdG1FczlJRUNRcnk2b1ppSWpSY3l0aHd2T3JYQ19CUEVqbzZtbTJheEFxaV9fdHVrbU5xX1hSNGhNYkliMGVOelNodUpiVTZMbHVtdUt3TkZjVlVCQTNFdXpweW8xY1pNNlhqUnBlY2d0alk?oc=5",
+        "published_at": "2026-10-17T07:12:34Z",
+        "publisher": "Simply Wall Street"
+      }
+    ],
+    "source_url": "https://news.google.com/rss/search?q=Advanced+Micro+Devices+when%3A120d&hl=en-US&gl=US&ceid=US%3Aen",
+    "note": "Headlines are leads, not facts; open the primary source before citing a material claim.",
+    "status": "ok"
+  },
+  "market_current": {
+    "price": 548.6,
+    "currency": "USD",
+    "quote_currency": "USD",
+    "price_as_of": "2026-10-19T13:30:35Z",
+    "shares_outstanding": 1632475042.0,
+    "shares_as_of": "2026-07-29T00:00:00Z",
+    "market_cap": 895575808041.2,
+    "evidence_ids": [
+      "E-LIVE-QUOTE",
+      "E-LIVE-SHARES"
+    ],
+    "basis": "price x latest reported shares (calculated, not provider market cap)"
+  },
+  "usd_view": {
+    "rates": {
+      "USD": {
+        "pair": "USDUSD",
+        "rate": 1.0,
+        "as_of": null,
+        "source_url": null,
+        "status": "ok"
+      }
+    },
+    "market_cap_usd": 895575808041.2,
+    "revenue_ttm_usd": 41305000000.0,
+    "revenue_basis": "ttm",
+    "ps_ttm": 21.68,
+    "note": "USD values use spot FX for comparison only; lens arithmetic stays in the quote currency."
+  },
+  "evidence": [
+    {
+      "evidence_id": "E-LIVE-QUOTE",
+      "title": "AMD quote 548.6 USD (NasdaqGS)",
+      "locator": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1y&interval=1d",
+      "published_at": "2026-10-19T13:30:35Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "market_data"
+    },
+    {
+      "evidence_id": "E-LIVE-SHARES",
+      "title": "Shares outstanding 1,632,475,042 as of 2026-07-29 (sec_companyfacts)",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "published_at": "2026-07-29T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-FIN",
+      "title": "Latest quarterly revenue 11,536,000,000 USD (period end 2026-06-27); TTM 41305000000; YoY 50.11%; GM 53.77%",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "published_at": "2026-06-27T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-01",
+      "title": "10-Q filed 2026-08-05",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm",
+      "published_at": "2026-08-05T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-02",
+      "title": "10-Q filed 2026-05-06",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000076/amd-20260328.htm",
+      "published_at": "2026-05-06T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-03",
+      "title": "424B5 filed 2026-08-14",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000119312526352628/d173126d424b5.htm",
+      "published_at": "2026-08-14T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-04",
+      "title": "424B5 filed 2026-08-13",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000119312526348029/d173126d424b5.htm",
+      "published_at": "2026-08-13T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-05",
+      "title": "S-3ASR filed 2026-08-13",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000119312526348013/d97381ds3asr.htm",
+      "published_at": "2026-08-13T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-06",
+      "title": "8-K filed 2026-09-28 (unregistered equity sale)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000182/amd-20260926.htm",
+      "published_at": "2026-09-28T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-07",
+      "title": "8-K filed 2026-08-19 (officer/director change, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000163/amd-20260817.htm",
+      "published_at": "2026-08-19T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-08",
+      "title": "8-K filed 2026-08-17 (material definitive agreement, new debt obligation, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000119312526354029/d142696d8k.htm",
+      "published_at": "2026-08-17T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-09",
+      "title": "8-K filed 2026-08-04 (results of operations, Reg FD disclosure, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/amd-20260804.htm",
+      "published_at": "2026-08-04T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-10",
+      "title": "SCHEDULE 13G filed 2026-04-29",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000210011926000052/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-04-29T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-11",
+      "title": "SCHEDULE 13G/A filed 2026-03-26",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000010290926000540/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-03-26T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-01",
+      "title": "[lead] Advanced Micro Devices, Inc. (AMD) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRTJ5YzhaNG1LMFJnazZBaXNsV3JWRENRZjBZSno5UVc0a3Rjc28wVkpHRXBYTmpOSzQ0Tm1qXzZpbFNFYVpmVDktMUJtUUFSNnpJTkJVbG16M3dCa3dDamJmcE1lUFJzYmpoYXEyR1RaQTFkUGVmUzM3cTM4X0pmWUNnSDV2ODVvdk5CN29XT1lsZnF6bUU0RHVRQQ?oc=5",
+      "published_at": "2026-10-19T12:00:02Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-02",
+      "title": "[lead] ETFs Are Net Sellers of Advanced Micro Devices (AMD) on Oct. 15 - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPeGlBUlFnLW80bW5ac3JyYkJnNmR6QThXVzB1VU15Y3paT2ZhNTY1TlRQU01Va3M5TEM1NkE4OXNSVjd5X3FTaF91bElwVnZCSlV1ZVNVNkU5R0xSS3NoRTYydml3TnZiYTZQYVNxaDdTZHBJNU5nOUIyOWY0YXI4b1ZyRnNaVHNTVm5kSmx2QmwwN3BkSU5Yc0x0UzA?oc=5",
+      "published_at": "2026-10-19T11:02:10Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-03",
+      "title": "[lead] Advanced Micro Devices, Inc. $AMD Shares Sold by Wealth Intelligence LLC - MarketBeat",
+      "locator": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOS0djVTNPb09IQlN5TlRDM284Z29JRXhWTVBreVo2ZUJyZ2g1VUtqRnl3NzdweHJuaGx4UjJWWWlSMGZrdHdhRmpqOERzX3pURW93bVdyb3VwWVZDazlJYmRkQTNZS3ZqY01ONUlSUmdZOG5jamdSRFA0N3Bkc2ZWN0FaZGVyekV6Rk1MaGNNdENIbkdHeUgwZWRUWWhmMEtacnZYMVRhOTFjNkVDZEF1aXlrajJSUnA3SVBMZjRsV1o2QU8xTmh2RzFR?oc=5",
+      "published_at": "2026-10-18T09:18:13Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-04",
+      "title": "[lead] Why Is Advanced Micro Devices (AMD) Gaining Ground In AI Infrastructure? - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORDFNWFI4R2wzZ2VnVUVGc0ZYVkxMRlM3MkdLeWhzUkZCdWZvWDY0Z3VuSkt3cTExb190N3J3SXhidFVxa095cEtJbkNnaU5JX0J5YU84eEZxcWRGalVJczE5LXp3WmtUVFJvRTdVclhCby1PMUpSbGlpYV9RRHdqald1aGVwVkpnZkw4NzRxZjJzeHBrbmpKR0Fn?oc=5",
+      "published_at": "2026-10-18T05:15:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-05",
+      "title": "[lead] What Advanced Micro Devices Buyers Were Betting On Before A 137% Rally - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOU2h5aVQyRmhyZ01ObjBaQWhrQVkxc3ZCUFNoMGFoZ09rX2hPT0hRR1p0eFcwd3lGSldjdkJXTWlLQjR1Zl9CcW9NRFFuRHMwM0U3Z21MUzJGQVIxUnJzdGN2Qkt2T1ExMGVZUzVnMnNraks3bkxwQ09ocFUyYk5JSUVLZ09EMjFtc0xzYjFMamlscDFKcGZWQms2Wkk5M0lo?oc=5",
+      "published_at": "2026-10-18T04:17:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-06",
+      "title": "[lead] What to Expect From Advanced Micro Devices’ Q3 2026 Earnings Report - Barchart.com",
+      "locator": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZW14RzdiVVdZRk1UcFNCVWZyRER4aTBCN0JhaFZxbDNDMl96SEFlYmZFdFJVMTk0OFVjd2MzenUyRXZYSVVUbkVjWlBJTUttUzJmRjY0ZzRyVGdIZDdaUnpHRVBsVEZld2pjQ2ZpX2dSckxpWWROVWt5NU5kejYxTzhWWExMVG1FaFRRYVB3cmpYSmhlQ1FfYUU3WWhxc2tBeG9kWXpyaGstQjE1X3NR?oc=5",
+      "published_at": "2026-10-17T22:27:10Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
+    }
+  ],
+  "warnings": [],
+  "fetch_log": [
+    {
+      "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+      "cache": "hit"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000002488.json",
+      "cache": "miss"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1y&interval=1d",
+      "cache": "miss"
+    },
+    {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22at-the-market%22+OR+%22at+the+market+offering%22+OR+%22equity+distribution+agreement%22+OR+%22sales+agreement%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22largest+customer%22+OR+%22one+customer+accounted%22+OR+%22two+customers+accounted%22+OR+%22customer+concentration%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "cache": "miss"
+    },
+    {
+      "url": "https://news.google.com/rss/search?q=Advanced+Micro+Devices+when%3A120d&hl=en-US&gl=US&ceid=US%3Aen",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22substantial+doubt%22+OR+%22going+concern%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22capacity+constrained%22+OR+%22supply+constrained%22+OR+%22lead+times%22+OR+%22sold+out%22+OR+%22allocation%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "cache": "miss"
+    },
+    {
+      "url": "https://efts.sec.gov/LATEST/search-index?q=%22sole+source%22+OR+%22single+source%22+OR+%22sole+supplier%22+OR+%22single+supplier%22+OR+%22limited+number+of+suppliers%22&ciks=0000002488&dateRange=custom&startdt=2024-09-19&enddt=2026-10-19",
+      "cache": "miss"
+    }
+  ],
+  "elapsed_seconds": 2.66,
+  "disclaimer": "Live data leads for research only; not investment advice. Verify material claims in primary sources."
+}

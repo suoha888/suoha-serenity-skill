@@ -1,36 +1,30 @@
 {
-  "schema_version": "5.0",
-  "lens_id": "lens:amd-2026-10-17",
+  "schema_version": "6.0",
+  "lens_id": "lens:amd-2026-10-19",
   "mode": "single_ticker",
   "subject": {
     "ticker": "AMD",
     "resolved_symbol": "AMD",
-    "exchange": "NASDAQ",
+    "exchange": "NasdaqGS",
     "company_name": "Advanced Micro Devices, Inc.",
     "currency": "USD",
     "company_type": "fabless_designer",
-    "taxonomy_codes": [
-      "L2.ACCEL.GPU",
-      "L2.ACCEL.CPU",
-      "L3.RACK"
-    ]
+    "taxonomy_codes": []
   },
-  "research_cutoff": "2026-10-17T13:00:00Z",
-  "as_of": "2026-10-17T13:00:00Z",
-  "one_liner": "AMD 是 AI 资本开支的确定受益者，但在 Serenity 框架里它是“被卡的赛马者”而不是卡点：真正的不对称在它上游的 CoWoS/HBM4/CPO。",
-  "thirty_second_summary": "需求端确定：OpenAI 6GW、Anthropic 2GW 与 Q3 约 $13B 指引给出了 2026–2027 的资本开支锚。但 AMD 的出货上限由 TSMC N2/N3 与 CoWoS 分配、HBM4 合约量决定，它本身不是卡点。$863B 市值、约 80 倍年化非 GAAP EPS 已计入 Helios 顺利放量；另有最多 3.2 亿股认股权证稀释。研究分级 amber：基本面强，但三闸门里“机构前”“便宜且去风险”不过关。用 Serenity 的方法，AMD 更适合作为下游锚点，去上溯找卡点。",
+  "research_cutoff": "2026-10-19T13:31:14Z",
+  "as_of": "2026-10-19T13:31:14Z",
+  "one_liner": "AMD 是 AI 加速器唯一成规模的 GPU 第二来源，Data Center 收入同比 +107%，但它本身不是卡点：先进制程全靠 TSMC，市值约 8956 亿美元、P/E 139 倍，三道闸门只过半道，列为 amber（观察）。",
+  "thirty_second_summary": "截至 2026-10-19，AMD 股价 548.6 美元，市值约 8956 亿美元，一年涨约 117%。Q2（截至 2026-06-27）收入 115.4 亿美元、同比 +50%，其中 Data Center 67.2 亿美元、同比 +107%，占收入约 58%，由 EPYC 和 MI350 驱动；毛利率 53.8%。它在 AI 链条里是中游系统/芯片设计方：≤7nm 晶圆全部依赖 TSMC，部分材料设备只有有限或唯一供应商，自己是被卡的一方。OpenAI 与 Meta 各持有最多 1.6 亿股、行权价 0.01 美元的认股权证（合计约占现有股本 19.6%），按 GPU 采购里程碑归属，既锁住大客户也带来稀释。P/E(TTM) 139 倍、P/S 21.7 倍，便宜这一关不过。体检 0 红旗 1 关注（商誉/权益 37.9%）。结论：好公司、热门票，但不是 Serenity 式的早期卡点，观察 Q3 财报与 Helios 出货。",
   "capex_certainty": {
     "demand_source": "hyperscaler_commercial",
-    "statement": "OpenAI（6GW，首 GW 2H26）与 Anthropic（2GW，首 GW 1H27）的多 GW 协议，加上 Q3 约 $13B 指引与 2H26 服务器收入同比 >80% 的口径，构成可核验的需求锚。",
+    "statement": "需求来自超大规模云厂商与 AI 实验室的数据中心资本开支：10-Q 显示 Data Center 上半年收入 124.9 亿美元、同比 +81%，OpenAI、Meta 认股权证按 GPU 采购里程碑归属，说明有大额采购承诺，但归属尚未发生、确定性中等。",
     "evidence_ids": [
-      "ev:openai-6gw",
-      "ev:amd-anthropic",
-      "ev:amd-q2-release",
-      "ev:amd-q2-call"
+      "E-LIVE-SEC-01",
+      "E-LIVE-DOC-02"
     ]
   },
   "chain_map": {
-    "theme": "AI 加速器与机架级系统（MI450 / Helios）",
+    "theme": "AI 数据中心加速器（Instinct GPU / EPYC / Helios 机架）",
     "layers": [
       {
         "layer": "downstream_reference",
@@ -38,27 +32,19 @@
         "nodes": [
           {
             "name": "OpenAI",
-            "role": "6GW 部署协议、认股权证持有方",
+            "role": "GPU 客户，持有最多 1.6 亿股认股权证",
             "listing_status": "private",
             "evidence_ids": [
-              "ev:openai-6gw"
-            ]
-          },
-          {
-            "name": "Anthropic",
-            "role": "2GW MI450/Helios 部署",
-            "listing_status": "private",
-            "evidence_ids": [
-              "ev:amd-anthropic"
+              "E-LIVE-DOC-02"
             ]
           },
           {
             "name": "Meta Platforms",
-            "role": "认股权证持有方、GPU 客户",
             "ticker": "META",
+            "role": "GPU 客户，持有最多 1.6 亿股认股权证",
             "listing_status": "listed",
             "evidence_ids": [
-              "ev:amd-10q"
+              "E-LIVE-DOC-02"
             ]
           }
         ]
@@ -68,115 +54,44 @@
         "taxonomy_code": "L3.RACK",
         "nodes": [
           {
-            "name": "AMD Helios / MI450",
-            "role": "机架级 AI 系统与加速器设计（fabless）",
+            "name": "Advanced Micro Devices, Inc.",
             "ticker": "AMD",
+            "role": "Fabless 芯片设计：Instinct GPU、EPYC CPU、Helios 机架平台（预计 2H FY2026 出货）",
             "is_subject": true,
             "listing_status": "listed",
             "evidence_ids": [
-              "ev:amd-q2-call"
-            ]
-          },
-          {
-            "name": "NVIDIA Vera Rubin",
-            "role": "直接竞品，争夺同一批客户与同一份 CoWoS",
-            "ticker": "NVDA",
-            "listing_status": "listed",
-            "evidence_ids": [
-              "ev:nvda-rubin"
-            ]
-          },
-          {
-            "name": "台湾 ODM（Wiwynn 等）",
-            "role": "机架组装与集成（线索，待一手核实）",
-            "ticker": "6669.TW",
-            "listing_status": "listed",
-            "evidence_ids": [
-              "ev:ser-2057388984310132855"
+              "E-LIVE-DOC-02",
+              "E-LIVE-FIN"
             ]
           }
         ]
       },
       {
         "layer": "midstream_component",
-        "taxonomy_code": "L2.MEM.HBM",
+        "taxonomy_code": "L2.MEM",
         "nodes": [
           {
-            "name": "HBM4（SK hynix / Micron / Samsung）",
-            "role": "高带宽内存，合约价上行、产能被预订",
-            "ticker": "MU",
-            "listing_status": "listed",
-            "archetypes": [
-              "ARC-CAPACITY-LOCK"
-            ],
+            "name": "HBM / 内存与基板供应商",
+            "role": "10-K 警示内存、基板短缺风险；AMD 上半年为供应协议预付约 10 亿美元",
+            "listing_status": "unknown",
             "evidence_ids": [
-              "ev:sa-hbm4"
-            ]
-          },
-          {
-            "name": "CPO 光引擎（SIVE + GFS，推测）",
-            "role": "共封装光学激光器/硅光代工（线索，待核实）",
-            "ticker": "SIVE.ST",
-            "listing_status": "listed",
-            "archetypes": [
-              "ARC-HIDDEN-SUPPLIER"
-            ],
-            "evidence_ids": [
-              "ev:ser-2048799639525351574"
+              "E-LIVE-DOC-01",
+              "E-LIVE-DOC-02"
             ]
           }
         ]
       },
       {
         "layer": "upstream_equipment",
-        "taxonomy_code": "L1.PKG.COWOS",
+        "taxonomy_code": "L1.FAB",
         "nodes": [
           {
-            "name": "TSMC N2/N3 + CoWoS",
-            "role": "≤7nm 晶圆唯一来源 + 2.5D 先进封装产能",
+            "name": "TSMC",
             "ticker": "TSM",
-            "listing_status": "listed",
-            "archetypes": [
-              "ARC-SOLE-SOURCE",
-              "ARC-CAPACITY-LOCK"
-            ],
-            "evidence_ids": [
-              "ev:amd-10q",
-              "ev:tf-cowos-cap",
-              "ev:tf-cowos-gap"
-            ]
-          },
-          {
-            "name": "ASE / SPIL",
-            "role": "OSAT 封测与先进封装分流",
-            "ticker": "ASX",
+            "role": "≤7nm 晶圆唯一代工来源（含先进封装）",
             "listing_status": "listed",
             "evidence_ids": [
-              "ev:ser-2057388984310132855"
-            ]
-          },
-          {
-            "name": "Intel EMIB",
-            "role": "CoWoS 的替代封装路线（Google TPU 已采用）",
-            "ticker": "INTC",
-            "listing_status": "listed",
-            "evidence_ids": [
-              "ev:digitimes-emib"
-            ]
-          }
-        ]
-      },
-      {
-        "layer": "cross_theme_root",
-        "taxonomy_code": "L0.POWER",
-        "nodes": [
-          {
-            "name": "GW 级数据中心电力",
-            "role": "协议以 GW 计价，部署节奏受电力与场地约束",
-            "listing_status": "unknown",
-            "evidence_ids": [
-              "ev:openai-6gw",
-              "ev:amd-anthropic"
+              "E-LIVE-DOC-02"
             ]
           }
         ]
@@ -184,138 +99,214 @@
     ]
   },
   "chokepoint_of_chokepoint": {
-    "statement": "AMD 2027 年能交付多少 MI450，取决于 TSMC 分给它多少 CoWoS 与能锁到多少 HBM4；2026 年 >85% CoWoS 已被三家锁定、交期 52–78 周。卡点的卡点在先进封装 + HBM4，而不在 GPU 设计。",
-    "node": "TSMC CoWoS + HBM4",
+    "statement": "AMD 的出货上限由 TSMC 先进制程/封装产能和 HBM 内存决定；10-Q 写明 ≤7nm 产品全部由 TSMC 制造，并为锁定供应预付约 10 亿美元，真正的卡点在它的上游。",
+    "node": "TSMC 先进制程与封装 + HBM 内存",
     "status": "inferred",
     "evidence_ids": [
-      "ev:amd-10q",
-      "ev:tf-cowos-cap",
-      "ev:tf-cowos-gap",
-      "ev:sa-hbm4"
+      "E-LIVE-DOC-02",
+      "E-LIVE-DOC-01"
     ]
   },
   "archetype_hits": [
     {
       "archetype": "ARC-SOLE-SOURCE",
       "applies": "no",
-      "why": "AMD 自己依赖 TSMC 唯一来源，是被卡方而非唯一供应方。",
+      "why": "AMD 不是唯一供应方，反而依赖 TSMC 这一唯一代工来源。",
       "evidence_ids": [
-        "ev:amd-10q"
+        "E-LIVE-DOC-02"
       ]
     },
     {
       "archetype": "ARC-CAPACITY-LOCK",
       "applies": "partial",
-      "why": "AMD 是 CoWoS 锁量三家之一，锁到的产能对二线竞品是壁垒，但不对 NVDA 构成约束。",
+      "why": "上半年为供应协议预付约 10 亿美元锁定产能，对小竞争者是壁垒，但锁的是别人的卡点。",
       "evidence_ids": [
-        "ev:sa-hbm4"
+        "E-LIVE-DOC-02"
       ]
     },
     {
       "archetype": "ARC-TRANSITION-GATE",
       "applies": "partial",
-      "why": "机架级 Helios 是从卖芯片到卖系统的跃迁，若放量顺利可抬高份额，但 NVDA 已先行。",
+      "why": "Helios 机架平台是从卖芯片到卖整机柜的跃迁，计划 2H FY2026 出货，尚未兑现。",
       "evidence_ids": [
-        "ev:amd-q2-call",
-        "ev:nvda-rubin"
+        "E-LIVE-DOC-02"
       ]
     },
     {
       "archetype": "ARC-CAPEX-PICKS-SHOVELS",
       "applies": "yes",
-      "why": "多 GW 协议使 AMD 直接吃到超大规模资本开支，只是位置在中游而非上游。",
+      "why": "Data Center 收入同比 +107%，直接吃到云厂商 AI 资本开支。",
       "evidence_ids": [
-        "ev:openai-6gw",
-        "ev:amd-anthropic"
+        "E-LIVE-SEC-01",
+        "E-LIVE-DOC-02"
       ]
     }
   ],
   "gates": {
     "real_bottleneck": {
       "status": "partial",
-      "why": "AMD 是 NVDA 之外唯一的规模化 GPU 第二来源，客户有分散供应的需求；但它本身受 CoWoS/HBM4 约束，不是卡点。",
+      "why": "它是唯一成规模的 GPU 第二来源，客户需要它来分散对单一供应商的依赖；但自身受 TSMC、内存、基板约束，不是链条里最窄的那一环。",
       "evidence_ids": [
-        "ev:amd-10q",
-        "ev:sa-hbm4"
+        "E-LIVE-DOC-02",
+        "E-LIVE-DOC-01"
       ]
     },
     "pre_institutional": {
       "status": "fail",
-      "why": "$863B 超大市值，覆盖充分、持仓拥挤，不存在信息差窗口。",
+      "why": "市值约 8956 亿美元、一年涨约 117%，13G 显示大机构持股，已被市场充分发现。",
       "evidence_ids": [
-        "ev:amd-close"
+        "E-LIVE-QUOTE",
+        "E-LIVE-SEC-10"
       ]
     },
     "cheap_derisked": {
       "status": "fail",
-      "why": "约 80 倍年化 Q2 非 GAAP EPS、约 16.6 倍年化 Q3 指引收入，已计入 Helios 顺利放量。",
+      "why": "P/E(TTM) 约 139 倍、P/S 约 21.7 倍、P/FCF 约 107 倍，价格已计入高增长，并不便宜。",
       "evidence_ids": [
-        "ev:amd-q2-release",
-        "ev:amd-close"
+        "E-LIVE-QUOTE",
+        "E-LIVE-FIN"
       ]
     }
   },
   "red_flags": [
     {
-      "flag": "认股权证稀释",
-      "severity": "downgrade",
-      "triggered": "yes",
-      "detail": "OpenAI 与 Meta 各最多 1.6 亿股、行权价 $0.01，合计最多约 19.6% 股本；收入增长不一定等于每股增长。",
-      "evidence_ids": [
-        "ev:amd-10q",
-        "ev:openai-6gw"
-      ]
-    },
-    {
-      "flag": "单一代工来源",
+      "flag": "company_check_B2",
       "severity": "watch",
       "triggered": "yes",
-      "detail": "≤7nm 晶圆唯一来源 TSMC，地缘与产能分配风险集中。",
+      "detail": "商誉 / 归母权益 = 37.89%：主要来自历史收购（含 ZT Systems，其制造业务已于 2025-10 剥离），10-Q 商誉 254.7 亿美元，未见减值，属关注项不改结论。",
       "evidence_ids": [
-        "ev:amd-10q"
+        "E-LIVE-FIN",
+        "E-LIVE-DOC-02"
       ]
     },
     {
-      "flag": "出口管制与中国许可",
+      "flag": "shelf_registration_on_file",
       "severity": "watch",
       "triggered": "yes",
-      "detail": "MI325 对华许可于 2026 年 2 月取得，政策可逆。",
+      "detail": "2026-08-13 提交 S-3ASR 自动储架，随后 424B5 用于发行优先票据（债务，一般公司用途/可能偿债），不是增发股票。",
       "evidence_ids": [
-        "ev:amd-10q"
+        "E-LIVE-SEC-05",
+        "E-LIVE-SEC-03"
       ]
     },
     {
-      "flag": "共识拥挤",
-      "severity": "downgrade",
-      "triggered": "yes",
-      "detail": "超大市值、高倍数，边际买家有限，不符合“机构前”的不对称条件。",
-      "evidence_ids": [
-        "ev:amd-close"
-      ]
-    },
-    {
-      "flag": "融资/持续经营风险",
-      "severity": "veto",
+      "flag": "repeated_prospectus_takedowns",
+      "severity": "watch",
       "triggered": "no",
-      "detail": "现金及短投 $13.1B、债务 $3.3B、上半年经营现金流 $5.3B，无此类风险。",
+      "detail": "8/13 与 8/14 两份 424B5 是同一笔票据的初稿与定稿，配合 8/17 的 8-K 新增债务，不是连续 ATM 增发。",
       "evidence_ids": [
-        "ev:amd-10q"
+        "E-LIVE-SEC-03",
+        "E-LIVE-SEC-04",
+        "E-LIVE-SEC-08"
+      ]
+    },
+    {
+      "flag": "unregistered_equity_sale_8k_3_02",
+      "severity": "watch",
+      "triggered": "yes",
+      "detail": "2026-09-28 8-K Item 3.02：以全股票方式收购 World Labs，约 82 亿美元，约占市值 0.9%，股数按交割前 10 日 VWAP 计算，稀释有限。",
+      "evidence_ids": [
+        "E-LIVE-SEC-06"
+      ]
+    },
+    {
+      "flag": "material_agreement_8k_1_01",
+      "severity": "watch",
+      "triggered": "yes",
+      "detail": "2026-08-17 8-K：重大协议 + 新增直接债务，推断对应 8 月优先票据发行；AMD 净现金约 107.6 亿美元，债务压力低。",
+      "evidence_ids": [
+        "E-LIVE-SEC-08",
+        "E-LIVE-FIN"
+      ]
+    },
+    {
+      "flag": "beneficial_owner_filings",
+      "severity": "watch",
+      "triggered": "no",
+      "detail": "13G（2026-04-29）与 13G/A（2026-03-26）为被动大机构持股申报，不是激进股东信号。",
+      "evidence_ids": [
+        "E-LIVE-SEC-10",
+        "E-LIVE-SEC-11"
+      ]
+    },
+    {
+      "flag": "insider_form4_activity",
+      "severity": "watch",
+      "triggered": "unknown",
+      "detail": "本次未逐一核对 Form 4，未判断内部人买卖方向。",
+      "evidence_ids": []
+    },
+    {
+      "flag": "going_concern_exhibit_only",
+      "severity": "watch",
+      "triggered": "no",
+      "detail": "持续经营字样只出现在附件/被收购方文件中，AMD 自身有约 84 亿美元 TTM 自由现金流和净现金，无持续经营风险。",
+      "evidence_ids": [
+        "E-LIVE-FIN"
+      ]
+    },
+    {
+      "flag": "customer_concentration",
+      "severity": "watch",
+      "triggered": "no",
+      "detail": "10-K：FY2025/FY2024 无单一客户占收入 ≥10%；但 OpenAI、Meta 认股权证绑定会提高未来大客户集中度。",
+      "evidence_ids": [
+        "E-LIVE-DOC-01",
+        "E-LIVE-DOC-02"
+      ]
+    },
+    {
+      "flag": "supply_concentration",
+      "severity": "watch",
+      "triggered": "yes",
+      "detail": "10-Q：≤7nm 晶圆全部依赖 TSMC，部分设备材料只有有限或唯一供应商——AMD 是被卡的一方。",
+      "evidence_ids": [
+        "E-LIVE-DOC-02"
+      ]
+    },
+    {
+      "flag": "capacity_language",
+      "severity": "watch",
+      "triggered": "yes",
+      "detail": "10-K/10-Q 警示内存、基板、设备短缺可能限制出货；上半年为供应协议预付约 10 亿美元，说明是产能受限而非需求受限。",
+      "evidence_ids": [
+        "E-LIVE-DOC-01",
+        "E-LIVE-DOC-02"
+      ]
+    },
+    {
+      "flag": "atm_language",
+      "severity": "watch",
+      "triggered": "no",
+      "detail": "未见 at-the-market 股权销售协议；储架用于债券。",
+      "evidence_ids": [
+        "E-LIVE-SEC-05"
+      ]
+    },
+    {
+      "flag": "warrant_dilution",
+      "severity": "downgrade",
+      "triggered": "yes",
+      "detail": "OpenAI 与 Meta 各获最多 1.6 亿股认股权证（行权价 0.01 美元），合计最多 3.2 亿股，约占现有股本 19.6%，按 GPU 采购里程碑和股价目标归属；截至 2026-06-27 尚未归属。",
+      "evidence_ids": [
+        "E-LIVE-DOC-02",
+        "E-LIVE-SHARES"
       ]
     }
   ],
   "valuation": {
     "current": {
-      "price": 528.75,
-      "shares_outstanding": 1632475042,
-      "market_cap": 863171178457.5,
-      "net_debt": -9800000000.0,
+      "price": 548.6,
+      "shares_outstanding": 1632475042.0,
+      "market_cap": 895575808041.2,
       "currency": "USD",
-      "price_as_of": "2026-10-16T20:00:00Z",
+      "price_as_of": "2026-10-19T13:30:35Z",
       "shares_as_of": "2026-07-29T00:00:00Z",
       "evidence_ids": [
-        "ev:amd-close",
-        "ev:amd-10q"
-      ]
+        "E-LIVE-QUOTE",
+        "E-LIVE-SHARES"
+      ],
+      "net_debt": -10760000000.0
     },
     "ruler": "hypergrowth_forward",
     "scenarios": [
@@ -325,241 +316,133 @@
         "horizon_years": 2,
         "assumptions": {
           "revenue": 60000000000.0,
-          "net_margin": 0.22,
-          "multiple": 28,
+          "net_margin": 0.2,
+          "multiple": 30,
           "multiple_basis": "pe",
-          "dilution_pct": 0.1
+          "dilution_pct": 0.05
         },
-        "implied_market_cap": 369600000000.0,
-        "implied_per_share": 205.8224,
-        "vs_current_pct": -61.07,
+        "implied_market_cap": 360000000000.0,
+        "implied_per_share": 210.0229,
+        "vs_current_pct": -61.72,
         "assumption_sources": [
-          "ev:amd-q2-release",
-          "assumption:Helios 首 GW 延后到 2027 下半年、CoWoS 份额不升；FY2028 收入约为 Q3 指引年化的 1.15 倍"
+          "E-LIVE-FIN",
+          "E-LIVE-DOC-02"
         ],
-        "narrative": "放量延后、HBM4 成本吃掉毛利，倍数回到成熟半导体区间；部分认股权证仍按部署进度行权。"
+        "narrative": "AI 加速器放量低于预期、毛利率被内存成本挤压：2 年后收入 600 亿美元、净利率 20%、30 倍 P/E，认股权证部分归属稀释 5%。"
       },
       {
         "name": "base",
         "label": "hypothesis",
         "horizon_years": 2,
         "assumptions": {
-          "revenue": 85000000000.0,
-          "net_margin": 0.27,
+          "revenue": 80000000000.0,
+          "net_margin": 0.25,
           "multiple": 35,
           "multiple_basis": "pe",
-          "dilution_pct": 0.15
+          "dilution_pct": 0.1
         },
-        "implied_market_cap": 803250000000.0,
-        "implied_per_share": 427.8646,
-        "vs_current_pct": -19.08,
+        "implied_market_cap": 700000000000.0,
+        "implied_per_share": 389.8152,
+        "vs_current_pct": -28.94,
         "assumption_sources": [
-          "ev:amd-q2-call",
-          "ev:openai-6gw",
-          "assumption:OpenAI 与 Anthropic 首批 GW 按期部署，服务器 CPU 维持高增长，非 GAAP 毛利率约 56%"
+          "E-LIVE-FIN",
+          "E-LIVE-DOC-02"
         ],
-        "narrative": "Helios 按 Q3 首发、Q4 放量的节奏推进，DC 成为收入主体；倍数从当前水平回落到增长股常态。"
+        "narrative": "Data Center 维持高增长、Helios 按计划放量：2 年后收入 800 亿美元、净利率 25%、35 倍 P/E，认股权证归属一半稀释约 10%。"
       },
       {
         "name": "bull",
         "label": "hypothesis",
         "horizon_years": 2,
         "assumptions": {
-          "revenue": 120000000000.0,
+          "revenue": 110000000000.0,
           "net_margin": 0.3,
           "multiple": 40,
           "multiple_basis": "pe",
           "dilution_pct": 0.196
         },
-        "implied_market_cap": 1440000000000.0,
-        "implied_per_share": 737.5386,
-        "vs_current_pct": 39.49,
+        "implied_market_cap": 1320000000000.0,
+        "implied_per_share": 676.0771,
+        "vs_current_pct": 23.24,
         "assumption_sources": [
-          "ev:amd-anthropic",
-          "ev:digitimes-emib",
-          "assumption:多个 GW 级协议在 2027 年同时放量，AMD CoWoS 份额上升，认股权证全部行权"
+          "E-LIVE-FIN",
+          "E-LIVE-DOC-02"
         ],
-        "narrative": "多 GW 同时放量、经营杠杆释放，但认股权证全额稀释，每股价值的弹性明显低于收入弹性。"
-      }
-    ],
-    "comparables": [
-      {
-        "ticker": "NVDA",
-        "note": "同一份 CoWoS 的主要争夺者，Vera Rubin 已全面投产。",
-        "evidence_ids": [
-          "ev:nvda-rubin"
-        ]
-      },
-      {
-        "ticker": "TSM",
-        "note": "两家 GPU 的共同上游卡点；押卡点而非押赛马者的对照组。",
-        "evidence_ids": [
-          "ev:tf-cowos-cap"
-        ]
+        "narrative": "OpenAI/Meta 里程碑全部达成、份额明显提升：2 年后收入 1100 亿美元、净利率 30%、40 倍 P/E，认股权证全部归属稀释 19.6%。"
       }
     ]
   },
   "leading_signals": [
     {
-      "signal": "Q3 FY2026 业绩与 Q4 指引",
+      "signal": "Q3 FY2026 财报中的 Data Center 收入",
       "type": "filing",
-      "confirms_if": "Q3 收入 ≥ $13B 且 Q4 指引环比继续增长",
-      "refutes_if": "Q3 收入低于 $12.7B 或 Q4 指引低于 Q3 实际",
-      "next_check": "2026-11-03"
+      "confirms_if": "DC 收入 ≥ 80 亿美元且环比继续增长",
+      "refutes_if": "DC 收入环比下滑或低于 70 亿美元",
+      "next_check": "2026-11-10"
     },
     {
-      "signal": "HBM4 合约价与供应商锁量",
-      "type": "spot_price",
-      "confirms_if": "AMD 锁量披露增加且价格上行可被转嫁",
-      "refutes_if": "毛利率因 HBM 成本跌破 55%",
-      "next_check": "2026-11-03"
+      "signal": "Q3 毛利率",
+      "type": "filing",
+      "confirms_if": "GAAP 毛利率维持 ≥ 53%",
+      "refutes_if": "GAAP 毛利率跌破 52%（内存/基板成本挤压）",
+      "next_check": "2026-11-10"
     },
     {
-      "signal": "TSMC CoWoS 扩产与 AMD 份额",
-      "type": "capacity_announcement",
-      "confirms_if": "供应链确认 AMD 2027 CoWoS 份额上升",
-      "refutes_if": "扩产被 NVDA/AVGO 新增订单吸收",
-      "next_check": "2027-01-15"
-    },
-    {
-      "signal": "OpenAI 首个 1GW MI450 实际部署",
+      "signal": "Helios 机架平台首批出货",
       "type": "anchor_customer_action",
-      "confirms_if": "2026 年底前确认开始部署",
-      "refutes_if": "部署推迟到 2027 或转向其他供应商",
+      "confirms_if": "2026 年底前确认出货给客户",
+      "refutes_if": "推迟到 2027 年",
       "next_check": "2026-12-31"
-    }
-  ],
-  "osint_leads": [
-    {
-      "lead": "AMD CPO 光引擎供应商是否为 SIVE + GFS",
-      "source_type": "social_lead + 供应链公告",
-      "status": "open",
-      "evidence_ids": [
-        "ev:ser-2048799639525351574"
-      ]
     },
     {
-      "lead": "台湾 $10B+ 生态投资对应的 ODM/OSAT 订单分配",
-      "source_type": "social_lead + 台股月营收",
-      "status": "open",
-      "evidence_ids": [
-        "ev:ser-2057388984310132855"
-      ]
-    },
-    {
-      "lead": "服务器 CPU 涨价是否延续到 Q3/Q4",
-      "source_type": "渠道价格 + 财报口径",
-      "status": "open",
-      "evidence_ids": [
-        "ev:ser-2047182611160965383",
-        "ev:amd-q2-call"
-      ]
+      "signal": "OpenAI/Meta 认股权证首批归属披露",
+      "type": "filing",
+      "confirms_if": "披露首批归属（意味着 GPU 采购里程碑达成）",
+      "refutes_if": "连续两个季度无归属",
+      "next_check": "2027-02-15"
     }
   ],
+  "osint_leads": [],
   "red_team": {
-    "not_real_bottleneck": "AMD 是 GPU 第二来源而非卡点：客户可以等 NVDA、上 TPU/自研 ASIC，或改用 EMIB 封装；AMD 自己的产能受 TSMC 与 HBM 约束。",
-    "not_monetized": "多 GW 协议与认股权证绑定，相当于用股权补贴价格；收入放量时每股收益可能被稀释和 HBM 成本同时侵蚀。",
-    "already_priced": "$863B、约 80 倍年化 EPS，市场已计入 Helios 顺利放量和多 GW 转化；即便 base 情景兑现，隐含价值也低于现价。",
+    "not_real_bottleneck": "AMD 是第二来源而非卡点：客户可以多等 NVIDIA、改用自研 ASIC/TPU；AMD 的产能本身由 TSMC 与 HBM 决定。",
+    "not_monetized": "认股权证相当于用最多 19.6% 的股本换订单，收入放量时每股价值可能被稀释抵消。",
+    "already_priced": "约 8956 亿美元市值、139 倍 P/E，市场已计入高速增长；即使 base 情景兑现，隐含价值也低于现价。",
     "better_alternative": {
       "ticker": "TSM",
-      "why": "AMD 与 NVDA 的 2027 出货都要经过 TSMC N2/N3 与 CoWoS；押卡点比押赛马者的胜负更少依赖单一产品周期。"
+      "why": "AMD 与竞争对手的先进芯片都要经过 TSMC，押上游卡点比押下游赛马更少依赖单一产品周期。"
     },
-    "biggest_kill_shot": "OpenAI 首个 GW 延期且 NVDA 锁走 CoWoS 新增产能，导致 2027 年 DC GPU 收入显著低于市场隐含，同时认股权证照常稀释。"
+    "biggest_kill_shot": "Helios 延期 + Q3 Data Center 增速明显放缓，同时认股权证照常归属带来稀释，估值从 139 倍 P/E 回落。"
   },
   "falsification": [
     {
-      "condition": "Q3 FY2026 收入低于指引下沿 $12.7B",
+      "condition": "Q3 FY2026 Data Center 收入低于 70 亿美元",
       "machine_checkable": true,
-      "metric": "amd_revenue_q3_fy2026_usd",
+      "metric": "amd_datacenter_revenue_q3_fy2026_usd",
       "operator": "<",
-      "threshold": 12700000000.0,
-      "check_by": "2026-11-03"
+      "threshold": 7000000000.0,
+      "check_by": "2026-11-10"
     },
     {
-      "condition": "Q3 FY2026 非 GAAP 毛利率低于 55%",
+      "condition": "Q3 FY2026 GAAP 毛利率低于 52%",
       "machine_checkable": true,
-      "metric": "amd_nongaap_gross_margin_q3_fy2026",
+      "metric": "amd_gaap_gross_margin_q3_fy2026",
       "operator": "<",
-      "threshold": 0.55,
-      "check_by": "2026-11-03"
+      "threshold": 0.52,
+      "check_by": "2026-11-10"
     },
     {
-      "condition": "OpenAI 首个 1GW MI450 部署在 2026 年底前未开始",
+      "condition": "Helios 在 2026-12-31 前未开始出货",
       "machine_checkable": false,
       "check_by": "2026-12-31"
     }
   ],
   "serenity_memory": {
-    "status": "available",
-    "source": "本地推文档案（用户提供的学习包）+ stance_ledger 规则基线，人工复核标签；仅帖子 ID 与自写摘要",
-    "current_state": "DORMANT（档案只覆盖到 2026-06，沉默不等于卖出）",
-    "first_mention": "2025-10-06",
-    "last_mention": "2026-06-03",
-    "mention_count": 30,
-    "timeline": [
-      {
-        "date": "2025-10-11",
-        "post_id": "1977157799164686796",
-        "action": "MENTION",
-        "stance": "bullish",
-        "summary": "以 OpenAI 合同放量为依据，给出一年期偏多看法。"
-      },
-      {
-        "date": "2025-11-05",
-        "post_id": "1985986580155163038",
-        "action": "MENTION",
-        "stance": "bullish",
-        "summary": "认为上行空间很大，依据是头部模型方确认 AMD 可用。"
-      },
-      {
-        "date": "2025-12-05",
-        "post_id": "1996821550692290898",
-        "action": "MENTION",
-        "stance": "neutral",
-        "summary": "自述立场转弱：原先看多依赖 OpenAI 领先，竞品模型反超后下调。"
-      },
-      {
-        "date": "2026-01-07",
-        "post_id": "2008877319239487537",
-        "action": "MENTION",
-        "stance": "neutral",
-        "summary": "把“每代都说要赢 NVDA”当作需要打折的管理层叙事。"
-      },
-      {
-        "date": "2026-04-19",
-        "post_id": "2045965735386820934",
-        "action": "REAFFIRM",
-        "stance": "bullish",
-        "summary": "在回顾清单中重申对 AMD 的长期看法未变。"
-      },
-      {
-        "date": "2026-04-23",
-        "post_id": "2047182611160965383",
-        "action": "MENTION",
-        "stance": "bullish",
-        "summary": "指出服务器 CPU 严重短缺、价格上调。"
-      },
-      {
-        "date": "2026-04-27",
-        "post_id": "2048799639525351574",
-        "action": "MENTION",
-        "stance": "neutral",
-        "summary": "推测 AMD 的 CPO 选择 SIVE + GFS，把 AMD 当作上游线索。"
-      },
-      {
-        "date": "2026-05-21",
-        "post_id": "2057388984310132855",
-        "action": "MENTION",
-        "stance": "bullish",
-        "summary": "引用 AMD 在台湾投资 $10B+ 锁产能，点名 OSAT 与 ODM 伙伴。"
-      }
-    ],
-    "note": "截至 2026-10-17 的时点查询；未见明确建仓/持仓披露，持仓状态 UNKNOWN。规则基线把 2025-12-05 误标为 bullish，已人工改为 neutral，说明立场抽取需 LLM 或人工复核。Serenity 的言论只是线索，不是公司事实。",
-    "archive_through": "2026-06-05"
+    "status": "unavailable",
+    "note": "No Serenity stance ledger supplied (--ledger). Silence in this pack is not a view."
   },
   "serenity_view": {
     "would_he_care": "maybe",
-    "why": "按 Serenity 框架会关注 AMD，但更多把它当作下游需求锚和供应链线索的来源（CPO、OSAT、ODM），而不是不对称标的；框架的高赔率区间在市值小、被低估的上游卡点。",
+    "why": "按框架，AMD 吃到了 AI 资本开支（卖铲子），但它是中游的大市值热门股，卡点在 TSMC/HBM 上游；Serenity 式做法是顺着 AMD 的供应约束往上游找更小、更早的卡点，而不是追高 AMD 本身。",
     "playbook_rules": [
       "PB-CORE-02",
       "PB-HUNT-01",
@@ -568,137 +451,284 @@
     ]
   },
   "research_tier": "amber",
-  "tier_reason": "需求与执行证据强，但“机构前”与“便宜且去风险”两道闸门未通过，且认股权证稀释压低每股弹性；适合作为上溯卡点的锚点，不适合作为不对称标的。",
+  "tier_reason": "真实需求强（DC 同比 +107%），但三道闸门：真卡点 partial、机构前 fail、便宜 fail；另有约 19.6% 认股权证稀释，故为 amber：值得跟踪，不是早期卡点机会。",
   "rerate_triggers": [
-    "Q3/Q4 证实 Helios 放量且非 GAAP 毛利率守住 56%",
-    "供应链确认 AMD 2027 CoWoS 份额上升",
-    "估值回落到 base 情景隐含价值附近（研究复核触发，不是交易指令）"
+    "Q3 FY2026 财报（约 2026-11 初）Data Center 收入与毛利率",
+    "Helios 机架平台首批出货",
+    "OpenAI/Meta 认股权证首批归属",
+    "World Labs 收购交割"
   ],
-  "audit_link": {
-    "research_output_id": "research:amd-2026-10-17",
-    "bundle_validated": false
-  },
   "evidence": [
     {
-      "evidence_id": "ev:amd-q2-release",
-      "title": "AMD Q2 FY2026 业绩新闻稿：收入 $11.536B、DC $6.7B、Q3 指引约 $13B",
-      "locator": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
-      "published_at": "2026-08-04T20:15:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "company_release"
-    },
-    {
-      "evidence_id": "ev:amd-10q",
-      "title": "AMD 10-Q（截至 2026-06-27）：股本 1,632,475,042（2026-07-29）、TSMC 唯一来源、OpenAI/Meta 认股权证、现金 $13.1B/债务 $3.3B",
-      "locator": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000123/amd-20260627.htm",
-      "published_at": "2026-08-05T12:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "filing"
-    },
-    {
-      "evidence_id": "ev:amd-q2-call",
-      "title": "AMD Q2 FY2026 电话会：Helios 投产、2H26 服务器收入同比 >80%",
-      "locator": "https://d1io3yog0oux5.cloudfront.net/_55290e38f3fafb37f420fede91561c89/amd/db/841/9237/webcast_transcript/AMD2Q26EarningsCallTranscript.pdf",
-      "published_at": "2026-08-04T21:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "earnings_call"
-    },
-    {
-      "evidence_id": "ev:amd-anthropic",
-      "title": "AMD × Anthropic：最多 2GW MI450/Helios，首个 GW 于 1H27 开始",
-      "locator": "https://ir.amd.com/news-events/press-releases/detail/1292/amd-and-anthropic-announce-strategic-partnership-to-",
-      "published_at": "2026-07-22T12:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "company_release"
-    },
-    {
-      "evidence_id": "ev:openai-6gw",
-      "title": "OpenAI × AMD 6GW 协议：首个 1GW MI450 于 2H26 开始；最多 1.6 亿股认股权证",
-      "locator": "https://openai.com/index/openai-amd-strategic-partnership/",
-      "published_at": "2025-10-06T12:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "company_release"
-    },
-    {
-      "evidence_id": "ev:tf-cowos-cap",
-      "title": "TrendForce：TSMC CoWoS 约 13 万片/月（2026 年底）→ 26 万（2028 年底）",
-      "locator": "https://www.trendforce.com/news/2026/09/14/news-tsmc-reportedly-targets-22-2nm-16-3nm-capacity-boost-by-mid-20",
-      "published_at": "2026-09-14T08:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "industry_data"
-    },
-    {
-      "evidence_id": "ev:tf-cowos-gap",
-      "title": "TrendForce：CoWoS 供需缺口约 20% → 2026 年底约 10%",
-      "locator": "https://www.trendforce.com/news/2026/06/15/news-tsmc-cowos-supply-demand-gap-reportedly-seen-narrowing-from-20",
-      "published_at": "2026-06-15T08:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "industry_data"
-    },
-    {
-      "evidence_id": "ev:sa-hbm4",
-      "title": "Silicon Analysts 通讯：HBM4 合约价大涨；2026 年 >85% CoWoS 被 NVDA/AVGO/AMD 锁定；交期 52–78 周",
-      "locator": "https://siliconanalysts.com/newsletter/qual-watch/2026-10-05",
-      "published_at": "2026-10-05T08:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "analysis"
-    },
-    {
-      "evidence_id": "ev:amd-close",
-      "title": "AMD 2026-10-16 收盘 $528.75（Macrotrends、Markets Insider 交叉核对）",
-      "locator": "https://fiscal.ai/company/NasdaqGS-AMD",
-      "published_at": "2026-10-16T20:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
+      "evidence_id": "E-LIVE-QUOTE",
+      "title": "AMD quote 548.6 USD (NasdaqGS)",
+      "locator": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1y&interval=1d",
+      "published_at": "2026-10-19T13:30:35Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
       "source_type": "market_data"
     },
     {
-      "evidence_id": "ev:amd-ir-cal",
-      "title": "AMD IR 日历：Q3 FY2026 业绩 2026-11-03",
-      "locator": "https://ir.amd.com/",
-      "published_at": "2026-10-06T12:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "company_release"
+      "evidence_id": "E-LIVE-SHARES",
+      "title": "Shares outstanding 1,632,475,042 as of 2026-07-29 (sec_companyfacts)",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "published_at": "2026-07-29T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
     },
     {
-      "evidence_id": "ev:nvda-rubin",
-      "title": "NVIDIA：Vera Rubin 全面投产，Anthropic/Meta/OpenAI 计划采用",
-      "locator": "https://www.manilatimes.net/2026/03/17/tmt-newswire/globenewswire/nvidia-vera-rubin-opens-agentic-ai-frontier/",
-      "published_at": "2026-03-16T12:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "company_release"
+      "evidence_id": "E-LIVE-FIN",
+      "title": "Latest quarterly revenue 11,536,000,000 USD (period end 2026-06-27); TTM 41305000000; YoY 50.11%; GM 53.77%",
+      "locator": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002488.json",
+      "published_at": "2026-06-27T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
     },
     {
-      "evidence_id": "ev:digitimes-emib",
-      "title": "DIGITIMES：Google TPU 采用 Intel EMIB；Morgan Stanley 认为 AMD 2027 CoWoS 份额或上升",
-      "locator": "https://www.digitimes.com/tag/cowos/00111842.html",
-      "published_at": "2026-09-05T08:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
+      "evidence_id": "E-LIVE-SEC-01",
+      "title": "10-Q filed 2026-08-05",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm",
+      "published_at": "2026-08-05T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-02",
+      "title": "10-Q filed 2026-05-06",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000076/amd-20260328.htm",
+      "published_at": "2026-05-06T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-03",
+      "title": "424B5 filed 2026-08-14",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000119312526352628/d173126d424b5.htm",
+      "published_at": "2026-08-14T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-04",
+      "title": "424B5 filed 2026-08-13",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000119312526348029/d173126d424b5.htm",
+      "published_at": "2026-08-13T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-05",
+      "title": "S-3ASR filed 2026-08-13",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000119312526348013/d97381ds3asr.htm",
+      "published_at": "2026-08-13T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-06",
+      "title": "8-K filed 2026-09-28 (unregistered equity sale)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000182/amd-20260926.htm",
+      "published_at": "2026-09-28T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-07",
+      "title": "8-K filed 2026-08-19 (officer/director change, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000163/amd-20260817.htm",
+      "published_at": "2026-08-19T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-08",
+      "title": "8-K filed 2026-08-17 (material definitive agreement, new debt obligation, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000119312526354029/d142696d8k.htm",
+      "published_at": "2026-08-17T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-09",
+      "title": "8-K filed 2026-08-04 (results of operations, Reg FD disclosure, exhibits)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/amd-20260804.htm",
+      "published_at": "2026-08-04T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-10",
+      "title": "SCHEDULE 13G filed 2026-04-29",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000210011926000052/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-04-29T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-SEC-11",
+      "title": "SCHEDULE 13G/A filed 2026-03-26",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000010290926000540/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "published_at": "2026-03-26T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-01",
+      "title": "[lead] Advanced Micro Devices, Inc. (AMD) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRTJ5YzhaNG1LMFJnazZBaXNsV3JWRENRZjBZSno5UVc0a3Rjc28wVkpHRXBYTmpOSzQ0Tm1qXzZpbFNFYVpmVDktMUJtUUFSNnpJTkJVbG16M3dCa3dDamJmcE1lUFJzYmpoYXEyR1RaQTFkUGVmUzM3cTM4X0pmWUNnSDV2ODVvdk5CN29XT1lsZnF6bUU0RHVRQQ?oc=5",
+      "published_at": "2026-10-19T12:00:02Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
       "source_type": "news"
     },
     {
-      "evidence_id": "ev:ser-2057388984310132855",
-      "title": "Serenity 帖子（线索）：AMD 投资台湾生态 $10B+，合作 ASE/SPIL 与 ODM",
-      "locator": "https://x.com/i/status/2057388984310132855",
-      "published_at": "2026-05-21T12:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "social_lead"
+      "evidence_id": "E-LIVE-NEWS-02",
+      "title": "[lead] ETFs Are Net Sellers of Advanced Micro Devices (AMD) on Oct. 15 - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPeGlBUlFnLW80bW5ac3JyYkJnNmR6QThXVzB1VU15Y3paT2ZhNTY1TlRQU01Va3M5TEM1NkE4OXNSVjd5X3FTaF91bElwVnZCSlV1ZVNVNkU5R0xSS3NoRTYydml3TnZiYTZQYVNxaDdTZHBJNU5nOUIyOWY0YXI4b1ZyRnNaVHNTVm5kSmx2QmwwN3BkSU5Yc0x0UzA?oc=5",
+      "published_at": "2026-10-19T11:02:10Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
     },
     {
-      "evidence_id": "ev:ser-2048799639525351574",
-      "title": "Serenity 帖子（线索）：推测 AMD CPO 选择 SIVE + GFS",
-      "locator": "https://x.com/i/status/2048799639525351574",
-      "published_at": "2026-04-27T12:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "social_lead"
+      "evidence_id": "E-LIVE-NEWS-03",
+      "title": "[lead] Advanced Micro Devices, Inc. $AMD Shares Sold by Wealth Intelligence LLC - MarketBeat",
+      "locator": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOS0djVTNPb09IQlN5TlRDM284Z29JRXhWTVBreVo2ZUJyZ2g1VUtqRnl3NzdweHJuaGx4UjJWWWlSMGZrdHdhRmpqOERzX3pURW93bVdyb3VwWVZDazlJYmRkQTNZS3ZqY01ONUlSUmdZOG5jamdSRFA0N3Bkc2ZWN0FaZGVyekV6Rk1MaGNNdENIbkdHeUgwZWRUWWhmMEtacnZYMVRhOTFjNkVDZEF1aXlrajJSUnA3SVBMZjRsV1o2QU8xTmh2RzFR?oc=5",
+      "published_at": "2026-10-18T09:18:13Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
     },
     {
-      "evidence_id": "ev:ser-2047182611160965383",
-      "title": "Serenity 帖子（线索）：服务器 CPU 严重短缺、涨价 10–20%",
-      "locator": "https://x.com/i/status/2047182611160965383",
-      "published_at": "2026-04-23T12:00:00Z",
-      "retrieved_at": "2026-10-17T13:30:00Z",
-      "source_type": "social_lead"
+      "evidence_id": "E-LIVE-NEWS-04",
+      "title": "[lead] Why Is Advanced Micro Devices (AMD) Gaining Ground In AI Infrastructure? - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORDFNWFI4R2wzZ2VnVUVGc0ZYVkxMRlM3MkdLeWhzUkZCdWZvWDY0Z3VuSkt3cTExb190N3J3SXhidFVxa095cEtJbkNnaU5JX0J5YU84eEZxcWRGalVJczE5LXp3WmtUVFJvRTdVclhCby1PMUpSbGlpYV9RRHdqald1aGVwVkpnZkw4NzRxZjJzeHBrbmpKR0Fn?oc=5",
+      "published_at": "2026-10-18T05:15:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-05",
+      "title": "[lead] What Advanced Micro Devices Buyers Were Betting On Before A 137% Rally - Yahoo Finance",
+      "locator": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOU2h5aVQyRmhyZ01ObjBaQWhrQVkxc3ZCUFNoMGFoZ09rX2hPT0hRR1p0eFcwd3lGSldjdkJXTWlLQjR1Zl9CcW9NRFFuRHMwM0U3Z21MUzJGQVIxUnJzdGN2Qkt2T1ExMGVZUzVnMnNraks3bkxwQ09ocFUyYk5JSUVLZ09EMjFtc0xzYjFMamlscDFKcGZWQms2Wkk5M0lo?oc=5",
+      "published_at": "2026-10-18T04:17:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-NEWS-06",
+      "title": "[lead] What to Expect From Advanced Micro Devices’ Q3 2026 Earnings Report - Barchart.com",
+      "locator": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZW14RzdiVVdZRk1UcFNCVWZyRER4aTBCN0JhaFZxbDNDMl96SEFlYmZFdFJVMTk0OFVjd2MzenUyRXZYSVVUbkVjWlBJTUttUzJmRjY0ZzRyVGdIZDdaUnpHRVBsVEZld2pjQ2ZpX2dSckxpWWROVWt5NU5kejYxTzhWWExMVG1FaFRRYVB3cmpYSmhlQ1FfYUU3WWhxc2tBeG9kWXpyaGstQjE1X3NR?oc=5",
+      "published_at": "2026-10-17T22:27:10Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "news"
+    },
+    {
+      "evidence_id": "E-LIVE-DOC-01",
+      "title": "10-K filed 2026-02-04 (primary document)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+      "published_at": "2026-02-04T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
+    },
+    {
+      "evidence_id": "E-LIVE-DOC-02",
+      "title": "10-Q filed 2026-08-05 (primary document)",
+      "locator": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm",
+      "published_at": "2026-08-05T00:00:00Z",
+      "retrieved_at": "2026-10-19T13:31:14Z",
+      "source_type": "filing"
     }
   ],
-  "disclaimer": "本报告由 suoha-serenity-skill 生成，仅用于回测与研究分析，非投资建议（not investment advice）。本 skill 根据 Serenity 公开发布的内容提炼研究框架；报告不代表 Serenity 本人观点。情景估值是“需要什么条件才成立”的假设推演，不是目标价或收益预测。Serenity 的帖子仅作为线索，未经核实不视为事实。"
+  "live_data": {
+    "snapshot_path": "examples/live/amd-snapshot-2026-10-19.json",
+    "retrieved_at": "2026-10-19T13:31:14Z",
+    "source_hosts": [
+      "data.sec.gov",
+      "news.google.com",
+      "query1.finance.yahoo.com",
+      "www.sec.gov"
+    ],
+    "warnings_addressed": []
+  },
+  "framework_fit": {
+    "role": "integrator_or_commodity",
+    "fit": "partial",
+    "rationale": "AMD 是 AI 加速器的第二来源（可多源的芯片/系统），吃到资本开支但不掌握最窄环节；按普通成长股估值，并顺着它的供应约束找上游卡点。",
+    "rule_ids": [
+      "PB-FIT-04",
+      "PB-HUNT-08"
+    ]
+  },
+  "bottleneck_status": {
+    "status": "not_bottleneck",
+    "kind": "demand",
+    "rationale": "AMD 的出货受上游 TSMC 产能与内存/基板约束；它是需求方的第二来源，而不是物料卡点本身。",
+    "evidence_ids": [
+      "E-LIVE-DOC-02",
+      "E-LIVE-DOC-01"
+    ]
+  },
+  "phase": {
+    "stage": "volume_ramp",
+    "evidence": "Data Center Q2 收入 67.2 亿美元、同比 +107%，MI350 放量、Helios 预计 2H FY2026 出货，处于放量阶段。",
+    "evidence_ids": [
+      "E-LIVE-SEC-01",
+      "E-LIVE-DOC-02"
+    ]
+  },
+  "purity": {
+    "exposure_pct_estimate": 58.0,
+    "basis": "reported_segment",
+    "rationale": "Q2 Data Center 收入 67.18 亿 / 总收入 115.36 亿 ≈ 58%（分部披露，含 EPYC CPU，不全是 AI GPU）。"
+  },
+  "risk_tier": "anchor",
+  "variant_perception": {
+    "consensus": "市场把 AMD 看作 AI 加速器的第二赢家，一年涨约 117%，新闻集中讨论其 AI 基础设施份额与 Q3 预期。",
+    "consensus_sources": [
+      "E-LIVE-NEWS-04",
+      "E-LIVE-NEWS-05",
+      "E-LIVE-NEWS-06"
+    ],
+    "our_view": "需求是真的（DC 同比 +107%），但 139 倍 P/E 和最多 19.6% 的认股权证稀释让风险回报不对称；按框架更值得研究的是它上游的 TSMC/HBM 约束，而不是 AMD 本身。",
+    "reason_codes": [
+      "PB-VP-01"
+    ],
+    "when_market_sees": "Q3 FY2026 财报（约 2026-11 初）与 Helios 出货时点",
+    "first_number_to_prove_wrong": {
+      "metric": "amd_datacenter_revenue_q3_fy2026_usd",
+      "operator": ">",
+      "threshold": 8500000000.0,
+      "check_by": "2026-11-10"
+    },
+    "what_changed_since_archive": "档案截止后：DC 收入翻倍、OpenAI/Meta 认股权证落地、8 月发行优先票据、9 月全股票收购 World Labs（约 82 亿美元）。"
+  },
+  "next_hop_picks": [
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing",
+      "relation": "upstream",
+      "node": "≤7nm 晶圆代工与先进封装",
+      "why": "AMD 的 ≤7nm 产品全部由 TSMC 制造，是 AMD 出货上限的直接约束。",
+      "archetypes": [
+        "ARC-SOLE-SOURCE",
+        "ARC-CAPACITY-LOCK"
+      ],
+      "basis": "live_data",
+      "verify_first": "核对 TSMC 先进封装产能扩张节奏与 AI 客户占比"
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology",
+      "relation": "upstream",
+      "node": "HBM 内存",
+      "why": "10-K 警示内存短缺风险，HBM 是 GPU 出货的另一个约束。",
+      "archetypes": [
+        "ARC-CAPACITY-LOCK"
+      ],
+      "basis": "inference",
+      "verify_first": "核对 HBM 产能是否售罄及对 AMD 的供货份额"
+    }
+  ],
+  "audit_link": {
+    "research_output_id": "research:amd-2026-10-19",
+    "bundle_validated": false
+  },
+  "disclaimer": "框架声明：本 skill 根据 Serenity 公开发布的内容提炼研究框架，用于回测与研究分析；报告由框架生成，不代表 Serenity 本人观点，亦非投资建议。"
 }

@@ -9,22 +9,15 @@
 
 **The most complete Serenity chokepoint-theory research Skill.** Pick any A-share, Hong Kong or US stock: it maps supply-chain chokepoints, pulls official filings and flags financial red flags.
 
-## What it does
+## See it once: researching AMD
 
-- **Learn the theory** — Serenity's chokepoint doctrine, playbook and case library, each rule tagged with its source post ID (no post text).
-- **Research any stock** — pulls official data (SEC, CNINFO, HKEXnews, plus Japan, Korea and Taiwan exchanges), applies the chokepoint framework and gives the conclusion first, then the evidence. Every number is recomputed by script and traceable to its source.
-- **Company health check** — growth, profitability, cash flow, leverage, dilution and valuation, routed by company type, each with formula and threshold: ✅ normal, 👀 watch, 🚩 red flag.
+<p align="center"><img src="assets/brand/demo.gif" alt="Demo: ask the AI to research AMD; it pulls SEC filings, recomputes the numbers and builds a report" width="100%"></p>
 
-## Just ask your AI
+<sub>The animation is assembled from the output of one real run on 2026-10-19 (commands, numbers and report are real). It is not a screen recording of any particular AI client. The UI text is Chinese.</sub>
 
-- Use suoha-serenity-skill to explain Serenity's chokepoint theory.
-- Use suoha-serenity-skill to check 600519. Conclusion first, then evidence.
-- Use suoha-serenity-skill to research Tencent (00700)'s supply-chain chokepoints.
-- Use suoha-serenity-skill to check NVDA for financial red flags.
+## Start in 3 steps
 
-## Install
-
-Requires Git and Python 3.10+. No API key or third-party Python package is needed.
+**① Install with one command** (Git and Python 3.10+, **no API key**)
 
 macOS / Linux:
 
@@ -38,7 +31,49 @@ Windows (PowerShell):
 git clone https://github.com/suoha888/suoha-serenity-skill.git; cd suoha-serenity-skill; .\install.ps1
 ```
 
-Then ask your Skills-enabled AI client (Claude Code, Codex, …), or try from the command line: `python suoha.py check AAPL` · `python suoha.py resolve Tencent`.
+**② Open a Skills-enabled AI client** (Claude Code, Codex, …)
+
+**③ Ask:** `Use suoha-serenity-skill to research AMD (US stock).`
+
+## How to use it
+
+| Ask your AI | You get |
+|---|---|
+| Use suoha-serenity-skill to research AMD | A full report: verdict, chokepoint map, three gates, red flags, evidence |
+| Use suoha-serenity-skill to check 600519, conclusion first | A health check: what is normal, what to watch, any red flags |
+| Use suoha-serenity-skill to research Tencent (00700)'s chokepoints | Same for Hong Kong: official filings + chokepoint judgment |
+| Use suoha-serenity-skill to explain Serenity's chokepoint theory | Key rules + historical cases |
+
+Or from the command line:
+
+```bash
+python suoha.py check AAPL       # health check in seconds
+python suoha.py research AMD     # pull official data and build a research pack
+python suoha.py resolve Tencent  # look up a ticker by name
+```
+
+## A real report (AMD, 2026-10-19)
+
+**① Verdict first: tier, one-liner and a 30-second summary**
+
+<img src="assets/brand/shot-1.png" alt="AMD report: verdict and summary" width="100%">
+
+**② Chokepoint map and the three gates**
+
+<img src="assets/brand/shot-2.png" alt="AMD report: chokepoint map and gates" width="100%">
+
+**③ Red flags and evidence: every number traces to an official filing**
+
+<img src="assets/brand/shot-3.png" alt="AMD report: red flags and evidence" width="100%">
+
+Full report: [examples/amd-serenity-report.html](examples/amd-serenity-report.html) (download and open in a browser) · [Markdown](examples/amd-serenity-report.md)
+
+## What it does
+
+- **Research any stock** — pulls official data (SEC, CNINFO, HKEXnews, plus Japan, Korea and Taiwan exchanges), applies the chokepoint framework and gives the conclusion first, then the evidence.
+- **Company health check** — routed by company type (bank, insurer, broker, property, general), each item with formula and threshold: ✅ normal, 👀 watch, 🚩 red flag.
+- **Learn the theory** — 14 laws, 18 chapters and 30+ historical cases, each tagged with its source post ID (no post text).
+- **Numbers you can trust** — every number is recomputed by script; missing or stale evidence is blocked; 190+ automated tests.
 
 More: [Guide (Chinese)](docs/GUIDE.md) · [FAQ](docs/FAQ.md) · [Changelog](docs/CHANGELOG.md) · [Report a problem](https://github.com/suoha888/suoha-serenity-skill/issues/new?template=field-test.yml)
 

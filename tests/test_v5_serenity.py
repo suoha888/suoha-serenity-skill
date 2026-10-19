@@ -20,7 +20,8 @@ import stance_ledger  # noqa: E402
 import ticker_normalizer  # noqa: E402
 import verify_report  # noqa: E402
 
-EXAMPLE = SOURCE_ROOT / "examples" / "amd-serenity-lens.json"
+EXAMPLE = SOURCE_ROOT / "tests" / "fixtures" / "amd-v5-contract-lens.json"
+SHIPPED_AMD = SOURCE_ROOT / "examples" / "amd-serenity-lens.json"
 UTC = timezone.utc
 
 
@@ -298,12 +299,12 @@ class ReportPipelineTest(unittest.TestCase):
         self.assertNotIn("<script>alert(1)", render_report.to_html(lens).split("id='lens-data'")[0])
 
     def test_shipped_example_reports_are_current(self):
-        lens = load_example()
+        lens = json.loads(SHIPPED_AMD.read_text(encoding="utf-8"))
         html_path = SOURCE_ROOT / "examples" / "amd-serenity-report.html"
         md_path = SOURCE_ROOT / "examples" / "amd-serenity-report.md"
         self.assertEqual(verify_report.verify(html_path.read_text(encoding="utf-8")), [])
-        self.assertEqual(verify_report.verify_markdown(md_path.read_text(encoding="utf-8"), EXAMPLE), [])
-        self.assertEqual(lens["lens_id"], "lens:amd-2026-10-17")
+        self.assertEqual(verify_report.verify_markdown(md_path.read_text(encoding="utf-8"), SHIPPED_AMD), [])
+        self.assertEqual(lens["lens_id"], "lens:amd-2026-10-19")
 
 
 if __name__ == "__main__":
