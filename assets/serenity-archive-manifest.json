@@ -1,436 +1,441 @@
 {
   "schema_version": "6.1",
-  "generated_at": "2026-10-18T04:35:43Z",
+  "generated_at": "2026-10-20T03:59:28Z",
   "subject": "Serenity (public posts)",
-  "post_count": 1505,
-  "first_post": "2025-07-02T10:48:10Z",
-  "archive_through": "2026-06-05T03:51:32Z",
-  "post_id_set_sha256": "9e2d2ed3cc8f1ed498d58014223d36833dfa44a41916bff353566bd8d9005b26",
+  "post_count": 7153,
+  "first_post": "2025-07-02T10:48:09Z",
+  "archive_through": "2026-10-19T10:34:45Z",
+  "post_id_set_sha256": "c0ba0f71780b558c70f8d3b9b4a2e25fc287e9827d5167240a669a52e8d32b89",
   "posts_per_month": {
-    "2025-07": 21,
-    "2025-08": 5,
-    "2025-09": 82,
-    "2025-10": 89,
-    "2025-11": 62,
-    "2025-12": 70,
-    "2026-01": 214,
-    "2026-02": 127,
-    "2026-03": 246,
-    "2026-04": 223,
-    "2026-05": 266,
-    "2026-06": 100
+    "2025-07": 33,
+    "2025-08": 7,
+    "2025-09": 369,
+    "2025-10": 533,
+    "2025-11": 363,
+    "2025-12": 282,
+    "2026-01": 638,
+    "2026-02": 668,
+    "2026-03": 1217,
+    "2026-04": 892,
+    "2026-05": 726,
+    "2026-06": 579,
+    "2026-07": 303,
+    "2026-08": 290,
+    "2026-09": 202,
+    "2026-10": 51
   },
   "extractor": "rules-v6.1",
-  "event_count": 3086,
+  "event_count": 11964,
   "action_counts": {
-    "ADD": 23,
-    "BEARISH": 14,
-    "DENY": 5,
-    "MENTION": 2975,
-    "OPEN": 33,
-    "REAFFIRM": 28,
-    "TRIM": 6,
-    "WATCH": 2
+    "ADD": 69,
+    "BEARISH": 37,
+    "CLOSE": 2,
+    "DENY": 24,
+    "MENTION": 11582,
+    "OPEN": 82,
+    "REAFFIRM": 131,
+    "TRIM": 11,
+    "WATCH": 26
   },
   "ticker_mentions_top": [
     {
-      "ticker": "NVDA",
-      "mentions": 129,
-      "in_atlas": true
-    },
-    {
       "ticker": "SIVE",
-      "mentions": 123,
+      "mentions": 683,
       "in_atlas": true
     },
     {
       "ticker": "NBIS",
-      "mentions": 111,
-      "in_atlas": false
-    },
-    {
-      "ticker": "IREN",
-      "mentions": 85,
-      "in_atlas": false
-    },
-    {
-      "ticker": "LITE",
-      "mentions": 83,
+      "mentions": 611,
       "in_atlas": true
     },
     {
-      "ticker": "AXTI",
-      "mentions": 77,
+      "ticker": "LITE",
+      "mentions": 476,
+      "in_atlas": true
+    },
+    {
+      "ticker": "NVDA",
+      "mentions": 475,
       "in_atlas": true
     },
     {
       "ticker": "AAOI",
-      "mentions": 65,
+      "mentions": 470,
       "in_atlas": true
     },
     {
-      "ticker": "000660.KS",
-      "mentions": 62,
+      "ticker": "AXTI",
+      "mentions": 461,
+      "in_atlas": true
+    },
+    {
+      "ticker": "IREN",
+      "mentions": 376,
       "in_atlas": true
     },
     {
       "ticker": "GOOGL",
-      "mentions": 54,
-      "in_atlas": false
+      "mentions": 248,
+      "in_atlas": true
     },
     {
       "ticker": "MRVL",
-      "mentions": 51,
-      "in_atlas": true
-    },
-    {
-      "ticker": "CRWV",
-      "mentions": 45,
-      "in_atlas": false
-    },
-    {
-      "ticker": "TSM",
-      "mentions": 43,
-      "in_atlas": true
-    },
-    {
-      "ticker": "META",
-      "mentions": 43,
-      "in_atlas": false
-    },
-    {
-      "ticker": "SOI",
-      "mentions": 41,
+      "mentions": 218,
       "in_atlas": true
     },
     {
       "ticker": "MU",
-      "mentions": 39,
+      "mentions": 209,
+      "in_atlas": true
+    },
+    {
+      "ticker": "000660.KS",
+      "mentions": 190,
+      "in_atlas": true
+    },
+    {
+      "ticker": "COHR",
+      "mentions": 189,
       "in_atlas": true
     },
     {
       "ticker": "MSFT",
-      "mentions": 38,
-      "in_atlas": false
-    },
-    {
-      "ticker": "COHR",
-      "mentions": 37,
+      "mentions": 183,
       "in_atlas": true
     },
     {
-      "ticker": "HOOD",
-      "mentions": 36,
-      "in_atlas": false
-    },
-    {
-      "ticker": "IQE",
-      "mentions": 35,
+      "ticker": "META",
+      "mentions": 179,
       "in_atlas": true
-    },
-    {
-      "ticker": "CIFR",
-      "mentions": 34,
-      "in_atlas": false
     },
     {
       "ticker": "SNDK",
-      "mentions": 34,
+      "mentions": 164,
       "in_atlas": true
     },
     {
-      "ticker": "RKLB",
-      "mentions": 33,
-      "in_atlas": false
+      "ticker": "TSM",
+      "mentions": 160,
+      "in_atlas": true
     },
     {
-      "ticker": "6146.T",
-      "mentions": 32,
-      "in_atlas": false
+      "ticker": "INTC",
+      "mentions": 159,
+      "in_atlas": true
+    },
+    {
+      "ticker": "IQE",
+      "mentions": 159,
+      "in_atlas": true
     },
     {
       "ticker": "AMZN",
-      "mentions": 31,
-      "in_atlas": false
-    },
-    {
-      "ticker": "POET",
-      "mentions": 31,
+      "mentions": 157,
       "in_atlas": true
     },
     {
       "ticker": "SIVE.ST",
-      "mentions": 31,
+      "mentions": 150,
       "in_atlas": true
     },
     {
-      "ticker": "AMD",
-      "mentions": 30,
+      "ticker": "SOI",
+      "mentions": 148,
+      "in_atlas": true
+    },
+    {
+      "ticker": "CRWV",
+      "mentions": 147,
+      "in_atlas": true
+    },
+    {
+      "ticker": "JBL",
+      "mentions": 135,
+      "in_atlas": true
+    },
+    {
+      "ticker": "FUTU",
+      "mentions": 130,
       "in_atlas": false
     },
     {
-      "ticker": "AEHR",
-      "mentions": 30,
+      "ticker": "RDDT",
+      "mentions": 129,
+      "in_atlas": false
+    },
+    {
+      "ticker": "AMD",
+      "mentions": 128,
+      "in_atlas": true
+    },
+    {
+      "ticker": "HOOD",
+      "mentions": 120,
+      "in_atlas": false
+    },
+    {
+      "ticker": "CIFR",
+      "mentions": 120,
+      "in_atlas": true
+    },
+    {
+      "ticker": "RKLB",
+      "mentions": 119,
+      "in_atlas": true
+    },
+    {
+      "ticker": "POET",
+      "mentions": 118,
       "in_atlas": true
     },
     {
       "ticker": "AVGO",
-      "mentions": 28,
+      "mentions": 107,
       "in_atlas": true
     },
     {
-      "ticker": "RDDT",
-      "mentions": 28,
+      "ticker": "6146.T",
+      "mentions": 107,
       "in_atlas": false
     },
     {
-      "ticker": "6451.TW",
-      "mentions": 28,
+      "ticker": "AEHR",
+      "mentions": 106,
       "in_atlas": true
+    },
+    {
+      "ticker": "TSEM",
+      "mentions": 102,
+      "in_atlas": true
+    },
+    {
+      "ticker": "EWY",
+      "mentions": 99,
+      "in_atlas": false
     },
     {
       "ticker": "HIMS",
-      "mentions": 26,
-      "in_atlas": false
-    },
-    {
-      "ticker": "INTC",
-      "mentions": 26,
+      "mentions": 96,
       "in_atlas": false
     },
     {
       "ticker": "TSLA",
-      "mentions": 24,
+      "mentions": 95,
       "in_atlas": false
     },
     {
-      "ticker": "EWY",
-      "mentions": 24,
-      "in_atlas": false
-    },
-    {
-      "ticker": "TSEM",
-      "mentions": 24,
-      "in_atlas": true
-    },
-    {
-      "ticker": "CRCL",
-      "mentions": 22,
+      "ticker": "AAPL",
+      "mentions": 86,
       "in_atlas": false
     },
     {
       "ticker": "ORCL",
-      "mentions": 21,
-      "in_atlas": false
-    },
-    {
-      "ticker": "JBL",
-      "mentions": 21,
-      "in_atlas": false
-    },
-    {
-      "ticker": "AVAV",
-      "mentions": 20,
+      "mentions": 78,
       "in_atlas": false
     },
     {
       "ticker": "RPI",
-      "mentions": 20,
+      "mentions": 76,
       "in_atlas": false
     },
     {
-      "ticker": "SMCI",
-      "mentions": 19,
+      "ticker": "GFS",
+      "mentions": 67,
+      "in_atlas": true
+    },
+    {
+      "ticker": "CRCL",
+      "mentions": 64,
       "in_atlas": false
     },
     {
       "ticker": "MTSI",
-      "mentions": 19,
-      "in_atlas": true
-    },
-    {
-      "ticker": "XLU",
-      "mentions": 19,
-      "in_atlas": false
-    },
-    {
-      "ticker": "UPWK",
-      "mentions": 18,
-      "in_atlas": false
-    },
-    {
-      "ticker": "VPG",
-      "mentions": 18,
-      "in_atlas": true
-    },
-    {
-      "ticker": "LPK",
-      "mentions": 18,
+      "mentions": 63,
       "in_atlas": true
     },
     {
       "ticker": "WULF",
-      "mentions": 17,
-      "in_atlas": false
+      "mentions": 57,
+      "in_atlas": true
     },
     {
-      "ticker": "ALAB",
-      "mentions": 17,
-      "in_atlas": false
+      "ticker": "6451.TW",
+      "mentions": 57,
+      "in_atlas": true
     },
     {
-      "ticker": "OSS",
-      "mentions": 17,
-      "in_atlas": false
+      "ticker": "LPK",
+      "mentions": 53,
+      "in_atlas": true
     },
     {
-      "ticker": "BKKT",
-      "mentions": 16,
-      "in_atlas": false
-    },
-    {
-      "ticker": "ETH",
-      "mentions": 16,
-      "in_atlas": false
-    },
-    {
-      "ticker": "ETOR",
-      "mentions": 16,
-      "in_atlas": false
-    },
-    {
-      "ticker": "VLN",
-      "mentions": 16,
-      "in_atlas": false
+      "ticker": "SMCI",
+      "mentions": 48,
+      "in_atlas": true
     },
     {
       "ticker": "ARM",
-      "mentions": 16,
-      "in_atlas": false
-    },
-    {
-      "ticker": "FLNC",
-      "mentions": 15,
+      "mentions": 48,
       "in_atlas": true
     },
     {
-      "ticker": "LASR",
-      "mentions": 15,
+      "ticker": "ALAB",
+      "mentions": 47,
       "in_atlas": true
-    },
-    {
-      "ticker": "ALRIB",
-      "mentions": 15,
-      "in_atlas": true
-    },
-    {
-      "ticker": "CRDO",
-      "mentions": 14,
-      "in_atlas": false
-    },
-    {
-      "ticker": "BMNR",
-      "mentions": 14,
-      "in_atlas": false
-    },
-    {
-      "ticker": "AIRO",
-      "mentions": 14,
-      "in_atlas": false
-    },
-    {
-      "ticker": "HPS.A",
-      "mentions": 14,
-      "in_atlas": false
     },
     {
       "ticker": "MSTR",
-      "mentions": 13,
+      "mentions": 46,
       "in_atlas": false
     },
     {
-      "ticker": "LPTH",
-      "mentions": 13,
-      "in_atlas": true
-    },
-    {
-      "ticker": "BULL",
-      "mentions": 12,
-      "in_atlas": false
-    },
-    {
-      "ticker": "VIRT",
-      "mentions": 12,
-      "in_atlas": false
-    },
-    {
-      "ticker": "SSYS",
-      "mentions": 12,
-      "in_atlas": true
-    },
-    {
-      "ticker": "COIN",
-      "mentions": 11,
-      "in_atlas": false
-    },
-    {
-      "ticker": "SNAP",
-      "mentions": 11,
+      "ticker": "IBKR",
+      "mentions": 44,
       "in_atlas": false
     },
     {
       "ticker": "SOI.PA",
-      "mentions": 11,
+      "mentions": 42,
       "in_atlas": true
     },
     {
-      "ticker": "IBIT",
-      "mentions": 10,
+      "ticker": "CCXI",
+      "mentions": 41,
       "in_atlas": false
     },
     {
-      "ticker": "WYFI",
-      "mentions": 10,
-      "in_atlas": false
+      "ticker": "VPG",
+      "mentions": 40,
+      "in_atlas": true
     },
     {
-      "ticker": "SLNH",
-      "mentions": 10,
-      "in_atlas": false
+      "ticker": "XFAB",
+      "mentions": 40,
+      "in_atlas": true
     },
     {
-      "ticker": "CVX",
-      "mentions": 10,
-      "in_atlas": false
-    },
-    {
-      "ticker": "NVO",
-      "mentions": 9,
-      "in_atlas": false
-    },
-    {
-      "ticker": "LTC",
-      "mentions": 9,
-      "in_atlas": false
-    },
-    {
-      "ticker": "WLAC",
-      "mentions": 9,
-      "in_atlas": false
-    },
-    {
-      "ticker": "KRKNF",
-      "mentions": 9,
+      "ticker": "PLTR",
+      "mentions": 39,
       "in_atlas": false
     },
     {
       "ticker": "ALRIB.PA",
-      "mentions": 9,
+      "mentions": 39,
       "in_atlas": true
     },
     {
-      "ticker": "DPRO",
-      "mentions": 9,
+      "ticker": "OSS",
+      "mentions": 39,
+      "in_atlas": false
+    },
+    {
+      "ticker": "UBER",
+      "mentions": 38,
+      "in_atlas": false
+    },
+    {
+      "ticker": "300308.SZ",
+      "mentions": 38,
+      "in_atlas": true
+    },
+    {
+      "ticker": "SPCX",
+      "mentions": 38,
+      "in_atlas": true
+    },
+    {
+      "ticker": "SNAP",
+      "mentions": 35,
+      "in_atlas": false
+    },
+    {
+      "ticker": "CRDO",
+      "mentions": 34,
+      "in_atlas": true
+    },
+    {
+      "ticker": "ALRIB",
+      "mentions": 34,
+      "in_atlas": true
+    },
+    {
+      "ticker": "WYFI",
+      "mentions": 32,
+      "in_atlas": false
+    },
+    {
+      "ticker": "VLN",
+      "mentions": 31,
+      "in_atlas": false
+    },
+    {
+      "ticker": "UPWK",
+      "mentions": 30,
+      "in_atlas": false
+    },
+    {
+      "ticker": "BMNR",
+      "mentions": 30,
+      "in_atlas": false
+    },
+    {
+      "ticker": "LASR",
+      "mentions": 30,
+      "in_atlas": true
+    },
+    {
+      "ticker": "XLU",
+      "mentions": 30,
+      "in_atlas": false
+    },
+    {
+      "ticker": "ETH",
+      "mentions": 29,
+      "in_atlas": false
+    },
+    {
+      "ticker": "AVAV",
+      "mentions": 28,
+      "in_atlas": false
+    },
+    {
+      "ticker": "BKKT",
+      "mentions": 26,
+      "in_atlas": false
+    },
+    {
+      "ticker": "ETOR",
+      "mentions": 25,
+      "in_atlas": false
+    },
+    {
+      "ticker": "LPTH",
+      "mentions": 25,
+      "in_atlas": true
+    },
+    {
+      "ticker": "HPS.A",
+      "mentions": 25,
+      "in_atlas": false
+    },
+    {
+      "ticker": "SKHY",
+      "mentions": 25,
+      "in_atlas": false
+    },
+    {
+      "ticker": "FLNC",
+      "mentions": 23,
+      "in_atlas": true
+    },
+    {
+      "ticker": "WLAC",
+      "mentions": 23,
+      "in_atlas": false
+    },
+    {
+      "ticker": "ONDS",
+      "mentions": 23,
       "in_atlas": false
     }
   ],

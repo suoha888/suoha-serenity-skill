@@ -123,7 +123,8 @@ def read_any(path: Path) -> Iterable[dict[str, Any]]:
     if stripped.startswith("["):
         yield from json.loads(stripped)
         return
-    for n, line in enumerate(text.splitlines(), 1):
+    # split on "\n" only: post text may contain U+2028/U+2029, which str.splitlines() treats as line breaks
+    for n, line in enumerate(text.split("\n"), 1):
         if line.strip():
             try:
                 yield json.loads(line)
@@ -223,10 +224,15 @@ def cmd_refresh(args: argparse.Namespace) -> int:
     for p in posts:
         events.extend(extract_post(p, aliases))
     write_jsonl(events_path, events)
-    manifest = build_manifest(posts, events, _atlas_tickers())
+    # The PUBLIC manifest describes public posts only: subscription posts stay in the private
+    # archive (for the maintainer's own-words distillation) and never show up in public counts.
+    public_posts = [p for p in posts if p.get("source_partition", p.get("access_level", "public")) == "public"]
+    public_events = [e for e in events if e.get("source_partition", "public") == "public"]
+    manifest = build_manifest(public_posts, public_events, _atlas_tickers())
     out = Path(args.manifest) if args.manifest else MANIFEST_PATH
     out.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"posts": len(posts), "events": len(events), "events_path": str(events_path),
+    print(json.dumps({"posts": len(posts), "public_posts": len(public_posts), "events": len(events),
+                      "public_events": len(public_events), "events_path": str(events_path),
                       "manifest": str(out), "archive_through": manifest["archive_through"]}, ensure_ascii=False))
     return 0
 

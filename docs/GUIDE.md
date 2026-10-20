@@ -81,7 +81,9 @@ python suoha.py exchange 300308.SZ        # 交易所原生数据：公告、旗
 
 报告固定区分四件事：瓶颈是否成立、公司占据哪一环、能否赚到钱、市场是否已经反映。不是每只股票都有卡点，也不是每只都被低估。
 
-- 每条规则引用 [理论全书](../references/serenity-doctrine.md) 和 [方法手册](../references/serenity-playbook.md) 里的编号，只附帖子编号，不转载原文。
+- 每条规则引用 [理论全书](../references/serenity-doctrine.md) 和 [方法手册](../references/serenity-playbook.md) 里的编号，只附帖子编号，不转载原文。规则提炼自 2025-07 至 2026-10 的 7,153 条公开推文。
+- 每条证伪条件会标上“兑现与失效”规则编号（PB-EXIT），说明它触发后论点是失效、降级、重新立论还是已经兑现；宏观回调、内部人卖出等噪音会明确写“不构成失效”。
+- 想知道某只股票在哪条产业链上：`python scripts/atlas.py ticker NBIS`（[卡点地图](../references/chokepoint-atlas.md)，10 条链、46 个节点）。
 - 市值、隐含市值、涨跌空间等数字全部由脚本计算，不靠手写。
 - 示例报告（方法演示，非投资建议）：[MU](../examples/mu-serenity-report.html) · [AMD](../examples/amd-serenity-report.html) · [AXTI](../examples/axti-serenity-report.html)
 

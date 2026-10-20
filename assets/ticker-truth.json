@@ -1,6 +1,6 @@
 {
  "truth_version": "1",
- "as_of": "2026-10-18",
+ "as_of": "2026-10-20",
  "description": "Official identities (name, currency, exchange) per symbol from dated live snapshots. A guard against wrong-ticker reports, not investment data.",
  "entries": {
   "000660.KS": {
@@ -127,6 +127,22 @@
    "sources": [
     "https://query1.finance.yahoo.com/v8/finance/chart/300308.SZ?range=1y&interval=1d",
     "https://qt.gtimg.cn/q=sz300308"
+   ]
+  },
+  "3006.TW": {
+   "symbol": "3006.TW",
+   "official_name": "Elite Semiconductor Microelectronics Technology Inc.",
+   "names": [
+    "Elite Semiconductor Microelectronics Technology Inc.",
+    "晶豪科"
+   ],
+   "currency": "TWD",
+   "exchange": "Taiwan",
+   "venue": "TWSE",
+   "sec_cik": null,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/3006.TW?range=1y&interval=1d"
    ]
   },
   "3081.TWO": {
@@ -461,6 +477,22 @@
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
+  "ALAB": {
+   "symbol": "ALAB",
+   "official_name": "Astera Labs, Inc.",
+   "names": [
+    "Astera Labs, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1736297,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/ALAB?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
   "ALM": {
    "symbol": "ALM",
    "official_name": "Almonty Industries Inc.",
@@ -523,6 +555,56 @@
    "verified_at": "2026-10-18T07:10:36Z",
    "sources": [
     "https://query1.finance.yahoo.com/v8/finance/chart/AMKR?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "AMZN": {
+   "symbol": "AMZN",
+   "official_name": "Amazon.com, Inc.",
+   "names": [
+    "Amazon.com, Inc.",
+    "AMAZON COM INC"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1018724,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "ARM": {
+   "symbol": "ARM",
+   "official_name": "Arm Holdings plc",
+   "names": [
+    "Arm Holdings plc",
+    "ARM HOLDINGS PLC /UK"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1973239,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "ASTS": {
+   "symbol": "ASTS",
+   "official_name": "AST SpaceMobile, Inc.",
+   "names": [
+    "AST SpaceMobile, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1780312,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/ASTS?range=1y&interval=1d",
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
@@ -590,6 +672,22 @@
     "https://query1.finance.yahoo.com/v8/finance/chart/BESI.AS?range=1y&interval=1d"
    ]
   },
+  "CIFR": {
+   "symbol": "CIFR",
+   "official_name": "Cipher Digital Inc.",
+   "names": [
+    "Cipher Digital Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1819989,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/CIFR?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
   "CODA": {
    "symbol": "CODA",
    "official_name": "Coda Octopus Group, Inc.",
@@ -620,6 +718,38 @@
    "verified_at": "2026-10-18T07:10:36Z",
    "sources": [
     "https://query1.finance.yahoo.com/v8/finance/chart/COHR?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "CRDO": {
+   "symbol": "CRDO",
+   "official_name": "Credo Technology Group Holding Ltd",
+   "names": [
+    "Credo Technology Group Holding Ltd"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1807794,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/CRDO?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "CRWV": {
+   "symbol": "CRWV",
+   "official_name": "CoreWeave, Inc.",
+   "names": [
+    "CoreWeave, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1769628,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/CRWV?range=1y&interval=1d",
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
@@ -703,6 +833,22 @@
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
+  "GOOGL": {
+   "symbol": "GOOGL",
+   "official_name": "Alphabet Inc.",
+   "names": [
+    "Alphabet Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1652044,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
   "HIMX": {
    "symbol": "HIMX",
    "official_name": "Himax Technologies, Inc.",
@@ -734,6 +880,39 @@
     "https://query1.finance.yahoo.com/v8/finance/chart/HPS-A.TO?range=1y&interval=1d"
    ]
   },
+  "HUT": {
+   "symbol": "HUT",
+   "official_name": "Hut 8 Corp.",
+   "names": [
+    "Hut 8 Corp."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1964789,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/HUT?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "INTC": {
+   "symbol": "INTC",
+   "official_name": "Intel Corporation",
+   "names": [
+    "Intel Corporation",
+    "INTEL CORP"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 50863,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
   "IQE.L": {
    "symbol": "IQE.L",
    "official_name": "IQE plc",
@@ -747,6 +926,40 @@
    "verified_at": "2026-10-18T07:10:36Z",
    "sources": [
     "https://query1.finance.yahoo.com/v8/finance/chart/IQE.L?range=1y&interval=1d"
+   ]
+  },
+  "IREN": {
+   "symbol": "IREN",
+   "official_name": "IREN Limited",
+   "names": [
+    "IREN Limited",
+    "IREN Ltd"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1878848,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/IREN?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "JBL": {
+   "symbol": "JBL",
+   "official_name": "Jabil Inc.",
+   "names": [
+    "Jabil Inc.",
+    "JABIL INC"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 898293,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/JBL?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
   "LASR": {
@@ -831,6 +1044,22 @@
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
+  "META": {
+   "symbol": "META",
+   "official_name": "Meta Platforms, Inc.",
+   "names": [
+    "Meta Platforms, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1326801,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/META?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
   "MP": {
    "symbol": "MP",
    "official_name": "MP Materials Corp.",
@@ -861,6 +1090,23 @@
    "verified_at": "2026-10-18T07:10:36Z",
    "sources": [
     "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "MSFT": {
+   "symbol": "MSFT",
+   "official_name": "Microsoft Corporation",
+   "names": [
+    "Microsoft Corporation",
+    "MICROSOFT CORP"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 789019,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=1y&interval=1d",
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
@@ -911,6 +1157,22 @@
    "verified_at": "2026-10-18T07:10:36Z",
    "sources": [
     "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "NBIS": {
+   "symbol": "NBIS",
+   "official_name": "Nebius Group N.V.",
+   "names": [
+    "Nebius Group N.V."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1513845,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/NBIS?range=1y&interval=1d",
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
@@ -982,6 +1244,22 @@
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
+  "PL": {
+   "symbol": "PL",
+   "official_name": "Planet Labs PBC",
+   "names": [
+    "Planet Labs PBC"
+   ],
+   "currency": "USD",
+   "exchange": "NYSE",
+   "venue": "US",
+   "sec_cik": 1836833,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/PL?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
   "POET": {
    "symbol": "POET",
    "official_name": "POET Technologies Inc.",
@@ -996,6 +1274,23 @@
    "verified_at": "2026-10-18T07:10:36Z",
    "sources": [
     "https://query1.finance.yahoo.com/v8/finance/chart/POET?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "RKLB": {
+   "symbol": "RKLB",
+   "official_name": "Rocket Lab Corporation",
+   "names": [
+    "Rocket Lab Corporation",
+    "Rocket Lab Corp"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1819994,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/RKLB?range=1y&interval=1d",
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
@@ -1031,6 +1326,22 @@
     "https://query1.finance.yahoo.com/v8/finance/chart/SIVE.ST?range=1y&interval=1d"
    ]
   },
+  "SMCI": {
+   "symbol": "SMCI",
+   "official_name": "Super Micro Computer, Inc.",
+   "names": [
+    "Super Micro Computer, Inc."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1375365,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/SMCI?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
   "SNDK": {
    "symbol": "SNDK",
    "official_name": "Sandisk Corporation",
@@ -1061,6 +1372,23 @@
    "verified_at": "2026-10-18T07:10:36Z",
    "sources": [
     "https://query1.finance.yahoo.com/v8/finance/chart/SOI.PA?range=1y&interval=1d"
+   ]
+  },
+  "SPCX": {
+   "symbol": "SPCX",
+   "official_name": "Space Exploration Technologies Corp.",
+   "names": [
+    "Space Exploration Technologies Corp.",
+    "SPACE EXPLORATION TECHNOLOGIES CORP"
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqGS",
+   "venue": "US",
+   "sec_cik": 1181412,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/SPCX?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },
   "SSYS": {
@@ -1259,6 +1587,23 @@
    "verified_at": "2026-10-18T07:10:36Z",
    "sources": [
     "https://query1.finance.yahoo.com/v8/finance/chart/VRT?range=1y&interval=1d",
+    "https://www.sec.gov/files/company_tickers_exchange.json"
+   ]
+  },
+  "WULF": {
+   "symbol": "WULF",
+   "official_name": "TeraWulf Inc.",
+   "names": [
+    "TeraWulf Inc.",
+    "TERAWULF INC."
+   ],
+   "currency": "USD",
+   "exchange": "NasdaqCM",
+   "venue": "US",
+   "sec_cik": 1083301,
+   "verified_at": "2026-10-20T03:53:45Z",
+   "sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/WULF?range=1y&interval=1d",
     "https://www.sec.gov/files/company_tickers_exchange.json"
    ]
   },

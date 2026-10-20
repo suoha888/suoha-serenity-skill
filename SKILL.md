@@ -5,11 +5,11 @@ license: MIT
 metadata:
   runtime-requirements: "Agent Skills-compatible clients with local Python 3.10+. scripts/ are local-only and network-free; connectors/ is the only package that reads the network, using read-only HTTPS to a literal host allow-list. Form POST only to the CNINFO search endpoint. Core features need no API key; EDINET/DART keys are optional. Without connector access, use host web/search tools and preserve evidence and data-gap labels."
   author: 梭哈.AI (@suoha_AI)
-  version: "8.0.1"
+  version: "8.1.0"
   short-description: Chokepoint research with exchange-native live data and verified, source-cited reports
 ---
 
-# suoha-serenity skill v8.0.1
+# suoha-serenity skill v8.1.0
 
 Designed and maintained by 梭哈.AI (@suoha_AI on X).
 
@@ -161,7 +161,9 @@ evidence IDs:
 6. **variant_perception**: consensus with evidence IDs; `our_view` contains a
    number and differs; PB-VP reason codes; first number to watch + check_by.
 7. **Red team + falsification**: named better alternative, biggest kill shot,
-   ≥1 machine-checkable falsifier (metric/operator/threshold/check_by).
+   ≥1 machine-checkable falsifier (metric/operator/threshold/check_by); tag
+   each falsifier with an `exit_rule` (PB-EXIT, doctrine §18: thesis broken,
+   downgraded, re-underwrite, realized, or noise that is *not* a break).
 8. **Next-hop picks + risk tier**, then "按 Serenity 框架会怎么看"
    (framework reading) and the Serenity memory section.
 

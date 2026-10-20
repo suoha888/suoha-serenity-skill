@@ -324,7 +324,7 @@ def lens_memory(ledger: dict[str, Any], ticker: str) -> dict[str, Any]:
         "mention_count": row["mention_count"], "timeline": row["timeline"],
         "archive_through": through,
         "note": (f"Point-in-time as of {ledger['as_of']}; archive covers posts through {through[:10]} "
-                 "(silence after that date is unknown, not a sell); holding_status={row['holding_status']}, "
+                 f"(silence after that date is unknown, not a sell); holding_status={row['holding_status']}, "
                  f"effective conviction {row['effective_conviction']} (raw {row['raw_conviction']}). "
                  "Serenity statements are leads, not company facts."),
     }

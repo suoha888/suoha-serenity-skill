@@ -291,7 +291,8 @@
       "metric": "MU quarterly gross margin pct",
       "operator": "<",
       "threshold": 70,
-      "check_by": "2027-01-15"
+      "check_by": "2027-01-15",
+      "exit_rule": "PB-EXIT-03"
     },
     {
       "condition": "下一份 10-Q 披露的剩余履约义务低于 1,000 亿美元",
@@ -299,7 +300,8 @@
       "metric": "MU remaining performance obligations USD",
       "operator": "<",
       "threshold": 100000000000.0,
-      "check_by": "2027-01-15"
+      "check_by": "2027-01-15",
+      "exit_rule": "PB-EXIT-10"
     }
   ],
   "serenity_memory": {
@@ -539,7 +541,7 @@
       "threshold": 70,
       "check_by": "2027-01-15"
     },
-    "what_changed_since_archive": "未接入私有 ledger；公开档案截至 2026-06-05。此后 MU 10-K（2026-10-09）首次给出约 1,340 亿美元 RPO 与 take-or-pay 条款，这是档案之后的新事实。"
+    "what_changed_since_archive": "本示例演示未接入私有 ledger 时的处理（Serenity 记忆为 unavailable，不推测其立场）。研究日之前的一手变化：MU 10-K（2026-10-09）首次给出约 1,340 亿美元 RPO 与 take-or-pay 条款，是研究时最重要的新事实。"
   },
   "next_hop_picks": [
     {

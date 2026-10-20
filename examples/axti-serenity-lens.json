@@ -401,7 +401,8 @@
       "metric": "axti_gross_margin_q3_2026_pct",
       "operator": "<",
       "threshold": 35,
-      "check_by": "2026-10-29"
+      "check_by": "2026-10-29",
+      "exit_rule": "PB-EXIT-03"
     },
     {
       "condition": "Q3 2026 收入低于 4,000 万美元",
@@ -409,21 +410,23 @@
       "metric": "axti_revenue_q3_2026_usd",
       "operator": "<",
       "threshold": 40000000,
-      "check_by": "2026-10-29"
+      "check_by": "2026-10-29",
+      "exit_rule": "PB-EXIT-03"
     },
     {
       "condition": "两个季度内再次通过 424B5 增发",
       "machine_checkable": false,
-      "check_by": "2027-01-31"
+      "check_by": "2027-01-31",
+      "exit_rule": "PB-EXIT-04"
     }
   ],
   "serenity_memory": {
     "status": "available",
     "source": "本地推文档案（学习包），仅帖子 ID 与自写摘要",
-    "current_state": "DORMANT（档案只覆盖到 2026-06，沉默不等于卖出）",
-    "first_mention": "2025-12-26",
-    "last_mention": "2026-05-25",
-    "mention_count": 77,
+    "current_state": "OPEN（档案覆盖到 2026-10-16；2026-07 仍表示看多并持有）",
+    "first_mention": "2025-12-22",
+    "last_mention": "2026-10-10",
+    "mention_count": 461,
     "timeline": [
       {
         "date": "2025-12-26",
@@ -452,10 +455,52 @@
         "action": "REAFFIRM",
         "stance": "bullish",
         "summary": "引用同业高管对 InP 短缺的公开表述作为印证。"
+      },
+      {
+        "date": "2026-06-12",
+        "post_id": "2065291889885274552",
+        "action": "MENTION",
+        "stance": "bullish",
+        "summary": "回顾：这个论点花了数月，才被公司与政府公开确认 InP 衬底瓶颈。"
+      },
+      {
+        "date": "2026-07-02",
+        "post_id": "2072733748261720186",
+        "action": "MENTION",
+        "stance": "bearish",
+        "summary": "指出上涨途中出现过流通股扩张与增发摊薄。"
+      },
+      {
+        "date": "2026-07-08",
+        "post_id": "2074972411557249248",
+        "action": "REAFFIRM",
+        "stance": "bullish",
+        "summary": "表示仍然看多并持有。"
+      },
+      {
+        "date": "2026-07-31",
+        "post_id": "2083088870942642391",
+        "action": "REAFFIRM",
+        "stance": "bullish",
+        "summary": "财报速评中仍把它列为最看好的名字之一。"
+      },
+      {
+        "date": "2026-09-21",
+        "post_id": "2102068786493026492",
+        "action": "MENTION",
+        "stance": "bullish",
+        "summary": "认为 InP 衬底在中美谈判中具有筹码属性。"
+      },
+      {
+        "date": "2026-10-10",
+        "post_id": "2108916977616179207",
+        "action": "MENTION",
+        "stance": "neutral",
+        "summary": "回看 2025 年论点，认为供给地位与超大厂风险基本被验证。"
       }
     ],
     "note": "立场只用于理解 Serenity 当时的思路，不用于跟单；档案后变化以实时数据为准。",
-    "archive_through": "2026-06-05"
+    "archive_through": "2026-10-16T21:25:06Z"
   },
   "serenity_view": {
     "would_he_care": "yes",
@@ -750,7 +795,7 @@
       "threshold": 35,
       "check_by": "2026-10-29"
     },
-    "what_changed_since_archive": "档案最后提及在 2026-05。之后：Casela 长协（6 月）、Coherent 预付协议（6 月）、Lumentum 6 年产能预留（7 月）；通美转香港上市；Q2 收入同比 +165%、毛利率 44.9%；新闻称已纳入 S&P 600；股价一年 +896%，但较 52 周高点回撤 64%。"
+    "what_changed_since_archive": "档案（覆盖到 2026-10-16）显示 Serenity 7 月仍看多，10 月回看认为论点基本兑现（PB-EXIT-07：下一步应换新问题重新立论）。同期一手信息：Casela 长协（6 月）、Coherent 预付协议（6 月）、Lumentum 6 年产能预留（7 月）；通美转香港上市；Q2 收入同比 +165%、毛利率 44.9%；新闻称已纳入 S&P 600；股价一年 +896%，但较 52 周高点回撤 64%。"
   },
   "next_hop_picks": [
     {

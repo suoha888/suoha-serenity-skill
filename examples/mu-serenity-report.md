@@ -33,7 +33,7 @@
 - **为什么市场可能错**：PB-VP-07, PB-VP-04
 - **市场何时会看到**：下一份 10-Q（约 2026 年 12 月下旬）披露 RPO 与合同负债变化时。
 - **第一个证伪数字**：`MU quarterly gross margin pct < 70`（2027-01-15 前检查）
-- **档案之后的变化**：未接入私有 ledger；公开档案截至 2026-06-05。此后 MU 10-K（2026-10-09）首次给出约 1,340 亿美元 RPO 与 take-or-pay 条款，这是档案之后的新事实。
+- **档案之后的变化**：本示例演示未接入私有 ledger 时的处理（Serenity 记忆为 unavailable，不推测其立场）。研究日之前的一手变化：MU 10-K（2026-10-09）首次给出约 1,340 亿美元 RPO 与 take-or-pay 条款，是研究时最重要的新事实。
 
 <!-- section:capex -->
 ## 1. 资本开支确定性
@@ -114,8 +114,8 @@ No Serenity stance ledger supplied (--ledger). Silence in this pack is not a vie
 
 <!-- section:falsification -->
 ## 10. 证伪条件
-- 下一份 10-Q 季度毛利率低于 70% `机器可检: MU quarterly gross margin pct < 70`（检查：2027-01-15）
-- 下一份 10-Q 披露的剩余履约义务低于 1,000 亿美元 `机器可检: MU remaining performance obligations USD < 100000000000.0`（检查：2027-01-15）
+- 下一份 10-Q 季度毛利率低于 70% `机器可检: MU quarterly gross margin pct < 70`（检查：2027-01-15）（PB-EXIT-03）
+- 下一份 10-Q 披露的剩余履约义务低于 1,000 亿美元 `机器可检: MU remaining performance obligations USD < 100000000000.0`（检查：2027-01-15）（PB-EXIT-10）
 
 <!-- section:evidence -->
 ## 证据
@@ -145,4 +145,4 @@ No Serenity stance ledger supplied (--ledger). Silence in this pack is not a vie
 ---
 ⚠️ 框架声明：本 skill 根据 Serenity 公开发布的内容提炼研究框架，用于回测与研究分析；报告由框架生成，不代表 Serenity 本人观点，亦非投资建议。
 
-<!-- serenity-lens lens_id=lens:mu-2026-10-18 sha256=f080d6b31f297ccf6df0c435decc9e458bc20ec6ccbd854112d2892ef2978bb8 -->
+<!-- serenity-lens lens_id=lens:mu-2026-10-18 sha256=b65f2574068985f4aba2cce8f638e8585220a71626ae2a429123bf9a52c5067a -->

@@ -65,7 +65,7 @@ from typing import Any, Callable
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-CONNECTOR_VERSION = "8.0.1"
+CONNECTOR_VERSION = "8.1.0"
 ALLOWED_HOSTS = frozenset({
     "www.sec.gov",
     "data.sec.gov",
@@ -522,6 +522,17 @@ def sec_submissions(fetcher: Fetcher, cik: int, limit: int = 250) -> dict[str, A
             "filings": rows, "source_url": url}
 
 
+def _keep_periodic(reports: list[dict[str, Any]], n: int) -> list[dict[str, Any]]:
+    """First n reports plus the latest 10-K/10-Q/20-F/40-F.  v8.1: a busy 6-K filer
+    (NBIS) otherwise pushes its 20-F out of the list and the brief gets no excerpts."""
+    keep = list(reports[:n])
+    for form in ("10-K", "10-Q", "20-F", "40-F"):
+        hit = next((r for r in reports if r["form"] == form), None)
+        if hit is not None and hit not in keep:
+            keep.append(hit)
+    return keep
+
+
 def filing_radar(subs: dict[str, Any], now: datetime | None = None, days: int = 400) -> dict[str, Any]:
     """Group recent filings into doctrine radars: dilution, ownership, insider, 8-K events."""
     now = now or utc_now()
@@ -567,7 +578,7 @@ def filing_radar(subs: dict[str, Any], now: datetime | None = None, days: int = 
         flags.append({"flag": "insider_form4_activity", "count": len(form4), "latest": form4[0]["filed"],
                       "doctrine": "PB-SIG-10", "check": "Classify open-market buys (code P) vs sales/grants; buys after a run-up are rarer signals."})
     return {"window_days": days, "dilution": dilution[:20], "ownership": ownership[:20], "insider": insider[:30],
-            "reports": reports[:8], "events_8k": events[:25], "flags": flags}
+            "reports": _keep_periodic(reports, 8), "events_8k": events[:25], "flags": flags}
 
 
 def _sec_series(facts: dict[str, Any], tags: tuple[str, ...], instant: bool) -> tuple[str | None, list[dict[str, Any]]]:
@@ -587,6 +598,10 @@ def _sec_series(facts: dict[str, Any], tags: tuple[str, ...], instant: bool) -> 
     return found[0][0], found[0][1]
 
 
+SEC_FACT_FORMS = {"10-K", "10-Q", "20-F", "40-F", "10-K/A", "10-Q/A", "20-F/A", "40-F/A", "6-K"}
+SEC_STALE_DAYS = 400  # balance/flow facts older than this vs the freshest SEC fact are not "latest"
+
+
 def _sec_series_all(facts: dict[str, Any], tags: tuple[str, ...], instant: bool):
     for taxonomy in ("us-gaap", "ifrs-full"):
         pool = facts.get("facts", {}).get(taxonomy, {})
@@ -594,12 +609,13 @@ def _sec_series_all(facts: dict[str, Any], tags: tuple[str, ...], instant: bool)
             node = pool.get(tag)
             if not node:
                 continue
+            best = None  # v8.1: a tag can carry several units (e.g. ex-Yandex NBIS: RUB to 2023, USD to now)
             for unit, vals in node.get("units", {}).items():
                 if "/" in unit:
                     continue
                 rows = []
                 for v in vals:
-                    if v.get("form") not in {"10-K", "10-Q", "20-F", "40-F", "10-K/A", "10-Q/A", "6-K"}:
+                    if v.get("form") not in SEC_FACT_FORMS:
                         continue
                     if instant:
                         if "start" in v:
@@ -612,8 +628,11 @@ def _sec_series_all(facts: dict[str, Any], tags: tuple[str, ...], instant: bool)
                         rows.append({"start": v["start"], "end": v["end"], "days": span, "value": v["val"],
                                      "filed": v.get("filed"), "unit": unit})
                 if rows:
-                    yield f"{taxonomy}:{tag}", rows
-                    break
+                    rank = (max(r["end"] for r in rows), len(rows))
+                    if best is None or rank > best[0]:
+                        best = (rank, rows)
+            if best:
+                yield f"{taxonomy}:{tag}", best[1]
 
 
 def _quarterly(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -698,8 +717,46 @@ def group_dei_shares(dei: dict[str, Any]) -> list[dict[str, Any]]:
     return [by_end[k] for k in sorted(by_end)]
 
 
+def _sec_drop_stale(series: dict[str, list[dict[str, Any]]]) -> tuple[dict[str, list[dict[str, Any]]], list[str]]:
+    """v8.1: drop series that stopped long ago or are in a different currency than the
+    freshest facts.  Without this a re-domiciled filer (ex-Yandex NBIS: RUB balance sheet
+    to 2023, USD after) shows a 2023 RUB cash pile as today's USD cash."""
+    rows_all = [x for k, v in series.items() if k != "shares_outstanding_dei" for x in (v or []) if x.get("end")]
+    if not rows_all:
+        return series, []
+    newest = max(x["end"] for x in rows_all)
+    floor = (datetime.fromisoformat(newest) - timedelta(days=SEC_STALE_DAYS)).date().isoformat()
+    fresh_units: dict[str, tuple[int, str]] = {}  # unit -> (fresh series ending in it, newest end)
+    for key, rows in series.items():
+        if key == "shares_outstanding_dei" or not rows or rows[-1]["end"] < floor or not rows[-1].get("unit"):
+            continue
+        n, e = fresh_units.get(rows[-1]["unit"], (0, ""))
+        fresh_units[rows[-1]["unit"]] = (n + 1, max(e, rows[-1]["end"]))
+    rev = series.get("revenue") or []
+    ccy = rev[-1]["unit"] if rev and rev[-1]["end"] >= floor else (max(fresh_units, key=fresh_units.get) if fresh_units else None)
+    out: dict[str, list[dict[str, Any]]] = {}
+    warnings: list[str] = []
+    for key, rows in series.items():
+        if key == "shares_outstanding_dei" or not rows:
+            out[key] = rows
+            continue
+        last = rows[-1]
+        if last["end"] < floor:
+            warnings.append(f"sec_stale_series_dropped:{key}:last_end_{last['end']}_vs_newest_{newest}")
+            out[key] = []
+        elif ccy and last.get("unit") and last["unit"] != ccy and last["unit"] != "shares":
+            warnings.append(f"sec_currency_mismatch_dropped:{key}:{last['unit']}_vs_{ccy}")
+            out[key] = []
+        else:
+            out[key] = [x for x in rows if not x.get("unit") or x["unit"] == last["unit"]]
+    return out, warnings
+
+
 def summarize_sec(series: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
     s: dict[str, Any] = {}
+    series, stale = _sec_drop_stale(series)
+    if stale:
+        s["sec_data_warnings"] = stale
     rev = series.get("revenue") or []
     if rev:
         s["revenue_latest_quarter"] = rev[-1]
@@ -1074,6 +1131,7 @@ def quality_warnings(snap: dict[str, Any]) -> list[str]:
         w.append("foreign_private_issuer: 20-F/6-K filer; quarterly XBRL may be missing and US quote may be an ADR")
     if s.get("financials_source"):
         w.append("financials_from_fallback: " + s["financials_source"])
+    w.extend(s.get("sec_data_warnings") or [])  # v8.1: stale / other-currency SEC series that were dropped
     basis = (snap.get("usd_view") or {}).get("revenue_basis")
     if basis and basis != "ttm" and not basis.startswith("ttm_from_ytd"):
         w.append(f"revenue_ttm_unavailable: P/S uses {basis}")
@@ -1687,6 +1745,23 @@ def _brief_company_section(snap: dict[str, Any], health: dict[str, Any] | None) 
     return L
 
 
+def layer_for_taxonomy(code: str, upstream: bool = False) -> str:
+    """Map a supply-chain taxonomy code (references/supply-chain-taxonomy.md) to a lens chain_map layer.
+    upstream=True: the node is something the subject buys, so systems/components count as upstream equipment."""
+    c = (code or "").upper()
+    if c.startswith(("L0.RAW", "L1.MAT")):
+        return "upstream_material"
+    if c.startswith(("L0.POWER", "L0.POLICY")):
+        return "cross_theme_root"
+    if c.startswith("L1.EQP") or upstream:
+        return "upstream_equipment"
+    if c.startswith(("L4", "L0.DEMAND")):
+        return "downstream_reference"
+    if c.startswith("L3"):
+        return "midstream_system"
+    return "midstream_component"
+
+
 def draft_lens(snap: dict[str, Any], scan: dict[str, Any], position: dict[str, Any], memory: dict[str, Any],
                docs: list[dict[str, Any]], snapshot_path: str, now: datetime,
                health: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -1707,16 +1782,42 @@ def draft_lens(snap: dict[str, Any], scan: dict[str, Any], position: dict[str, A
     role = fit.get("role") if fit.get("role") in {"chokepoint", "price_setter_anchor", "downstream_platform",
                                                     "integrator_or_commodity", "diluter_or_story", "non_ai_compounder"} else "integrator_or_commodity"
     fitv = fit.get("fit") if fit.get("fit") in {"strong", "partial", "weak", "not_applicable"} else "partial"
-    layers = [{"layer": "upstream_material", "taxonomy_code": pos["taxonomy"] if pos else "",
-               "nodes": [{"name": q.get("name") or sym, "ticker": sym, "role": T + "该公司在链条中的位置", "is_subject": True,
-                          "listing_status": "listed"}]}]
+    # v8.1: the schema needs >= 3 layers (downstream -> subject -> upstream); the old draft emitted at most
+    # two, all tagged upstream_material, so every fast-path draft failed `finish` on chain_map.
+    tax: dict[str, Any] = {}
+    names: dict[str, str] = {}
+    try:
+        atlas_mod, _ = _scan_tools()
+        idx = atlas_mod.index(atlas_mod.load_atlas())
+        tax = {k: v.get("taxonomy") for k, v in idx.items()}
+        names = {h["ticker"]: h.get("name") or h["ticker"] for v in idx.values() for h in v.get("holders", [])}
+    except Exception:  # noqa: BLE001 - layer labels degrade to the defaults below
+        pass
+    subject_layer = {"layer": layer_for_taxonomy(pos["taxonomy"] if pos else ""), "taxonomy_code": pos["taxonomy"] if pos else "",
+                     "nodes": [{"name": q.get("name") or sym, "ticker": sym, "role": T + "该公司在链条中的位置", "is_subject": True,
+                                "listing_status": "listed"}]}
+    down_layers: list[dict[str, Any]] = []
+    up_layers: list[dict[str, Any]] = []
     if pos:
         if pos["peers"]:
-            layers[0]["nodes"] += [{"name": p, "ticker": p, "role": "同层（图谱）", "listing_status": "listed"} for p in pos["peers"][:4]]
-        ups = [u for u in pos["upstream_path"] if u["depth"] == 1][:3]
-        if ups:
-            layers.append({"layer": "cross_theme_root", "nodes": [{"name": u["name"], "ticker": (u["holders"] or [""])[0],
-                                                                    "role": f"上游节点（图谱状态 {u['status']}）", "listing_status": "listed"} for u in ups]})
+            subject_layer["nodes"] += [{"name": names.get(p, p), "ticker": p, "role": "同层（图谱）", "listing_status": "listed"} for p in pos["peers"][:4]]
+        for d in (pos.get("downstream") or [])[:2]:
+            down_layers.append({"layer": "downstream_reference", "taxonomy_code": tax.get(d["node_id"]) or "",
+                                "nodes": [{"name": d["name"], "ticker": (d["holders"] or [""])[0],
+                                           "role": "下游节点（图谱）", "listing_status": "listed"}]})
+        for u in [u for u in pos["upstream_path"] if u["depth"] == 1][:3]:
+            up_layers.append({"layer": layer_for_taxonomy(tax.get(u["node_id"]) or "", upstream=True),
+                              "taxonomy_code": tax.get(u["node_id"]) or "",
+                              "nodes": [{"name": u["name"], "ticker": (u["holders"] or [""])[0],
+                                         "role": f"上游节点（图谱状态 {u['status']}）", "listing_status": "listed"}]})
+    def placeholder(layer: str, where: str) -> dict[str, Any]:
+        return {"layer": layer, "nodes": [{"name": T + f"补一层{where}（产业链图至少 3 层）",
+                                           "role": T + "该层在链条中的作用", "listing_status": "unknown"}]}
+    if not down_layers:
+        down_layers = [placeholder("downstream_reference", "下游需求方")]
+    if not any(x["layer"].startswith("upstream") for x in up_layers):  # validator: >= 1 upstream_* layer
+        up_layers.append(placeholder("upstream_material", "上游原料/设备"))
+    layers = down_layers + [subject_layer] + up_layers
     picks = []
     for c in scan.get("next_hop_candidates", [])[:3]:
         basis = c.get("basis") if c.get("basis") in {"serenity_lead", "author_lead", "industry_knowledge", "live_data", "inference"} else "inference"
@@ -1774,7 +1875,7 @@ def draft_lens(snap: dict[str, Any], scan: dict[str, Any], position: dict[str, A
         "osint_leads": [],
         "red_team": {"not_real_bottleneck": T, "not_monetized": T, "already_priced": T,
                      "better_alternative": {"ticker": (picks[0]["ticker"] if picks else T), "why": T}, "biggest_kill_shot": T},
-        "falsification": [{"condition": T + "可证伪条件", "machine_checkable": False}],
+        "falsification": [{"condition": T + "可证伪条件", "machine_checkable": False, "exit_rule": "PB-EXIT-01"}],
         "serenity_memory": mem,
         "serenity_view": {"would_he_care": "maybe", "why": T + "按 Serenity 框架会怎么看", "playbook_rules": []},
         "research_tier": "amber", "tier_reason": T + "分级理由", "rerate_triggers": [T + "重估触发器"],

@@ -126,9 +126,9 @@ No Serenity stance ledger supplied (--ledger). Silence in this pack is not a vie
 
 <!-- section:falsification -->
 ## 10. 证伪条件
-- Q3 FY2026 Data Center 收入低于 70 亿美元 `机器可检: amd_datacenter_revenue_q3_fy2026_usd < 7000000000.0`（检查：2026-11-10）
-- Q3 FY2026 GAAP 毛利率低于 52% `机器可检: amd_gaap_gross_margin_q3_fy2026 < 0.52`（检查：2026-11-10）
-- Helios 在 2026-12-31 前未开始出货（检查：2026-12-31）
+- Q3 FY2026 Data Center 收入低于 70 亿美元 `机器可检: amd_datacenter_revenue_q3_fy2026_usd < 7000000000.0`（检查：2026-11-10）（PB-EXIT-03）
+- Q3 FY2026 GAAP 毛利率低于 52% `机器可检: amd_gaap_gross_margin_q3_fy2026 < 0.52`（检查：2026-11-10）（PB-EXIT-03）
+- Helios 在 2026-12-31 前未开始出货（检查：2026-12-31）（PB-EXIT-11）
 
 <!-- section:evidence -->
 ## 证据
@@ -161,4 +161,4 @@ No Serenity stance ledger supplied (--ledger). Silence in this pack is not a vie
 ---
 ⚠️ 框架声明：本 skill 根据 Serenity 公开发布的内容提炼研究框架，用于回测与研究分析；报告由框架生成，不代表 Serenity 本人观点，亦非投资建议。
 
-<!-- serenity-lens lens_id=lens:amd-2026-10-19 sha256=e39ce7d11e755021f764783ed2591b95834c055000f2f6206b62a80ba0bf0264 -->
+<!-- serenity-lens lens_id=lens:amd-2026-10-19 sha256=b2ba2f6752216e8c1bafff4acc11f9d2f5cd2ff8d9b40a04f2cfb41432e41d9d -->

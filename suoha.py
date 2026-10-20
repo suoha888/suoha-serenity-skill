@@ -38,6 +38,7 @@ MESSAGES = {
     "network": ("网络或数据源暂不可用；稍后重试，并检查网络、代理。", "Network/data source unavailable; retry later and check your connection/proxy."),
     "ticker": ("无法识别股票；用 python suoha.py resolve <名称> 查询。示例：600519.SS / 0700.HK / AAPL。", "Ticker unresolved; run python suoha.py resolve <name>. Examples: 600519.SS / 0700.HK / AAPL."),
     "usage": ("缺少文件或参数，或参数无效；运行 python suoha.py --help 查看用法，安装不完整请重新安装。", "Missing files/arguments or invalid options; run python suoha.py --help, or reinstall an incomplete package."),
+    "lens": ("lens 未通过校验：按上面的 ERROR 行逐条修改 lens 文件后重新运行 finish。", "Lens failed validation: fix each ERROR line above in the lens file and rerun finish."),
     "internal": ("操作未完成；加 --debug 查看详情，并通过 FAQ 中的反馈入口报告问题。", "Operation failed; add --debug for details and report through the FAQ feedback link."),
 }
 
@@ -99,6 +100,13 @@ def run(args: list[str], hint: str | None = None, check: bool = True) -> int:
                 code = 1
         except (ValueError, TypeError):
             pass
+    if code and check and hint == "lens" and not DEBUG:
+        # v8.1: validation errors are the user's to fix, so show them instead of a generic "internal" message
+        lines = [ln for ln in (result.stdout + "\n" + result.stderr).splitlines() if ln.startswith(("ERROR", "WARN", "TODO"))]
+        for ln in lines[:40]:
+            print(ln, file=sys.stderr)
+        if not lines:
+            hint = None
     if code and check:
         kind = "usage" if "FileNotFoundError" in result.stderr else (hint if hint in MESSAGES else "internal")
         explain(kind)

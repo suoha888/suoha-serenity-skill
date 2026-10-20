@@ -1,6 +1,6 @@
 # 卡点地图（Chokepoint Atlas）
 
-> 由 `scripts/atlas.py render` 从 `assets/chokepoint-atlas.json` 生成，请勿手改。截至 2026-06-05。研究线索，不构成投资建议。代码为 Yahoo 风格，以实时解析为准。
+> 由 `scripts/atlas.py render` 从 `assets/chokepoint-atlas.json` 生成，请勿手改。截至 2026-10-19。研究线索，不构成投资建议。代码为 Yahoo 风格，以实时解析为准。
 
 状态是档案期的研究判断（见 `references/serenity-doctrine.md` §2），使用前用实时数据复核。
 
@@ -22,8 +22,9 @@
 | 硅光/CPO 检测与良率 `siph_test` | L1.EQP.TEST | 即将·demand | — | ARC-TESTING-YIELD, ARC-FUNCTIONAL-MONOPOLY | `6830.TW` MSSCorps（CPO 检测，目标高份额，serenity_lead）；`FORM` FormFactor（探针/测试（领先指标），serenity_lead）；`AEHR` Aehr Test Systems（老化测试，认证转量产，serenity_lead）；`VIAV` Viavi Solutions（光测试（领先指标），serenity_lead） |
 | CPO / 硅光封装 `cpo_packaging` | L1.PKG.OSAT | 正在被订满·demand | siph_foundry, cw_laser, fau_passive, siph_test | ARC-PARENT-CARRY | `6451.TW` Shunsin（鸿海体系 CPO 封装，serenity_lead）；`ASX` ASE Technology（OSAT，CPO 量产，serenity_lead）；`POET` POET Technologies（光学中介层（单一客户风险反例），serenity_lead） |
 | CPO 连接器 / 笼体散热 `cpo_connector` | L2.CONN | 正在被订满·material | — | ARC-HIDDEN-SUPPLIER | `8147.TWO` Nextronics Engineering（卖方附注发现的微型股，serenity_lead） |
-| 光模块 / 可插拔 `optical_module` | L2.OPT.MODULE | 正在被订满·material | eml_laser, cw_laser, fau_passive | ARC-DEMAND-SPILLOVER | `AAOI` Applied Optoelectronics（美国本土最大可用产能，serenity_lead）；`FN` Fabrinet（代工组装，serenity_lead）；`300308.SZ` Zhongji Innolight（光模块龙头，serenity_lead） |
+| 光模块 / 可插拔 `optical_module` | L2.OPT.MODULE | 正在被订满·material | eml_laser, cw_laser, fau_passive | ARC-DEMAND-SPILLOVER | `AAOI` Applied Optoelectronics（美国本土最大可用产能，serenity_lead）；`FN` Fabrinet（代工组装，serenity_lead）；`300308.SZ` Zhongji Innolight（光模块龙头，serenity_lead）；`JBL` Jabil（1.6T LRO 可插拔模块，采用 SIVE CW 激光，serenity_lead） |
 | 光子 IP / 平台（CPO 交换、光计算） `photonic_platform` | L2.OPT.CPO | 即将·demand | cpo_packaging, optical_module | ARC-TRANSITION-GATE | `MRVL` Marvell（Celestial 光子互连，serenity_lead）；`AVGO` Broadcom（CPO 交换，serenity_lead）；`NVDA` NVIDIA（CPO 交换与需求方，serenity_lead） |
+| Scale-up 互连（Retimer / AEC / CXL） `scaleup_connectivity` | L2.CONN | 正在被订满·demand | — | ARC-PER-UNIT-CONTENT | `ALAB` Astera Labs（Retimer / CXL 连接芯片，serenity_lead）；`CRDO` Credo Technology（AEC 有源铜缆，serenity_lead） |
 
 ## AI 存储（HBM / NAND / 遗留 DRAM）（`memory`）
 
@@ -35,7 +36,7 @@
 | HBM 压缩成型 `hbm_molding` | L1.EQP.BACK | 垄断不紧缺·demand | — | ARC-FUNCTIONAL-MONOPOLY | `6315.T` Towa（压缩成型垄断，serenity_lead） |
 | HBM / 先进 DRAM `hbm_dram` | L2.MEM.HBM | 正在卡·material | mem_equipment, hbm_molding | ARC-SUPER-SUPPLIER | `000660.KS` SK hynix（HBM 龙头，serenity_lead）；`005930.KS` Samsung Electronics（存储，serenity_lead）；`MU` Micron（存储，供给时间表来源，serenity_lead） |
 | NAND / 企业级 SSD `nand` | L2.MEM.STORAGE | 正在卡·material | mem_equipment | ARC-SUPER-SUPPLIER | `SNDK` SanDisk（NAND 价格领导者，serenity_lead） |
-| 遗留 DRAM / MLC NAND / NOR `legacy_memory` | L2.MEM.STORAGE | 正在卡·material | — | ARC-LEGACY-VOID | `2408.TW` Nanya Technology（遗留 DRAM，serenity_lead）；`2337.TW` Macronix（MLC NAND / NOR，serenity_lead）；`8299.TWO` Phison（库存套利，serenity_lead） |
+| 遗留 DRAM / MLC NAND / NOR `legacy_memory` | L2.MEM.STORAGE | 正在卡·material | — | ARC-LEGACY-VOID | `2408.TW` Nanya Technology（遗留 DRAM，serenity_lead）；`2337.TW` Macronix（MLC NAND / NOR，serenity_lead）；`8299.TWO` Phison（库存套利，serenity_lead）；`3006.TW` Elite Semiconductor (ESMT)（DDR2/DDR3 遗留 DRAM 利基（无晶圆厂），serenity_lead） |
 
 ## 先进封装与基板（CoWoS / 玻璃基板 / T-glass）（`advanced_packaging`）
 
@@ -97,4 +98,25 @@
 | 节点 | 编码 | 状态 | 上游 | 原型 | 持有者 |
 |---|---|---|---|---|---|
 | MBE 外延设备 `mbe_tools` | L1.EQP.FRONT | 正在被订满·demand | — | ARC-EQUIPMENT-PHASE | `ALRIB.PA` Riber（MBE 双寡头之一，开源情报发现客户，serenity_lead）；`VECO` Veeco（MBE 双寡头之一，serenity_lead） |
+
+## AI 算力租赁（Neocloud / 托管 / 服务器）（`ai_compute_neocloud`）
+
+需求驱动：超大厂与模型公司把算力外包：长约锁定已通电容量 → GPU 云
+
+| 节点 | 编码 | 状态 | 上游 | 原型 | 持有者 |
+|---|---|---|---|---|---|
+| 已通电 HPC 托管容量（矿场转型 / 长约租赁） `energized_colo` | L0.POWER | 正在被订满·material | power_gen, transformer | ARC-CAPACITY-LOCK | `CIFR` Cipher Digital（与超大厂（经 Fluidstack）签 10 年期托管长约，serenity_lead）；`WULF` TeraWulf（HPC 托管合同总额大、容量逐步交付，serenity_lead）；`HUT` Hut 8（与模型公司签三方长租（经 Fluidstack），serenity_lead） |
+| 服务器 CPU（AI 推理/Agent 带动 CPU:GPU 比例上升） `server_cpu` | L2.ACCEL.CPU | 正在卡·material | — | ARC-DEMAND-SPILLOVER | `INTC` Intel（CPU 供应紧张、提价，serenity_lead）；`AMD` Advanced Micro Devices（服务器 CPU 份额 + GPU，serenity_lead）；`ARM` Arm Holdings（自研 AI 数据中心 CPU、授权费，serenity_lead） |
+| AI 服务器整机 / 机架集成 `ai_server` | L3.RACK | 非瓶颈·none | server_cpu |  | `SMCI` Super Micro Computer（集成商层级（毛利约 10–15%），框架上不是卡点；用作 AI 服务器需求读数，serenity_lead） |
+| GPU 云 / Neocloud `gpu_cloud` | L4.CLOUD | 正在被订满·demand | energized_colo, ai_server | ARC-BACKLOG-COMPOUNDER | `NBIS` Nebius Group（获超大厂大额长约、融资结构较健康，serenity_lead）；`CRWV` CoreWeave（在手订单（backlog）规模最大，serenity_lead）；`IREN` IREN（电力储备大但大额 ATM 融资结构差——反例，serenity_lead） |
+| 超大厂 / 模型公司资本开支（需求源） `compute_buyers` | L0.DEMAND | 非瓶颈·none | gpu_cloud |  | `MSFT` Microsoft（资本开支来源（PB-FIT-03），serenity_lead）；`META` Meta Platforms（资本开支来源（PB-FIT-03），serenity_lead）；`GOOGL` Alphabet（资本开支来源（PB-FIT-03），serenity_lead）；`AMZN` Amazon（资本开支来源（PB-FIT-03），serenity_lead） |
+
+## 太空（发射 / 卫星网络）（`space`）
+
+需求驱动：低轨卫星网络与太空数据中心设想（远期题材，PB-LAW-08 例外）
+
+| 节点 | 编码 | 状态 | 上游 | 原型 | 持有者 |
+|---|---|---|---|---|---|
+| 火箭发射 `launch` | OTHER | 垄断不紧缺·demand | — |  | `SPCX` Space Exploration Technologies (SpaceX)（发射龙头；超大型 IPO，定价充分，serenity_lead）；`RKLB` Rocket Lab（行业第二名的错误定价逻辑，serenity_lead） |
+| 低轨卫星网络 / 对地观测 `sat_network` | OTHER | 即将·demand | launch, compound_foundry |  | `ASTS` AST SpaceMobile（手机直连卫星网络、海外合资，serenity_lead）；`PL` Planet Labs（卫星数据，带动板块周期，serenity_lead） |
 

@@ -283,7 +283,8 @@ def to_markdown(L: dict[str, Any]) -> str:
     w("## 10. 证伪条件")
     for f in L["falsification"]:
         mc = f" `机器可检: {f['metric']} {f['operator']} {f['threshold']}`" if f["machine_checkable"] else ""
-        w(f"- {f['condition']}{mc}" + (f"（检查：{f['check_by']}）" if f.get("check_by") else ""))
+        w(f"- {f['condition']}{mc}" + (f"（检查：{f['check_by']}）" if f.get("check_by") else "")
+          + (f"（{f['exit_rule']}）" if f.get("exit_rule") else ""))
     w("")
     w("<!-- section:evidence -->")
     w("## 证据")
@@ -395,7 +396,8 @@ def to_html(L: dict[str, Any]) -> str:
     rt = L["red_team"]
     w(f"<section id='red-team'><h2>9 · 红队</h2><ol><li>不是真瓶颈？{e(rt['not_real_bottleneck'])}</li><li>不变现？{e(rt['not_monetized'])}</li><li>已定价？{e(rt['already_priced'])}</li><li>更优替代 <code>{e(rt['better_alternative']['ticker'])}</code>：{e(rt['better_alternative']['why'])}</li></ol><p class='kill'><b>最大杀点：</b>{e(rt['biggest_kill_shot'])}</p></section>")
     w("<section id='falsification'><h2>10 · 证伪条件</h2><ul>" + "".join(
-        f"<li>{e(f['condition'])}" + (f" <code>{e(f['metric'])} {e(f['operator'])} {e(f['threshold'])}</code>" if f["machine_checkable"] else "") + "</li>" for f in L["falsification"]) + "</ul></section>")
+        f"<li>{e(f['condition'])}" + (f" <code>{e(f['metric'])} {e(f['operator'])} {e(f['threshold'])}</code>" if f["machine_checkable"] else "")
+        + (f" <span class='mut'>{e(f['exit_rule'])}</span>" if f.get("exit_rule") else "") + "</li>" for f in L["falsification"]) + "</ul></section>")
     w("<section id='evidence'><h2>证据</h2><ul>" + "".join(
         f"<li>[{e(x['evidence_id'])}] {e(x['title'])} — <span class='mut'>{e(x['locator'])} · {e(x['published_at'][:10])}</span></li>" for x in L["evidence"]) + "</ul></section>")
     notice = "" if FRAMEWORK_NOTICE in L["disclaimer"] else f"<br><b>{e(FRAMEWORK_NOTICE)}</b>"

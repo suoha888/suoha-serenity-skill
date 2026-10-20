@@ -715,6 +715,10 @@
           },
           "check_by": {
             "type": "string"
+          },
+          "exit_rule": {
+            "type": "string",
+            "pattern": "^PB-EXIT-[0-9]{2}$"
           }
         }
       }

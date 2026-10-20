@@ -30,7 +30,7 @@ body:
     id: version
     attributes:
       label: Skill 版本 / Version
-      value: v8.0.1
+      value: v8.1.0
   - type: textarea
     id: actual
     attributes:

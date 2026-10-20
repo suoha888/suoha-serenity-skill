@@ -420,7 +420,8 @@
       "metric": "amd_datacenter_revenue_q3_fy2026_usd",
       "operator": "<",
       "threshold": 7000000000.0,
-      "check_by": "2026-11-10"
+      "check_by": "2026-11-10",
+      "exit_rule": "PB-EXIT-03"
     },
     {
       "condition": "Q3 FY2026 GAAP 毛利率低于 52%",
@@ -428,12 +429,14 @@
       "metric": "amd_gaap_gross_margin_q3_fy2026",
       "operator": "<",
       "threshold": 0.52,
-      "check_by": "2026-11-10"
+      "check_by": "2026-11-10",
+      "exit_rule": "PB-EXIT-03"
     },
     {
       "condition": "Helios 在 2026-12-31 前未开始出货",
       "machine_checkable": false,
-      "check_by": "2026-12-31"
+      "check_by": "2026-12-31",
+      "exit_rule": "PB-EXIT-11"
     }
   ],
   "serenity_memory": {

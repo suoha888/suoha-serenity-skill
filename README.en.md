@@ -72,8 +72,9 @@ Full report: [examples/amd-serenity-report.html](examples/amd-serenity-report.ht
 
 - **Research any stock** — pulls official data (SEC, CNINFO, HKEXnews, plus Japan, Korea and Taiwan exchanges), applies the chokepoint framework and gives the conclusion first, then the evidence.
 - **Company health check** — routed by company type (bank, insurer, broker, property, general), each item with formula and threshold: ✅ normal, 👀 watch, 🚩 red flag.
-- **Learn the theory** — 14 laws, 18 chapters and 30+ historical cases, each tagged with its source post ID (no post text).
-- **Numbers you can trust** — every number is recomputed by script; missing or stale evidence is blocked; 190+ automated tests.
+- **Learn the theory** — distilled from 7,153 public posts: 14 laws, 19 chapters (including when a thesis is realized or broken) and 35+ historical cases with an outcome review, each tagged with its source post ID (no post text).
+- **Chokepoint atlas** — 10 supply chains and 46 nodes (now including AI compute rental and space); look up any ticker to see its position, upstream and peers.
+- **Numbers you can trust** — every number is recomputed by script; missing or stale evidence is blocked; 200+ automated tests.
 
 More: [Guide (Chinese)](docs/GUIDE.md) · [FAQ](docs/FAQ.md) · [Changelog](docs/CHANGELOG.md) · [Report a problem](https://github.com/suoha888/suoha-serenity-skill/issues/new?template=field-test.yml)
 

@@ -1,6 +1,6 @@
 {
  "atlas_version": "6.0",
- "as_of": "2026-06-05",
+ "as_of": "2026-10-19",
  "description": "自写卡点地图：链 → 节点（自上游至下游）→ 持有者。节点状态是档案期（截至 as_of）的研究判断，不是实时事实；使用前用 connectors/live_data.py 复核。",
  "basis_legend": {
   "serenity_lead": "Serenity 档案帖子中的研究线索（附 post_ids）",
@@ -517,6 +517,17 @@
        "post_ids": [
         "2029160940604739625"
        ]
+      },
+      {
+       "ticker": "JBL",
+       "name": "Jabil",
+       "role": "1.6T LRO 可插拔模块，采用 SIVE CW 激光",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2044287196300226960",
+        "2059057639238365336",
+        "2064237083510952402"
+       ]
       }
      ]
     },
@@ -559,6 +570,39 @@
        "basis": "serenity_lead",
        "post_ids": [
         "2030432044434784733"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "scaleup_connectivity",
+     "name": "Scale-up 互连（Retimer / AEC / CXL）",
+     "taxonomy": "L2.CONN",
+     "status": "filling",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [
+      "ARC-PER-UNIT-CONTENT"
+     ],
+     "holders": [
+      {
+       "ticker": "ALAB",
+       "name": "Astera Labs",
+       "role": "Retimer / CXL 连接芯片",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "1949825690960023810",
+        "2023600495353622546"
+       ]
+      },
+      {
+       "ticker": "CRDO",
+       "name": "Credo Technology",
+       "role": "AEC 有源铜缆",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2008854319806787681",
+        "2020975054411137326"
        ]
       }
      ]
@@ -736,6 +780,16 @@
        "basis": "serenity_lead",
        "post_ids": [
         "2017097752535322767"
+       ]
+      },
+      {
+       "ticker": "3006.TW",
+       "name": "Elite Semiconductor (ESMT)",
+       "role": "DDR2/DDR3 遗留 DRAM 利基（无晶圆厂）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2092789800428622128",
+        "2094281116421370213"
        ]
       }
      ]
@@ -1347,6 +1401,305 @@
        "basis": "serenity_lead",
        "post_ids": [
         "2043977582564229249"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chain_id": "ai_compute_neocloud",
+   "name": "AI 算力租赁（Neocloud / 托管 / 服务器）",
+   "demand_driver": "超大厂与模型公司把算力外包：长约锁定已通电容量 → GPU 云",
+   "nodes": [
+    {
+     "node_id": "energized_colo",
+     "name": "已通电 HPC 托管容量（矿场转型 / 长约租赁）",
+     "taxonomy": "L0.POWER",
+     "status": "filling",
+     "kind": "material",
+     "upstream": [
+      "power_gen",
+      "transformer"
+     ],
+     "archetypes": [
+      "ARC-CAPACITY-LOCK"
+     ],
+     "holders": [
+      {
+       "ticker": "CIFR",
+       "name": "Cipher Digital",
+       "role": "与超大厂（经 Fluidstack）签 10 年期托管长约",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "1991509461442425276",
+        "2065130589204992048"
+       ]
+      },
+      {
+       "ticker": "WULF",
+       "name": "TeraWulf",
+       "role": "HPC 托管合同总额大、容量逐步交付",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "1988048592754589970"
+       ]
+      },
+      {
+       "ticker": "HUT",
+       "name": "Hut 8",
+       "role": "与模型公司签三方长租（经 Fluidstack）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2001265461963694140",
+        "2079254669793316962"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "server_cpu",
+     "name": "服务器 CPU（AI 推理/Agent 带动 CPU:GPU 比例上升）",
+     "taxonomy": "L2.ACCEL.CPU",
+     "status": "now",
+     "kind": "material",
+     "upstream": [],
+     "archetypes": [
+      "ARC-DEMAND-SPILLOVER"
+     ],
+     "holders": [
+      {
+       "ticker": "INTC",
+       "name": "Intel",
+       "role": "CPU 供应紧张、提价",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2047182611160965383",
+        "2097232588796780856"
+       ]
+      },
+      {
+       "ticker": "AMD",
+       "name": "Advanced Micro Devices",
+       "role": "服务器 CPU 份额 + GPU",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2047182611160965383",
+        "2102062423499047004"
+       ]
+      },
+      {
+       "ticker": "ARM",
+       "name": "Arm Holdings",
+       "role": "自研 AI 数据中心 CPU、授权费",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2036532579638399109",
+        "2102062423499047004"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "ai_server",
+     "name": "AI 服务器整机 / 机架集成",
+     "taxonomy": "L3.RACK",
+     "status": "not_bottleneck",
+     "kind": "none",
+     "upstream": [
+      "server_cpu"
+     ],
+     "archetypes": [],
+     "holders": [
+      {
+       "ticker": "SMCI",
+       "name": "Super Micro Computer",
+       "role": "集成商层级（毛利约 10–15%），框架上不是卡点；用作 AI 服务器需求读数",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2087280662802026931",
+        "2055925643158938050"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "gpu_cloud",
+     "name": "GPU 云 / Neocloud",
+     "taxonomy": "L4.CLOUD",
+     "status": "filling",
+     "kind": "demand",
+     "upstream": [
+      "energized_colo",
+      "ai_server"
+     ],
+     "archetypes": [
+      "ARC-BACKLOG-COMPOUNDER"
+     ],
+     "holders": [
+      {
+       "ticker": "NBIS",
+       "name": "Nebius Group",
+       "role": "获超大厂大额长约、融资结构较健康",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2033486637553127865",
+        "2054524864866980010",
+        "1990452960758042917"
+       ]
+      },
+      {
+       "ticker": "CRWV",
+       "name": "CoreWeave",
+       "role": "在手订单（backlog）规模最大",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2087285356999958663",
+        "2110848740559126575"
+       ]
+      },
+      {
+       "ticker": "IREN",
+       "name": "IREN",
+       "role": "电力储备大但大额 ATM 融资结构差——反例",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2063571485739106593",
+        "2052494142765441301",
+        "2079254669793316962"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "compute_buyers",
+     "name": "超大厂 / 模型公司资本开支（需求源）",
+     "taxonomy": "L0.DEMAND",
+     "status": "not_bottleneck",
+     "kind": "none",
+     "upstream": [
+      "gpu_cloud"
+     ],
+     "archetypes": [],
+     "holders": [
+      {
+       "ticker": "MSFT",
+       "name": "Microsoft",
+       "role": "资本开支来源（PB-FIT-03）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2083270545320386734",
+        "2033486637553127865",
+        "2071135874100990438",
+        "2112130322683072617"
+       ]
+      },
+      {
+       "ticker": "META",
+       "name": "Meta Platforms",
+       "role": "资本开支来源（PB-FIT-03）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2083270545320386734",
+        "2033486637553127865",
+        "2071135874100990438",
+        "2112130322683072617"
+       ]
+      },
+      {
+       "ticker": "GOOGL",
+       "name": "Alphabet",
+       "role": "资本开支来源（PB-FIT-03）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2083270545320386734",
+        "2033486637553127865",
+        "2071135874100990438",
+        "2112130322683072617"
+       ]
+      },
+      {
+       "ticker": "AMZN",
+       "name": "Amazon",
+       "role": "资本开支来源（PB-FIT-03）",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2083270545320386734",
+        "2033486637553127865",
+        "2071135874100990438",
+        "2112130322683072617"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chain_id": "space",
+   "name": "太空（发射 / 卫星网络）",
+   "demand_driver": "低轨卫星网络与太空数据中心设想（远期题材，PB-LAW-08 例外）",
+   "nodes": [
+    {
+     "node_id": "launch",
+     "name": "火箭发射",
+     "taxonomy": "OTHER",
+     "status": "monopoly_not_bottleneck",
+     "kind": "demand",
+     "upstream": [],
+     "archetypes": [],
+     "holders": [
+      {
+       "ticker": "SPCX",
+       "name": "Space Exploration Technologies (SpaceX)",
+       "role": "发射龙头；超大型 IPO，定价充分",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2065073494220849660",
+        "2029270327247962447"
+       ]
+      },
+      {
+       "ticker": "RKLB",
+       "name": "Rocket Lab",
+       "role": "行业第二名的错误定价逻辑",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "1997122660749529353",
+        "2074838397341065516"
+       ]
+      }
+     ]
+    },
+    {
+     "node_id": "sat_network",
+     "name": "低轨卫星网络 / 对地观测",
+     "taxonomy": "OTHER",
+     "status": "coming",
+     "kind": "demand",
+     "upstream": [
+      "launch",
+      "compound_foundry"
+     ],
+     "archetypes": [],
+     "holders": [
+      {
+       "ticker": "ASTS",
+       "name": "AST SpaceMobile",
+       "role": "手机直连卫星网络、海外合资",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "2071545016007467486",
+        "2046095854621413511"
+       ]
+      },
+      {
+       "ticker": "PL",
+       "name": "Planet Labs",
+       "role": "卫星数据，带动板块周期",
+       "basis": "serenity_lead",
+       "post_ids": [
+        "1995865990341496999",
+        "2036329557444403424"
        ]
       }
      ]

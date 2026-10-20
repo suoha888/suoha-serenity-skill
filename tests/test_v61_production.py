@@ -241,6 +241,8 @@ class StanceRegressionTest(unittest.TestCase):
         mem = stance_ledger.lens_memory(led, "AAA")
         self.assertIn("archive_through", mem)
         self.assertIn("not a sell", mem["note"])
+        self.assertIn("holding_status=", mem["note"])
+        self.assertNotIn("{row", mem["note"])
         self.assertIn("archive_through", stance_ledger.lens_memory(led, "ZZZ"))
 
 
@@ -270,6 +272,24 @@ class SerenityUpdateTest(unittest.TestCase):
             blob = json.dumps(manifest)
             self.assertNotIn("substrates", blob)
             self.assertEqual(manifest["post_count"], 2)
+
+    def test_ingest_keeps_unicode_line_separators_and_refresh_counts_public_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            priv, inc = Path(tmp) / "priv", Path(tmp) / "new.jsonl"
+            manifest_path = Path(tmp) / "manifest.json"
+            rows = [{"id": "1000000000000000040", "text": "Line one\u2028line two about $AAA.",
+                     "created_at": "2026-06-01T00:00:00Z", "access_level": "public", "source_partition": "public"},
+                    {"id": "1000000000000000041", "text": "Paid-tier note on $BBB.", "created_at": "2026-06-02T00:00:00Z",
+                     "access_level": "subscription", "source_partition": "subscription"}]
+            inc.write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in rows), encoding="utf-8")
+            self.assertEqual(serenity_update.main(["ingest", str(inc), "--private-dir", str(priv)]), 0)
+            # re-ingest the stored archive itself: U+2028 inside text must not split a JSONL record
+            self.assertEqual(serenity_update.main(["ingest", str(priv / "posts.jsonl"), "--private-dir", str(priv)]), 0)
+            self.assertEqual(len(serenity_update.load_archive(priv / "posts.jsonl")), 2)
+            self.assertEqual(serenity_update.main(["refresh", "--private-dir", str(priv), "--manifest", str(manifest_path)]), 0)
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            self.assertEqual(manifest["post_count"], 1)
+            self.assertNotIn("BBB", json.dumps(manifest))
 
     def test_leak_scan(self):
         post = {"id": "1000000000000000030",

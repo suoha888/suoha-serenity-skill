@@ -354,6 +354,9 @@ def validate(lens: dict[str, Any], schema_path: Path = SCHEMA_PATH) -> list[str]
         for rule in lens["serenity_view"]["playbook_rules"]:
             if rule not in known:
                 errors.append(f"lens:unknown_playbook_rule:{rule}")
+        for f in lens["falsification"]:
+            if f.get("exit_rule") and f["exit_rule"] not in known:
+                errors.append(f"lens:unknown_exit_rule:{f['exit_rule']}")
         for hit in lens["archetype_hits"]:
             if hit["archetype"].startswith("ARC-") and hit["archetype"] not in known:
                 errors.append(f"lens:unknown_archetype:{hit['archetype']}")

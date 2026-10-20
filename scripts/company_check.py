@@ -63,6 +63,13 @@ def _num(v: Any) -> float | None:
     return float(v) if isinstance(v, (int, float)) and not isinstance(v, bool) else None
 
 
+def _period_gap_days(a: str | None, b: str | None) -> int | None:
+    try:
+        return abs((date.fromisoformat(str(a)[:10]) - date.fromisoformat(str(b)[:10])).days)
+    except (TypeError, ValueError):
+        return None
+
+
 def _pct(a: float | None, b: float | None) -> float | None:
     return round((a / b - 1) * 100, 2) if a is not None and b not in (None, 0) and b > 0 else None
 
@@ -327,9 +334,15 @@ def checks(m: dict[str, Any], kind: str) -> list[dict[str, Any]]:
         g = _pct(m.get(key), m.get(f"{key}_ya"))
         material = m.get(key) is not None and m.get("revenue_ttm") and m[key] >= MATERIAL_SHARE_OF_REVENUE * m["revenue_ttm"]
         val = round(g - rev_growth, 2) if g is not None and rev_growth is not None else None
-        add(cid, "working_capital", label, val, "pp", _grade(val, rule, True) if material else ("info" if val is not None else "na"),
-            f"{ZH_ITEM[key]}同比（{m.get('balance_ya_end')}→{m.get('balance_end')}）− 收入同比",
-            "" if material else f"{ZH_ITEM[key]}不足 TTM 收入的 5%，只作参考")
+        # v8.1: a fiscal-year balance sheet against a later quarter's revenue growth is not a like-for-like test
+        lag = _period_gap_days(m.get("balance_end"), m.get("period_end"))
+        misaligned = lag is not None and lag > 100
+        note = ("" if material else f"{ZH_ITEM[key]}不足 TTM 收入的 5%，只作参考")
+        if misaligned and val is not None:
+            note = (note + "；" if note else "") + f"资产负债表期末 {m.get('balance_end')} 与收入期末 {m.get('period_end')} 相差 {lag} 天，口径不一致，只作参考"
+        add(cid, "working_capital", label, val, "pp",
+            _grade(val, rule, True) if material and not misaligned else ("info" if val is not None else "na"),
+            f"{ZH_ITEM[key]}同比（{m.get('balance_ya_end')}→{m.get('balance_end')}）− 收入同比", note)
     cl = _pct(m.get("contract_liabilities"), m.get("contract_liabilities_ya"))
     if cl is not None and not fin:
         cl_material = bool(m.get("revenue_ttm")) and (m.get("contract_liabilities") or 0) >= 0.01 * m["revenue_ttm"]
