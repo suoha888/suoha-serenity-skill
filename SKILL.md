@@ -5,11 +5,11 @@ license: MIT
 metadata:
   runtime-requirements: "Agent Skills-compatible clients with local Python 3.10+. scripts/ are local-only and network-free; connectors/ is the only package that reads the network, using read-only HTTPS to a literal host allow-list. Form POST only to the CNINFO search endpoint. Core features need no API key; EDINET/DART keys are optional. Without connector access, use host web/search tools and preserve evidence and data-gap labels."
   author: 梭哈.AI (@suoha_AI)
-  version: "8.1.0"
+  version: "8.2.0"
   short-description: Chokepoint research with exchange-native live data and verified, source-cited reports
 ---
 
-# suoha-serenity skill v8.1.0
+# suoha-serenity skill v8.2.0
 
 Designed and maintained by 梭哈.AI (@suoha_AI on X).
 
@@ -73,7 +73,10 @@ untrusted until checked:
    - `gross_margin_period_lag`, `latest_quarterly_financials_older_than_200_days`,
      `financials_from_fallback`, `share_classes_summed`, `share_class_note_*`.
 2. Market cap is price × latest reported shares (calculated, not provider);
-   reported and calculated values stay distinct and dated.
+   reported and calculated values stay distinct and dated. A+H issuers:
+   A shares × A price + H shares × H price (`market_current.ah_lines`), never
+   total shares × one line's price. Figures are dated by when they became
+   public (SEC filing date), not by period end (`period_end` is separate).
 3. Filing radar flags are leads: open the 8-K / 424B / S-3 before applying
    PB-FIN rules. A 424B next to an 8-K Item 1.01 is usually an underwritten
    deal, not an ATM. Going-concern hits only in exhibits are
@@ -81,6 +84,14 @@ untrusted until checked:
 4. News and social posts are leads. The validator rejects a `pass` gate, an
    active (now/filling) bottleneck, or a `confirmed` OSINT lead supported only
    by news/social evidence, and a current price without market_data evidence.
+   Claim ↔ evidence type (v8.2): a real-bottleneck pass, an active bottleneck
+   or an `established` chokepoint-of-chokepoint needs filing / company_release
+   / earnings_call / industry_data (a price quote proves nothing about supply);
+   a cheap-and-de-risked pass needs market_data **and** a fundamental source.
+   This is a type check only: for every decisive claim, quote to yourself the
+   one sentence in the cited source that directly proves it; if you cannot,
+   downgrade the claim. Net debt is left unset (with a warning) when cash or
+   debt is unknown — never assume zero debt.
 5. If a source is missing, stale or ambiguous, say UNKNOWN / STALE and state
    the resolving check. Never fill a price, share count, customer, contract or
    market cap from memory. Without the connector, collect the same fields with
@@ -152,7 +163,9 @@ evidence IDs:
 2. **Chain map + chokepoint-of-chokepoint**: ≥3 layers incl. upstream
    (`python scripts/atlas.py ticker <T>`; not on the atlas → walk upstream to
    the material/process layer, PB-HUNT-08). Status established / inferred /
-   hypothesis / UNKNOWN.
+   hypothesis / UNKNOWN. Atlas statuses are dated leads (`status_checked`);
+   challenge each one with current data, and re-verify any that is
+   `status_review_due` (older than 180 days) before relying on it.
 3. **Framework fit, bottleneck status, phase, purity** (PB-FIT, PB-PHASE):
    a weak / not_applicable fit is a valid answer — do not force a chokepoint.
 4. **Three gates**: real bottleneck, pre-institutional, cheap and de-risked.
@@ -163,7 +176,10 @@ evidence IDs:
 7. **Red team + falsification**: named better alternative, biggest kill shot,
    ≥1 machine-checkable falsifier (metric/operator/threshold/check_by); tag
    each falsifier with an `exit_rule` (PB-EXIT, doctrine §18: thesis broken,
-   downgraded, re-underwrite, realized, or noise that is *not* a break).
+   downgraded, re-underwrite, realized, or noise that is *not* a break). In a
+   later review, attribute a miss with the failure codes (F-DEMAND,
+   F-NOBOTTLENECK, F-QUAL, F-MONETIZE, F-PRICED, F-DILUTION; X-MACRO / X-OPEN
+   are not thesis failures — references/serenity-case-library.md).
 8. **Next-hop picks + risk tier**, then "按 Serenity 框架会怎么看"
    (framework reading) and the Serenity memory section.
 

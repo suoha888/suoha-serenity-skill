@@ -2,7 +2,7 @@
 
 > 由 `scripts/atlas.py render` 从 `assets/chokepoint-atlas.json` 生成，请勿手改。截至 2026-10-19。研究线索，不构成投资建议。代码为 Yahoo 风格，以实时解析为准。
 
-状态是档案期的研究判断（见 `references/serenity-doctrine.md` §2），使用前用实时数据复核。
+状态是档案期的研究判断（见 `references/serenity-doctrine.md` §2），使用前用实时数据复核；节点状态的核验日期默认等于上面的截至日期，超过 180 天必须重新核验（`atlas.py ticker` 会给出 `status_review_due`）。
 
 ## AI 光子链（InP 激光 / 硅光 / CPO）（`ai_photonics`）
 

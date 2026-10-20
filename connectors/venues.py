@@ -134,9 +134,11 @@ def parse_tencent(raw: bytes, symbol: str, url: str) -> dict[str, Any]:
         shares, ccy, pe, pb = num(73), (f[82] if len(f) > 82 and f[82] else "CNY"), num(39), num(46)
     else:
         when = datetime.strptime(f[30], "%Y/%m/%d %H:%M:%S")
-        shares, ccy, pe, pb = num(70), (f[75] if len(f) > 75 and f[75] else "HKD"), num(39), None
+        # HK fields: 69 = all issued shares (every class / A+H lines), 70 = shares of this HK-listed line only
+        shares, ccy, pe, pb = num(69) or num(70), (f[75] if len(f) > 75 and f[75] else "HKD"), num(39), None
     cap_e8 = num(45)
-    return {"provider": "tencent", "symbol": symbol, "name": f[1], "price": num(3), "previous_close": num(4),
+    line = {"line_shares": num(70)} if venue != "CN" and num(70) else {}
+    return {**line, "provider": "tencent", "symbol": symbol, "name": f[1], "price": num(3), "previous_close": num(4),
             "price_as_of": _utc(when, venue), "currency": ccy,
             "market_cap": round(cap_e8 * 1e8, 2) if cap_e8 else None, "shares_total": shares,
             "pe_ttm": pe, "pb": pb, "source_url": url}

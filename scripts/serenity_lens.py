@@ -78,6 +78,17 @@ VERBATIM_FIELDS = {"text", "post_text", "tweet_text", "full_text", "raw_text"}
 TODO_RE = re.compile(r"^\s*TODO\b", re.I)
 WEAK_SOURCES = {"news", "social_lead"}            # leads, never sufficient on their own
 FIRSTHAND_SOURCES = {"filing", "company_release", "earnings_call", "market_data", "industry_data"}
+# v8.2 claim -> evidence-type matrix.  A price quote cannot prove a supply bottleneck, and a
+# filing alone cannot prove "cheap".  This is a type check only: whether the cited sentence
+# really supports the claim still needs the red team (references/serenity-doctrine.md §15).
+FUNDAMENTAL_SOURCES = {"filing", "company_release", "earnings_call", "industry_data"}
+CLAIM_EVIDENCE: dict[str, list[set[str]]] = {   # every set must be hit by at least one cited item
+    "gates.real_bottleneck": [FUNDAMENTAL_SOURCES],
+    "gates.cheap_derisked": [{"market_data"}, FUNDAMENTAL_SOURCES],
+    "gates.pre_institutional": [{"market_data", "filing", "industry_data"}],
+    "bottleneck_status": [FUNDAMENTAL_SOURCES],
+    "chokepoint_of_chokepoint": [FUNDAMENTAL_SOURCES],
+}
 SERENITY_NOTICE_RE = re.compile(
     r"(不代表\s*Serenity|并非\s*Serenity|not\s+(?:the\s+)?(?:views?|opinions?|positions?)\s+of\s+Serenity|"
     r"does\s+not\s+represent\s+Serenity)", re.I)
@@ -227,6 +238,20 @@ def validate(lens: dict[str, Any], schema_path: Path = SCHEMA_PATH) -> list[str]
     bs = lens.get("bottleneck_status")
     if isinstance(bs, dict) and bs.get("status") in {"now", "filling"} and not firsthand(bs.get("evidence_ids")):
         errors.append("lens:active_bottleneck_requires_non_lead_evidence")
+
+    def type_mismatch(claim: str, ids: list[str] | None) -> None:
+        types = {evidence[i].get("source_type") for i in ids or [] if i in evidence}
+        missing = ["/".join(sorted(need)) for need in CLAIM_EVIDENCE[claim] if not types & need]
+        if missing:
+            errors.append(f"lens:claim_evidence_type_mismatch:{claim}:needs:{'+'.join(missing)}")
+    for gname, gate in lens["gates"].items():
+        if gate["status"] == "pass" and f"gates.{gname}" in CLAIM_EVIDENCE:
+            type_mismatch(f"gates.{gname}", gate.get("evidence_ids"))
+    if isinstance(bs, dict) and bs.get("status") in {"now", "filling"}:
+        type_mismatch("bottleneck_status", bs.get("evidence_ids"))
+    cc = lens.get("chokepoint_of_chokepoint")
+    if isinstance(cc, dict) and cc.get("status") == "established":
+        type_mismatch("chokepoint_of_chokepoint", cc.get("evidence_ids"))
     for i, lead in enumerate(lens["osint_leads"]):
         if lead["status"] == "confirmed" and not any(
                 evidence.get(x, {}).get("source_type") in FIRSTHAND_SOURCES for x in lead.get("evidence_ids", [])):

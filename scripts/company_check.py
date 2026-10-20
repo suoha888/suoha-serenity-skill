@@ -209,6 +209,9 @@ def valuation(snap: dict[str, Any], m: dict[str, Any]) -> dict[str, Any]:
     if price is None:
         return {**out, "status": "na", "note": "no price"}
     shares, basis = _num(m.get("shares_total")), "total shares from the statements (all share lines at this line's price)"
+    if mc.get("ah_lines") and _num(mc.get("shares_outstanding")):
+        # A+H: market_current already priced each line at its own price; use the line-equivalent share count
+        shares, basis = _num(mc["shares_outstanding"]), mc.get("shares_basis") or "A+H: each share line at its own price (line-equivalent shares)"
     if shares is None:
         shares, basis = _num(mc.get("shares_outstanding")), "latest reported shares (market_current)"
     if mc.get("market_cap_withheld") and _num(m.get("shares_total")) is None:

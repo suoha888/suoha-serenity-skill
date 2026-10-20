@@ -65,7 +65,7 @@ from typing import Any, Callable
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-CONNECTOR_VERSION = "8.1.0"
+CONNECTOR_VERSION = "8.2.0"
 ALLOWED_HOSTS = frozenset({
     "www.sec.gov",
     "data.sec.gov",
@@ -660,7 +660,8 @@ def _quarterly(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
             if prev is not None and r["end"] not in q and 70 <= (r["days"] - prev["days"]) <= 110:
                 q[r["end"]] = {**r, "days": r["days"] - prev["days"], "value": r["value"] - prev["value"], "derived": "YTD-diff"}
             prev = r
-    return [{"end": k, "value": v["value"], "unit": v["unit"], **({"derived": v["derived"]} if "derived" in v else {})}
+    return [{"end": k, "value": v["value"], "unit": v["unit"], **({"derived": v["derived"]} if "derived" in v else {}),
+             **({"filed": v["filed"]} if v.get("filed") else {})}
             for k, v in sorted(q.items())]
 
 
@@ -688,7 +689,7 @@ def sec_facts(fetcher: Fetcher, cik: int) -> dict[str, Any]:
         out["tags"][key] = t
         dedup: dict[str, dict[str, Any]] = {}
         for x in sorted(r, key=lambda x: x.get("filed") or ""):
-            dedup[x["end"]] = {"end": x["end"], "value": x["value"], "unit": x["unit"]}
+            dedup[x["end"]] = {"end": x["end"], "value": x["value"], "unit": x["unit"], **({"filed": x["filed"]} if x.get("filed") else {})}
         series[key] = [dedup[k] for k in sorted(dedup)]
     dei = facts.get("facts", {}).get("dei", {}).get("EntityCommonStockSharesOutstanding", {})
     series["shares_outstanding_dei"] = group_dei_shares(dei)[-8:]
@@ -827,6 +828,8 @@ def summarize_sec(series: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
     if sh:
         s["shares_outstanding"] = sh[-1]["value"]
         s["shares_as_of"] = sh[-1]["end"]
+        if sh[-1].get("filed"):
+            s["shares_filed"] = sh[-1]["filed"]
         if sh[-1].get("classes"):
             s["share_classes_summed"] = sh[-1]["classes"]
         if len(sh) >= 5 and sh[-5]["value"]:
@@ -920,6 +923,14 @@ def fx_rate(fetcher: Fetcher, ccy: str, to: str = "USD") -> dict[str, Any]:
 
 
 # ---------------------------------------------------------------- snapshot
+
+def _available_at(filed: Any, retrieved: str) -> tuple[str, str]:
+    """When a figure became public: the SEC filing date when known, never the period end
+    (a quarter ending 31 Mar is usually filed weeks later).  Unknown -> retrieval time."""
+    if filed:
+        return day_iso(str(filed)[:10]), "sec_filing_date"
+    return retrieved, "retrieved_at (filing date unknown; period_end is not the date the figure was public)"
+
 def build_evidence(snap: dict[str, Any]) -> list[dict[str, Any]]:
     """Lens-ready evidence entries (schemas/serenity-lens.schema.json#evidence)."""
     ev: list[dict[str, Any]] = []
@@ -934,8 +945,10 @@ def build_evidence(snap: dict[str, Any]) -> list[dict[str, Any]]:
         sec = f["provider"] == "sec_companyfacts"
         if s.get("shares_as_of"):
             shares_src = s.get("shares_source_url") or f["source_url"]
+            avail, basis = _available_at(s.get("shares_filed") if sec else None, retrieved)
             ev.append({"evidence_id": "E-LIVE-SHARES", "title": f"Shares outstanding {s['shares_outstanding']:,.0f} as of {s['shares_as_of']} ({s.get('shares_source') or f['provider']})",
-                       "locator": shares_src, "published_at": day_iso(s["shares_as_of"]), "retrieved_at": retrieved,
+                       "locator": shares_src, "published_at": avail, "period_end": day_iso(s["shares_as_of"]),
+                       "available_basis": basis, "retrieved_at": retrieved,
                        "source_type": "filing" if shares_src == f["source_url"] and sec else "market_data"})
         rq = s.get("revenue_latest_quarter") or ((s.get("revenue_quarterly") or [None])[-1])
         if rq:
@@ -944,7 +957,8 @@ def build_evidence(snap: dict[str, Any]) -> list[dict[str, Any]]:
             gm = (s.get("gross_margin_quarterly") or [{}])[-1].get("pct")
             ev.append({"evidence_id": "E-LIVE-FIN", "title": (f"Latest quarterly revenue {rq['value']:,.0f} {s.get('reporting_currency') or ''} (period end {end}); "
                                                                f"TTM {s.get('revenue_ttm')}; YoY {s.get('revenue_yoy_pct')}%; GM {gm}%"),
-                       "locator": fin_src, "published_at": day_iso(end), "retrieved_at": retrieved,
+                       "locator": fin_src, **dict(zip(("published_at", "available_basis"), _available_at(rq.get("filed") if sec else None, retrieved))),
+                       "period_end": day_iso(end), "retrieved_at": retrieved,
                        "source_type": "filing" if fin_src == f["source_url"] and sec else "market_data"})
     for i, (ccy, r) in enumerate(sorted(((snap.get("usd_view") or {}).get("rates") or {}).items()), 1):
         if r.get("source_url") and r.get("as_of"):
@@ -1045,9 +1059,39 @@ def market_current(snap: dict[str, Any]) -> dict[str, Any] | None:
            "basis": "price x latest reported shares (calculated, not provider market cap)"}
     if withheld:
         out["market_cap_withheld"] = withheld
+    if not withheld:
+        _ah_lines(snap, out, notes)
     if notes:
         out["notes"] = notes
     return out
+
+
+def _ah_lines(snap: dict[str, Any], out: dict[str, Any], notes: list[str]) -> None:
+    """A+H issuers: total shares x ONE line's price mis-states the company (BYD 2026-10: H line -16%, A line +11%).
+    Market cap = A shares x A price + H shares x H price (converted to this quote's currency);
+    shares_outstanding becomes this line's equivalent share count (market cap / price)."""
+    ah = (snap.get("exchange") or {}).get("ah_premium") or {}
+    total, h_sh = out.get("shares_outstanding"), ah.get("h_shares_exchange")
+    if ah.get("status", "ok") != "ok" or not total or not h_sh or not ah.get("hkdcny") or not 0 < float(h_sh) < float(total):
+        return
+    a_sh, fx, price = float(total) - float(h_sh), float(ah["hkdcny"]), float(out["price"])
+    sym = (snap.get("subject") or {}).get("symbol", "")
+    if out["currency"] == "HKD" and sym == ah.get("h_symbol"):
+        cap = float(h_sh) * price + a_sh * float(ah["a_price_cny"]) / fx
+    elif out["currency"] == "CNY" and sym == ah.get("a_symbol"):
+        cap = a_sh * price + float(h_sh) * float(ah["h_price_hkd"]) * fx
+    else:
+        return
+    out["ah_lines"] = {"a_shares": round(a_sh), "h_shares": round(float(h_sh)), "a_price_cny": ah["a_price_cny"],
+                       "h_price_hkd": ah["h_price_hkd"], "hkdcny": fx, "total_shares": round(float(total)),
+                       "market_cap_if_all_shares_at_this_price": round(price * float(total), 2)}
+    out["market_cap"] = round(cap, 2)
+    out["shares_outstanding"] = round(cap / price, 2)
+    out["shares_basis"] = "A+H: line-equivalent shares = (A shares x A price + H shares x H price) / this line's price"
+    out["basis"] = "A shares x A price + H shares x H price (Tencent quotes, HKDCNY), in this line's currency — not total shares x one price"
+    diff = (price * float(total) / cap - 1) * 100
+    notes.append(f"A+H: {a_sh:,.0f} A shares at {ah['a_price_cny']} CNY + {float(h_sh):,.0f} H shares at {ah['h_price_hkd']} HKD; "
+                 f"total shares x this line's price alone would be {diff:+.1f}% off")
 
 
 def usd_view(snap: dict[str, Any], fetcher: Fetcher) -> dict[str, Any]:
@@ -1157,8 +1201,8 @@ def quality_warnings(snap: dict[str, Any]) -> list[str]:
         w += _cnhk().warnings(lf, now)
     if (xch.get("ah_premium") or {}).get("status") == "ok":
         ah = xch["ah_premium"]
-        w.append(f"dual_listed_a_h: {ah['a_symbol']} / {ah['h_symbol']} premium {ah['premium_pct']}% — value each line at its own price; "
-                 "per-share ratios use total shares")
+        w.append(f"dual_listed_a_h: {ah['a_symbol']} / {ah['h_symbol']} premium {ah['premium_pct']}% — market cap = A shares x A price + H shares x H price "
+                 "(market_current.ah_lines); per-share ratios use total shares")
     if s.get("shares_source") == "tencent_quote_total_shares":
         w.append("shares_from_exchange_quote: total shares from Tencent quote (all share lines); confirm A/H split before valuing one line")
     for key in ("quote", "fundamentals", "filings", "news"):
@@ -1244,6 +1288,8 @@ def ah_premium(fetcher: Fetcher, subject_quote: dict[str, Any], other_quote: dic
     prem = (a["price"] / (h["price"] * hkdcny) - 1) * 100
     return {"a_symbol": a_sym, "h_symbol": h_sym, "a_price_cny": a["price"], "h_price_hkd": h["price"],
             "hkdcny": round(hkdcny, 6), "premium_pct": round(prem, 2), "a_as_of": a.get("price_as_of"), "h_as_of": h.get("price_as_of"),
+            **({"h_shares_exchange": h["line_shares"]} if h.get("line_shares") else {}),
+            **({"total_shares_exchange": h.get("shares_total") or a.get("shares_total")} if (h.get("shares_total") or a.get("shares_total")) else {}),
             "source_urls": [a.get("source_url"), h.get("source_url"), hkd.get("source_url"), cny.get("source_url")],
             "basis": "Tencent quotes for both lines; FX = HKDUSD / CNYUSD (Yahoo). Positive = A-share line richer."}
 
@@ -1641,7 +1687,12 @@ def brief_markdown(pack_result: dict[str, Any], snap: dict[str, Any], health: di
              f"FCF 跑道 {s.get('runway_quarters_at_avg_fcf_burn', '—')} 季。")
     mc = snap.get("market_current") or {}
     if mc.get("market_cap") is not None:
-        L.append(f"- 计算市值：{_fmt_big(mc['market_cap'])} {mc['currency']}（{mc['price']} × {mc['shares_outstanding']:,.0f} 股，股本截至 {mc['shares_as_of'][:10]}）。")
+        if mc.get("ah_lines"):
+            al = mc["ah_lines"]
+            L.append(f"- 计算市值：{_fmt_big(mc['market_cap'])} {mc['currency']}（A股 {al['a_shares']:,} 股 × {al['a_price_cny']} 元 + H股 {al['h_shares']:,} 股 × {al['h_price_hkd']} 港元，"
+                     f"按 HKDCNY {al['hkdcny']} 换算；股本截至 {mc['shares_as_of'][:10]}）。A+H 公司不能用总股本 × 单边股价。")
+        else:
+            L.append(f"- 计算市值：{_fmt_big(mc['market_cap'])} {mc['currency']}（{mc['price']} × {mc['shares_outstanding']:,.0f} 股，股本截至 {mc['shares_as_of'][:10]}）。")
     elif mc.get("market_cap_withheld"):
         L.append(f"- ⚠️ 市值未计算：{mc['market_cap_withheld']}")
     for n in mc.get("notes", []):
@@ -1696,6 +1747,9 @@ def brief_markdown(pack_result: dict[str, Any], snap: dict[str, Any], health: di
         L.append(f"- 未收录于卡点图谱：{pos.get('note')}")
     for p in pos.get("positions", []):
         L.append(f"- 链 `{p['chain_id']}` / 节点 `{p['node_id']}`（{p['node']}，状态 {p['status']}，类型 {p['kind']}）；同层：{', '.join(p['peers']) or '—'}")
+        if p.get("status_checked"):
+            due = "，**已超过 180 天，先重新核验再使用**" if p.get("status_review_due") else "；超过 180 天需重新核验"
+            L.append(f"  - 图谱状态最后核验：{p['status_checked']}（{p.get('status_age_days')} 天前{due}）。图谱状态只是线索，用本次实时数据主动质疑它。")
         for c in p["next_hop_candidates"][:5]:
             L.append(f"  - 下一跳 `{c['ticker']}` {c['name']} — {c['node']}（{c['status']}，依据 {c['basis']}）")
     L += ["", "## 5. Serenity 公开言论记忆（时点）", ""]
@@ -1830,8 +1884,12 @@ def draft_lens(snap: dict[str, Any], scan: dict[str, Any], position: dict[str, A
            "evidence_ids": [e for e in ("E-LIVE-QUOTE", "E-LIVE-SHARES") if any(x["evidence_id"] == e for x in evidence)]}
     cash = (s.get("cash_and_st_investments") or {}).get("value")
     debt = (s.get("total_debt_latest") or {}).get("value")
-    if cash is not None:
-        cur["net_debt"] = float((debt or 0) - cash)
+    net_debt_note = None
+    if cash is not None and debt is not None:
+        cur["net_debt"] = float(debt - cash)
+    elif cash is not None or debt is not None:  # never treat a missing debt figure as zero debt
+        net_debt_note = ("net_debt_unknown: " + ("total debt" if debt is None else "cash") +
+                         " not found in the financial data; scenarios use net debt 0 until you set valuation.current.net_debt from the balance sheet")
     if mc.get("market_cap") is None:
         cur["market_cap"] = T + (mc.get("market_cap_withheld") or "market cap unavailable")
     scen = [{"name": n, "label": "hypothesis", "horizon_years": 2,
@@ -1853,7 +1911,7 @@ def draft_lens(snap: dict[str, Any], scan: dict[str, Any], position: dict[str, A
     if not red_flags:
         red_flags.append({"flag": "dilution_and_financing", "severity": "watch", "triggered": "unknown",
                           "detail": T + "核实股本、货架注册与融资", "evidence_ids": []})
-    warnings_addressed = [{"warning": w, "handling": T + "说明如何处理"} for w in snap.get("warnings", [])]
+    warnings_addressed = [{"warning": w, "handling": T + "说明如何处理"} for w in snap.get("warnings", []) + ([net_debt_note] if net_debt_note else [])]
     mem = dict(memory)
     mem.setdefault("note", "")
     return {

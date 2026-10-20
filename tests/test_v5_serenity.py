@@ -230,6 +230,25 @@ class ForwardReturnsTest(unittest.TestCase):
         summary = forward_returns.summarize([nxt, {"status": "no_price_data"}])
         self.assertEqual((summary["signals"], summary["evaluated"]), (2, 1))
 
+    def test_adverse_move_vs_peak_to_trough_drawdown(self):
+        # v8.2: +50% then -40% from the peak: only -10% vs entry (adverse) but a -40% drawdown
+        d = date(2026, 1, 1)
+        closes = [100, 100, 150, 90, 120]
+        p = [(d + timedelta(days=i), c, c, float(c)) for i, c in enumerate(closes)]
+        out = forward_returns.evaluate({"signal_id": "s", "ticker": "T", "created_at": "2026-01-01"}, p)
+        self.assertEqual(out["entry_close"], 100.0)
+        self.assertAlmostEqual(out["max_runup_pct"], 50.0)
+        self.assertAlmostEqual(out["max_adverse_pct"], -10.0)
+        self.assertAlmostEqual(out["max_drawdown_pct"], -40.0)
+
+    def test_high_low_scaled_to_adjusted_close(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            f = Path(tmp) / "T.csv"
+            f.write_text("date,open,high,low,close,adj_close\n2026-01-02,10,11,9,10,5\n", encoding="utf-8")
+            (_d, high, low, close), = forward_returns.load_prices(f)
+        self.assertEqual((high, low, close), (5.5, 4.5, 5.0))
+
     def test_missing_entry_bar(self):
         sig = {"signal_id": "s2", "ticker": "T", "created_at": "2027-01-01T00:00:00Z"}
         self.assertEqual(forward_returns.evaluate(sig, self.prices())["status"], "no_entry_bar")

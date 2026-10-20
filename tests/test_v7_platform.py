@@ -70,6 +70,10 @@ class VenueParsingTests(unittest.TestCase):
         raw = tencent_bytes({1: "腾讯控股", 3: "600.5", 4: "598", 30: "2026/10/16 16:08:00", 45: "55000", 70: "9100000000", 75: "HKD"})
         q = venues.parse_tencent(raw, "0700.HK", "u")
         self.assertEqual((q["currency"], q["shares_total"], q["pb"]), ("HKD", 9.1e9, None))
+        # A+H / dual-class: field 69 = all issued shares, field 70 = the HK-listed line only (BYD 2026-10)
+        raw = tencent_bytes({1: "比亚迪股份", 3: "73.85", 30: "2026/10/20 16:08:00", 69: "9117197565", 70: "3683400000", 75: "HKD"})
+        q = venues.parse_tencent(raw, "1211.HK", "u")
+        self.assertEqual((q["shares_total"], q["line_shares"]), (9117197565, 3683400000))
         with self.assertRaises(KeyError):
             venues.parse_tencent(b'v_pv_none_match="1";', "0700.HK", "u")
 

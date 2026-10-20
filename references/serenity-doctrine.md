@@ -309,6 +309,8 @@ v5 的 PB-BIAS-01..04 仍需检查。扩展：
 
 使用方法：每条 `falsification` 尽量指向一个 PB-EXIT 编号（多数是 01/02/03/04/10/11/12）；`rerate_triggers` 中的兑现类事件可引用 PB-EXIT-07 或 PB-EXIT-14；遇到 PB-EXIT-09 列出的噪音，报告应明确写“不构成失效”。
 
+复盘时（本项目补充）：论点失效或结果不及预期，先用失败归因代码定性——`F-DEMAND` 需求判断错、`F-NOBOTTLENECK` 瓶颈不存在、`F-QUAL` 认证/订单未兑现、`F-MONETIZE` 没变现到报表、`F-PRICED` 已提前定价、`F-DILUTION` 融资稀释；`X-MACRO`（环境压缩）与 `X-OPEN`（未到验证期）不算论点失败。定义与示例见 `references/serenity-case-library.md`“失败归因代码”。
+
 ## 附：任意股票的 Doctrine 八步
 
 1. **拉实时数据**：`python3 connectors/live_data.py snapshot <TICKER>`；读 `warnings`（PB-DATA-01）。

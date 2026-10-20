@@ -22,6 +22,7 @@ import argparse
 import json
 import re
 import sys
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -32,6 +33,7 @@ MD_PATH = ROOT / "references" / "chokepoint-atlas.md"
 STATUSES = {"now", "filling", "coming", "monopoly_not_bottleneck", "diluted_exposure", "resolving", "not_bottleneck", "unknown"}
 KINDS = {"material", "demand", "none"}
 BASES = {"serenity_lead", "author_lead", "industry_knowledge", "inferred"}  # author_lead = legacy alias
+STATUS_REVIEW_DAYS = 180  # v8.2: atlas statuses older than this must be re-verified before use
 STATUS_RANK = {"now": 0, "filling": 1, "coming": 2, "monopoly_not_bottleneck": 3, "diluted_exposure": 4,
                "resolving": 5, "unknown": 6, "not_bottleneck": 7}
 
@@ -78,6 +80,11 @@ def validate(atlas: dict[str, Any]) -> list[str]:
             seen.add(nid)
             if node.get("status") not in STATUSES:
                 errors.append(f"atlas:bad_status:{nid}")
+            checked = node.get("status_checked")
+            if checked is not None and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(checked)):
+                errors.append(f"atlas:bad_status_checked:{nid}")
+            elif checked and atlas.get("as_of") and str(checked) > str(atlas["as_of"]):
+                errors.append(f"atlas:status_checked_after_as_of:{nid}")
             if node.get("kind") not in KINDS:
                 errors.append(f"atlas:bad_kind:{nid}")
             if codes and node.get("taxonomy") not in codes:
@@ -124,7 +131,18 @@ def upstream_tree(nodes: dict[str, dict[str, Any]], nid: str, depth: int = 0) ->
     return out
 
 
-def lookup_ticker(atlas: dict[str, Any], ticker: str) -> dict[str, Any]:
+def status_freshness(atlas: dict[str, Any], node: dict[str, Any], today: date | None = None) -> dict[str, Any]:
+    """When the node's status was last checked (node.status_checked, else atlas.as_of) and whether it is due."""
+    checked = str(node.get("status_checked") or atlas.get("as_of") or "")[:10]
+    today = today or datetime.now(timezone.utc).date()
+    try:
+        age = (today - date.fromisoformat(checked)).days
+    except ValueError:
+        return {"status_checked": None, "status_review_due": True}
+    return {"status_checked": checked, "status_age_days": age, "status_review_due": age > STATUS_REVIEW_DAYS}
+
+
+def lookup_ticker(atlas: dict[str, Any], ticker: str, today: date | None = None) -> dict[str, Any]:
     nodes = index(atlas)
     t = norm(ticker)
     base = t.split(".")[0]
@@ -149,12 +167,14 @@ def lookup_ticker(atlas: dict[str, Any], ticker: str) -> dict[str, Any]:
                 hits.append({
                     "chain_id": node["chain_id"], "chain": node["chain_name"], "node_id": nid, "node": node["name"],
                     "taxonomy": node["taxonomy"], "status": node["status"], "kind": node["kind"],
+                    **status_freshness(atlas, node, today),
                     "archetypes": node.get("archetypes", []), "holder": h,
                     "peers": [x["ticker"] for x in node["holders"] if norm(x["ticker"]) != ht],
                     "upstream_path": tree, "downstream": downstream, "next_hop_candidates": next_hop,
                 })
     return {"ticker": ticker, "atlas_as_of": atlas["as_of"], "found": bool(hits), "positions": hits,
-            "note": "Atlas statuses are research leads as of atlas_as_of; verify with live data." if hits else
+            "note": (f"Atlas statuses are research leads as of status_checked; re-verify any status older than "
+                     f"{STATUS_REVIEW_DAYS} days (status_review_due) and challenge every status with live data.") if hits else
                     "Not in atlas: map the chain manually (PB-HUNT-08) and consider adding a node."}
 
 
@@ -177,7 +197,7 @@ STATUS_ZH = {"now": "正在卡", "filling": "正在被订满", "coming": "即将
 def render_md(atlas: dict[str, Any]) -> str:
     lines = ["# 卡点地图（Chokepoint Atlas）", "",
              f"> 由 `scripts/atlas.py render` 从 `assets/chokepoint-atlas.json` 生成，请勿手改。截至 {atlas['as_of']}。{atlas['disclaimer']}",
-             "", "状态是档案期的研究判断（见 `references/serenity-doctrine.md` §2），使用前用实时数据复核。", ""]
+             "", "状态是档案期的研究判断（见 `references/serenity-doctrine.md` §2），使用前用实时数据复核；节点状态的核验日期默认等于上面的截至日期，超过 180 天必须重新核验（`atlas.py ticker` 会给出 `status_review_due`）。", ""]
     for chain in atlas["chains"]:
         lines += [f"## {chain['name']}（`{chain['chain_id']}`）", "", f"需求驱动：{chain.get('demand_driver', '—')}", "",
                   "| 节点 | 编码 | 状态 | 上游 | 原型 | 持有者 |", "|---|---|---|---|---|---|"]

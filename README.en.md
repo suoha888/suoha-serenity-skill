@@ -7,7 +7,7 @@
   <br><a href="README.md">中文</a> | English
 </p>
 
-**The most complete Serenity chokepoint-theory research Skill.** Pick any A-share, Hong Kong or US stock: it maps supply-chain chokepoints, pulls official filings and flags financial red flags.
+**I turned Serenity's research method into an AI Skill**: give it any A-share, Hong Kong or US ticker and it tells you whether the company is a real chokepoint, whether it is worth digging into, how much valuation room is left, and what would show you got it wrong.
 
 ## See it once: researching AMD
 
