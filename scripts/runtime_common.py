@@ -16,8 +16,22 @@ from typing import Any, Iterable
 
 
 RUNTIME_SCHEMA_VERSION = "4"
-SKILL_VERSION = "8.2.1"
+SKILL_VERSION = "8.2.2"
 RUNTIME_MANIFEST_NAME = "BUILD-MANIFEST.json"
+# Files the skill itself creates when a user runs it inside the installed
+# directory (live-data cache, research workspaces, Python bytecode).  They are
+# never part of the manifest, never block an update, and work/ + .cache/ are
+# carried over into the new runtime so user reports survive a reinstall.
+USER_PRESERVED_DIRS = ("work", ".cache")
+
+
+def is_user_artifact(relative: str) -> bool:
+    parts = relative.replace("\\", "/").split("/")
+    if not parts or not parts[0]:
+        return False
+    if parts[0] in USER_PRESERVED_DIRS:
+        return True
+    return "__pycache__" in parts or parts[-1].endswith((".pyc", ".pyo"))
 
 # Documentation and fixtures are public-safe source artifacts.  Historical raw
 # archives, derived records, local indexes, and private overlays are never in

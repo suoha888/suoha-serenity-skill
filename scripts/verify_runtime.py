@@ -13,6 +13,7 @@ from runtime_common import (
     RUNTIME_MANIFEST_NAME,
     build_manifest,
     file_manifest,
+    is_user_artifact,
     parse_frontmatter_name,
     relative_runtime_paths,
     sha256_file,
@@ -55,7 +56,7 @@ def verify_runtime(source_root: Path, runtime_root: Path) -> dict:
             if not path.is_file():
                 continue
             relative = path.relative_to(runtime_root).as_posix()
-            if relative not in allowed:
+            if relative not in allowed and not is_user_artifact(relative):
                 errors.append(f"runtime_unmanaged_file:{relative}")
 
     expected_name = parse_frontmatter_name(source_root / "SKILL.md")

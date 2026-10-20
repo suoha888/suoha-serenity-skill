@@ -21,6 +21,8 @@ from runtime_common import (
     RUNTIME_MANIFEST_NAME,
     RUNTIME_SCHEMA_VERSION,
     RUNTIME_FILES,
+    USER_PRESERVED_DIRS,
+    is_user_artifact,
     build_manifest,
     file_manifest,
     relative_runtime_paths,
@@ -71,23 +73,42 @@ def _validate_replace_target(output: Path, expected_name: str) -> None:
     expected_paths = set(files) | {RUNTIME_MANIFEST_NAME}
     actual_paths: set[str] = set()
     for path in output.rglob("*"):
+        relative = path.relative_to(output).as_posix()
+        if is_user_artifact(relative):
+            continue
         if path.is_symlink():
             raise ValueError(f"refusing to replace a runtime containing a symlink: {path}")
         if path.is_file():
-            actual_paths.add(path.relative_to(output).as_posix())
+            actual_paths.add(relative)
     if actual_paths != expected_paths:
         unexpected = sorted(actual_paths - expected_paths)
         missing = sorted(expected_paths - actual_paths)
         raise ValueError(
             "refusing to replace a runtime whose file set differs from its manifest; "
-            f"unexpected={unexpected}, missing={missing}"
+            f"unexpected={unexpected}, missing={missing}. "
+            "安装目录里的技能文件被改动过：请先把该目录改名备份，再重新运行安装脚本。"
         )
     for relative in files:
         relative_path = Path(relative)
         if relative_path.is_absolute() or ".." in relative_path.parts:
             raise ValueError(f"runtime manifest contains an unsafe path: {relative}")
     if file_manifest(output, files) != files:
-        raise ValueError(f"refusing to replace a runtime with modified files: {output}")
+        raise ValueError(
+            f"refusing to replace a runtime with modified files: {output}. "
+            "安装目录里的技能文件被改动过：请先把该目录改名备份，再重新运行安装脚本。"
+        )
+
+
+def _carry_over_user_data(previous: Path, staging: Path) -> list[str]:
+    """Copy user-created work/ and .cache/ from the old runtime into the new one."""
+    carried: list[str] = []
+    for name in USER_PRESERVED_DIRS:
+        source = previous / name
+        if source.is_symlink() or not source.is_dir():
+            continue
+        shutil.copytree(source, staging / name, symlinks=True)
+        carried.append(name)
+    return carried
 
 
 def _backup_path(output: Path) -> Path:
@@ -169,6 +190,7 @@ def build_runtime(
             encoding="utf-8",
         )
         if output.exists():
+            manifest["preserved_user_data"] = _carry_over_user_data(output, staging)
             backup = _backup_path(output)
             output.rename(backup)
             manifest["replacement_backup"] = backup.as_posix()

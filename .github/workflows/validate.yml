@@ -114,7 +114,7 @@ jobs:
         working-directory: suoha-serenity-skill-main
         env:
           SUOHA_INSTALL_ROOT: ${{ runner.temp }}/home
-        run: ./install.sh all && python suoha.py doctor && cd "$SUOHA_INSTALL_ROOT/.claude/skills/suoha-serenity-skill" && python suoha.py doctor && python suoha.py resolve 腾讯
+        run: ./install.sh all && python suoha.py doctor && cd "$SUOHA_INSTALL_ROOT/.claude/skills/suoha-serenity-skill" && python suoha.py doctor && python suoha.py resolve 腾讯 && mkdir -p work/smoke && echo keep > work/smoke/report.md && cd "$GITHUB_WORKSPACE/suoha-serenity-skill-main" && ./install.sh all && test -f "$SUOHA_INSTALL_ROOT/.claude/skills/suoha-serenity-skill/work/smoke/report.md"
       - name: Install (PowerShell)
         if: runner.os == 'Windows'
         working-directory: suoha-serenity-skill-main
@@ -131,6 +131,12 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit 1 }
           python suoha.py resolve 腾讯
           if ($LASTEXITCODE -ne 0) { exit 1 }
+          New-Item -ItemType Directory -Force -Path work\smoke | Out-Null
+          Set-Content -Path work\smoke\report.md -Value keep
+          Set-Location "$env:GITHUB_WORKSPACE\suoha-serenity-skill-main"
+          .\install.ps1 -Target all
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          if (-not (Test-Path "$env:SUOHA_INSTALL_ROOT\.claude\skills\suoha-serenity-skill\work\smoke\report.md")) { exit 1 }
       - name: Unit tests
         working-directory: suoha-serenity-skill-main
         env:
