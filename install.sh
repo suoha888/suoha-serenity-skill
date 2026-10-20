@@ -34,19 +34,28 @@ target_dirs() {
   esac
 }
 
-"$PY" scripts/validate_skill.py . --strict >/dev/null
+run() {  # quiet on success, show the tool's own output on failure
+  local out
+  if ! out=$("$PY" "$@" 2>&1); then
+    echo "$out" | tail -20
+    echo "❌ 安装失败：$PY $*"
+    echo "   请把上面的输出贴到 https://github.com/suoha888/suoha-serenity-skill/issues"
+    exit 1
+  fi
+}
+run scripts/validate_skill.py . --strict --any-folder
 while IFS= read -r base; do
   mkdir -p "$base"
   dest="$base/$NAME"
   if [ -f "$dest/BUILD-MANIFEST.json" ]; then
-    "$PY" scripts/build_runtime.py --source . --output "$dest" --replace >/dev/null
+    run scripts/build_runtime.py --source . --output "$dest" --replace
   else
     if [ -e "$dest" ]; then
       bak="$dest.bak-$(date +%Y%m%d%H%M%S)"; mv "$dest" "$bak"; echo "ℹ️  旧目录已备份到 $bak"
     fi
-    "$PY" scripts/build_runtime.py --source . --output "$dest" >/dev/null
+    run scripts/build_runtime.py --source . --output "$dest"
   fi
-  "$PY" scripts/verify_runtime.py --source . --runtime "$dest" >/dev/null
+  run scripts/verify_runtime.py --source . --runtime "$dest"
   echo "✅ 已安装并校验：$dest"
 done < <(target_dirs "${1:-auto}")
 echo

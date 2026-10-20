@@ -93,3 +93,46 @@ jobs:
       - name: macOS install in isolated directory
         if: runner.os == 'macOS'
         run: SUOHA_INSTALL_ROOT="$RUNNER_TEMP/install smoke" ./install.sh
+
+  install-smoke:
+    # v8.2.0: what a new user does — fresh checkout (renamed like a ZIP download), install, doctor, unit tests
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.10", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: suoha-serenity-skill-main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install (bash)
+        if: runner.os != 'Windows'
+        working-directory: suoha-serenity-skill-main
+        env:
+          SUOHA_INSTALL_ROOT: ${{ runner.temp }}/home
+        run: ./install.sh all && python suoha.py doctor && cd "$SUOHA_INSTALL_ROOT/.claude/skills/suoha-serenity-skill" && python suoha.py doctor && python suoha.py resolve 腾讯
+      - name: Install (PowerShell)
+        if: runner.os == 'Windows'
+        working-directory: suoha-serenity-skill-main
+        shell: pwsh
+        env:
+          SUOHA_INSTALL_ROOT: ${{ runner.temp }}\home
+        run: |
+          .\install.ps1 -Target all
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          python suoha.py doctor
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          Set-Location "$env:SUOHA_INSTALL_ROOT\.claude\skills\suoha-serenity-skill"
+          python suoha.py doctor
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          python suoha.py resolve 腾讯
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+      - name: Unit tests
+        working-directory: suoha-serenity-skill-main
+        env:
+          PYTHONUTF8: "1"
+        run: python -m unittest discover -s tests

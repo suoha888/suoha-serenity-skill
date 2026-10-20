@@ -13,7 +13,16 @@ foreach ($c in @("py -3", "python", "python3")) {
   } catch {}
 }
 if (-not $Py) { Write-Host "❌ 需要 Python 3.10+（https://www.python.org/downloads/）"; exit 1 }
-function Invoke-Py { param([string[]]$Args2) & $Py[0] @($Py[1..9] | Where-Object { $_ }) @Args2; if ($LASTEXITCODE -ne 0) { throw "失败：$($Args2 -join ' ')" } }
+function Invoke-Py {
+  param([string[]]$Args2)
+  $out = & $Py[0] @($Py[1..9] | Where-Object { $_ }) @Args2 2>&1
+  if ($LASTEXITCODE -ne 0) {
+    $out | Select-Object -Last 20 | ForEach-Object { Write-Host $_ }
+    Write-Host "❌ 安装失败：$($Args2 -join ' ')"
+    Write-Host "   请把上面的输出贴到 https://github.com/suoha888/suoha-serenity-skill/issues"
+    exit 1
+  }
+}
 
 $H = if ($env:SUOHA_INSTALL_ROOT) { $env:SUOHA_INSTALL_ROOT } else { $HOME }
 $bases = switch ($Target) {
@@ -28,17 +37,17 @@ $bases = switch ($Target) {
 }
 $env:PYTHONIOENCODING = "utf-8"
 $env:PYTHONUTF8 = "1"
-Invoke-Py @("scripts/validate_skill.py", ".", "--strict") | Out-Null
+Invoke-Py @("scripts/validate_skill.py", ".", "--strict", "--any-folder")
 foreach ($base in $bases) {
   New-Item -ItemType Directory -Force -Path $base | Out-Null
   $dest = Join-Path $base $Name
   if (Test-Path (Join-Path $dest "BUILD-MANIFEST.json")) {
-    Invoke-Py @("scripts/build_runtime.py", "--source", ".", "--output", $dest, "--replace") | Out-Null
+    Invoke-Py @("scripts/build_runtime.py", "--source", ".", "--output", $dest, "--replace")
   } else {
     if (Test-Path $dest) { $bak = "$dest.bak-$(Get-Date -Format yyyyMMddHHmmss)"; Move-Item $dest $bak; Write-Host "ℹ️  旧目录已备份到 $bak" }
-    Invoke-Py @("scripts/build_runtime.py", "--source", ".", "--output", $dest) | Out-Null
+    Invoke-Py @("scripts/build_runtime.py", "--source", ".", "--output", $dest)
   }
-  Invoke-Py @("scripts/verify_runtime.py", "--source", ".", "--runtime", $dest) | Out-Null
+  Invoke-Py @("scripts/verify_runtime.py", "--source", ".", "--runtime", $dest)
   Write-Host "✅ 已安装并校验：$dest"
 }
 Write-Host ""

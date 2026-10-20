@@ -26,6 +26,8 @@ git clone https://github.com/suoha888/suoha-serenity-skill.git && cd suoha-seren
 git clone https://github.com/suoha888/suoha-serenity-skill.git; cd suoha-serenity-skill; .\install.ps1
 ~~~
 
+没装 Git：在 GitHub 页面点 **Code → Download ZIP**，解压后在该文件夹里运行同样的安装命令（文件夹叫 `suoha-serenity-skill-main` 也没关系）。
+
 指定安装位置：`./install.sh claude|codex|agents|all`，Windows 用 `.\install.ps1 -Target all`。
 
 **手动安装**（PowerShell 执行策略拦截脚本时使用，不必关闭安全策略）：
@@ -106,6 +108,6 @@ python suoha.py exchange 300308.SZ        # 交易所原生数据：公告、旗
 
 本项目由 X 博主 **梭哈.AI**（[@suoha_AI](https://x.com/suoha_AI)）设计和维护。
 
-研究方法提炼自 Serenity 公开发布的推文，只引用帖子编号，不含推文原文。报告由框架生成，**不代表 Serenity 本人观点，也不构成投资建议**。
+本项目为非官方作品，与 Serenity 本人没有隶属或背书关系。研究方法提炼自 Serenity 公开发布的推文，只引用帖子编号，不含推文原文。报告由框架生成，**不代表 Serenity 本人观点，也不构成投资建议**。
 
 更多：[数据政策](DATA_POLICY.md) · [第三方声明](THIRD_PARTY_NOTICES.md) · [架构说明](ARCHITECTURE.md) · [更新日志](CHANGELOG.md) · License：[MIT](../LICENSE)

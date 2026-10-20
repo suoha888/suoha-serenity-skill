@@ -112,7 +112,7 @@ def parse_frontmatter(text: str) -> dict[str, str]:
     return fields
 
 
-def validate(root: Path, strict: bool = False) -> list[str]:
+def validate(root: Path, strict: bool = False, any_folder: bool = False) -> list[str]:
     root = root.resolve()
     errors: list[str] = []
     skill_path = root / "SKILL.md"
@@ -128,7 +128,7 @@ def validate(root: Path, strict: bool = False) -> list[str]:
         errors.append(f"frontmatter name {name!r}: only a-z, 0-9 and single hyphens allowed")
     if len(name) > MAX_NAME_LEN:
         errors.append(f"frontmatter name longer than {MAX_NAME_LEN} chars")
-    if root.name != name:
+    if root.name != name and not any_folder:  # installers: a ZIP download unpacks to <name>-main
         errors.append(f"folder {root.name!r} differs from frontmatter name {name!r}")
     if not description:
         errors.append("frontmatter description is empty")
@@ -192,8 +192,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", nargs="?", type=Path, default=Path.cwd())
     parser.add_argument("--strict", action="store_true")
+    parser.add_argument("--any-folder", action="store_true",
+                        help="skip the folder-name check (source checkouts such as a ZIP download named <name>-main)")
     args = parser.parse_args()
-    errors = validate(args.root, strict=args.strict)
+    errors = validate(args.root, strict=args.strict, any_folder=args.any_folder)
     if errors:
         for error in errors:
             print(f"ERROR: {error}")

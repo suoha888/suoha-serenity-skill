@@ -10,7 +10,7 @@ English: Research workflow and financial screens, not trading or guaranteed retu
 
 需要 Git、Python 3.10+ 和可联网环境；核心功能仅用 Python 标准库，不需要 API Key，也不需要 OPENAI_API_KEY。AI 客户端本身的账户或订阅由客户端决定。日本 EDINET / 韩国 DART 的扩展接口可选配免费 key；SEC_USER_AGENT 是建议提供的联系标识，不是 API Key。Windows 没有 IANA 数据时，对 1992 年起的受支持亚洲市场使用固定时差；更早的历史时间需要系统时区数据。
 
-安装方式见 [首页](../README.md#安装3-步)。PowerShell 执行策略阻止脚本时，可使用 [使用手册](GUIDE.md#安装) 的 Python 手动安装，不必关闭安全策略。更新使用 git pull --rebase 后重新安装；遇到本地改动先备份，不要强制覆盖。
+安装方式见 [首页](../README.md#3-步开始用)。PowerShell 执行策略阻止脚本时，可使用 [使用手册](GUIDE.md#安装) 的 Python 手动安装，不必关闭安全策略。更新使用 git pull --rebase 后重新安装；遇到本地改动先备份，不要强制覆盖。
 
 English: Git and Python 3.10+, standard library only. No API key for core features.
 

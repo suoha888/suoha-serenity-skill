@@ -35,7 +35,7 @@ git clone https://github.com/suoha888/suoha-serenity-skill.git; cd suoha-serenit
 
 **③ 直接说一句话**：`帮我研究股票：AMD（美股）`（如果 AI 没自动用上，就在前面加“用 suoha-serenity-skill”）
 
-Windows 被拦截或想手动安装，见 [使用手册 · 安装](docs/GUIDE.md#安装)。
+没装 Git：在本页点 **Code → Download ZIP**，解压后在该文件夹里运行 `./install.sh`（Windows 运行 `.\install.ps1`）。Windows 被拦截或想手动安装，见 [使用手册 · 安装](docs/GUIDE.md#安装)。
 
 ## 怎么用
 
@@ -76,7 +76,7 @@ python suoha.py resolve 腾讯      # 不知道代码时先查代码
 - **财务体检**：按公司类型（银行、保险、券商、地产、一般企业）逐项检查，每项附公式和阈值：✅ 正常、👀 留意、🚩 红旗。
 - **学理论**：从 7,153 条公开推文提炼出 14 条定律、19 章理论（含“论点兑现与失效”）、35+ 历史案例和结果回看，每条标注出处帖子编号。
 - **卡点地图**：10 条产业链、46 个节点（含 AI 算力租赁、太空），输入股票代码即可看到它在链上的位置、上游和同层公司。
-- **数字可信**：报告里的数字全部由脚本复算，证据缺失或过期会被拦下；200+ 自动测试。
+- **数字可复算**：报告里的数字全部由脚本复算，证据缺失或过期会被拦下；200+ 自动测试。
 
 ## 更多
 
@@ -86,4 +86,4 @@ python suoha.py resolve 腾讯      # 不知道代码时先查代码
 
 由 **梭哈.AI**（[@suoha_AI](https://x.com/suoha_AI)）设计和维护。
 
-研究方法提炼自 Serenity 公开发布的推文，只引用帖子编号，不含推文原文；报告由框架生成，不代表 Serenity 本人观点。本工具仅供研究，不构成投资建议。License：[MIT](LICENSE)。
+本项目为非官方作品，与 Serenity 本人没有隶属或背书关系。研究方法提炼自 Serenity 公开发布的推文，只引用帖子编号，不含推文原文；报告由框架生成，不代表 Serenity 本人观点。本工具仅供研究，不构成投资建议。License：[MIT](LICENSE)。

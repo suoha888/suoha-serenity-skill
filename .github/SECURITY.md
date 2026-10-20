@@ -29,10 +29,14 @@ relationship, customer, price, order, contract, market cap, or tool result.
 
 Before release, run:
 
-~~~powershell
+~~~bash
 python scripts/validate_skill.py . --strict
-python scripts/run_evals.py --root . --data-root ..\..\data\serenity --runtime-root ..\..\runtime\suoha-serenity-skill
+python -m unittest discover -s tests
+python scripts/serenity_update.py check
 ~~~
+
+(Maintainers with the private archive also run the n-gram and subscription-ID
+checks against it; those inputs never leave the private boundary.)
 
 Any subscription leak, severe temporal leak, invalid provenance, schema
 failure, network import in local data scripts, stale/unlabeled market data,
@@ -41,7 +45,9 @@ unsafe reflexivity label, or source/runtime drift blocks release.
 
 ## Reporting
 
-Report a security issue privately to the project maintainer before public
-disclosure. Include the affected path, impact, reproduction steps, and a
+Report a security issue privately before public disclosure: on GitHub open
+**Security → Report a vulnerability** for this repository (private
+vulnerability reporting), or message @suoha_AI on X and ask for a private
+channel. Do not open a public issue for a vulnerability. Include the affected path, impact, reproduction steps, and a
 minimal synthetic fixture when possible. Never include raw subscription data,
 credentials, or private archive contents in the report.
