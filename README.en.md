@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/brand/hero.png" alt="suoha-serenity skill" width="100%"></p>
+<p align="center"><img src="assets/brand/hero.png" alt="suoha-serenity skill: Serenity research method as an AI Skill" width="100%"></p>
 
 <p align="center">
   <a href="https://github.com/suoha888/suoha-serenity-skill/releases"><img src="https://img.shields.io/github/v/release/suoha888/suoha-serenity-skill?color=c2410c&label=release" alt="release"></a>
