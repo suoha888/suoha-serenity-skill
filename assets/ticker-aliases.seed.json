@@ -43,7 +43,8 @@
    "symbol": "AIXA.DE",
    "names": [
     "Aixtron",
-    "AIXTRON"
+    "AIXTRON",
+    "AIXA"
    ],
    "exchange": "XETRA"
   },
@@ -839,6 +840,57 @@
     "纳斯达克100ETF"
    ],
    "exchange": "NASDAQ"
+  },
+  {
+   "symbol": "RPI.L",
+   "names": [
+    "RPI",
+    "Raspberry Pi",
+    "Raspberry Pi Holdings",
+    "树莓派"
+   ],
+   "exchange": "London"
+  },
+  {
+   "symbol": "LPK.DE",
+   "names": [
+    "LPK",
+    "LPKF",
+    "LPKFF",
+    "LPKF Laser",
+    "LPKF Laser & Electronics"
+   ],
+   "exchange": "XETRA"
+  },
+  {
+   "symbol": "HPS-A.TO",
+   "names": [
+    "HPS.A",
+    "HPS-A",
+    "HPS/A",
+    "Hammond Power",
+    "Hammond Power Solutions"
+   ],
+   "exchange": "Toronto"
+  },
+  {
+   "symbol": "3006.TW",
+   "names": [
+    "ESMT",
+    "Elite Semiconductor",
+    "晶豪科"
+   ],
+   "exchange": "TWSE"
+  },
+  {
+   "symbol": "5714.T",
+   "names": [
+    "DOWA",
+    "Dowa",
+    "Dowa Holdings",
+    "同和控股"
+   ],
+   "exchange": "Tokyo"
   }
  ],
  "cross_listings": {

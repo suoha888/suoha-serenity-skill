@@ -159,7 +159,8 @@ def extract(snap: dict[str, Any]) -> dict[str, Any]:
         m.update(source=("sec_companyfacts" if f.get("provider") == "sec_companyfacts" else f.get("provider")),
                  currency=s.get("reporting_currency"),
                  period_end=(s.get("revenue_latest_quarter") or {}).get("end") or ((s.get("revenue_quarterly") or [{}])[-1]).get("as_of"),
-                 revenue_ttm=s.get("revenue_ttm"), revenue_ttm_basis="sum of last four quarters" if s.get("revenue_ttm") else None,
+                 revenue_ttm=s.get("revenue_ttm"),
+                 revenue_ttm_basis=(s.get("revenue_ttm_basis") or "sum of last four quarters") if s.get("revenue_ttm") else None,
                  revenue_yoy_pct=s.get("revenue_yoy_pct"),
                  revenue_ttm_yoy_pct=_pct(s.get("revenue_ttm"), s.get("revenue_ttm_year_ago")),
                  profit_yoy_pct=(_pct(s.get("net_income_ttm"), s.get("net_income_ttm_year_ago"))

@@ -193,7 +193,12 @@ FILING_TERM_PRESETS["all"] = {**FILING_TERM_PRESETS["contracts"], **FILING_TERM_
 YAHOO_TYPES = ("quarterlyOrdinarySharesNumber", "quarterlyTotalRevenue", "quarterlyGrossProfit",
                "quarterlyOperatingIncome", "quarterlyNetIncome", "quarterlyCashAndCashEquivalents",
                "quarterlyTotalDebt", "quarterlyOperatingCashFlow", "quarterlyCapitalExpenditure",
-               "annualTotalRevenue", "annualGrossProfit", "quarterlyMarketCap")
+               "annualTotalRevenue", "annualGrossProfit", "quarterlyMarketCap",
+               # v8.3: provider trailing-twelve-month totals and balance sheet, so
+               # companies with a quarter gap (common outside the US) still get TTM
+               "trailingTotalRevenue", "trailingNetIncome", "trailingOperatingCashFlow",
+               "trailingGrossProfit", "quarterlyTotalAssets", "quarterlyTotalLiabilitiesNetMinorityInterest",
+               "quarterlyStockholdersEquity", "quarterlyGoodwill")
 
 
 def utc_now() -> datetime:
@@ -462,7 +467,61 @@ def yahoo_fundamentals(fetcher: Fetcher, symbol: str, now: datetime | None = Non
             summary["gross_margin_change_yoy_pp"] = round(gm[-1]["pct"] - prior[-1]["pct"], 2)
         if rev_q and gm[-1]["as_of"] != rev_q[-1]["as_of"]:
             summary["gross_margin_period_lag"] = {"gross_margin_end": gm[-1]["as_of"], "revenue_end": rev_q[-1]["as_of"]}
+    _yahoo_trailing_and_balance(out, summary)
     return {"provider": "yahoo_timeseries", "summary": summary, "series": out, "source_url": url}
+
+
+def _year_ago(series: list[dict[str, Any]]) -> dict[str, Any] | None:
+    if len(series) < 2:
+        return None
+    last = series[-1]
+    for x in reversed(series[:-1]):
+        if 350 <= (_d(last) - _d(x)).days <= 380:
+            return x
+    return None
+
+
+def _yahoo_trailing_and_balance(out: dict[str, list[dict[str, Any]]], summary: dict[str, Any]) -> None:
+    """Fill TTM and balance-sheet fields from Yahoo's own trailing/balance series.
+
+    Quarterly sums stay preferred; the provider trailing total is used only when
+    the quarterly series has a gap, and is labelled so the basis is visible.
+    """
+    rev_q = out.get("quarterlyTotalRevenue") or []
+    latest_q = rev_q[-1]["as_of"] if rev_q else None
+    trailing = {
+        "revenue": out.get("trailingTotalRevenue") or [],
+        "net_income": out.get("trailingNetIncome") or [],
+        "operating_cash_flow": out.get("trailingOperatingCashFlow") or [],
+        "gross_profit": out.get("trailingGrossProfit") or [],
+    }
+    tr = trailing["revenue"]
+    if summary.get("revenue_ttm") is None and tr and (latest_q is None or tr[-1]["as_of"] >= latest_q):
+        summary["revenue_ttm"] = tr[-1]["value"]
+        summary["revenue_ttm_basis"] = f"provider trailing twelve months to {tr[-1]['as_of']}"
+        summary["revenue_ttm_note"] = "quarterly series has a gap; using provider trailing total"
+        summary.setdefault("reporting_currency", tr[-1].get("currency"))
+        prior = _year_ago(tr)
+        if prior:
+            summary["revenue_ttm_year_ago"] = prior["value"]
+    for key in ("net_income", "operating_cash_flow", "gross_profit"):
+        series = trailing[key]
+        if not series or (tr and series[-1]["as_of"] != tr[-1]["as_of"]):
+            continue
+        summary[f"{key}_ttm"] = series[-1]["value"]
+        summary[f"{key}_ttm_as_of"] = series[-1]["as_of"]
+        prior = _year_ago(series)
+        if prior:
+            summary[f"{key}_ttm_year_ago"] = prior["value"]
+    for key, typ in (("total_assets", "quarterlyTotalAssets"),
+                     ("total_liabilities", "quarterlyTotalLiabilitiesNetMinorityInterest"),
+                     ("equity", "quarterlyStockholdersEquity"), ("goodwill", "quarterlyGoodwill")):
+        series = out.get(typ) or []
+        if series:
+            summary[f"{key}_latest"] = {"value": series[-1]["value"], "end": series[-1]["as_of"]}
+            prior = _year_ago(series)
+            if prior:
+                summary[f"{key}_year_ago"] = {"value": prior["value"], "end": prior["as_of"]}
 
 
 def _d(x: dict[str, Any]) -> datetime:
