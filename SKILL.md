@@ -5,11 +5,11 @@ license: MIT
 metadata:
   runtime-requirements: "Agent Skills-compatible clients with local Python 3.10+. scripts/ are local-only and network-free; connectors/ is the only package that reads the network, using read-only HTTPS to a literal host allow-list. Form POST only to the CNINFO search endpoint. Core features need no API key; EDINET/DART keys are optional. Without connector access, use host web/search tools and preserve evidence and data-gap labels."
   author: 梭哈.AI (@suoha_AI)
-  version: "8.2.0"
+  version: "8.2.1"
   short-description: Chokepoint research with exchange-native live data and verified, source-cited reports
 ---
 
-# suoha-serenity skill v8.2.0
+# suoha-serenity skill v8.2.1
 
 Designed and maintained by 梭哈.AI (@suoha_AI on X).
 

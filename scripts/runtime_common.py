@@ -16,7 +16,7 @@ from typing import Any, Iterable
 
 
 RUNTIME_SCHEMA_VERSION = "4"
-SKILL_VERSION = "8.2.0"
+SKILL_VERSION = "8.2.1"
 RUNTIME_MANIFEST_NAME = "BUILD-MANIFEST.json"
 
 # Documentation and fixtures are public-safe source artifacts.  Historical raw

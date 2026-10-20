@@ -65,7 +65,7 @@ from typing import Any, Callable
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-CONNECTOR_VERSION = "8.2.0"
+CONNECTOR_VERSION = "8.2.1"
 ALLOWED_HOSTS = frozenset({
     "www.sec.gov",
     "data.sec.gov",
