@@ -55,8 +55,10 @@ def resolve(data: dict[str, Any], ticker: str) -> str | None:
     return hits[0] if len(hits) == 1 else None
 
 
-def entries(data: dict[str, Any], key: str, as_of: str | None = None) -> list[dict[str, Any]]:
-    return [e for e in data["tickers"].get(key, []) if not as_of or e["d"] <= as_of[:10]]
+def entries(data: dict[str, Any], key: str, as_of: str | None = None, incidental: bool = False) -> list[dict[str, Any]]:
+    """Point-in-time rows. Rows flagged x=1 only list this ticker next to the company the post is about
+    (e.g. a ten-name sector list); they are excluded unless incidental=True and never count as a stance."""
+    return [e for e in data["tickers"].get(key, []) if (not as_of or e["d"] <= as_of[:10]) and bool(e.get("x")) == incidental]
 
 
 def directional(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -78,9 +80,11 @@ def memory(ticker: str, as_of: str | None = None, data: dict[str, Any] | None = 
     through = min(data["archive_through"], as_of[:10]) if as_of else data["archive_through"]
     key = resolve(data, ticker)
     rows = entries(data, key, as_of) if key else []
+    side = len(entries(data, key, as_of, incidental=True)) if key else 0
     if not rows:
-        return {"status": "no_mentions", "source": "public_timeline", "archive_through": through,
-                "note": f"公开时间线里没有 {ticker.upper()} 的表态（覆盖至 {through}）。没提到不代表看空。"}
+        extra = f"另有 {side} 条只是和其他公司一起被列出，不算表态。" if side else ""
+        return {"status": "no_mentions", "source": "public_timeline", "archive_through": through, "incidental_count": side,
+                "note": f"公开时间线里没有关于 {ticker.upper()} 本身的表态（覆盖至 {through}）。{extra}没提到不代表看空。"}
     picked = changes(rows)
     picked = (picked[:4] + picked[-7:]) if len(picked) > 11 else picked
     cur = directional(rows)[-1]
@@ -90,6 +94,7 @@ def memory(ticker: str, as_of: str | None = None, data: dict[str, Any] | None = 
            "summary": e["c"][:160]} for e in picked[-12:]]
     return {"status": "available", "source": "public_timeline", "current_state": cur["s"],
             "first_mention": rows[0]["d"], "last_mention": rows[-1]["d"], "mention_count": len(rows),
+            "incidental_count": side,
             "timeline": tl, "archive_through": through,
             "note": ("公开帖转述（不是原话，不含订阅内容），帖子编号可在 x.com 查原文。立场 = 当时公开表达的看法，不是持仓记录；"
                      f"{through} 之后是否有新表态未知（沉默不等于卖出）。Serenity 的说法是线索，不是公司事实。")}
@@ -99,12 +104,14 @@ def dossier(ticker: str, as_of: str | None = None, recent: int = 10, data: dict[
     data = data or load()
     key = resolve(data, ticker)
     rows = entries(data, key, as_of) if key else []
+    side = len(entries(data, key, as_of, incidental=True)) if key else 0
     if not rows:
-        return f"# {ticker.upper()}：公开时间线无记录\n\n覆盖至 {data['archive_through']}。没提到不代表看空。\n"
+        extra = f"另有 {side} 条只是和其他公司一起被列出（不算表态）。" if side else ""
+        return f"# {ticker.upper()}：公开时间线无记录\n\n覆盖至 {data['archive_through']}。{extra}没提到不代表看空。\n"
     dist = collections.Counter(STANCE_ZH[e["s"]] for e in rows)
     ch = changes(rows)
     L = [f"# {key} · Serenity 公开言论档案（转述）", "",
-         f"- 公开条目 {len(rows)} 条 · {rows[0]['d']} → {rows[-1]['d']} · 最近的方向性表态：**{STANCE_ZH[directional(rows)[-1]['s']]}**（{directional(rows)[-1]['d']}）",
+         f"- 公开条目 {len(rows)} 条" + (f"（另有 {side} 条只是和其他公司一起被列出，不计入）" if side else "") + f" · {rows[0]['d']} → {rows[-1]['d']} · 最近的方向性表态：**{STANCE_ZH[directional(rows)[-1]['s']]}**（{directional(rows)[-1]['d']}）",
          "- 立场分布：" + "，".join(f"{k} {v}" for k, v in dist.most_common()),
          "- 方向性立场变化（不含中性/背景条目）：" + " → ".join(f"{e['d']} {STANCE_ZH[e['s']]}" for e in ch[-15:]) + (" …（只显示最近 15 次）" if len(ch) > 15 else ""), ""]
 
@@ -117,7 +124,7 @@ def dossier(ticker: str, as_of: str | None = None, recent: int = 10, data: dict[
         L.append("")
 
     block("核心论点（卡点/瓶颈/论点更新）", [e for e in rows if e["t"] in THESIS_TYPES], 8)
-    kpis = list(dict.fromkeys(e["kpi"] for e in rows if e.get("kpi")))
+    kpis = list(dict.fromkeys(e["kpi"] for e in rows if e.get("kpi") and len(e["kpi"]) >= 4 and not e["kpi"].startswith("各")))
     if kpis:
         L.extend(["## 他盯的 KPI", ""] + [f"- {k}" for k in kpis[-10:]] + [""])
     flips = list(dict.fromkeys(e["flip"] for e in rows if e.get("flip")))
@@ -148,7 +155,8 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(memory(a.ticker, a.as_of), ensure_ascii=False, indent=2))
     else:
         d = load()
-        for k, v in sorted(d["tickers"].items(), key=lambda kv: -len(kv[1]))[:a.top]:
+        main_rows = {k: [e for e in v if not e.get("x")] for k, v in d["tickers"].items()}
+        for k, v in sorted(((k, v) for k, v in main_rows.items() if v), key=lambda kv: -len(kv[1]))[:a.top]:
             print(f"{k}\t{len(v)}\t{v[0]['d']} → {v[-1]['d']}\t{STANCE_ZH[directional(v)[-1]['s']]}")
     return 0
 

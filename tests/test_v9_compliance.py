@@ -110,3 +110,23 @@ class PublicWordingTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class IncidentalMentionTest(unittest.TestCase):
+    def test_listed_alongside_never_counts_as_stance(self):
+        data = {"archive_through": "2026-02-01", "tickers": {"AAA": [
+            {"d": "2026-01-01", "s": "bull", "t": "thesis", "c": "关于 AAA 的论点", "p": [PUB]},
+            {"d": "2026-01-05", "s": "neutral", "t": "list", "c": "板块名单", "p": [SUB], "x": 1}]}}
+        mem = tl.memory("AAA", data=data)
+        self.assertEqual(mem["mention_count"], 1)
+        self.assertEqual(mem["incidental_count"], 1)
+        self.assertNotIn(SUB, json.dumps(mem))
+        self.assertIn("不计入", tl.dossier("AAA", data=data))
+        only = {"archive_through": "2026-02-01", "tickers": {"BBB": [data["tickers"]["AAA"][1]]}}
+        self.assertEqual(tl.memory("BBB", data=only)["status"], "no_mentions")
+
+    def test_shipped_incidental_rows_are_neutral_without_kpi(self):
+        timeline = json.loads((ROOT / "assets/serenity-public-timeline.json").read_text(encoding="utf-8"))
+        side = [e for v in timeline["tickers"].values() for e in v if e.get("x")]
+        self.assertTrue(side)
+        self.assertTrue(all(e["s"] == "neutral" and "kpi" not in e and "flip" not in e for e in side))
