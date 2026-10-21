@@ -32,7 +32,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-CHECK_VERSION = "company-check-v1"
+CHECK_VERSION = "company-check-v2"
 FINANCIAL = {"bank", "insurer", "broker", "financial_other"}
 RULES = {  # id: (watch, flag) thresholds; direction is in the check code
     "G1_revenue_yoy": (0.0, -10.0),
@@ -49,6 +49,9 @@ RULES = {  # id: (watch, flag) thresholds; direction is in the check code
     "W3_contract_liabilities_yoy_pct": (-15.0, -40.0),
     "D1_share_change_pct": (5.0, 10.0),
     "D2_pledge_ratio_pct": (15.0, 30.0),
+    "R1_cash_runway_months": (24.0, 12.0),
+    "V1_ps_when_growth_below_40pct": (15.0, 30.0),
+    "V1r_ps_in_ramp_stage": (30.0, 60.0),
     "S1_bank_npl_pct": (1.8, 3.0),
     "S2_bank_provision_coverage_pct": (180.0, 150.0),
     "S3_bank_cet1_pct": (9.5, 8.0),
@@ -367,13 +370,106 @@ def checks(m: dict[str, Any], kind: str) -> list[dict[str, Any]]:
     return out
 
 
+# ---------------------------------------------------------------- v9 stage layer
+RAMP_MIN_REVENUE_GROWTH = 25.0     # loss-making but revenue growing >= 25% y/y -> ramp / qualification stage
+PER_SHARE_GROWTH_EXCEPTION = 20.0  # dilution downgraded to watch when revenue per share still grows >= 20%
+MIN_SCORED_CHECKS = 3  # fewer scored rows than this = not enough data to call the check "clean"
+FINANCING_LADDER = "ATM（持续、无上限，最差）< 溢价可转债 < 定增 < 客户预付/长约（最好）"
+STAGE_ZH = {"ramp": "认证/放量期", "cyclical_high": "周期高利润期", "loss_no_growth": "亏损且不增长", "operating": "常规经营期"}
+
+
+def stage(m: dict[str, Any], val: dict[str, Any], kind: str) -> dict[str, Any]:
+    """Which stage the numbers put the company in, and which KPIs that stage is judged on.
+
+    Serenity-style rule: a company in qualification/ramp is judged on orders, qualification and capacity,
+    not on current profit; what can kill it is cash runway and the kind of dilution it uses."""
+    if kind in FINANCIAL:
+        return {"stage": "operating", "basis": "financial company", "kpis": ["ROE", "P/B", "资产质量"]}
+    rev_g = m.get("revenue_yoy_pct") if m.get("revenue_yoy_pct") is not None else m.get("revenue_ttm_yoy_pct")
+    profit = _num(m.get("profit_ttm"))
+    pe = _num(val.get("pe_ttm"))
+    if profit is not None and profit <= 0 and rev_g is not None and rev_g >= RAMP_MIN_REVENUE_GROWTH:
+        return {"stage": "ramp", "basis": f"TTM 亏损且收入同比 {rev_g:.0f}% ≥ {RAMP_MIN_REVENUE_GROWTH:.0f}%",
+                "kpis": ["认证/客户导入进度", "订单与长约（可取消比例）", "产能与良率爬坡", "现金跑道", "融资方式"]}
+    if profit is not None and profit <= 0 and (rev_g is None or rev_g < 10):
+        return {"stage": "loss_no_growth", "basis": "TTM 亏损且收入增速 < 10%" if rev_g is not None else "TTM 亏损且无收入增速数据",
+                "kpis": ["现金跑道", "融资方式与稀释", "收入能否恢复增长"]}
+    pg = m.get("profit_yoy_pct")
+    if pe is not None and pe <= 12 and pg is not None and pg >= 100:
+        return {"stage": "cyclical_high", "basis": f"净利同比 {pg:.0f}% 且 P/E(TTM) {pe:.1f}x",
+                "kpis": ["价格/ASP 能否持续", "持续时间（长约年限）", "成本上升与利润回落情景", "囤货 vs 结构性短缺"]}
+    return {"stage": "operating", "basis": "常规口径", "kpis": ["收入增速", "利润率", "现金转换", "估值"]}
+
+
+def apply_stage(rows: list[dict[str, Any]], m: dict[str, Any], val: dict[str, Any], st: dict[str, Any], kind: str) -> None:
+    by = {r["id"]: r for r in rows}
+    if st["stage"] == "ramp":
+        for cid in ("G2", "P3", "C1"):
+            r = by.get(cid)
+            if r and r["status"] in ("flag", "watch"):
+                r["stage_adjusted_from"] = r["status"]
+                r["status"] = "info"
+                r["why"] = ((r.get("why") + "；") if r.get("why") else "") + "认证/放量期：当期利润不是关键 KPI，改看订单、认证、产能、现金跑道与融资方式"
+    if kind not in FINANCIAL and m.get("ocf_ttm") is not None and m.get("capex_ttm") is not None and m.get("cash") is not None:
+        fcf = m["ocf_ttm"] - m["capex_ttm"]
+        if fcf < 0:
+            months = round(m["cash"] / (-fcf / 12.0), 1)
+            rows.append({"id": "R1", "area": "cash", "label": "现金跑道（月）", "value": months, "unit": "月",
+                         "status": _grade(months, "R1_cash_runway_months", False),
+                         "formula": "现金及短投 / (−TTM 自由现金流 / 12)",
+                         "why": "跑道短 = 近期必须融资；融资方式决定稀释好坏：" + FINANCING_LADDER})
+    d1 = by.get("D1")
+    rev_g = m.get("revenue_yoy_pct") if m.get("revenue_yoy_pct") is not None else m.get("revenue_ttm_yoy_pct")
+    if d1 and d1["status"] in ("flag", "watch") and d1.get("value") is not None:
+        why = "核实融资方式：" + FINANCING_LADDER
+        if rev_g is not None:
+            ps = round(((1 + rev_g / 100) / (1 + d1["value"] / 100) - 1) * 100, 1)
+            why = f"每股收入同比 {ps:+.1f}%；" + why
+            if d1["status"] == "flag" and ps >= PER_SHARE_GROWTH_EXCEPTION:
+                d1["stage_adjusted_from"] = "flag"
+                d1["status"] = "watch"
+                why = "增长快于稀释（例外规则：融资用于扩产且每股收入仍高增长）；" + why
+        d1["why"] = why
+    ps_ttm, g = _num(val.get("ps_ttm")), rev_g
+    if st["stage"] != "ramp" and ps_ttm is not None and g is not None and g < 40:
+        rows.append({"id": "V1", "area": "valuation", "label": "P/S（增速 < 40% 时）", "value": ps_ttm, "unit": "x",
+                     "status": _grade(ps_ttm, "V1_ps_when_growth_below_40pct", True),
+                     "formula": "市值 / TTM 收入，仅在收入增速 < 40% 时打分",
+                     "why": "好公司 ≠ 好价格：增速不够时高 P/S 需要更强的前瞻证据"})
+    elif st["stage"] == "ramp" and ps_ttm is not None:
+        rows.append({"id": "V1", "area": "valuation", "label": "P/S（认证/放量期）", "value": ps_ttm, "unit": "x",
+                     "status": _grade(ps_ttm, "V1r_ps_in_ramp_stage", True),
+                     "formula": "市值 / TTM 收入；放量期阈值放宽，但极端倍数仍要求订单/长约能覆盖",
+                     "why": "放量期不看当期利润，但好公司 ≠ 好价格：倍数要能被已签订单和产能爬坡解释"})
+
+
+def verify_list(rows: list[dict[str, Any]], st: dict[str, Any]) -> list[str]:
+    """Things a human must confirm in primary filings before trusting the mechanical result."""
+    out = ["瓶颈/主题业务占总收入的比例（分部披露；占比小=敞口被稀释）",
+           "近 12 个月融资：方式（" + FINANCING_LADDER + "）、规模/市值、用途、价格；未用完的 ATM/储架额度",
+           "前五大客户集中度与长约条款（期限、可取消比例、预付款）"]
+    if st["stage"] == "ramp":
+        out.append("认证阶段与时间表（样品→认证→小批量→量产），以公司原话为准")
+    if st["stage"] == "cyclical_high":
+        out.append("单期年化利润做压力测试：成本上升、利润减半、价格回到正常三种情景")
+    for r in rows:
+        if r["status"] == "flag":
+            out.append(f"{r['id']} {r['label']}：到定期报告原文核对口径与一次性因素")
+    return out
+
+
 def check(snap: dict[str, Any]) -> dict[str, Any]:
     kind = route(snap)
     m = extract(snap)
     rows = checks(m, kind["type"])
     val = valuation(snap, m)
+    st = stage(m, val, kind["type"])
+    apply_stage(rows, m, val, st, kind["type"])
     counts = {k: sum(1 for r in rows if r["status"] == k) for k in ("flag", "watch", "ok", "info", "na")}
+    data_status = "ok" if (counts["ok"] + counts["watch"] + counts["flag"]) >= MIN_SCORED_CHECKS else "insufficient"
     notes = ["机械体检：每项都附公式与阈值（RULES），状态只是“该去看什么”，不是买卖结论。"]
+    if data_status == "insufficient":
+        notes.insert(0, "数据不足：可打分的项目少于 %d 项，0 个红旗不代表“干净”，请先补数据（ETF/基金/新股/停牌常见）。" % MIN_SCORED_CHECKS)
     if m.get("source", "").endswith("(aggregator)"):
         notes.append("A 股/港股财务来自聚合源（东方财富 F10），决定性数字请到巨潮/披露易定期报告原文核对。")
     if kind["type"] in FINANCIAL:
@@ -382,7 +478,7 @@ def check(snap: dict[str, Any]) -> dict[str, Any]:
             "name": (snap.get("quote") or {}).get("name") or (snap.get("local_financials") or {}).get("name"),
             "retrieved_at": snap.get("retrieved_at"), "company_type": kind, "source": m.get("source"),
             "currency": m.get("currency"), "period_end": m.get("period_end"), "evidence_ids": m.get("evidence_ids", []),
-            "checks": rows, "valuation": val, "counts": counts, "rules": RULES, "notes": notes}
+            "stage": st, "data_status": data_status, "checks": rows, "valuation": val, "counts": counts, "verify": verify_list(rows, st), "rules": RULES, "notes": notes}
 
 
 # ---------------------------------------------------------------- rendering
@@ -408,6 +504,7 @@ def to_markdown(r: dict[str, Any], heading: str = "##") -> str:
     L = [f"{heading} 公司体检（通用框架 · {CHECK_VERSION}）", "",
          f"- 类型路由：**{TYPE_ZH.get(ct['type'], ct['type'])}**（依据：{ct['basis']}）",
          f"- 数据：{r.get('source') or '—'}，报告期 {r.get('period_end') or '—'}，币种 {r.get('currency') or '—'}；证据 {', '.join(r.get('evidence_ids') or []) or '—'}",
+         *( [f"- 阶段：**{STAGE_ZH.get(r['stage']['stage'], r['stage']['stage'])}**（{r['stage']['basis']}）；该阶段看：{'、'.join(r['stage']['kpis'])}"] if r.get('stage') else [] ),
          f"- 结果：🚩 {r['counts']['flag']} · 👀 {r['counts']['watch']} · ✅ {r['counts']['ok']} · ℹ️ {r['counts']['info']} · — {r['counts']['na']}", "",
          "| 项目 | 数值 | 状态 | 公式 / 说明 |", "|---|---|---|---|"]
     for c in r["checks"]:
@@ -435,6 +532,8 @@ def to_markdown(r: dict[str, Any], heading: str = "##") -> str:
         if v.get("pe_cross_check"):
             pc = v["pe_cross_check"]
             L.append(f"- P/E 第二来源（{pc['second_source']}）{pc['pe_ttm']}x，差 {pc['diff_pct']}%（{pc['status']}）")
+    if r.get("verify"):
+        L += ["", "**需核实清单（到定期报告/公告原文确认）**", ""] + [f"- [ ] {x}" for x in r["verify"]]
     L += [""] + [f"> {n}" for n in r["notes"]] + [""]
     return "\n".join(L)
 

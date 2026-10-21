@@ -112,11 +112,26 @@ def _name_regex(aliases: dict[str, Any]) -> tuple[re.Pattern[str] | None, dict[s
     return _NAME_RX_CACHE[key]
 
 
+def _canonical_cashtag(tag: str, aliases: dict[str, Any]) -> str:
+    """v9: map an author cashtag to the curated listing ($SIVE -> SIVE.ST, $SOI -> SOI.PA, $AXT -> AXTI).
+
+    Only curated seed rows are used, and only when the cashtag equals the row's base symbol or one of its
+    upper-case ticker-style names, so the same company is never counted under two tickers."""
+    row = aliases.get(tag) or aliases.get(tag.lower())
+    if not row:
+        return tag
+    sym = row.get("symbol") or tag
+    names = {n.upper() for n in row.get("names", []) if n.isascii() and n.isupper()}
+    if tag == sym or (("." in sym and tag == sym.split(".")[0]) or tag in names):
+        return sym.split(".")[0] if sym.endswith(".US") else sym
+    return tag
+
+
 def tickers_in(text: str, aliases: dict[str, Any]) -> list[str]:
     found: list[str] = []
     rx, names = _name_regex(aliases)
     for m in CASHTAG.finditer(text):
-        found.append(m.group(1).upper())
+        found.append(_canonical_cashtag(m.group(1).upper(), aliases))
     for m in CODE_IN_PARENS.finditer(text):
         res = normalize(m.group(1), aliases)
         found.append(res["symbol"] or m.group(1))

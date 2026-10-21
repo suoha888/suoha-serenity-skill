@@ -193,6 +193,9 @@ def cmd_check(a: argparse.Namespace) -> int:
     code = run([PY, S / "company_check.py", snap, "--md", md, "--json", snap.with_name(snap.stem + "-check.json")])
     if not code:
         print(md.read_text(encoding="utf-8"))
+        result = json.loads(snap.with_name(snap.stem + "-check.json").read_text(encoding="utf-8"))
+        if result.get("data_status") == "insufficient":
+            print("\n⚠️ 数据不足：可打分项目太少，0 个红旗不代表公司“干净”。请补充定期报告数据后再判断。")
         print(f"\n✅ 体检已保存：{md}（数据快照 {snap}）。状态只是“该去看什么”，不是买卖结论。")
     return code
 

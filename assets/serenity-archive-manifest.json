@@ -1,6 +1,6 @@
 {
   "schema_version": "6.1",
-  "generated_at": "2026-10-20T03:59:28Z",
+  "generated_at": "2026-10-21T04:26:24Z",
   "subject": "Serenity (public posts)",
   "post_count": 7153,
   "first_post": "2025-07-02T10:48:09Z",
@@ -25,22 +25,22 @@
     "2026-10": 51
   },
   "extractor": "rules-v6.1",
-  "event_count": 11964,
+  "event_count": 11824,
   "action_counts": {
     "ADD": 69,
     "BEARISH": 37,
     "CLOSE": 2,
     "DENY": 24,
-    "MENTION": 11582,
-    "OPEN": 82,
+    "MENTION": 11444,
+    "OPEN": 80,
     "REAFFIRM": 131,
     "TRIM": 11,
     "WATCH": 26
   },
   "ticker_mentions_top": [
     {
-      "ticker": "SIVE",
-      "mentions": 683,
+      "ticker": "SIVE.ST",
+      "mentions": 731,
       "in_atlas": true
     },
     {
@@ -65,7 +65,7 @@
     },
     {
       "ticker": "AXTI",
-      "mentions": 461,
+      "mentions": 462,
       "in_atlas": true
     },
     {
@@ -104,6 +104,11 @@
       "in_atlas": true
     },
     {
+      "ticker": "SOI.PA",
+      "mentions": 180,
+      "in_atlas": true
+    },
+    {
       "ticker": "META",
       "mentions": 179,
       "in_atlas": true
@@ -124,23 +129,13 @@
       "in_atlas": true
     },
     {
-      "ticker": "IQE",
+      "ticker": "IQE.L",
       "mentions": 159,
       "in_atlas": true
     },
     {
       "ticker": "AMZN",
       "mentions": 157,
-      "in_atlas": true
-    },
-    {
-      "ticker": "SIVE.ST",
-      "mentions": 150,
-      "in_atlas": true
-    },
-    {
-      "ticker": "SOI",
-      "mentions": 148,
       "in_atlas": true
     },
     {
@@ -224,6 +219,11 @@
       "in_atlas": false
     },
     {
+      "ticker": "RPI.L",
+      "mentions": 88,
+      "in_atlas": false
+    },
+    {
       "ticker": "AAPL",
       "mentions": 86,
       "in_atlas": false
@@ -234,9 +234,9 @@
       "in_atlas": false
     },
     {
-      "ticker": "RPI",
-      "mentions": 76,
-      "in_atlas": false
+      "ticker": "ALRIB.PA",
+      "mentions": 68,
+      "in_atlas": true
     },
     {
       "ticker": "GFS",
@@ -254,6 +254,11 @@
       "in_atlas": true
     },
     {
+      "ticker": "LPK.DE",
+      "mentions": 58,
+      "in_atlas": true
+    },
+    {
       "ticker": "WULF",
       "mentions": 57,
       "in_atlas": true
@@ -261,11 +266,6 @@
     {
       "ticker": "6451.TW",
       "mentions": 57,
-      "in_atlas": true
-    },
-    {
-      "ticker": "LPK",
-      "mentions": 53,
       "in_atlas": true
     },
     {
@@ -294,11 +294,6 @@
       "in_atlas": false
     },
     {
-      "ticker": "SOI.PA",
-      "mentions": 42,
-      "in_atlas": true
-    },
-    {
       "ticker": "CCXI",
       "mentions": 41,
       "in_atlas": false
@@ -309,7 +304,7 @@
       "in_atlas": true
     },
     {
-      "ticker": "XFAB",
+      "ticker": "XFAB.PA",
       "mentions": 40,
       "in_atlas": true
     },
@@ -317,11 +312,6 @@
       "ticker": "PLTR",
       "mentions": 39,
       "in_atlas": false
-    },
-    {
-      "ticker": "ALRIB.PA",
-      "mentions": 39,
-      "in_atlas": true
     },
     {
       "ticker": "OSS",
@@ -350,11 +340,6 @@
     },
     {
       "ticker": "CRDO",
-      "mentions": 34,
-      "in_atlas": true
-    },
-    {
-      "ticker": "ALRIB",
       "mentions": 34,
       "in_atlas": true
     },
@@ -437,6 +422,21 @@
       "ticker": "ONDS",
       "mentions": 23,
       "in_atlas": false
+    },
+    {
+      "ticker": "MS",
+      "mentions": 23,
+      "in_atlas": false
+    },
+    {
+      "ticker": "SPY",
+      "mentions": 22,
+      "in_atlas": false
+    },
+    {
+      "ticker": "AEVA",
+      "mentions": 22,
+      "in_atlas": true
     }
   ],
   "note": "Counts and IDs only. Post text lives in the maintainer's private archive and is never committed to the public skill repo. The skill is a framework distilled from Serenity's public posts for research/backtesting; it does not speak for Serenity."
