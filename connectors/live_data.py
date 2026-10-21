@@ -1633,9 +1633,13 @@ def _company_check(snap: dict[str, Any]) -> dict[str, Any] | None:
         return None
 
 
-def _memory(ledger_path: Path | None, symbol: str) -> dict[str, Any]:
-    if not ledger_path:
-        return {"status": "unavailable", "note": "No Serenity stance ledger supplied (--ledger). Silence in this pack is not a view."}
+def _memory(ledger_path: Path | None, symbol: str, as_of: str | None = None) -> dict[str, Any]:
+    if not ledger_path:  # v9: fall back to the shipped public timeline (paraphrases + public post ids)
+        try:
+            from serenity_timeline import memory as public_memory  # type: ignore
+            return public_memory(symbol, as_of)
+        except (OSError, ValueError, ImportError, KeyError) as exc:
+            return {"status": "unavailable", "note": f"No Serenity stance ledger supplied (--ledger) and public timeline unreadable ({exc}). Silence in this pack is not a view."}
     try:
         from stance_ledger import lens_memory  # type: ignore
         ledger = json.loads(Path(ledger_path).read_text(encoding="utf-8"))
@@ -1691,7 +1695,7 @@ def pack(subject: str, fetcher: Fetcher, out_dir: Path, peers: list[str] | None 
         path.write_text(json.dumps(s, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         snap_paths[s["subject"]["symbol"]] = str(path)
     scans = {s["subject"]["symbol"]: scan_mod.scan_snapshot(s, atlas) for s in [snap, *peer_snaps.values()]}
-    memory = _memory(ledger_path, sym)
+    memory = _memory(ledger_path, sym, now.date().isoformat())
     health = _company_check(snap)
     if health:
         (out_dir / "company-check.json").write_text(json.dumps(health, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -1875,6 +1879,28 @@ def layer_for_taxonomy(code: str, upstream: bool = False) -> str:
     return "midstream_component"
 
 
+def _v9_draft_blocks(health: dict[str, Any] | None) -> dict[str, Any]:
+    """Optional v9 lens blocks seeded from the stage-aware company check; judgment stays TODO."""
+    T = "TODO: "
+    if not health:
+        return {}
+    st = health.get("stage") or {}
+    d1 = next((c for c in health.get("checks", []) if c["id"] == "D1"), None)
+    out: dict[str, Any] = {
+        "verify_checklist": [{"item": x, "status": "pending"} for x in health.get("verify") or []],
+        "dilution": {"class": "unknown", "share_count_yoy_pct": (d1 or {}).get("value"), "per_share_growth_covers": "unknown",
+                     "detail": T + "融资方式（ATM < 可转债 < 定增 < 客户预付/长约）、规模、用途；每股收入/利润增速是否快于股本增速"},
+    }
+    return out
+
+
+def _stage_kpis(health: dict[str, Any] | None) -> dict[str, Any]:
+    st = (health or {}).get("stage") or {}
+    if not st.get("kpis") or st.get("stage") == "operating":  # only special stages change what to judge
+        return {}
+    return {"kpis": [{"kpi": k, "status": "unknown", "note": "TODO: 用公司原话/公告更新进度"} for k in st["kpis"]]}
+
+
 def draft_lens(snap: dict[str, Any], scan: dict[str, Any], position: dict[str, Any], memory: dict[str, Any],
                docs: list[dict[str, Any]], snapshot_path: str, now: datetime,
                health: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -2005,8 +2031,10 @@ def draft_lens(snap: dict[str, Any], scan: dict[str, Any], position: dict[str, A
                               "kind": (pos or {}).get("kind", "none") if (pos or {}).get("kind") in {"material", "demand", "none"} else "none",
                               "rationale": T + "用实时数据确认图谱状态", "evidence_ids": []},
         "phase": {"stage": {"volume_ramp": "volume_ramp", "rnd_or_sampling": "sampling", "decline_or_cyclical_trough": "decline"}.get(scan.get("phase_guess"), "steady_state"),
-                  "evidence": T + f"机械猜测 {scan.get('phase_guess')}", "evidence_ids": []},
+                  "evidence": T + f"机械猜测 {scan.get('phase_guess')}" + (f"；体检阶段：{(health or {}).get('stage', {}).get('basis')}" if (health or {}).get("stage") else ""),
+                  "evidence_ids": [], **_stage_kpis(health)},
         "purity": {"exposure_pct_estimate": None, "basis": "unknown", "rationale": T + "相关业务占比"},
+        **_v9_draft_blocks(health),
         "risk_tier": "rerating",
         "variant_perception": {"consensus": T + "市场共识", "consensus_sources": [], "our_view": T + "差异化观点（需带数字）",
                                "reason_codes": ["PB-VP-01"], "when_market_sees": T + "市场何时看到",

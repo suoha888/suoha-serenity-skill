@@ -75,3 +75,79 @@ class StageTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+import json  # noqa: E402
+
+import render_report  # noqa: E402
+import serenity_lens  # noqa: E402
+
+AXTI = Path(__file__).resolve().parents[1] / "examples" / "axti-serenity-lens.json"
+
+
+class LensV9FieldsTest(unittest.TestCase):
+    def lens(self):
+        L = json.loads(AXTI.read_text(encoding="utf-8"))
+        L["phase"]["kpis"] = [{"kpi": "认证/客户导入进度", "status": "on_track", "note": "以公司电话会原话为准"}]
+        L["dilution"] = {"class": "private_placement", "share_count_yoy_pct": 8.0, "use_of_funds": "扩产",
+                         "per_share_growth_covers": "yes", "detail": "融资用于扩产，每股收入增速高于股本增速"}
+        L["verify_checklist"] = [{"item": "主题业务收入占比", "status": "pending"}]
+        return L
+
+    def test_old_lenses_still_valid_and_new_fields_render(self):
+        self.assertEqual(serenity_lens.validate(json.loads(AXTI.read_text(encoding="utf-8"))), [])
+        L = self.lens()
+        self.assertEqual(serenity_lens.validate(L), [])
+        md, html = render_report.to_markdown(L), render_report.to_html(L)
+        for text in ("阶段 KPI", "稀释分类", "定增", "财务需核实清单", "主题业务收入占比"):
+            self.assertIn(text, md)
+            self.assertIn(text, html)
+        self.assertLess(md.index("## 8. 红旗筛查"), md.index("稀释分类"))
+        self.assertLess(md.index("稀释分类"), md.index("## 9. 红队"))
+
+    def test_uncovered_atm_blocks_green(self):
+        L = self.lens()
+        L["research_tier"] = "green"
+        L["dilution"].update({"class": "atm", "per_share_growth_covers": "no"})
+        self.assertIn("lens:uncovered_atm_dilution_blocks_green", serenity_lens.validate(L))
+
+    def test_problem_item_needs_note(self):
+        L = self.lens()
+        L["verify_checklist"][0]["status"] = "problem"
+        self.assertIn("lens:verify_problem_requires_note", serenity_lens.validate(L))
+
+
+import re  # noqa: E402
+
+import serenity_timeline as stl  # noqa: E402
+
+
+class PublicTimelineTest(unittest.TestCase):
+    def test_asset_shape_ids_only(self):
+        d = stl.load()
+        self.assertGreater(d["entry_count"], 1000)
+        for t, rows in d["tickers"].items():
+            for e in rows:
+                self.assertTrue(e["p"] and all(re.fullmatch(r"[0-9]{5,25}", p) for p in e["p"]), t)
+                self.assertIn(e["s"], stl.STANCE_ZH)
+                self.assertNotIn("http", e["c"])
+        self.assertNotIn("SIVE", d["tickers"])  # cashtag aliases merged into SIVE.ST
+
+    def test_memory_is_point_in_time_and_lens_valid(self):
+        m = stl.memory("SIVEF", "2026-04-01")
+        self.assertEqual(m["status"], "available")
+        self.assertLessEqual(len(m["timeline"]), 12)
+        self.assertTrue(all(x["date"] <= "2026-04-01" and len(x["summary"]) <= 200 for x in m["timeline"]))
+        L = json.loads(AXTI.read_text(encoding="utf-8"))
+        L["serenity_memory"] = stl.memory("AXTI", L["research_cutoff"][:10])
+        self.assertEqual(serenity_lens.validate(L), [])
+
+    def test_unknown_ticker_is_not_a_view(self):
+        m = stl.memory("ZZZZQ")
+        self.assertEqual(m["status"], "no_mentions")
+        self.assertIn("不代表看空", m["note"])
+        self.assertIn("公开时间线无记录", stl.dossier("ZZZZQ"))
+
+    def test_neutral_context_is_not_a_stance_change(self):
+        rows = [{"d": "2026-01-01", "s": "bull"}, {"d": "2026-01-02", "s": "neutral"}, {"d": "2026-01-03", "s": "bull"}]
+        self.assertEqual(len(stl.changes(rows)), 1)

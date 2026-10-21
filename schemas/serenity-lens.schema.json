@@ -1070,6 +1070,43 @@
           "items": {
             "type": "string"
           }
+        },
+        "kpis": {
+          "type": "array",
+          "description": "v9 optional: the KPIs this stage is judged on (ramp: qualification/orders/capacity/runway/financing; cyclical high: price durability/contract length/stress test).",
+          "items": {
+            "type": "object",
+            "required": [
+              "kpi",
+              "status",
+              "note"
+            ],
+            "properties": {
+              "kpi": {
+                "type": "string",
+                "minLength": 2
+              },
+              "status": {
+                "enum": [
+                  "on_track",
+                  "behind",
+                  "not_started",
+                  "unknown",
+                  "done"
+                ]
+              },
+              "note": {
+                "type": "string",
+                "minLength": 4
+              },
+              "evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -1256,6 +1293,87 @@
         }
       },
       "minItems": 1
+    },
+    "dilution": {
+      "type": "object",
+      "description": "v9 optional: what kind of dilution, not just how much. Ladder (worst to best): atm < convertible < private_placement < customer_prepay.",
+      "required": [
+        "class",
+        "per_share_growth_covers",
+        "detail"
+      ],
+      "properties": {
+        "class": {
+          "enum": [
+            "none",
+            "atm",
+            "convertible",
+            "private_placement",
+            "customer_prepay",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "share_count_yoy_pct": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "use_of_funds": {
+          "type": "string"
+        },
+        "per_share_growth_covers": {
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ]
+        },
+        "detail": {
+          "type": "string",
+          "minLength": 10
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verify_checklist": {
+      "type": "array",
+      "description": "v9 optional: financial items a human must confirm in primary filings (seeded from company_check verify list).",
+      "items": {
+        "type": "object",
+        "required": [
+          "item",
+          "status"
+        ],
+        "properties": {
+          "item": {
+            "type": "string",
+            "minLength": 4
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "ok",
+              "problem"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
     }
   }
 }

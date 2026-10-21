@@ -14,7 +14,7 @@
 | 5 | 先行信号 `signals` | 确认/否定条件 + 下次检查日期；OSINT 线索 | `leading_signals`、`osint_leads` |
 | 6 | Serenity 记忆 `memory` | 时点一致的提及时间线（帖子 ID + 自写摘要） | `serenity_memory` |
 | 7 | 按 Serenity 框架会怎么看 `serenity-view` | 会不会关注、为什么、引用哪些 PB 规则 | `serenity_view` |
-| 8 | 红旗 `red-flags` | veto/downgrade/watch 与是否触发 | `red_flags` |
+| 8 | 红旗 `red-flags` | veto/downgrade/watch 与是否触发；可选：阶段 KPI、稀释分类、财务需核实清单（v9） | `red_flags`，可选 `phase.kpis`、`dilution`、`verify_checklist` |
 | 9 | 红队 `red-team` | 4 问 + 更优替代 + 最大杀点 | `red_team` |
 | 10 | 证伪 `falsification` | ≥1 条机器可检（指标/运算符/阈值/日期） | `falsification` |
 | — | 证据 `evidence` | 每条证据的标题、定位、发布时间 | `evidence` |

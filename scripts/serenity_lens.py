@@ -344,6 +344,16 @@ def validate(lens: dict[str, Any], schema_path: Path = SCHEMA_PATH) -> list[str]
             errors.append("lens:green_requires_two_leading_signals")
         if lens["chokepoint_of_chokepoint"]["status"] == "unknown":
             errors.append("lens:green_requires_identified_chokepoint")
+    dil = lens.get("dilution")
+    if isinstance(dil, dict) and tier == "green" and dil.get("class") in {"atm", "mixed"} and dil.get("per_share_growth_covers") != "yes":
+        errors.append("lens:uncovered_atm_dilution_blocks_green")
+    for item in lens.get("verify_checklist") or []:
+        if item.get("status") == "problem" and len((item.get("note") or "").strip()) < 10:
+            errors.append("lens:verify_problem_requires_note")
+        if item.get("status") == "problem" and tier == "green" and not any(
+                f["triggered"] == "yes" for f in lens["red_flags"]):
+            errors.append("lens:verify_problem_must_surface_as_red_flag")
+            break
     if tier == "amber" and not lens.get("rerate_triggers"):
         errors.append("lens:amber_requires_rerate_triggers")
     for f in lens["falsification"]:

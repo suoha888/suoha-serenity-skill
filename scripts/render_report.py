@@ -94,6 +94,51 @@ def cite(ids: list[str] | None) -> str:
     return " ".join(f"[{i}]" for i in (ids or []))
 
 
+# ----------------------------------------------------------------- v9 optional blocks
+KPI_TEXT = {"on_track": "按计划", "behind": "落后", "not_started": "未开始", "unknown": "未知", "done": "已完成"}
+DILUTION_TEXT = {"none": "无明显稀释", "atm": "ATM 增发（持续、最差）", "convertible": "可转债", "private_placement": "定增",
+                 "customer_prepay": "客户预付/长约（最好）", "mixed": "混合", "unknown": "未知"}
+COVER_TEXT = {"yes": "是", "no": "否", "unknown": "未知"}
+VERIFY_TEXT = {"pending": "☐ 待核实", "ok": "☑ 已核实无问题", "problem": "⚠️ 发现问题"}
+
+
+def md_v9_extras(L: dict[str, Any]) -> list[str]:
+    o: list[str] = []
+    kpis = (L.get("phase") or {}).get("kpis") or []
+    if kpis:
+        o += ["", "**阶段 KPI（该阶段看什么，而不是看当期利润）**", "", "| KPI | 状态 | 说明 |", "|---|---|---|"]
+        o += [f"| {k['kpi']} | {KPI_TEXT[k['status']]} | {k['note']} {cite(k.get('evidence_ids'))} |" for k in kpis]
+    d = L.get("dilution")
+    if d:
+        sc = d.get("share_count_yoy_pct")
+        o += ["", "**稀释分类（看方式，不只看幅度）**", "",
+              f"- 方式：{DILUTION_TEXT[d['class']]}" + (f" · 股本同比 {sc:+.1f}%" if isinstance(sc, (int, float)) else "")
+              + f" · 每股增长能否覆盖稀释：{COVER_TEXT[d['per_share_growth_covers']]}",
+              f"- {d['detail']}" + (f"（资金用途：{d['use_of_funds']}）" if d.get("use_of_funds") else "") + f" {cite(d.get('evidence_ids'))}"]
+    vc = L.get("verify_checklist") or []
+    if vc:
+        o += ["", "**财务需核实清单（到定期报告/公告原文确认）**", ""]
+        o += [f"- {VERIFY_TEXT[x['status']]} {x['item']}" + (f" — {x['note']}" if x.get("note") else "") + f" {cite(x.get('evidence_ids'))}" for x in vc]
+    return o
+
+
+def html_v9_extras(L: dict[str, Any]) -> str:
+    h = ""
+    kpis = (L.get("phase") or {}).get("kpis") or []
+    if kpis:
+        h += "<h3>阶段 KPI</h3><table><tr><th>KPI</th><th>状态</th><th>说明</th></tr>" + "".join(
+            f"<tr><td>{e(k['kpi'])}</td><td>{e(KPI_TEXT[k['status']])}</td><td>{e(k['note'])}</td></tr>" for k in kpis) + "</table>"
+    d = L.get("dilution")
+    if d:
+        h += (f"<h3>稀释分类</h3><p>方式：<b>{e(DILUTION_TEXT[d['class']])}</b> · 每股增长能否覆盖稀释：{e(COVER_TEXT[d['per_share_growth_covers']])}</p>"
+              f"<p>{e(d['detail'])}" + (f"（资金用途：{e(d['use_of_funds'])}）" if d.get("use_of_funds") else "") + "</p>")
+    vc = L.get("verify_checklist") or []
+    if vc:
+        h += "<h3>财务需核实清单</h3><ul>" + "".join(
+            f"<li>{e(VERIFY_TEXT[x['status']])} {e(x['item'])}" + (f" — {e(x['note'])}" if x.get("note") else "") + "</li>" for x in vc) + "</ul>"
+    return h
+
+
 # ----------------------------------------------------------------- v6 blocks
 def md_v6_head(L: dict[str, Any]) -> list[str]:
     live, fit, bs, ph, pu, vp = (L["live_data"], L["framework_fit"], L["bottleneck_status"],
@@ -269,6 +314,7 @@ def to_markdown(L: dict[str, Any]) -> str:
     w("## 8. 红旗筛查")
     for f in L["red_flags"]:
         w(f"- [{f['severity']}] {f['flag']}：**{f['triggered']}** — {f['detail']} {cite(f.get('evidence_ids'))}")
+    out.extend(md_v9_extras(L))
     w("")
     rt = L["red_team"]
     w("<!-- section:red-team -->")
@@ -392,7 +438,7 @@ def to_html(L: dict[str, Any]) -> str:
     if L.get("schema_version") == "6.0":
         w(html_v6_next_hop(L))
     w("<section id='red-flags'><h2>8 · 红旗筛查</h2><table><tr><th>红旗</th><th>级别</th><th>触发</th><th>说明</th></tr>" + "".join(
-        f"<tr><td>{e(f['flag'])}</td><td>{e(f['severity'])}</td><td>{e(f['triggered'])}</td><td>{e(f['detail'])}</td></tr>" for f in L["red_flags"]) + "</table></section>")
+        f"<tr><td>{e(f['flag'])}</td><td>{e(f['severity'])}</td><td>{e(f['triggered'])}</td><td>{e(f['detail'])}</td></tr>" for f in L["red_flags"]) + "</table>" + html_v9_extras(L) + "</section>")
     rt = L["red_team"]
     w(f"<section id='red-team'><h2>9 · 红队</h2><ol><li>不是真瓶颈？{e(rt['not_real_bottleneck'])}</li><li>不变现？{e(rt['not_monetized'])}</li><li>已定价？{e(rt['already_priced'])}</li><li>更优替代 <code>{e(rt['better_alternative']['ticker'])}</code>：{e(rt['better_alternative']['why'])}</li></ol><p class='kill'><b>最大杀点：</b>{e(rt['biggest_kill_shot'])}</p></section>")
     w("<section id='falsification'><h2>10 · 证伪条件</h2><ul>" + "".join(

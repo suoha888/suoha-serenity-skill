@@ -26,6 +26,14 @@ even then it is a past public statement, not current advice.
 Raw archives and subscription source material are not part of the public
 runtime: post text stays in a private store (references/serenity-update-workflow.md).
 
+**Two passes, always in this order (v9).** First read the company the way the
+framework does — stage first (qualification/ramp, cyclical high, loss without
+growth, steady operating), then the KPIs that stage is judged on, then the
+exceptions he applies to his own rules (references/serenity-exceptions.md).
+Only then red-team it independently: named better alternative, kill shot,
+falsifiers. Do not let the mechanical check overrule the stage reading, and do
+not let the stage reading excuse a balance-sheet, runway or toxic-dilution flag.
+
 ## Fast path (default for one ticker, ~3 tool calls of data work)
 
 ~~~bash
@@ -146,6 +154,15 @@ untrusted until checked:
   lens draft. Statuses are screens, not conclusions. Use it for companies
   outside the chokepoint atlas too (`framework_fit: not_applicable` is a valid
   answer; the health check still applies).
+- The check is **stage-aware** (v9, `check_version: company-check-v2`): in a
+  qualification/ramp stage (TTM loss and revenue growth ≥ 25%) current-profit
+  flags (P3 ROE, G2 profit growth, C1 cash conversion) become ℹ️ with
+  `stage_adjusted_from`; it adds R1 cash runway, V1 P/S by stage, a
+  dilution-vs-growth exception (D1 🚩→👀 when revenue per share still grows
+  ≥ 20%, with the financing ladder ATM < convertible < placement < customer
+  prepay), `data_status: insufficient` when < 3 rows can be scored (zero flags
+  then means "no data", not "clean"), and a `verify` list of items to confirm
+  in primary filings. Balance-sheet and liquidity flags are never waived.
 
 ## Ticker truth and ETF audit
 
@@ -183,12 +200,26 @@ evidence IDs:
 8. **Next-hop picks + risk tier**, then "按 Serenity 框架会怎么看"
    (framework reading) and the Serenity memory section.
 
+Optional v9 blocks (rendered under section 8; old lenses stay valid):
+`phase.kpis` (what this stage is judged on, each on_track / behind /
+not_started / unknown / done), `dilution` (class none / atm / convertible /
+private_placement / customer_prepay / mixed / unknown, plus whether per-share
+growth covers it — an uncovered ATM blocks `green`) and `verify_checklist`
+(pending / ok / problem; a problem needs a note and, in a green lens, a
+triggered red flag). `pack` seeds all three from the health check. Before
+finishing, walk references/serenity-exceptions.md and say in the lens which
+exception applies and why — never apply one silently.
+
 Serenity memory comes **after** the current-evidence synthesis:
 `python scripts/stance_ledger.py lookup <private events.jsonl> --ticker X --as-of <cutoff> --lens-memory`
 (or `pack --ledger`). It is point-in-time, reports `archive_through`, and
 separates DENY, CLOSE and silence (silence after archive_through is unknown,
 not a sell). Post IDs and own-words summaries only — never verbatim text.
-Without a private archive, status is `unavailable`; never invent a view.
+Without a private archive, `pack` falls back to the shipped public timeline
+(`python suoha.py timeline <T> [--as-of YYYY-MM-DD] [--json]`,
+assets/serenity-public-timeline.json): our Chinese paraphrases of public posts
+with post IDs, no original text, no subscription content; neutral/background
+entries are not stance changes. Unknown ticker → `no_mentions`; never invent a view.
 
 Tier gating (validator): a triggered veto forces `red`; `green` needs a
 passing/partial real-bottleneck gate, no failed gate, two leading signals,
@@ -262,8 +293,10 @@ release run `python scripts/run_evals.py`, `python scripts/validate_skill.py .`,
 
 - references/serenity-doctrine.md, references/serenity-playbook.md,
   references/serenity-case-library.md — rule IDs, archetypes, worked cases (post IDs only).
+- references/serenity-exceptions.md — where his own rules bend, mapped to the health-check rows.
+- scripts/serenity_timeline.py + assets/serenity-public-timeline.json — public stance timeline and thesis dossier.
 - assets/chokepoint-atlas.json, references/chokepoint-atlas.md, scripts/atlas.py — chain nodes and next hops.
-- suoha.py — one entry point: doctor, research, check, resolve, finish, exchange, etf, truth, update.
+- suoha.py — one entry point: doctor, research, check, timeline, resolve, finish, exchange, etf, truth, update.
 - connectors/live_data.py — pack, batch, snapshot, filing-text, filings, fts, fx, quote, news, exchange, etf-holdings;
   connectors/venues.py — CNINFO, HKEXnews, TDnet, EDINET, DART, TWSE/TPEx, Tencent quote, N-PORT;
   connectors/cnhk_fin.py — A-share/HK statements, TTM, balance sheet, pledge, dividends (aggregator);

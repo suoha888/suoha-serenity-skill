@@ -7,6 +7,7 @@
   python suoha.py research MU                一键研究包：实时数据 + 交易所公告 + 同链对比 + lens 草稿
   python suoha.py finish work/mu/lens-draft.json   计算、校验并生成研究报告
   python suoha.py check 贵州茅台             通用公司体检（A 股/港股/美股任意公司：成长/盈利/现金/负债/股东/估值）
+  python suoha.py timeline SIVE             Serenity 公开言论档案（转述 + 公开帖编号；--as-of 做时点回测）
   python suoha.py resolve 腾讯 比亚迪 苹果     名称/代码 → 标准代码（含 A+H、港美两地上市线）
   python suoha.py exchange 300308.SZ         非美股交易所原生数据（公告/旗标/第二行情/台股月营收）
   python suoha.py etf [--refresh]            ETF 覆盖审计（非共识卡点 / 图谱缺口）
@@ -132,6 +133,7 @@ def cmd_doctor(a: argparse.Namespace) -> int:
         line((ROOT / rel).is_file(), f"文件 {rel}", "安装不完整：重新下载或 git pull")
     for rel in ("scripts/ticker_truth.py", "scripts/atlas.py",
                 "scripts/ticker_normalizer.py", "scripts/company_check.py", "assets/ticker-aliases.seed.json",
+                "scripts/serenity_timeline.py", "assets/serenity-public-timeline.json",
                 "assets/universe/cn.json", "assets/universe/hk.json", "assets/universe/us.json"):
         line((ROOT / rel).is_file(), f"文件 {rel}")
     if not ok:
@@ -246,6 +248,8 @@ def dispatch(argv: list[str] | None = None) -> int:
     p.add_argument("--adr-ratio"); p.add_argument("--ledger"); p.add_argument("--news-query")
     p = sub.add_parser("finish", help="完成 lens：计算/校验/渲染"); p.add_argument("lens")
     p = sub.add_parser("check", help="通用公司体检"); p.add_argument("ticker"); p.add_argument("--yahoo"); p.add_argument("--out")
+    p = sub.add_parser("timeline", help="Serenity 公开言论档案"); p.add_argument("ticker"); p.add_argument("--as-of")
+    p.add_argument("--json", action="store_true", help="输出 lens 用的 serenity_memory 块")
     p = sub.add_parser("resolve", help="名称/代码解析"); p.add_argument("inputs", nargs="+"); p.add_argument("--hint")
     p = sub.add_parser("exchange", help="交易所原生数据"); p.add_argument("symbol"); p.add_argument("--days", default="180")
     p = sub.add_parser("etf", help="ETF 覆盖审计"); p.add_argument("--refresh", action="store_true")
@@ -261,6 +265,8 @@ def dispatch(argv: list[str] | None = None) -> int:
         return cmd_finish(a)
     if a.cmd == "check":
         return cmd_check(a)
+    if a.cmd == "timeline":
+        return run([PY, S / "serenity_timeline.py", "memory" if a.json else "show", a.ticker, *(["--as-of", a.as_of] if a.as_of else [])])
     if a.cmd == "resolve":
         for raw in a.inputs:
             normalized_ticker(raw, a.hint or "")
