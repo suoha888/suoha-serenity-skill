@@ -310,19 +310,44 @@ def leak_scan(archive_posts: Iterable[dict[str, Any]], files: list[Path], n: int
     return hits
 
 
+POST_ID_IN_TEXT_RE = re.compile(r"(?<!\d)(\d{15,20})(?!\d)")
+
+
+def restricted_id_scan(archive_posts: Iterable[dict[str, Any]], files: list[Path]) -> list[dict[str, Any]]:
+    """Public files must never cite subscription-only posts, not even by ID (v9)."""
+    restricted = {p["id"] for p in archive_posts if str(p.get("access_level") or "public") != "public"}
+    if not restricted:
+        return []
+    hits = []
+    for f in files:
+        try:
+            text = f.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        found = sorted(set(POST_ID_IN_TEXT_RE.findall(text)) & restricted)
+        if found:
+            hits.append({"file": str(f), "posts": found[:10], "count": len(found)})
+    return hits
+
+
 def cmd_check(args: argparse.Namespace) -> int:
     archive = Path(args.archive) if args.archive else private_dir(args.private_dir) / "posts.jsonl"
     if not archive.exists():
         print(f"SKIP: no private archive at {archive}; nothing to compare against (set SERENITY_PRIVATE_DIR).")
         return 0 if not args.strict else 1
     root = Path(args.root).resolve()
-    hits = leak_scan(load_archive(archive).values(), public_files(root), args.ngram)
-    if hits:
-        for h in hits:
-            print(f"LEAK: {h['file']} shares {args.ngram}-word runs with {h['count']} post(s), e.g. {', '.join(h['posts'][:3])}")
-        print("Refusing: rewrite in your own words and keep only post IDs before pushing.")
+    posts = list(load_archive(archive).values())
+    files = public_files(root)
+    hits = leak_scan(posts, files, args.ngram)
+    id_hits = restricted_id_scan(posts, files)
+    for h in hits:
+        print(f"LEAK: {h['file']} shares {args.ngram}-word runs with {h['count']} post(s), e.g. {', '.join(h['posts'][:3])}")
+    for h in id_hits:
+        print(f"LEAK: {h['file']} cites {h['count']} subscription-only post ID(s), e.g. {', '.join(h['posts'][:3])}")
+    if hits or id_hits:
+        print("Refusing: rewrite in your own words, keep only public post IDs, and never cite subscription posts.")
         return 1
-    print(f"OK: no {args.ngram}-word overlap between {root} public files and the private archive.")
+    print(f"OK: no {args.ngram}-word overlap and no subscription-only post IDs in {root} public files.")
     return 0
 
 

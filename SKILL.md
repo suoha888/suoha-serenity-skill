@@ -31,7 +31,10 @@ framework does — stage first (qualification/ramp, cyclical high, loss without
 growth, steady operating), then the KPIs that stage is judged on, then the
 exceptions he applies to his own rules (references/serenity-exceptions.md).
 Only then red-team it independently: named better alternative, kill shot,
-falsifiers. Do not let the mechanical check overrule the stage reading, and do
+falsifiers — and ask whether this is a mistake he has admitted before
+(references/serenity-case-library.md, “他自己承认错了” section: `F-TIMING` = right
+direction, wrong timing; `F-FACT` = unlock vs block sale, sold asset, ASP basis,
+inference written as fact). Do not let the mechanical check overrule the stage reading, and do
 not let the stage reading excuse a balance-sheet, runway or toxic-dilution flag.
 
 ## Fast path (default for one ticker, ~3 tool calls of data work)
@@ -292,7 +295,8 @@ release run `python scripts/run_evals.py`, `python scripts/validate_skill.py .`,
 ## Resources
 
 - references/serenity-doctrine.md, references/serenity-playbook.md,
-  references/serenity-case-library.md — rule IDs, archetypes, worked cases (post IDs only).
+  references/serenity-case-library.md — rule IDs, archetypes, worked cases, and the cases where he
+  admitted being wrong or early (post IDs only).
 - references/serenity-exceptions.md — where his own rules bend, mapped to the health-check rows.
 - scripts/serenity_timeline.py + assets/serenity-public-timeline.json — public stance timeline and thesis dossier.
 - assets/chokepoint-atlas.json, references/chokepoint-atlas.md, scripts/atlas.py — chain nodes and next hops.
