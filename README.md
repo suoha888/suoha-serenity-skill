@@ -9,6 +9,8 @@
 
 **我把 Serenity 的研究方法做成了一个 AI Skill**：输入任意一只 A股、港股、美股代码，它会告诉你这家公司是不是真卡点、值不值得深挖、估值还有多少空间，以及出现什么情况说明看错了。
 
+方法来自 Serenity（X：[@aleabitoreddit](https://x.com/aleabitoreddit)）：被粉丝称为“白毛股神”的独立 AI/半导体供应链研究员，在 X 上免费分享研究。想看原始思路，推荐直接关注 Serenity。
+
 ## 看一遍就懂：研究 AMD
 
 <p align="center"><img src="assets/brand/demo.gif" alt="演示：对 AI 说“帮我研究股票：AMD（美股）”，自动抓取 SEC 财报、校验数字、生成报告" width="100%"></p>
@@ -88,4 +90,7 @@ python suoha.py resolve 腾讯      # 不知道代码时先查代码
 
 由 **梭哈.AI**（[@suoha_AI](https://x.com/suoha_AI)）设计和维护。
 
-本项目为非官方作品，与 Serenity 本人没有隶属或背书关系。研究方法提炼自 Serenity 公开发布的推文，只引用帖子编号，不含推文原文；报告由框架生成，不代表 Serenity 本人观点。本工具仅供研究，不构成投资建议。License：[MIT](LICENSE)。
+**方法来源：Serenity**（[@aleabitoreddit](https://x.com/aleabitoreddit)）
+Serenity 被粉丝称为“白毛股神”，是一位独立的 AI/半导体供应链研究员，专注于挖掘供应链关键瓶颈，以及梳理超大规模厂商（hyperscaler）的供应链关系，在 X 平台免费分享研究。本项目的规则和案例都来自 Serenity 的公开帖子。仓库里只有我们的中文转述和帖子编号，原文请到 Serenity 的主页按编号查看。
+
+本项目为非官方作品，与 Serenity 本人没有隶属或背书关系。研究方法提炼自 Serenity（@aleabitoreddit）公开发布的推文，只引用帖子编号，不含推文原文；报告由框架生成，不代表 Serenity 本人观点。本工具仅供研究，不构成投资建议。License：[MIT](LICENSE)。

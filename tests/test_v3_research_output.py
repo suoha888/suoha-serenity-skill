@@ -27,8 +27,8 @@ class SurohaSerenityV4Tests(unittest.TestCase):
 
     def test_runtime_manifest_version_matches_skill_release(self):
         skill_text = (SOURCE_ROOT / "SKILL.md").read_text(encoding="utf-8")
-        self.assertEqual(SKILL_VERSION, "9.0.1")
-        self.assertIn('version: "9.0.1"', skill_text)
+        self.assertEqual(SKILL_VERSION, "9.0.2")
+        self.assertIn('version: "9.0.2"', skill_text)
 
     def test_future_as_of_is_rejected(self):
         value = copy.deepcopy(self.fixture)

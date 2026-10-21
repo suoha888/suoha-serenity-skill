@@ -132,7 +132,7 @@ def dossier(ticker: str, as_of: str | None = None, recent: int = 10, data: dict[
         L.extend(["## 论点失效条件（他说过什么情况下会改变看法）", ""] + [f"- {k}" for k in flips[-10:]] + [""])
     block("风险 / 稀释 / 回顾", [e for e in rows if e["t"] in RISK_TYPES or e["s"] in {"bear", "avoid", "trim", "downgrade", "correction"}], 10)
     block(f"最近 {recent} 条", rows, recent)
-    L.append(f"> 以上为公开帖转述，不是原话；原帖：{URL.format('<编号>')}。立场 = 当时的公开表达，不是持仓记录；"
+    L.append(f"> 以上为公开帖转述，不是原话；Serenity 主页：https://x.com/aleabitoreddit ，原帖：{URL.format('<编号>')}。立场 = 当时的公开表达，不是持仓记录；"
              f"覆盖至 {data['archive_through']}，之后的表态未知。框架研究用途，不代表 Serenity 本人观点，也不是投资建议。")
     return "\n".join(L) + "\n"
 

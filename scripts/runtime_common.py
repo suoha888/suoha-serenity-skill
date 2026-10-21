@@ -16,7 +16,7 @@ from typing import Any, Iterable
 
 
 RUNTIME_SCHEMA_VERSION = "4"
-SKILL_VERSION = "9.0.1"
+SKILL_VERSION = "9.0.2"
 RUNTIME_MANIFEST_NAME = "BUILD-MANIFEST.json"
 # Files the skill itself creates when a user runs it inside the installed
 # directory (live-data cache, research workspaces, Python bytecode).  They are
