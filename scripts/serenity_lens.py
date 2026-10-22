@@ -177,7 +177,42 @@ def _days(a: datetime, b: datetime) -> float:
     return abs((a - b).total_seconds()) / 86400
 
 
-def validate(lens: dict[str, Any], schema_path: Path = SCHEMA_PATH) -> list[str]:
+def _snapshot_warnings(lens: dict[str, Any], base: Path | None = None) -> list[str] | None:
+    """Warnings recorded in the live-data snapshot the lens was built from; None when it cannot be found
+    (older lenses, or a snapshot that was not shipped) so the check is skipped rather than failing."""
+    raw = (lens.get("live_data") or {}).get("snapshot_path")
+    if not isinstance(raw, str) or not raw.strip():
+        return None
+    p = Path(raw)
+    root = Path(__file__).resolve().parents[1]
+    candidates = [p] if p.is_absolute() else [Path.cwd() / p, root / p] + ([base / p, base / "snapshots" / p.name, base / p.name] if base else [])
+    for c in candidates:
+        try:
+            if c.is_file():
+                snap = json.loads(c.read_text(encoding="utf-8"))
+                w = snap.get("warnings") if isinstance(snap, dict) else None
+                return [str(x) for x in w] if isinstance(w, list) else []
+        except (OSError, ValueError):
+            return None
+    return None
+
+
+def _warning_code(w: str) -> str:
+    return w.split(":", 1)[0].strip()
+
+
+def unaddressed_snapshot_warnings(lens: dict[str, Any], base: Path | None = None) -> list[str]:
+    """Every warning in the source snapshot must appear in live_data.warnings_addressed (v9.1).
+    Deleting the pre-filled entries must not make a report pass."""
+    snap = _snapshot_warnings(lens, base)
+    if not snap:
+        return []
+    done = {_warning_code(str(w.get("warning", ""))) for w in (lens.get("live_data") or {}).get("warnings_addressed", [])
+            if isinstance(w, dict)}
+    return [f"lens:snapshot_warning_not_addressed:{_warning_code(w)}" for w in snap if _warning_code(w) not in done]
+
+
+def validate(lens: dict[str, Any], schema_path: Path = SCHEMA_PATH, base: Path | None = None) -> list[str]:
     todos = find_todos(lens)
     if todos:
         return todos  # a draft from `live_data.py pack`; fill judgments first
@@ -274,6 +309,9 @@ def validate(lens: dict[str, Any], schema_path: Path = SCHEMA_PATH) -> list[str]
         errors.append("lens:scenarios_must_be_bear_base_bull_in_order")
     net_debt = float(cur.get("net_debt", 0.0))
     implied = []
+    if any(s["assumptions"].get("multiple_basis") == "ev_sales" for s in scenarios) and cur.get("net_debt") is None:
+        # EV-based multiples need net debt; treating a missing value as 0 overstates equity value for indebted firms
+        errors.append("lens:ev_sales_requires_net_debt")
     for sc in scenarios:
         a = sc["assumptions"]
         if a["multiple_basis"] == "pe" and "net_margin" not in a:
@@ -402,6 +440,7 @@ def validate(lens: dict[str, Any], schema_path: Path = SCHEMA_PATH) -> list[str]
                         errors.append(f"lens:unknown_archetype:{arc}")
     if lens.get("schema_version") == "6.0":
         errors += validate_v6(lens, known, evidence, as_of)
+        errors += unaddressed_snapshot_warnings(lens, base)
     if lens["serenity_view"]["would_he_care"] == "yes" and not lens["serenity_view"]["playbook_rules"]:
         errors.append("lens:serenity_view_requires_playbook_rules")
 
@@ -502,7 +541,7 @@ def finish(path: Path, lens: dict[str, Any], out_dir: Path | None = None, stem: 
         print(f"Refusing to finish: {len(todos)} draft field(s) still start with TODO.")
         return 1
     out = compute(lens)
-    errors = validate(out)
+    errors = validate(out, base=path.resolve().parent)
     if errors:
         for e in errors:
             print(f"ERROR: {e}")
@@ -552,7 +591,7 @@ def main(argv: list[str] | None = None) -> int:
         target.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"OK: derived numbers written to {target}")
         return 0
-    errors = validate(lens)
+    errors = validate(lens, base=args.path.resolve().parent)
     if errors:
         for e in errors:
             print(f"ERROR: {e}")
